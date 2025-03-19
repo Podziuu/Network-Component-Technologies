@@ -1,28 +1,19 @@
 package entities.item;
 
-import model.item.Item;
-import org.bson.types.ObjectId;
+import entities.item.ItemEnt;
 
-@BsonDiscriminator("movie")
-public class MovieEnt extends Item {
-    @BsonProperty("minutes")
+public class MovieEnt extends ItemEnt {
     private int minutes;
-    @BsonProperty("casette")
     private boolean casette;
 
-    public MovieEnt(
-                 @BsonProperty("id") ObjectId id,
-                 @BsonProperty("basePrice") int basePrice,
-                 @BsonProperty("itemName") String itemName,
-                 @BsonProperty("minutes") int minutes,
-                 @BsonProperty("casette") boolean casette) {
+    public MovieEnt(String id, int basePrice, String itemName, int minutes, boolean casette) {
         super(id, basePrice, itemName);
         this.itemType = "movie";
         this.minutes = minutes;
         this.casette = casette;
     }
 
-    public MovieEnt(ObjectId id, int basePrice, String itemName, boolean available, int minutes, boolean casette) {
+    public MovieEnt(String id, int basePrice, String itemName, boolean available, int minutes, boolean casette) {
         super(id, basePrice, itemName, available);
         this.itemType = "movie";
         this.minutes = minutes;

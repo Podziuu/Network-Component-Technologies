@@ -16,7 +16,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>RepositoriesAdapters</module>
-        <module>ViewAdapters</module>
     </modules>
 
 </project>

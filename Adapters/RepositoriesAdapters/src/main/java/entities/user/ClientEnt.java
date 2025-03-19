@@ -1,21 +1,14 @@
 package entities.user;
 
-import model.user.User;
-import org.bson.codecs.pojo.annotations.BsonDiscriminator;
-import org.bson.codecs.pojo.annotations.BsonProperty;
-import org.bson.types.ObjectId;
-
-@BsonDiscriminator("Client")
-public class ClientEnt extends User {
-    @BsonProperty("clientType")
+public class ClientEnt extends UserEnt {
     private ClientTypeEnt clientType;
 
-    public ClientEnt(ObjectId id,
+    public ClientEnt(String id,
                      String login,
                      String password,
                      String firstName,
                      String lastName,
-                     @BsonProperty("clientType") ClientTypeEnt clientType) {
+                     ClientTypeEnt clientType) {
         super(id, login, password, firstName, lastName);
         this.setRole(RoleEnt.CLIENT);
         this.clientType = clientType;

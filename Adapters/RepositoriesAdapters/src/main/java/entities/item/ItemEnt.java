@@ -1,32 +1,20 @@
 package entities.item;
 
-import org.bson.types.ObjectId;
-
-@BsonDiscriminator("item")
 public class ItemEnt {
-    @BsonId
-    private ObjectId id;
-    @BsonProperty("basePrice")
+    private String id;
     protected int basePrice;
-    @BsonProperty("itemName")
     protected String itemName;
-    @BsonProperty("available")
     protected boolean available;
-    @BsonProperty("itemType")
     protected String itemType;
 
-    @BsonCreator
-    public ItemEnt(
-            @BsonProperty("id") ObjectId id,
-            @BsonProperty("basePrice") int basePrice,
-            @BsonProperty("itemName") String itemName) {
+    public ItemEnt(String id, int basePrice, String itemName) {
         this.id = id;
         this.basePrice = basePrice;
         this.itemName = itemName;
         this.available = true;
     }
 
-    public ItemEnt(ObjectId id, int basePrice, String itemName, boolean available) {
+    public ItemEnt(String id, int basePrice, String itemName, boolean available) {
         this.id = id;
         this.basePrice = basePrice;
         this.itemName = itemName;
@@ -37,7 +25,6 @@ public class ItemEnt {
 
     }
 
-    @BsonIgnore
     public String getItemInfo() {
         return "Item ID: " + id + ", Name: " + itemName + ", Base Price: " + basePrice;
     }
@@ -58,11 +45,11 @@ public class ItemEnt {
         return available;
     }
 
-    public ObjectId getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(String id) {
         this.id = id;
     }
 

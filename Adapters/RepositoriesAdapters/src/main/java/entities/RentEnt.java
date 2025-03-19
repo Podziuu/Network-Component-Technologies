@@ -1,47 +1,34 @@
 package entities;
 
-import org.bson.types.ObjectId;
-import pl.lodz.p.edu.rest.model.item.Item;
-import pl.lodz.p.edu.rest.model.user.Client;
-
 import java.time.LocalDateTime;
 
-public class RentEnt {
-    @BsonId
-    private ObjectId id;
-    @BsonProperty("beginTime")
-    private LocalDateTime beginTime;
-    @BsonProperty("endTime")
-    private LocalDateTime endTime;
-    @BsonProperty("rentCost")
-    private int rentCost;
-    @BsonProperty("archive")
-    private boolean archive = false;
-    @BsonProperty("client")
-    private Client client;
-    @BsonProperty("item")
-    private Item item;
+import entities.item.ItemEnt;
+import entities.user.ClientEnt;
 
-    @BsonCreator
-    public RentEnt(@BsonProperty("beginTime") LocalDateTime beginTime,
-                   @BsonProperty("rentCost") int rentCost,
-                   @BsonProperty("client") Client client,
-                   @BsonProperty("item") Item item) {
+public class RentEnt {
+    private String id;
+    private LocalDateTime beginTime;
+    private LocalDateTime endTime;
+    private int rentCost;
+    private boolean archive = false;
+    private ClientEnt clientEnt;
+    private ItemEnt itemEnt;
+
+    public RentEnt(LocalDateTime beginTime, int rentCost, ClientEnt clientEnt, ItemEnt itemEnt) {
         this.beginTime = beginTime;
         this.rentCost = rentCost;
-        this.client = client;
-        this.item = item;
+        this.clientEnt = clientEnt;
+        this.itemEnt = itemEnt;
     }
 
     public RentEnt() {
-
     }
 
-    public ObjectId getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -61,7 +48,6 @@ public class RentEnt {
         this.beginTime = beginTime;
     }
 
-    @BsonIgnore
     public long getRentDays() {
         return java.time.Duration.between(beginTime, endTime).toDays();
     }
@@ -74,20 +60,20 @@ public class RentEnt {
         this.rentCost = rentCost;
     }
 
-    public Client getClient() {
-        return client;
+    public ClientEnt getClient() {
+        return clientEnt;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setClient(ClientEnt client) {
+        this.clientEnt = client;
     }
 
-    public Item getItem() {
-        return item;
+    public ItemEnt getItem() {
+        return itemEnt;
     }
 
-    public void setItem(Item item) {
-        this.item = item;
+    public void setItem(ItemEnt item) {
+        this.itemEnt = item;
     }
 
     public boolean isArchive() {
@@ -98,8 +84,7 @@ public class RentEnt {
         this.archive = archive;
     }
 
-    @BsonIgnore
     public String getRentInfo() {
-        return "Rent ID: " + id + ", Client: " + client.getFirstName() + ", Item: " + item.getItemName();
+        return "Rent ID: " + id + ", Client: " + clientEnt.getFirstName() + ", Item: " + itemEnt.getItemName();
     }
 }

@@ -1,6 +1,5 @@
 package entities.user;
 
-import model.user.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,9 +8,9 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class UserPrincipalEnt implements UserDetails {
-    private User user;
+    private UserEnt user;
 
-    public UserPrincipalEnt(User user) {
+    public UserPrincipalEnt(UserEnt user) {
         this.user = user;
     }
 

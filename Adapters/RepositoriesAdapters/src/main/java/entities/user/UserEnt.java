@@ -1,38 +1,19 @@
 package entities.user;
 
-import org.bson.codecs.pojo.annotations.BsonCreator;
-import org.bson.codecs.pojo.annotations.BsonDiscriminator;
-import org.bson.codecs.pojo.annotations.BsonId;
-import org.bson.codecs.pojo.annotations.BsonProperty;
-import org.bson.types.ObjectId;
-
-@BsonDiscriminator("User")
 public abstract class UserEnt {
-    @BsonId
-    private ObjectId id;
-    @BsonProperty("login")
+    private String id;
     private String login;
-    @BsonProperty("password")
     private String password;
-    @BsonProperty("firstName")
     private String firstName;
-    @BsonProperty("lastName")
     private String lastName;
-    @BsonProperty("active")
     private boolean isActive;
-    @BsonProperty("role")
     private RoleEnt role;
 
     protected UserEnt() {
 
     }
 
-    @BsonCreator
-    protected UserEnt(@BsonProperty("id") ObjectId id,
-                      @BsonProperty("login") String login,
-                      @BsonProperty("password") String password,
-                      @BsonProperty("firstName") String firstName,
-                      @BsonProperty("lastName") String lastName) {
+    protected UserEnt(String id, String login, String password, String firstName, String lastName) {
         this.id = id;
         this.login = login;
         this.password = password;
@@ -41,11 +22,11 @@ public abstract class UserEnt {
         this.isActive = true;
     }
 
-    public ObjectId getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(String id) {
         this.id = id;
     }
 

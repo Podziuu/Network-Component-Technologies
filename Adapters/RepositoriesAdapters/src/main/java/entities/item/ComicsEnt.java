@@ -1,31 +1,19 @@
 package entities.item;
 
-import model.item.Item;
-import org.bson.codecs.pojo.annotations.BsonDiscriminator;
-import org.bson.codecs.pojo.annotations.BsonProperty;
-import org.bson.types.ObjectId;
+import entities.item.ItemEnt;
 
-@BsonDiscriminator("comics")
-public class ComicsEnt extends Item {
-    @BsonProperty("pageNumber")
+public class ComicsEnt extends ItemEnt {
     private int pageNumber;
-
-    @BsonProperty("publisher")
     private String publisher;
 
-    public ComicsEnt(
-                  @BsonProperty("id") ObjectId id,
-                  @BsonProperty("basePrice") int basePrice,
-                  @BsonProperty("itemName") String itemName,
-                  @BsonProperty("pageNumber") int pageNumber,
-                  @BsonProperty("publisher") String publisher) {
+    public ComicsEnt(String id, int basePrice, String itemName, int pageNumber, String publisher) {
         super(id, basePrice, itemName);
         this.itemType = "comics";
         this.pageNumber = pageNumber;
         this.publisher = publisher;
     }
 
-    public ComicsEnt(ObjectId id, int basePrice, String itemName, boolean available, int pageNumber, String publisher) {
+    public ComicsEnt(String id, int basePrice, String itemName, boolean available, int pageNumber, String publisher) {
         super(id, basePrice, itemName, available);
         this.itemType = "comics";
         this.pageNumber = pageNumber;
@@ -33,7 +21,6 @@ public class ComicsEnt extends Item {
     }
 
     public ComicsEnt() {
-
     }
 
     public int getPageNumber() {
