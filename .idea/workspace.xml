@@ -4,7 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="" />
+    <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/RentEnt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/item/ComicsEnt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/item/ItemEnt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/item/MovieEnt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/item/MusicEnt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/item/MusicGenreEnt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/user/AdminEnt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/user/ClientEnt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/user/ClientTypeEnt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/user/ManagerEnt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/user/RoleEnt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/user/UserEnt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/user/UserPrincipalEnt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/ViewAdapters/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/Rent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/item/Comics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/item/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/item/Movie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/item/Music.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/item/MusicGenre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/user/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/user/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/user/ClientType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/user/Manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/user/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/user/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/user/UserPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RepositoriesAdapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,19 +57,26 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/plewkowicz/Studia/sem6/MKWA_SR_1015_06/Adapters/RepositoriesAdapters/src/main/java/data",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/data" />
+      <recent name="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="RestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="AppCore" />

@@ -11,12 +11,12 @@
     </parent>
 
     <groupId>pl.lodz.p.edu</groupId>
-    <artifactId>ApplicationPorts</artifactId>
+    <artifactId>Adapters</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>infrastructure</module>
+        <module>RepositoriesAdapters</module>
+        <module>ViewAdapters</module>
     </modules>
-
 
 </project>

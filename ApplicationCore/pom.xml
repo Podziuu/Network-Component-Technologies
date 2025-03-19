@@ -14,9 +14,13 @@
 
     <artifactId>AppCore</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
-    <name>AppCore</name>
+    <name>ApplicationCore</name>
+    <modules>
+        <module>DomainModel</module>
+        <module>ApplicationServices</module>
+    </modules>
 
     <dependencies>
         <dependency>
