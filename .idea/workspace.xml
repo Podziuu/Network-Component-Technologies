@@ -5,87 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/RentEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/RentEnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/item/ComicsEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/item/ComicsEnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/ViewAdapters/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/DomainModel/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/RestApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/config/PasswordEncoderConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/config/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/controller/ItemController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/controller/RentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/dto/ChangePasswordDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/dto/ClientDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/dto/ComicsDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/dto/CreateUserDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/dto/ItemDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/dto/LoginDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/dto/MovieDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/dto/MusicDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/dto/RentDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/dto/TokenDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/dto/UpdateUserDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/dto/UserDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/exception/DuplicateUserException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/exception/InvalidCredentialsException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/exception/InvalidItemTypeException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/exception/InvalidUserDataException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/exception/ItemAlreadyRentedException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/exception/ItemNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/exception/RentNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/exception/RentOperationException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/exception/UserNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/mapper/ItemMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/mapper/RentMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/mapper/UserMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/model/Rent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/model/item/Comics.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/model/item/Item.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/model/item/Movie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/model/item/Music.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/model/item/MusicGenre.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/model/user/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/model/user/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/model/user/ClientType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/model/user/Manager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/model/user/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/model/user/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/model/user/UserPrincipal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/repository/AbstractMongoEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/repository/ItemRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/repository/MongoEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/repository/RentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/security/JwsProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/security/JwtFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/security/JwtTokenProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/service/ItemService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/service/RentService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/java/pl/lodz/p/edu/rest/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/resources/CreateUserDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/main/resources/keystore.p12" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/test/java/pl/lodz/p/edu/rest/ItemIntegrationTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/test/java/pl/lodz/p/edu/rest/RentIntegrationTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/src/test/java/pl/lodz/p/edu/rest/UserIntegrationTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/maven/archetype.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/archetype-resources/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/main/java/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/test/java/AppTest.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/ItemRepositoryAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/RentRepositoryAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/UserRepositoryAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/ChangePasswordDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/ClientDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/ComicsDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/CreateUserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/ItemDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/LoginDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/MovieDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/MusicDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/RentDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/TokenDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/UpdateUserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/ItemMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/AbstractMongoEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/ItemRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/MongoEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/RentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/UserRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -98,22 +52,25 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/plewkowicz/Studia/sem6/MKWA_SR_1015_06/Adapters/RepositoriesAdapters/src/main/java/data&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/plewkowicz/Studia/sem6/MKWA_SR_1015_06/Adapters/RepositoriesAdapters/src/main/java/dto",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto" />
+      <recent name="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers" />
+      <recent name="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo" />
       <recent name="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/data" />
       <recent name="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java" />
     </key>
