@@ -5,29 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/ItemRepositoryAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/RentRepositoryAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/UserRepositoryAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/ChangePasswordDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/ClientDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/ComicsDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/CreateUserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/ItemDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/LoginDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/MovieDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/MusicDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/RentDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/TokenDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/UpdateUserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/ItemMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/AbstractMongoEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/ItemRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/MongoEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/RentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,20 +30,20 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/plewkowicz/Studia/sem6/MKWA_SR_1015_06/Adapters/RepositoriesAdapters/src/main/java/dto",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/plewkowicz/Studia/sem6/MKWA_SR_1015_06/Adapters/RepositoriesAdapters/src/main/java/dto&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto" />
@@ -102,6 +80,7 @@
       <updated>1742320194946</updated>
       <workItem from="1742320196893" duration="376000" />
       <workItem from="1742320602221" duration="56000" />
+      <workItem from="1742504203105" duration="670000" />
     </task>
     <servers />
   </component>
