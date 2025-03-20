@@ -1,33 +1,21 @@
 package model;
 
-import org.bson.codecs.pojo.annotations.*;
-import org.bson.types.ObjectId;
-import pl.lodz.p.edu.rest.model.item.Item;
-import pl.lodz.p.edu.rest.model.user.Client;
+import model.item.Item;
+import model.user.Client;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class Rent {
-    @BsonId
-    private ObjectId id;
-    @BsonProperty("beginTime")
+    private String id;
     private LocalDateTime beginTime;
-    @BsonProperty("endTime")
     private LocalDateTime endTime;
-    @BsonProperty("rentCost")
     private int rentCost;
-    @BsonProperty("archive")
     private boolean archive = false;
-    @BsonProperty("client")
     private Client client;
-    @BsonProperty("item")
     private Item item;
 
-    @BsonCreator
-    public Rent(@BsonProperty("beginTime") LocalDateTime beginTime,
-                @BsonProperty("rentCost") int rentCost,
-                @BsonProperty("client") Client client,
-                @BsonProperty("item") Item item) {
+    public Rent(LocalDateTime beginTime, int rentCost, Client client, Item item) {
         this.beginTime = beginTime;
         this.rentCost = rentCost;
         this.client = client;
@@ -35,14 +23,13 @@ public class Rent {
     }
 
     public Rent() {
-
     }
 
-    public ObjectId getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -62,9 +49,8 @@ public class Rent {
         this.beginTime = beginTime;
     }
 
-    @BsonIgnore
     public long getRentDays() {
-        return java.time.Duration.between(beginTime, endTime).toDays();
+        return (endTime != null) ? Duration.between(beginTime, endTime).toDays() : 0;
     }
 
     public int getRentCost() {
@@ -99,8 +85,7 @@ public class Rent {
         this.archive = archive;
     }
 
-    @BsonIgnore
     public String getRentInfo() {
-        return "Rent ID: " + id + ", Client: " + client.getFirstName() + ", Item: " + item.getItemName();
+        return "Rent ID: " + id + ", Client: " + (client != null ? client.getFirstName() : "Unknown") + ", Item: " + (item != null ? item.getItemName() : "Unknown");
     }
 }

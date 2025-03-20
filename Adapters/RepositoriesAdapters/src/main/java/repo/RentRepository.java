@@ -22,7 +22,7 @@ public class RentRepository extends AbstractMongoEntity {
 
     public ObjectId addRent(RentEnt rent) {
         InsertOneResult result = rentCollection.insertOne(rent);
-        rent.setId(String.valueOf(result.getInsertedId().asObjectId().getValue()));
+        rent.setId(result.getInsertedId().asObjectId().getValue());
         return result.getInsertedId().asObjectId().getValue();
     }
 

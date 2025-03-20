@@ -1,24 +1,24 @@
-package model.item;
+package dto;
 
-public class Movie extends Item {
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+
+public class MovieEntDTO extends ItemEntDTO {
+    @NotNull(message = "Minutes cannot be null")
+    @Min(value = 0, message = "Minutes must be at least 0")
     private int minutes;
+    @NotNull(message = "Casette cannot be null")
     private boolean casette;
 
-    public Movie(String id, int basePrice, String itemName, int minutes, boolean casette) {
-        super(id, basePrice, itemName);
-        this.itemType = "movie";
-        this.minutes = minutes;
-        this.casette = casette;
+    public MovieEntDTO() {
     }
 
-    public Movie(String id, int basePrice, String itemName, boolean available, int minutes, boolean casette) {
+    public MovieEntDTO(String id, int basePrice, String itemName, boolean available, int minutes, boolean casette) {
         super(id, basePrice, itemName, available);
         this.itemType = "movie";
         this.minutes = minutes;
         this.casette = casette;
     }
-
-    public Movie() {}
 
     public int getMinutes() {
         return minutes;

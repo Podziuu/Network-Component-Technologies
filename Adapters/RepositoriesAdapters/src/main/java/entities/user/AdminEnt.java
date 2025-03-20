@@ -5,9 +5,10 @@ import org.bson.types.ObjectId;
 
 @BsonDiscriminator("Admin")
 public class AdminEnt extends UserEnt {
-    public AdminEnt(String id, String login, String password, String firstName, String lastName) {
+
+    public AdminEnt(ObjectId id, String login, String password, String firstName, String lastName) {
         super(id, login, password, firstName, lastName);
-        this.setRole(RoleEnt.ADMIN);
+        this.setRole(Role.ADMIN);
     }
 
     public AdminEnt() {

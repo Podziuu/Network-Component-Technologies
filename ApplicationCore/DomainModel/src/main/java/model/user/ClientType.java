@@ -1,25 +1,15 @@
 package model.user;
 
-import org.bson.codecs.pojo.annotations.BsonCreator;
-import org.bson.codecs.pojo.annotations.BsonIgnore;
-import org.bson.codecs.pojo.annotations.BsonProperty;
-
 public class ClientType {
-    @BsonProperty("max_articles")
     protected int maxArticles;
-    @BsonProperty("discount")
     protected int discount;
 
-    @BsonCreator
-    public ClientType(@BsonProperty("max_articles") int maxArticles,
-                      @BsonProperty("discount") int discount) {
+    public ClientType(int maxArticles, int discount) {
         this.maxArticles = maxArticles;
         this.discount = discount;
     }
 
-    public ClientType() {
-
-    }
+    public ClientType() {}
 
     public int getMaxArticles() {
         return maxArticles;
@@ -29,7 +19,6 @@ public class ClientType {
         return discount;
     }
 
-    @BsonIgnore
     public String getClientTypeInfo() {
         return "\nMaksymalna ilość wypożyczonych artykułów: " + this.getMaxArticles();
     }

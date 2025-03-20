@@ -24,7 +24,7 @@ public class ItemRepository extends AbstractMongoEntity {
 
     public ObjectId addItem(ItemEnt item) {
         InsertOneResult result = itemCollection.insertOne(item);
-        item.setId(String.valueOf(result.getInsertedId().asObjectId().getValue()));
+        item.setId(result.getInsertedId().asObjectId().getValue());
         return result.getInsertedId().asObjectId().getValue();
     }
 

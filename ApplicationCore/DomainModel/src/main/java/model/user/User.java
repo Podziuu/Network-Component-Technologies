@@ -1,38 +1,17 @@
 package model.user;
 
-import org.bson.codecs.pojo.annotations.BsonCreator;
-import org.bson.codecs.pojo.annotations.BsonDiscriminator;
-import org.bson.codecs.pojo.annotations.BsonId;
-import org.bson.codecs.pojo.annotations.BsonProperty;
-import org.bson.types.ObjectId;
-
-@BsonDiscriminator("User")
 public abstract class User {
-    @BsonId
-    private ObjectId id;
-    @BsonProperty("login")
+    private String id;
     private String login;
-    @BsonProperty("password")
     private String password;
-    @BsonProperty("firstName")
     private String firstName;
-    @BsonProperty("lastName")
     private String lastName;
-    @BsonProperty("active")
     private boolean isActive;
-    @BsonProperty("role")
     private Role role;
 
-    protected User() {
+    protected User() {}
 
-    }
-
-    @BsonCreator
-    protected User(@BsonProperty("id") ObjectId id,
-                   @BsonProperty("login") String login,
-                   @BsonProperty("password") String password,
-                   @BsonProperty("firstName") String firstName,
-                   @BsonProperty("lastName") String lastName) {
+    protected User(String id, String login, String password, String firstName, String lastName) {
         this.id = id;
         this.login = login;
         this.password = password;
@@ -41,11 +20,11 @@ public abstract class User {
         this.isActive = true;
     }
 
-    public ObjectId getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -81,7 +60,7 @@ public abstract class User {
         this.lastName = lastName;
     }
 
-    public boolean getActive() {
+    public boolean isActive() {
         return isActive;
     }
 
