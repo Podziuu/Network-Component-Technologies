@@ -1,5 +1,7 @@
 package entities.item;
 
+import model.item.MusicGenre;
+
 public enum MusicGenreEnt {
     Jazz(1),
     Metal(2),
@@ -8,6 +10,7 @@ public enum MusicGenreEnt {
     POP(8);
 
     private final int value;
+    private String name;
 
     MusicGenreEnt(int value) {
         this.value = value;
@@ -17,4 +20,22 @@ public enum MusicGenreEnt {
     public int getValue() {
         return value;
     }
+
+    public static MusicGenre toMusicGenre(MusicGenreEnt musicGenreEnt) {
+        switch (musicGenreEnt) {
+            case Jazz:
+                return MusicGenre.Jazz;
+            case Metal:
+                return MusicGenre.Metal;
+            case Classical:
+                return MusicGenre.Classical;
+            case HipHop:
+                return MusicGenre.HipHop;
+            case POP:
+                return MusicGenre.POP;
+            default:
+                throw new IllegalArgumentException("Unknown MusicGenreEnt: " + musicGenreEnt);
+        }
+    }
+
 }

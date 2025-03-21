@@ -1,27 +1,23 @@
-//package mappers;
-//
-//import pl.lodz.p.edu.rest.dto.RentDTO;
-//import pl.lodz.p.edu.rest.model.Rent;
-//
-//import java.util.List;
-//import java.util.stream.Collectors;
-//
-//public class RentMapper {
-//    public List<RentDTO> toDTO(List<Rent> rents) {
-//        return rents.stream()
-//                .map(this::convertToDTO)
-//                .collect(Collectors.toList());
-//    }
-//
-//    public RentDTO convertToDTO(Rent rent) {
-//        return new RentDTO(
-//                rent.getId().toString(),
-//                rent.getBeginTime(),
-//                rent.getEndTime(),
-//                rent.getRentCost(),
-//                rent.isArchive(),
-//                rent.getClient().getId().toString(),
-//                rent.getItem().getId().toString()
-//        );
-//    }
-//}
+package mappers;
+
+import entities.RentEnt;
+import model.Rent;
+import model.user.Client;
+
+public class RentMapper {
+
+    public static Rent toModel(RentEnt rentEnt) {
+        Rent rent = new Rent(
+                rentEnt.getBeginTime(),
+                rentEnt.getRentCost(),
+                (Client) UserMapper.toModel(rentEnt.getClient()),
+                ItemMapper.toModel(rentEnt.getItem())
+        );
+
+        rent.setId(rentEnt.getId().toString());
+        rent.setEndTime(rentEnt.getEndTime());
+        rent.setArchive(rentEnt.isArchive());
+
+        return rent;
+    }
+}

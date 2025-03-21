@@ -8,27 +8,27 @@ import org.bson.types.ObjectId;
 public class ClientEnt extends UserEnt {
 
     @BsonProperty("clientType")
-    private ClientType clientType;
+    private ClientTypeEnt clientType;
 
     public ClientEnt(ObjectId id,
                      String login,
                      String password,
                      String firstName,
                      String lastName,
-                     @BsonProperty("clientType") ClientType clientType) {
+                     @BsonProperty("clientType") ClientTypeEnt clientType) {
         super(id, login, password, firstName, lastName);
-        this.setRole(Role.CLIENT);
+        this.setRole(RoleEnt.CLIENT);
         this.clientType = clientType;
     }
 
     public ClientEnt() {
     }
 
-    public ClientType getClientType() {
+    public ClientTypeEnt getClientType() {
         return clientType;
     }
 
-    public void setClientType(ClientType clientType) {
+    public void setClientType(ClientTypeEnt clientType) {
         this.clientType = clientType;
     }
 }

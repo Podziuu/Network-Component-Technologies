@@ -9,10 +9,16 @@ import entities.item.ItemEnt;
 import entities.item.MovieEnt;
 import entities.item.MusicEnt;
 import exception.InvalidItemTypeException;
+import model.item.Comics;
+import model.item.Movie;
+import model.item.Music;
 import org.bson.types.ObjectId;
+import model.item.Item;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static entities.item.MusicGenreEnt.toMusicGenre;
 
 public class ItemMapper {
     public static MusicEnt toMusic(MusicEntDTO dto) {
@@ -115,6 +121,40 @@ public class ItemMapper {
             default -> throw new InvalidItemTypeException("Nieznany type: " + itemDTO.getItemType());
         };
     }
+
+    public static Item toModel(ItemEnt itemEnt) {
+        if (itemEnt instanceof MusicEnt musicEnt) {
+            return new Music(
+                    musicEnt.getId().toString(),
+                    musicEnt.getBasePrice(),
+                    musicEnt.getItemName(),
+                    musicEnt.isAvailable(),
+                    toMusicGenre(musicEnt.getGenre()),
+                    musicEnt.isVinyl()
+            );
+        } else if (itemEnt instanceof MovieEnt movieEnt) {
+            return new Movie(
+                    movieEnt.getId().toString(),
+                    movieEnt.getBasePrice(),
+                    movieEnt.getItemName(),
+                    movieEnt.isAvailable(),
+                    movieEnt.getMinutes(),
+                    movieEnt.isCasette()
+            );
+        } else if (itemEnt instanceof ComicsEnt comicsEnt) {
+            return new Comics(
+                    comicsEnt.getId().toString(),
+                    comicsEnt.getBasePrice(),
+                    comicsEnt.getItemName(),
+                    comicsEnt.isAvailable(),
+                    comicsEnt.getPageNumber(),
+                    comicsEnt.getPublisher()
+            );
+        } else {
+            throw new InvalidItemTypeException("Unknown item type: " + itemEnt.getClass().getSimpleName());
+        }
+    }
+
 
     public static List<ItemEntDTO> toDTOList(List<ItemEnt> items) {
         return items.stream().map(ItemMapper::toDTO).collect(Collectors.toList());

@@ -1,22 +1,22 @@
-//package mappers;
-//
-//import org.bson.types.ObjectId;
-//import pl.lodz.p.edu.rest.dto.ClientDTO;
-//import pl.lodz.p.edu.rest.dto.CreateUserDTO;
-//import pl.lodz.p.edu.rest.dto.UserDTO;
-//import pl.lodz.p.edu.rest.model.user.*;
-//
-//import java.util.List;
-//import java.util.stream.Collectors;
-//
-//public class UserMapper {
-//    public List<UserDTO> toDTO(List<User> users) {
+package mappers;
+
+import entities.user.*;
+import model.user.*;
+
+import org.bson.types.ObjectId;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class UserMapper {
+
+//    public static List<UserDTO> toDTO(List<User> users) {
 //        return users.stream()
-//                .map(this::convertToDTO)
+//                .map(UserMapper::convertToDTO)
 //                .collect(Collectors.toList());
 //    }
 //
-//    public UserDTO convertToDTO(User user) {
+//    public static UserDTO convertToDTO(User user) {
 //        if (user instanceof Client client) {
 //            return new ClientDTO(
 //                    client.getId().toString(),
@@ -39,7 +39,7 @@
 //        }
 //    }
 //
-//    public UserDTO convertToUserDTO(User user) {
+//    public static UserDTO convertToUserDTO(User user) {
 //        return new UserDTO(
 //                user.getId().toString(),
 //                user.getLogin(),
@@ -49,29 +49,39 @@
 //                user.getActive()
 //        );
 //    }
-//
-//    public User convertToUser(CreateUserDTO createUserDTO) {
-//        ObjectId objectId = createUserDTO.getId() != null ? new ObjectId(createUserDTO.getId()) : null;
-//        return switch (createUserDTO.getRole()) {
-//            case CLIENT -> new Client(
-//                    objectId,
-//                    createUserDTO.getLogin(),
-//                    createUserDTO.getPassword(),
-//                    createUserDTO.getFirstName(),
-//                    createUserDTO.getLastName(),
-//                    ClientType.createNoMembership());
-//            case ADMIN -> new Admin(
-//                    objectId,
-//                    createUserDTO.getLogin(),
-//                    createUserDTO.getPassword(),
-//                    createUserDTO.getFirstName(),
-//                    createUserDTO.getLastName());
-//            case MANAGER -> new Manager(
-//                    objectId,
-//                    createUserDTO.getLogin(),
-//                    createUserDTO.getPassword(),
-//                    createUserDTO.getFirstName(),
-//                    createUserDTO.getLastName());
-//        };
-//    }
-//}
+
+    public static User toModel(UserEnt userEnt) {
+        if (userEnt instanceof ClientEnt clientEnt) {
+            return new Client(
+                    clientEnt.getId().toString(),
+                    clientEnt.getLogin(),
+                    clientEnt.getPassword(),
+                    clientEnt.getFirstName(),
+                    clientEnt.getLastName(),
+                    clientEnt.getClientType().toModel()
+            );
+        } else if (userEnt instanceof AdminEnt adminEnt) {
+            return new Admin(
+                    adminEnt.getId().toString(),
+                    adminEnt.getLogin(),
+                    adminEnt.getPassword(),
+                    adminEnt.getFirstName(),
+                    adminEnt.getLastName()
+            );
+        } else if (userEnt instanceof ManagerEnt managerEnt) {
+            return new Manager(
+                    managerEnt.getId().toString(),
+                    managerEnt.getLogin(),
+                    managerEnt.getPassword(),
+                    managerEnt.getFirstName(),
+                    managerEnt.getLastName()
+            );
+        } else {
+            throw new IllegalArgumentException("Unknown user type: " + userEnt.getClass().getSimpleName());
+        }
+    }
+
+    public static ClientType toModel(ClientTypeEnt clientTypeEnt) {
+        return new ClientType(clientTypeEnt.getMaxArticles(), clientTypeEnt.getDiscount());
+    }
+}

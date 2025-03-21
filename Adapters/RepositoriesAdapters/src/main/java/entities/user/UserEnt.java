@@ -1,6 +1,6 @@
 package entities.user;
 
-import entities.RoleEnt;
+import entities.user.RoleEnt;
 import org.bson.codecs.pojo.annotations.BsonCreator;
 import org.bson.codecs.pojo.annotations.BsonDiscriminator;
 import org.bson.codecs.pojo.annotations.BsonId;

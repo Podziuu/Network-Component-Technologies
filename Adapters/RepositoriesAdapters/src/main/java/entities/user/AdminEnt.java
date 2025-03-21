@@ -8,7 +8,7 @@ public class AdminEnt extends UserEnt {
 
     public AdminEnt(ObjectId id, String login, String password, String firstName, String lastName) {
         super(id, login, password, firstName, lastName);
-        this.setRole(Role.ADMIN);
+        this.setRole(RoleEnt.ADMIN);
     }
 
     public AdminEnt() {

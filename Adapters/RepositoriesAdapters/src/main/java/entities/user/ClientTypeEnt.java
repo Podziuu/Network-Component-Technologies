@@ -1,5 +1,6 @@
 package entities.user;
 
+import model.user.ClientType;
 import org.bson.codecs.pojo.annotations.BsonCreator;
 import org.bson.codecs.pojo.annotations.BsonIgnore;
 import org.bson.codecs.pojo.annotations.BsonProperty;
@@ -45,5 +46,9 @@ public class ClientTypeEnt {
 
     public static ClientTypeEnt createNoMembership() {
         return new ClientTypeEnt(2, 0);
+    }
+
+    public ClientType toModel() {
+        return new ClientType(this.maxArticles, this.discount);
     }
 }
