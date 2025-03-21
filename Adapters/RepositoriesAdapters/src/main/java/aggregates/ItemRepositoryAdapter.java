@@ -12,11 +12,9 @@ import java.util.Optional;
 
 public class ItemRepositoryAdapter implements ItemQueryPort, ItemCommandPort {
     private final ItemRepository itemRepository;
-    private final ItemMapper itemMapper;
 
-    public ItemRepositoryAdapter(ItemRepository itemRepository, ItemMapper itemMapper) {
+    public ItemRepositoryAdapter(ItemRepository itemRepository) {
         this.itemRepository = itemRepository;
-        this.itemMapper = itemMapper;
     }
 
     @Override
@@ -25,15 +23,25 @@ public class ItemRepositoryAdapter implements ItemQueryPort, ItemCommandPort {
     }
 
     @Override
-    public Optional<Item> getItemById(String id) {
+    public Item getItemById(String id) {
         ItemEnt itemEnt = itemRepository.getItemById(id);
 
-        if (itemEnt == null) {
-            return Optional.empty();
-        }
+        return ItemMapper.toModel(itemEnt);
+    }
 
-        Item item = itemMapper.toModel(itemEnt);
-        return Optional.of(item);
+    @Override
+    public List<Item> getItemsByBasePrice(int basePrice) {
+        return List.of();
+    }
+
+    @Override
+    public List<Item> getItemsByItemName(String itemName) {
+        return List.of();
+    }
+
+    @Override
+    public List<Item> getItemsByItemType(String itemType) {
+        return List.of();
     }
 
     @Override
@@ -47,7 +55,7 @@ public class ItemRepositoryAdapter implements ItemQueryPort, ItemCommandPort {
     }
 
     @Override
-    public void removeItem(Item item) {
+    public void removeItem(String id) {
 
     }
 }

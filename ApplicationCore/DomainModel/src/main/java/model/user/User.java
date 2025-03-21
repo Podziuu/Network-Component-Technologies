@@ -60,7 +60,7 @@ public abstract class User {
         this.lastName = lastName;
     }
 
-    public boolean isActive() {
+    public boolean getActive() {
         return isActive;
     }
 

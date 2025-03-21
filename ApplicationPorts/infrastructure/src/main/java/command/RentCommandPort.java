@@ -9,7 +9,7 @@ public interface RentCommandPort {
 
     void remove(Rent rent);
 
-    Optional<Rent> update(Rent rent);
+    Rent update(Rent rent);
 
     boolean removeById(String rentId);
 }

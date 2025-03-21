@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface RentQueryPort {
-    Optional<Rent> getById(String id);
+    Rent getById(String id);
 
     List<Rent> getAll();
 
@@ -18,4 +18,15 @@ public interface RentQueryPort {
 
     List<Rent> findByClientAndStatus(String clientId, boolean isRented);
 
+    List<Rent> findActiveRentsByItemId(String itemId);
+
+    List<Rent> getActiveRents();
+
+    List<Rent> getInactiveRents();
+
+    List<Rent> findInactiveRentsByItemId(String itemdId);
+
+    List<Rent> findActiveRentsByClientId(String clientId);
+
+    List<Rent> findInactiveRentsByClientId(String clientId);
 }

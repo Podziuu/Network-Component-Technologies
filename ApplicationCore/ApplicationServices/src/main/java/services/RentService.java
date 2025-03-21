@@ -1,39 +1,44 @@
+package services;
+
+import command.RentCommandPort;
+import command.UserCommandPort;
+import dto.ItemDTO;
+import dto.RentDTO;
+import exception.*;
+import mapper.ItemMapper;
+import mapper.RentMapper;
+import model.Rent;
+import model.item.Item;
+import model.user.Client;
 import org.springframework.stereotype.Service;
-import pl.lodz.p.edu.rest.dto.*;
-import pl.lodz.p.edu.rest.exception.*;
-import pl.lodz.p.edu.rest.mapper.ItemMapper;
-import pl.lodz.p.edu.rest.mapper.RentMapper;
-import pl.lodz.p.edu.rest.model.Rent;
-import pl.lodz.p.edu.rest.model.item.Item;
-import pl.lodz.p.edu.rest.model.user.Client;
-import pl.lodz.p.edu.rest.model.user.User;
-import pl.lodz.p.edu.rest.repository.ItemRepository;
-import pl.lodz.p.edu.rest.repository.MongoEntity;
-import pl.lodz.p.edu.rest.repository.RentRepository;
-import pl.lodz.p.edu.rest.mapper.UserMapper;
-import pl.lodz.p.edu.rest.repository.UserRepository;
+import query.RentQueryPort;
+import query.UserQueryPort;
+import repo.MongoEntity;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
 public class RentService {
-    private final RentRepository rentRepository;
-    private final UserRepository userRepository;
     private final ItemService itemService;
     private final MongoEntity mongoEntity;
-    private final UserMapper userMapper = new UserMapper();
+    private final RentCommandPort rentCommandPort;
+    private final RentQueryPort rentQueryPort;
+    private final UserCommandPort userCommandPort;
+    private final UserQueryPort userQueryPort;
     private final RentMapper rentMapper = new RentMapper();
 
-    public RentService(RentRepository rentRepository, UserRepository userRepository, ItemService itemService, ItemRepository itemRepository) {
-        this.rentRepository = rentRepository;
-        this.userRepository = userRepository;
+    public RentService(RentCommandPort rentCommandPort, RentQueryPort rentQueryPort, ItemService itemService, UserCommandPort userCommandPort, UserQueryPort userQueryPort) {
+        this.rentCommandPort = rentCommandPort;
+        this.rentQueryPort = rentQueryPort;
+        this.userCommandPort = userCommandPort;
+        this.userQueryPort = userQueryPort;
         this.itemService = itemService;
         mongoEntity = new MongoEntity();
     }
 
     public RentDTO rentItem(RentDTO rentDTO) {
-        Client client = (Client) userRepository.findById(rentDTO.getClientId());
+        Client client = (Client) userQueryPort.getById(rentDTO.getClientId());
         if (client == null) {
             throw new UserNotFoundException("User with id " + rentDTO.getItemId() + " not found");
         }
@@ -52,10 +57,11 @@ public class RentService {
         try (var session = mongoEntity.getMongoClient().startSession()) {
             session.startTransaction();
 
-            itemService.setUnavailable(item.getId());
+            // TODO: Fix this later
+//            itemService.setUnavailable(item.getId());
 
             Rent rent = new Rent(rentDTO.getBeginTime(), rentDTO.getRentCost(), client, item);
-            rentRepository.addRent(rent);
+            rentCommandPort.add(rent);
 
             session.commitTransaction();
 
@@ -66,7 +72,7 @@ public class RentService {
     }
 
     public RentDTO getRentById(String rentId) {
-        Rent rent = rentRepository.getRent(rentId);
+        Rent rent = rentQueryPort.getById(rentId);
         if (rent == null) {
             throw new RentNotFoundException("Rent with ID: " + rentId + " not found");
         }
@@ -78,7 +84,7 @@ public class RentService {
         try (var session = mongoEntity.getMongoClient().startSession()) {
             session.startTransaction();
 
-            Rent rent = rentRepository.getRent(rentId);
+            Rent rent = rentQueryPort.getById(rentId);
             if (rent == null) {
                 throw new RentNotFoundException("Rent with ID: " + rentId + " not found");
             }
@@ -92,9 +98,10 @@ public class RentService {
 
             rent.setEndTime(end);
             rent.setArchive(true);
-            rentRepository.updateRent(rent);
+            rentCommandPort.update(rent);
 
-            itemService.setAvailable(item.getId());
+            // TODO: Fix this later
+//            itemService.setAvailable(item.getId());
 
             session.commitTransaction();
         } catch (Exception e) {
@@ -103,7 +110,7 @@ public class RentService {
     }
 
     public List<RentDTO> getActiveRents() {
-        List<Rent> rents = rentRepository.findActiveRents();
+        List<Rent> rents = rentQueryPort.getActiveRents();
         if (rents == null) {
             throw new RentNotFoundException("No active rents found");
         }
@@ -111,7 +118,7 @@ public class RentService {
     }
 
     public List<RentDTO> getInactiveRents() {
-        List<Rent> rents = rentRepository.findInactiveRents();
+        List<Rent> rents = rentQueryPort.getInactiveRents();
         if (rents == null) {
             throw new RentNotFoundException("No active rents found");
         }
@@ -119,7 +126,7 @@ public class RentService {
     }
 
     public List<RentDTO> getRentsByItem(String itemId) {
-        List<Rent> rents = rentRepository.findRentsByItemId(itemId);
+        List<Rent> rents = rentQueryPort.getByItemId(itemId);
         if (rents == null) {
             throw new RentNotFoundException("No active rents found");
         }
@@ -127,7 +134,7 @@ public class RentService {
     }
 
     public List<RentDTO> getActiveRentsByItem(String itemId) {
-        List<Rent> rents = rentRepository.findActiveRentsByItemId(itemId);
+        List<Rent> rents = rentQueryPort.findActiveRentsByItemId(itemId);
         if (rents == null) {
             throw new RentNotFoundException("No active rents found");
         }
@@ -135,7 +142,7 @@ public class RentService {
     }
 
     public List<RentDTO> getInactiveRentsByItem(String itemId) {
-        List<Rent> rents = rentRepository.findInactiveRentsByItemId(itemId);
+        List<Rent> rents = rentQueryPort.findInactiveRentsByItemId(itemId);
         if (rents == null) {
             throw new RentNotFoundException("No active rents found");
         }
@@ -143,7 +150,7 @@ public class RentService {
     }
 
     public List<RentDTO> getRentsByClient(String clientId) {
-        List<Rent> rents = rentRepository.findRentsByClientId(clientId);
+        List<Rent> rents = rentQueryPort.getByClientId(clientId);
         if (rents == null) {
             throw new RentNotFoundException("No active rents found");
         }
@@ -151,7 +158,7 @@ public class RentService {
     }
 
     public List<RentDTO> getActiveRentsByClient(String clientId) {
-        List<Rent> rents =  rentRepository.findActiveRentsByClientId(clientId);
+        List<Rent> rents =  rentQueryPort.findActiveRentsByClientId(clientId);
         if (rents == null) {
             throw new RentNotFoundException("No active rents found");
         }
@@ -159,7 +166,7 @@ public class RentService {
     }
 
     public List<RentDTO> getInactiveRentsByClient(String clientId) {
-        List<Rent> rents =  rentRepository.findInactiveRentsByClientId(clientId);
+        List<Rent> rents =  rentQueryPort.findInactiveRentsByClientId(clientId);
         if (rents == null) {
             throw new RentNotFoundException("No active rents found");
         }
@@ -167,7 +174,7 @@ public class RentService {
     }
 
     public boolean isItemRented(String itemId) {
-        List<Rent> activeRents = rentRepository.findActiveRentsByItemId(itemId);
+        List<Rent> activeRents = rentQueryPort.findActiveRentsByItemId(itemId);
         if (activeRents == null) {
             throw new RentNotFoundException("No active rents found");
         }

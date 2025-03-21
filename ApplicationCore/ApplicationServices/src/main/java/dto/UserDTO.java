@@ -5,14 +5,11 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import model.user.Role;
 
-public class CreateUserDTO {
+public class UserDTO {
     private String id;
     @NotNull(message = "Login cannot be null")
     @Size(min = 3, max = 20, message = "Login must be between 3 and 20 characters")
     private String login;
-    @NotNull(message = "Password cannot be null")
-    @Size(min = 8, message = "Password must be at least 8 characters long")
-    private String password;
     @NotNull(message = "First name cannot be null")
     private String firstName;
     @NotNull(message = "Last name cannot be null")
@@ -22,19 +19,17 @@ public class CreateUserDTO {
     private boolean isActive;
 
     @JsonCreator
-    public CreateUserDTO(String id, String login, String password, String firstName, String lastName, Role role, boolean isActive) {
+    public UserDTO(String id, String login, String firstName, String lastName, Role role, boolean isActive) {
         this.id = id;
         this.login = login;
-        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = role;
         this.isActive = isActive;
     }
 
-    public CreateUserDTO(String login, String password, String firstName, String lastName, Role role) {
+    public UserDTO(String login, String firstName, String lastName, Role role) {
         this.login = login;
-        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = role;
@@ -63,14 +58,6 @@ public class CreateUserDTO {
 
     public void setLogin(String login) {
         this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getFirstName() {

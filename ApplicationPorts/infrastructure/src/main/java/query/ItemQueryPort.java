@@ -8,5 +8,11 @@ import java.util.Optional;
 public interface ItemQueryPort {
     List<Item> getAllItems();
 
-    Optional<Item> getItemById(String id);
+    Item getItemById(String id);
+
+    List<Item> getItemsByBasePrice(int basePrice);
+
+    List<Item> getItemsByItemName(String itemName);
+
+    List<Item> getItemsByItemType(String itemType);
 }

@@ -9,5 +9,5 @@ public interface UserCommandPort {
 
     void remove(User user);
 
-    Optional<User> update(User user);
+    User update(String id, String firstName, String lastName);
 }
