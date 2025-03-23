@@ -5,70 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/EntityMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/ItemRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/RentRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/UserRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/RentCommandPort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/UserCommandPort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker/keyFile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Docker/mongod.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/ItemRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/ItemRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/RentRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/RentRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/UserRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/UserRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/ChangePasswordDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/ClientEntDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/ComicsEntDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/CreateUserDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/ItemEntDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/LoginDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/MovieEntDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/RentDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/TokenDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/UpdateUserDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/UserEntDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/item/MusicEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/item/MusicEnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/item/MusicGenreEnt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/ItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/ItemMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/ItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/RentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/RentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/controller/ItemController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/controller/RentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/security/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/security/JwtFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/security/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/security/JwtTokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/ItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/RentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/RentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/infrastructure/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/infrastructure/src/main/java/command/ItemCommandPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/ItemCommandPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/infrastructure/src/main/java/command/RentCommandPort.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/infrastructure/src/main/java/command/UserCommandPort.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/infrastructure/src/main/java/query/ItemQueryPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/query/ItemQueryPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/infrastructure/src/main/java/query/RentQueryPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/query/RentQueryPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/infrastructure/src/main/java/query/UserQueryPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/query/UserQueryPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/ItemRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/ItemRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/RentRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/RentRepositoryTest.java" afterDir="false" />
     </list>
-    <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="">
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/RentRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/RentRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/UserRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/UserRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto/MusicEntDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/ItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/ItemMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/ItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/user/ClientType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/user/ClientType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,73 +25,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/UserRepositoryAdapter.java">
-      <ranges>
-        <range start1="2" end1="3" start2="2" end2="4" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="5" end1="5" start2="6" end2="7" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="6" end1="6" start2="8" end2="9" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="8" end1="9" start2="11" end2="12" changelist="557ece6e-b011-4423-8caa-737fc98896b0" />
-        <range start1="10" end1="10" start2="13" end2="19" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="12" end1="18" start2="21" end2="22" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="21" end1="23" start2="25" end2="27" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="27" end1="28" start2="31" end2="32" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="32" end1="33" start2="36" end2="37" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="37" end1="38" start2="41" end2="42" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="42" end1="43" start2="46" end2="47" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="47" end1="48" start2="51" end2="52" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="52" end1="53" start2="56" end2="57" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="57" end1="58" start2="61" end2="72" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/RentRepositoryAdapter.java">
-      <ranges>
-        <range start1="2" end1="3" start2="2" end2="4" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="4" end1="4" start2="5" end2="6" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="5" end1="5" start2="7" end2="8" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="7" end1="8" start2="10" end2="11" changelist="557ece6e-b011-4423-8caa-737fc98896b0" />
-        <range start1="9" end1="9" start2="12" end2="18" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="11" end1="17" start2="20" end2="21" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="20" end1="22" start2="24" end2="26" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="24" end1="30" start2="28" end2="28" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="32" end1="38" start2="30" end2="31" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="42" end1="43" start2="35" end2="36" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="47" end1="58" start2="40" end2="41" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="62" end1="63" start2="45" end2="46" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="67" end1="68" start2="50" end2="51" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="72" end1="73" start2="55" end2="56" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="77" end1="78" start2="60" end2="61" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="82" end1="83" start2="65" end2="66" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="87" end1="88" start2="70" end2="71" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/ItemRepository.java">
-      <ranges>
-        <range start1="24" end1="25" start2="24" end2="25" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="26" end1="28" start2="26" end2="29" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="68" end1="68" start2="69" end2="70" changelist="557ece6e-b011-4423-8caa-737fc98896b0" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/ItemMapper.java">
-      <ranges>
-        <range start1="2" end1="6" start2="2" end2="2" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="11" end1="14" start2="7" end2="8" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="15" end1="16" start2="9" end2="9" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="19" end1="21" start2="12" end2="12" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="23" end1="39" start2="14" end2="21" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="41" end1="48" start2="23" end2="30" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="50" end1="59" start2="32" end2="39" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="61" end1="64" start2="41" end2="43" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="68" end1="70" start2="47" end2="48" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="72" end1="81" start2="50" end2="57" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="83" end1="113" start2="59" end2="66" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="115" end1="121" start2="68" end2="74" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="122" end1="160" start2="75" end2="75" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="161" end1="161" start2="76" end2="89" changelist="d47acf05-2042-46c8-bafd-632ec08d03c9" />
-        <range start1="162" end1="162" start2="90" end2="91" changelist="557ece6e-b011-4423-8caa-737fc98896b0" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
@@ -165,6 +39,8 @@
     "JUnit.ItemRepositoryTest.addItemTest.executor": "Run",
     "JUnit.ItemRepositoryTest.executor": "Run",
     "JUnit.ItemRepositoryTest.setUnavailableTest.executor": "Run",
+    "JUnit.RentRepositoryTest.executor": "Run",
+    "JUnit.RentRepositoryTest.rentItemTest.executor": "Run",
     "JUnit.UserRepositoryTest.executor": "Run",
     "Maven.Adapters [compile].executor": "Run",
     "Maven.Adapters [install].executor": "Run",
@@ -215,13 +91,14 @@
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
+        <option value="KtorApplicationConfigurationType" />
         <option value="MicronautRunConfigurationType" />
         <option value="QuarkusRunConfigurationType" />
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.RestApplication">
+  <component name="RunManager" selected="JUnit.RentRepositoryTest">
     <configuration name="ItemRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepositoriesAdapters" />
       <option name="PACKAGE_NAME" value="" />
@@ -231,21 +108,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemRepositoryTest.setUnavailableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RentRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepositoriesAdapters" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ItemRepositoryTest" />
-      <option name="METHOD_NAME" value="setUnavailableTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="RentRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RentRepositoryTest.rentItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepositoriesAdapters" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="RentRepositoryTest" />
+      <option name="METHOD_NAME" value="rentItemTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -279,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RentRepositoryTest" />
+        <item itemvalue="JUnit.RentRepositoryTest.rentItemTest" />
         <item itemvalue="Spring Boot.Application" />
         <item itemvalue="Spring Boot.App" />
         <item itemvalue="JUnit.ItemRepositoryTest" />
-        <item itemvalue="JUnit.UserRepositoryTest" />
-        <item itemvalue="JUnit.ItemRepositoryTest.setUnavailableTest" />
       </list>
     </recent_temporary>
   </component>

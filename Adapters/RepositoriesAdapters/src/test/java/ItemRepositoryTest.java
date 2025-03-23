@@ -1,17 +1,15 @@
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import entities.RentEnt;
 import entities.item.ComicsEnt;
 import entities.item.ItemEnt;
 import entities.item.MovieEnt;
 import entities.item.MusicEnt;
+import entities.user.UserEnt;
 import model.item.MusicGenre;
 import org.bson.types.ObjectId;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.*;
 import repo.ItemRepository;
-
-import org.junit.jupiter.api.Test;
 
 
 import repo.MongoEntity;
@@ -112,5 +110,14 @@ public class ItemRepositoryTest {
     @AfterAll
     static void tearDown() throws Exception {
         mongoEntity.close();
+    }
+    @AfterEach
+    public void dropCollection() {
+        MongoCollection<RentEnt> rentCollection = mongoEntity.getDatabase().getCollection("rent", RentEnt.class);
+        MongoCollection<ItemEnt> itemCollection = mongoEntity.getDatabase().getCollection("item", ItemEnt.class);
+        MongoCollection<UserEnt> userCollection = mongoEntity.getDatabase().getCollection("user", UserEnt.class);
+        itemCollection.drop();
+        userCollection.drop();
+        rentCollection.drop();
     }
 }
