@@ -4,7 +4,6 @@ import model.user.Role;
 import model.user.User;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface UserQueryPort {
     User getById(String id);

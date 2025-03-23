@@ -1,11 +1,9 @@
-package command;
+package infrastructure;
 
 import model.item.Item;
 
-import java.util.Optional;
-
 public interface ItemCommandPort {
     Item addItem(Item item);
-    Optional<Item> updateItem(Item item);
+    void updateItem(Item item);
     void removeItem(String id);
 }

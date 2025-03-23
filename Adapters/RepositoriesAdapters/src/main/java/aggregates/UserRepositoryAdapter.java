@@ -1,60 +1,74 @@
 package aggregates;
 
-import command.UserCommandPort;
+import infrastructure.UserCommandPort;
+import mappers.UserMapper;
 import model.user.Role;
 import model.user.User;
+import org.springframework.stereotype.Component;
 import query.UserQueryPort;
+import repo.UserRepository;
 
 import java.util.List;
-
+@Component
 public class UserRepositoryAdapter implements UserCommandPort, UserQueryPort {
+    private final UserRepository userRepository;
+
+    public UserRepositoryAdapter(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
     @Override
     public User add(User user) {
-        return null;
+        return UserMapper.toUser(userRepository.save(UserMapper.toUserEnt(user)));
     }
 
     @Override
-    public void remove(User user) {
-
-    }
-
-    @Override
-    public User update(String id, String firstName, String lastName) {
-        return null;
+    public void update(String id, String firstName, String lastName) {
+        userRepository.update(id, firstName, lastName);
     }
 
     @Override
     public User getById(String id) {
-        return null;
+        return UserMapper.toUser(userRepository.findById(id));
     }
 
     @Override
     public List<User> getAll() {
-        return List.of();
+        return UserMapper.toUserList(userRepository.findAll());
     }
 
     @Override
     public User findByLogin(String login) {
-        return null;
+        return UserMapper.toUser(userRepository.findByLogin(login));
     }
 
     @Override
     public List<User> findByRole(Role role) {
-        return List.of();
+        return UserMapper.toUserList(userRepository.findByRole(role));
     }
 
     @Override
     public List<User> findByFirstName(String firstName) {
-        return List.of();
+        return UserMapper.toUserList(userRepository.findByFirstName(firstName));
     }
 
     @Override
     public List<User> findByRoleAndFirstName(Role role, String firstName) {
-        return List.of();
+        return UserMapper.toUserList(userRepository.findByRoleAndFirstName(role, firstName));
     }
 
     @Override
     public boolean userExists(String login) {
-        return false;
+        return userRepository.userExists(login);
+    }
+
+    @Override
+    public void activateUser(String id) {
+        userRepository.activateUser(id);
+    }
+
+    @Override
+    public void deactivateUser(String id) {
+        userRepository.deactivateUser(id);
     }
 }

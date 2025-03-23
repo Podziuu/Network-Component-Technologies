@@ -1,162 +1,90 @@
 package mappers;
 
-import dto.ComicsEntDTO;
-import dto.ItemEntDTO;
-import dto.MovieEntDTO;
-import dto.MusicEntDTO;
 import entities.item.ComicsEnt;
 import entities.item.ItemEnt;
 import entities.item.MovieEnt;
 import entities.item.MusicEnt;
 import exception.InvalidItemTypeException;
-import model.item.Comics;
-import model.item.Movie;
-import model.item.Music;
+import model.item.*;
 import org.bson.types.ObjectId;
-import model.item.Item;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static entities.item.MusicGenreEnt.toMusicGenre;
-
 public class ItemMapper {
-    public static MusicEnt toMusic(MusicEntDTO dto) {
-        return new MusicEnt(dto.getId() != null ? new ObjectId(dto.getId()) : null,
-                dto.getBasePrice(),
-                dto.getItemName(),
-                dto.isAvailable(),
-                dto.getGenre(),
-                dto.isVinyl());
+    public static Music toMusic(MusicEnt musicEnt) {
+        return new Music(musicEnt.getId().toString(),
+                musicEnt.getBasePrice(),
+                musicEnt.getItemName(),
+                musicEnt.isAvailable(),
+                musicEnt.getGenre(),
+                musicEnt.isVinyl());
     }
 
-    public static MovieEnt toMovie(MovieEntDTO dto) {
-        return new MovieEnt(dto.getId() != null ? new ObjectId(dto.getId()) : null,
-                dto.getBasePrice(),
-                dto.getItemName(),
-                dto.isAvailable(),
-                dto.getMinutes(),
-                dto.isCasette());
-    }
-
-    public static ComicsEnt toComics(ComicsEntDTO dto) {
-        return new ComicsEnt(dto.getId() != null ? new ObjectId(dto.getId()) : null,
-                dto.getBasePrice(),
-                dto.getItemName(),
-                dto.isAvailable(),
-                dto.getPagesNumber(),
-                dto.getPublisher());
-    }
-
-    public static MusicEntDTO toMusicDTO(MusicEnt music) {
-        return new MusicEntDTO(
-                music.getId().toString(),
+    public static MusicEnt toMusicEnt(Music music) {
+        return new MusicEnt(new ObjectId(music.getId()),
                 music.getBasePrice(),
                 music.getItemName(),
                 music.isAvailable(),
                 music.getGenre(),
-                music.isVinyl()
-        );
+                music.isVinyl());
     }
 
-    public static MovieEntDTO toMovieDTO(MovieEnt movie) {
-        return new MovieEntDTO(
-                movie.getId().toString(),
+    public static Movie toMovie(MovieEnt movieEnt) {
+        return new Movie(movieEnt.getId().toString(),
+                movieEnt.getBasePrice(),
+                movieEnt.getItemName(),
+                movieEnt.isAvailable(),
+                movieEnt.getMinutes(),
+                movieEnt.isCasette());
+    }
+
+    public static MovieEnt toMovieEnt(Movie movie) {
+        return new MovieEnt(new ObjectId(movie.getId()),
                 movie.getBasePrice(),
                 movie.getItemName(),
                 movie.isAvailable(),
                 movie.getMinutes(),
-                movie.isCasette()
-        );
+                movie.isCasette());
     }
 
-    public static ComicsEntDTO toComicsDTO(ComicsEnt comics) {
-        return new ComicsEntDTO(
-                comics.getId().toString(),
+    public static Comics toComics(ComicsEnt comicsEnt) {
+        return new Comics(comicsEnt.getId().toString(),
+                comicsEnt.getBasePrice(),
+                comicsEnt.getItemName(),
+                comicsEnt.isAvailable(),
+                comicsEnt.getPageNumber(),
+                comicsEnt.getPublisher());
+    }
+
+    public static ComicsEnt toComicsEnt(Comics comics) {
+        return new ComicsEnt(new ObjectId(comics.getId()),
                 comics.getBasePrice(),
                 comics.getItemName(),
                 comics.isAvailable(),
                 comics.getPageNumber(),
-                comics.getPublisher()
-        );
+                comics.getPublisher());
     }
 
-    public static ItemEntDTO toDTO(ItemEnt item) {
-        if (item instanceof MusicEnt music) {
-            return new MusicEntDTO(
-                    item.getId().toString(),
-                    item.getBasePrice(),
-                    item.getItemName(),
-                    item.isAvailable(),
-                    music.getGenre(),
-                    music.isVinyl()
-            );
-        } else if (item instanceof MovieEnt movie) {
-            return new MovieEntDTO(
-                    item.getId().toString(),
-                    item.getBasePrice(),
-                    item.getItemName(),
-                    item.isAvailable(),
-                    movie.getMinutes(),
-                    movie.isCasette()
-            );
-        } else {
-            ComicsEnt comics = (ComicsEnt) item;
-            return new ComicsEntDTO(
-                    item.getId().toString(),
-                    item.getBasePrice(),
-                    item.getItemName(),
-                    item.isAvailable(),
-                    comics.getPageNumber(),
-                    comics.getPublisher()
-            );
-        }
-    }
-
-    public static ItemEnt toItem(ItemEntDTO itemDTO) {
-        return switch (itemDTO.getItemType().toLowerCase()) {
-            case "music" -> toMusic((MusicEntDTO) itemDTO);
-            case "movie" -> toMovie((MovieEntDTO) itemDTO);
-            case "comics" -> toComics((ComicsEntDTO) itemDTO);
-            default -> throw new InvalidItemTypeException("Nieznany type: " + itemDTO.getItemType());
+    public static Item toItem(ItemEnt itemEnt) {
+        return switch (itemEnt.getItemType().toLowerCase()) {
+            case "comics" -> toComics((ComicsEnt) itemEnt);
+            case "music" -> toMusic((MusicEnt) itemEnt);
+            case "movie" -> toMovie((MovieEnt) itemEnt);
+            default -> throw new InvalidItemTypeException(itemEnt.getItemType());
         };
     }
 
-    public static Item toModel(ItemEnt itemEnt) {
-        if (itemEnt instanceof MusicEnt musicEnt) {
-            return new Music(
-                    musicEnt.getId().toString(),
-                    musicEnt.getBasePrice(),
-                    musicEnt.getItemName(),
-                    musicEnt.isAvailable(),
-                    toMusicGenre(musicEnt.getGenre()),
-                    musicEnt.isVinyl()
-            );
-        } else if (itemEnt instanceof MovieEnt movieEnt) {
-            return new Movie(
-                    movieEnt.getId().toString(),
-                    movieEnt.getBasePrice(),
-                    movieEnt.getItemName(),
-                    movieEnt.isAvailable(),
-                    movieEnt.getMinutes(),
-                    movieEnt.isCasette()
-            );
-        } else if (itemEnt instanceof ComicsEnt comicsEnt) {
-            return new Comics(
-                    comicsEnt.getId().toString(),
-                    comicsEnt.getBasePrice(),
-                    comicsEnt.getItemName(),
-                    comicsEnt.isAvailable(),
-                    comicsEnt.getPageNumber(),
-                    comicsEnt.getPublisher()
-            );
-        } else {
-            throw new InvalidItemTypeException("Unknown item type: " + itemEnt.getClass().getSimpleName());
-        }
+    public static ItemEnt toItemEnt(Item item) {
+        return switch (item.getItemType().toLowerCase()) {
+            case "comics" -> toComicsEnt((Comics) item);
+            case "music" -> toMusicEnt((Music) item);
+            case "movie" -> toMovieEnt((Movie) item);
+            default -> throw new InvalidItemTypeException(item.getItemType());
+        };
     }
 
-
-    public static List<ItemEntDTO> toDTOList(List<ItemEnt> items) {
-        return items.stream().map(ItemMapper::toDTO).collect(Collectors.toList());
+    public static List<Item> toItemList(List<ItemEnt> items) {
+        return items.stream().map(ItemMapper::toItem).collect(Collectors.toList());
     }
 }

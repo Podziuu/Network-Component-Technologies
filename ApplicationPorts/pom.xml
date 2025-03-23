@@ -13,10 +13,13 @@
     <groupId>pl.lodz.p.edu</groupId>
     <artifactId>ApplicationPorts</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <modules>
-        <module>infrastructure</module>
-    </modules>
-
-
+    <packaging>jar</packaging>
+    <name>ApplicationPorts</name>
+    <dependencies>
+        <dependency>
+            <groupId>pl.lodz.p.edu</groupId>
+            <artifactId>DomainModel</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

@@ -11,6 +11,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/Adapters/ViewAdapters/pom.xml" />
+        <option value="$PROJECT_DIR$/ApplicationPorts/infrastructure/pom.xml" />
       </set>
     </option>
   </component>

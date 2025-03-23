@@ -6,6 +6,7 @@ import com.mongodb.client.result.InsertOneResult;
 import com.mongodb.client.result.UpdateResult;
 import entities.user.RoleEnt;
 import entities.user.UserEnt;
+import model.user.Role;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 import org.springframework.stereotype.Repository;
@@ -30,16 +31,17 @@ public class UserRepository extends AbstractMongoEntity {
         mongoClient.close();
     }
 
-    public ObjectId save(UserEnt user) {
+    public UserEnt save(UserEnt user) {
         InsertOneResult result = userCollection.insertOne(user);
-        return result.getInsertedId().asObjectId().getValue();
+        ObjectId insertedId = result.getInsertedId().asObjectId().getValue();
+        return userCollection.find(Filters.eq("_id", insertedId)).first();
     }
 
     public UserEnt findById(String id) {
         return userCollection.find(Filters.eq("_id", new ObjectId(id))).first();
     }
 
-    public List<UserEnt> findByRole(RoleEnt role) {
+    public List<UserEnt> findByRole(Role role) {
         return userCollection.find(Filters.eq("role", role)).into(new ArrayList<>());
     }
 
@@ -47,7 +49,7 @@ public class UserRepository extends AbstractMongoEntity {
         return userCollection.find(Filters.regex("firstName", firstName, "i")).into(new ArrayList<>());
     }
 
-    public List<UserEnt> findByRoleAndFirstName(RoleEnt role, String firstName) {
+    public List<UserEnt> findByRoleAndFirstName(Role role, String firstName) {
         Bson combinedFilter = Filters.and(
                 Filters.eq("role", role),
                 Filters.regex("firstName", firstName, "i")

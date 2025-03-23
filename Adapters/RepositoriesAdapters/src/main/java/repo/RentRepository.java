@@ -20,10 +20,11 @@ public class RentRepository extends AbstractMongoEntity {
         this.rentCollection = database.getCollection("rents", RentEnt.class);
     }
 
-    public ObjectId addRent(RentEnt rent) {
+    public RentEnt addRent(RentEnt rent) {
         InsertOneResult result = rentCollection.insertOne(rent);
-        rent.setId(result.getInsertedId().asObjectId().getValue());
-        return result.getInsertedId().asObjectId().getValue();
+        ObjectId insertedId = result.getInsertedId().asObjectId().getValue();
+        rent.setId(insertedId);
+        return rentCollection.find(Filters.eq("_id", insertedId)).first();
     }
 
     public RentEnt getRent(String id) {

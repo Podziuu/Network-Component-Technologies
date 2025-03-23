@@ -1,0 +1,162 @@
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.result.UpdateResult;
+import entities.item.ItemEnt;
+import entities.item.MovieEnt;
+import entities.user.ClientEnt;
+import entities.user.UserEnt;
+import org.bson.types.ObjectId;
+import org.junit.jupiter.api.*;
+import repo.ItemRepository;
+import repo.MongoEntity;
+import repo.UserRepository;
+
+public class UserRepositoryTest {
+    private static MongoEntity mongoEntity;
+//    private static MongoDatabase database;
+//    private static MongoCollection<UserEnt> userCollection;
+    private static UserRepository userRepository;
+
+    @BeforeAll
+    static void setUp() {
+        mongoEntity = new MongoEntity();
+//        database = mongoEntity.getDatabase();
+//        userCollection = database.getCollection("users", UserEnt.class);
+        userRepository = new UserRepository();
+    }
+
+    @Test
+    void addUserTest() {
+//        MovieEnt movie = new MovieEnt(null, 250, "Movie", 120, true);
+//        ObjectId itemId = itemRepository.addItem(movie).getId();
+//        Assertions.assertNotNull(itemId);
+//        Assertions.assertEquals(itemId, movie.getId());
+        ClientEnt user = new ClientEnt(
+                new ObjectId(),
+                "testLogin",
+                "testPassword",
+                "Jan",
+                "Robak",
+                null
+        );
+
+        UserEnt savedUser = userRepository.save(user);
+        Assertions.assertNotNull(savedUser.getId());
+        Assertions.assertEquals("testLogin", savedUser.getLogin());
+        Assertions.assertEquals("testPassword", savedUser.getPassword());
+        Assertions.assertEquals("Jan", savedUser.getFirstName());
+        Assertions.assertEquals("Robak", savedUser.getLastName());
+    }
+
+    @Test
+    void findByIdTest(){
+        ClientEnt user = new ClientEnt(
+                new ObjectId(),
+                "testLogin",
+                "testPassword",
+                "Jan",
+                "Robak",
+                null
+        );
+        UserEnt savedUser = userRepository.save(user);
+
+        UserEnt receivedUser = userRepository.findById(savedUser.getId().toString());
+        Assertions.assertNotNull(receivedUser.getId());
+        Assertions.assertEquals("testLogin", receivedUser.getLogin());
+        Assertions.assertEquals("testPassword", receivedUser.getPassword());
+        Assertions.assertEquals("Jan", receivedUser.getFirstName());
+        Assertions.assertEquals("Robak", receivedUser.getLastName());
+    }
+
+    @Test
+    void findByLoginTest() {
+        ClientEnt user = new ClientEnt(
+                new ObjectId(),
+                "testLogin",
+                "testPassword",
+                "Jan",
+                "Robak",
+                null
+        );
+        UserEnt savedUser = userRepository.save(user);
+
+        UserEnt receivedUser = userRepository.findByLogin(savedUser.getLogin().toString());
+        Assertions.assertNotNull(receivedUser.getId());
+        Assertions.assertEquals("testLogin", receivedUser.getLogin());
+        Assertions.assertEquals("testPassword", receivedUser.getPassword());
+        Assertions.assertEquals("Jan", receivedUser.getFirstName());
+        Assertions.assertEquals("Robak", receivedUser.getLastName());
+    }
+
+    @Test
+    void updateUserTest() {
+        ClientEnt user = new ClientEnt(
+                new ObjectId(),
+                "testLogin",
+                "testPassword",
+                "Jan",
+                "Robak",
+                null
+        );
+        UserEnt savedUser = userRepository.save(user);
+
+        UpdateResult result = userRepository.update(savedUser.getId().toString(), "Janek", "Robakowski");
+
+        Assertions.assertNotNull(result);
+        UserEnt updatedUser = userRepository.findById(savedUser.getId().toString());
+        Assertions.assertNotNull(updatedUser);
+        Assertions.assertEquals("Janek", updatedUser.getFirstName());
+        Assertions.assertEquals("Robakowski", updatedUser.getLastName());
+    }
+
+    @Test
+    void activateUserTest() {
+        ClientEnt user = new ClientEnt(
+                new ObjectId(),
+                "testLogin",
+                "testPassword",
+                "Jan",
+                "Robak",
+                null
+        );
+        UserEnt savedUser = userRepository.save(user);
+        userRepository.deactivateUser(savedUser.getId().toString());
+        UserEnt deactivatedUser = userRepository.findById(savedUser.getId().toString());
+//        userRepository.update(savedUser.getId().toString());
+        Assertions.assertFalse(deactivatedUser.getActive());
+
+//        UpdateResult result = userRepository.update(savedUser.getId().toString(), "Janek", "Robakowski");
+
+        UpdateResult result = userRepository.activateUser(savedUser.getId().toString());
+
+        Assertions.assertNotNull(result);
+        UserEnt updatedUser = userRepository.findById(savedUser.getId().toString());
+        Assertions.assertNotNull(updatedUser);
+    }
+
+    @Test
+    void userExistsTest() {
+        ClientEnt user = new ClientEnt(
+                new ObjectId(),
+                "testLogin",
+                "testPassword",
+                "Jan",
+                "Robak",
+                null
+        );
+        userRepository.save(user);
+
+        boolean exists = userRepository.userExists("testLogin");
+        Assertions.assertTrue(exists);
+
+        boolean notExists = userRepository.userExists("testLogin2");
+        Assertions.assertFalse(notExists);
+    }
+
+
+    @AfterEach
+    public void dropCollection() {
+        MongoCollection<UserEnt> userCollection = mongoEntity.getDatabase().getCollection("users", UserEnt.class);
+        userCollection.drop();
+    }
+}

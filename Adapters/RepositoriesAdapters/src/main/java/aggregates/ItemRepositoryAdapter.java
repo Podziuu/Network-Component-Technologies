@@ -1,15 +1,15 @@
 package aggregates;
 
-import command.ItemCommandPort;
-import entities.item.ItemEnt;
+import infrastructure.ItemCommandPort;
+import org.springframework.stereotype.Component;
+import query.ItemQueryPort;
 import mappers.ItemMapper;
 import model.item.Item;
-import query.ItemQueryPort;
+import org.bson.types.ObjectId;
 import repo.ItemRepository;
 
 import java.util.List;
-import java.util.Optional;
-
+@Component
 public class ItemRepositoryAdapter implements ItemQueryPort, ItemCommandPort {
     private final ItemRepository itemRepository;
 
@@ -19,43 +19,41 @@ public class ItemRepositoryAdapter implements ItemQueryPort, ItemCommandPort {
 
     @Override
     public List<Item> getAllItems() {
-        return List.of();
+        return ItemMapper.toItemList(itemRepository.getAllItems());
     }
 
     @Override
     public Item getItemById(String id) {
-        ItemEnt itemEnt = itemRepository.getItemById(id);
-
-        return ItemMapper.toModel(itemEnt);
+        return ItemMapper.toItem(itemRepository.getItemById(id));
     }
 
     @Override
     public List<Item> getItemsByBasePrice(int basePrice) {
-        return List.of();
+        return ItemMapper.toItemList(itemRepository.getItemsByBasePrice(basePrice));
     }
 
     @Override
     public List<Item> getItemsByItemName(String itemName) {
-        return List.of();
+        return ItemMapper.toItemList(itemRepository.getItemsByItemName(itemName));
     }
 
     @Override
     public List<Item> getItemsByItemType(String itemType) {
-        return List.of();
+        return ItemMapper.toItemList(itemRepository.getItemsByItemType(itemType));
     }
 
     @Override
     public Item addItem(Item item) {
-        return null;
+        return ItemMapper.toItem(itemRepository.addItem(ItemMapper.toItemEnt(item)));
     }
 
     @Override
-    public Optional<Item> updateItem(Item item) {
-        return Optional.empty();
+    public void updateItem(Item item) {
+        itemRepository.updateItem(ItemMapper.toItemEnt(item));
     }
 
     @Override
     public void removeItem(String id) {
-
+        itemRepository.removeItem(new ObjectId(id));
     }
 }

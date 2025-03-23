@@ -4,20 +4,33 @@ import entities.RentEnt;
 import model.Rent;
 import model.user.Client;
 
-public class RentMapper {
+import java.util.List;
+import java.util.stream.Collectors;
 
-    public static Rent toModel(RentEnt rentEnt) {
-        Rent rent = new Rent(
+public class RentMapper {
+//    public static List<Rent>
+    public static RentEnt toEnt(Rent rent) {
+        return new RentEnt(
+                rent.getBeginTime(),
+                rent.getRentCost(),
+                UserMapper.toClientEnt(rent.getClient()),
+                ItemMapper.toItemEnt(rent.getItem()));
+    }
+
+    public static Rent toRent(RentEnt rentEnt) {
+        return new Rent(
                 rentEnt.getBeginTime(),
                 rentEnt.getRentCost(),
-                (Client) UserMapper.toModel(rentEnt.getClient()),
-                ItemMapper.toModel(rentEnt.getItem())
+                UserMapper.toClient(rentEnt.getClient()),
+                ItemMapper.toItem(rentEnt.getItem())
         );
+    }
 
-        rent.setId(rentEnt.getId().toString());
-        rent.setEndTime(rentEnt.getEndTime());
-        rent.setArchive(rentEnt.isArchive());
+    public static List<RentEnt> toEntList(List<Rent> rents) {
+        return rents.stream().map(RentMapper::toEnt).collect(Collectors.toList());
+    }
 
-        return rent;
+    public static List<Rent> toRentList(List<RentEnt> rentEnts) {
+        return rentEnts.stream().map(RentMapper::toRent).collect(Collectors.toList());
     }
 }

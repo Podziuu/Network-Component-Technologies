@@ -1,10 +1,10 @@
 package services;
 
-import command.RentCommandPort;
-import command.UserCommandPort;
 import dto.ItemDTO;
 import dto.RentDTO;
 import exception.*;
+import infrastructure.RentCommandPort;
+import infrastructure.UserCommandPort;
 import mapper.ItemMapper;
 import mapper.RentMapper;
 import model.Rent;

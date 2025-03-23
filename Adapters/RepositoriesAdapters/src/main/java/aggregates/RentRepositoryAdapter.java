@@ -1,90 +1,73 @@
 package aggregates;
 
-import command.RentCommandPort;
+import infrastructure.RentCommandPort;
+import mappers.RentMapper;
 import model.Rent;
+import org.springframework.stereotype.Component;
 import query.RentQueryPort;
+import repo.RentRepository;
 
 import java.util.List;
-
+@Component
 public class RentRepositoryAdapter implements RentQueryPort, RentCommandPort {
+    private final RentRepository rentRepository;
+
+    public RentRepositoryAdapter(RentRepository rentRepository) {
+        this.rentRepository = rentRepository;
+    }
+
     @Override
     public Rent add(Rent rent) {
-        return null;
+        return RentMapper.toRent(rentRepository.addRent(RentMapper.toEnt(rent)));
     }
 
     @Override
-    public void remove(Rent rent) {
-
+    public void update(Rent rent) {
+        rentRepository.updateRent(RentMapper.toEnt(rent));
     }
-
-    @Override
-    public Rent update(Rent rent) {
-        return null;
-    }
-
-    @Override
-    public boolean removeById(String rentId) {
-        return false;
-    }
-
 
     @Override
     public Rent getById(String id) {
-        return null;
-    }
-
-    @Override
-    public List<Rent> getAll() {
-        return List.of();
+        return RentMapper.toRent(rentRepository.getRent(id));
     }
 
     @Override
     public List<Rent> getByItemId(String itemId) {
-        return List.of();
+        return RentMapper.toRentList(rentRepository.findRentsByItemId(itemId));
     }
 
     @Override
     public List<Rent> getByClientId(String clientId) {
-        return List.of();
-    }
-
-    @Override
-    public List<Rent> findByItemAndStatus(String itemId, boolean isRented) {
-        return List.of();
-    }
-
-    @Override
-    public List<Rent> findByClientAndStatus(String clientId, boolean isRented) {
-        return List.of();
+        return RentMapper.toRentList(rentRepository.findRentsByClientId(clientId));
     }
 
     @Override
     public List<Rent> findActiveRentsByItemId(String itemId) {
-        return List.of();
+        return RentMapper.toRentList(rentRepository.findRentsByItemId(itemId));
     }
 
     @Override
     public List<Rent> getActiveRents() {
-        return List.of();
+        return RentMapper.toRentList(rentRepository.findActiveRents());
     }
 
     @Override
     public List<Rent> getInactiveRents() {
-        return List.of();
+        return RentMapper.toRentList(rentRepository.findInactiveRents());
     }
 
     @Override
     public List<Rent> findInactiveRentsByItemId(String itemdId) {
-        return List.of();
+        return RentMapper.toRentList(rentRepository.findInactiveRentsByItemId(itemdId));
     }
 
     @Override
     public List<Rent> findActiveRentsByClientId(String clientId) {
-        return List.of();
+        return RentMapper.toRentList(rentRepository.findActiveRentsByClientId(clientId));
     }
 
     @Override
     public List<Rent> findInactiveRentsByClientId(String clientId) {
-        return List.of();
+        return RentMapper.toRentList(rentRepository.findInactiveRentsByClientId(clientId));
     }
 }

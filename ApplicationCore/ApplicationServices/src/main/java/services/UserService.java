@@ -1,11 +1,10 @@
 package services;
 
-import com.mongodb.client.result.UpdateResult;
-import command.UserCommandPort;
 import dto.*;
 import exception.DuplicateUserException;
 import exception.UserNotFoundException;
 import exception.InvalidCredentialsException;
+import infrastructure.UserCommandPort;
 import mapper.UserMapper;
 import model.user.Role;
 import model.user.User;

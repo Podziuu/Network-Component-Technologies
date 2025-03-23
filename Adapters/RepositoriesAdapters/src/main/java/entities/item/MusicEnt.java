@@ -1,5 +1,6 @@
 package entities.item;
 
+import model.item.MusicGenre;
 import org.bson.codecs.pojo.annotations.BsonDiscriminator;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 import org.bson.types.ObjectId;
@@ -8,7 +9,7 @@ import org.bson.types.ObjectId;
 public class MusicEnt extends ItemEnt {
 
     @BsonProperty("genre")
-    private MusicGenreEnt genre;
+    private MusicGenre genre;
     @BsonProperty("vinyl")
     private boolean vinyl;
 
@@ -16,7 +17,7 @@ public class MusicEnt extends ItemEnt {
             @BsonProperty("id") ObjectId id,
             @BsonProperty("basePrice") int basePrice,
             @BsonProperty("itemName") String itemName,
-            @BsonProperty("genre") MusicGenreEnt genre,
+            @BsonProperty("genre") MusicGenre genre,
             @BsonProperty("vinyl") boolean vinyl) {
         super(id, basePrice, itemName);
         this.itemType = "music";
@@ -24,7 +25,7 @@ public class MusicEnt extends ItemEnt {
         this.vinyl = vinyl;
     }
 
-    public MusicEnt(ObjectId id, int basePrice, String itemName, boolean available, MusicGenreEnt genre, boolean vinyl) {
+    public MusicEnt(ObjectId id, int basePrice, String itemName, boolean available, MusicGenre genre, boolean vinyl) {
         super(id, basePrice, itemName, available);
         this.itemType = "music";
         this.genre = genre;
@@ -35,11 +36,11 @@ public class MusicEnt extends ItemEnt {
 
     }
 
-    public MusicGenreEnt getGenre() {
+    public MusicGenre getGenre() {
         return genre;
     }
 
-    public void setGenre(MusicGenreEnt genre) {
+    public void setGenre(MusicGenre genre) {
         this.genre = genre;
     }
 

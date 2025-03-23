@@ -1,6 +1,5 @@
 package services;
 
-import command.ItemCommandPort;
 import dto.ComicsDTO;
 import dto.ItemDTO;
 import dto.MovieDTO;
@@ -8,6 +7,7 @@ import dto.MusicDTO;
 import exception.InvalidItemTypeException;
 import exception.ItemAlreadyRentedException;
 import exception.ItemNotFoundException;
+import infrastructure.ItemCommandPort;
 import mapper.ItemMapper;
 import model.Rent;
 import model.item.Comics;

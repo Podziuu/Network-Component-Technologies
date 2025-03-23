@@ -22,10 +22,11 @@ public class ItemRepository extends AbstractMongoEntity {
         this.itemCollection = database.getCollection("items", ItemEnt.class);
     }
 
-    public ObjectId addItem(ItemEnt item) {
+    public ItemEnt addItem(ItemEnt item) {
         InsertOneResult result = itemCollection.insertOne(item);
-        item.setId(result.getInsertedId().asObjectId().getValue());
-        return result.getInsertedId().asObjectId().getValue();
+        ObjectId insertedId = result.getInsertedId().asObjectId().getValue();
+        item.setId(insertedId);
+        return itemCollection.find(Filters.eq("_id", insertedId)).first();
     }
 
     public ItemEnt getItemById(String id) {
