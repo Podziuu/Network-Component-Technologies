@@ -71,4 +71,9 @@ public class UserRepositoryAdapter implements UserCommandPort, UserQueryPort {
     public void deactivateUser(String id) {
         userRepository.deactivateUser(id);
     }
+
+    @Override
+    public void updatePassword(String id, String newPassword) {
+        userRepository.updatePassword(id, newPassword);
+    }
 }

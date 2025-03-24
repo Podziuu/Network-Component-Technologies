@@ -10,13 +10,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class UserMapper {
-    public List<UserDTO> toDTO(List<User> users) {
+    public static List<UserDTO> toDTO(List<User> users) {
         return users.stream()
-                .map(this::convertToDTO)
+                .map(UserMapper::convertToDTO)
                 .collect(Collectors.toList());
     }
 
-    public UserDTO convertToDTO(User user) {
+    public static UserDTO convertToDTO(User user) {
         if (user instanceof Client client) {
             return new ClientDTO(
                     client.getId().toString(),

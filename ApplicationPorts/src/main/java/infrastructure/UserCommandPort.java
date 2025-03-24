@@ -10,4 +10,6 @@ public interface UserCommandPort {
     void activateUser(String id);
 
     void deactivateUser(String id);
+
+    void updatePassword(String id, String newPassword);
 }

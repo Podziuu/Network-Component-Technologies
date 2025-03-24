@@ -12,6 +12,11 @@ public class ChangePasswordDTO {
         this.newPassword = newPassword;
     }
 
+    public ChangePasswordDTO(String currentPassword, String newPassword) {
+        this.currentPassword = currentPassword;
+        this.newPassword = newPassword;
+    }
+
     public @NotBlank String getCurrentPassword() {
         return currentPassword;
     }

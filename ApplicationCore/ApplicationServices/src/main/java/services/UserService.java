@@ -24,13 +24,11 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Service
 public class UserService implements UserDetailsService {
-//    private final UserRepository userRepository;
     private final UserQueryPort userQueryPort;
     private final UserCommandPort userCommandPort;
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenProvider jwtTokenProvider;
     private final Set<String> blacklist = ConcurrentHashMap.newKeySet();
-    private final UserMapper userMapper = new UserMapper();
 
     @Autowired
     public UserService(UserQueryPort userQueryPort, UserCommandPort userCommandPort, PasswordEncoder passwordEncoder, JwtTokenProvider jwtTokenProvider) {
@@ -44,11 +42,10 @@ public class UserService implements UserDetailsService {
         if (userExists(user.getLogin())) {
             throw new DuplicateUserException("User with login " + user.getLogin() + " already exists");
         }
-        User createdUser = userMapper.convertToUser(user);
-        createdUser.setPassword(passwordEncoder.encode(user.getPassword()));
-        userCommandPort.add(createdUser);
-//        createdUser.setId(id);
-        return userMapper.convertToUserDTO(createdUser);
+        User mappedUser = UserMapper.convertToUser(user);
+        mappedUser.setPassword(passwordEncoder.encode(user.getPassword()));
+        User createdUser = userCommandPort.add(mappedUser);
+        return UserMapper.convertToUserDTO(createdUser);
     }
 
     public UserDTO getUserById(String id) {
@@ -56,26 +53,26 @@ public class UserService implements UserDetailsService {
         if (user == null) {
             throw new UserNotFoundException("User with id " + id + " not found");
         }
-        return userMapper.convertToUserDTO(user);
+        return UserMapper.convertToUserDTO(user);
     }
 
-    public UserDTO getUserByLogin(LoginDTO login) {
-        User user = userQueryPort.findByLogin(login.getLogin());
-        if (user == null) {
-            throw new UserNotFoundException("User with login " + login.getLogin() + " not found");
-        }
-        if (!passwordEncoder.matches(login.getPassword(), user.getPassword())) {
-            throw new InvalidCredentialsException("Invalid credentials");
-        }
-        return userMapper.convertToUserDTO(user);
-    }
+//    public UserDTO getUserByLogin(LoginDTO login) {
+//        User user = userQueryPort.findByLogin(login.getLogin());
+//        if (user == null) {
+//            throw new UserNotFoundException("User with login " + login.getLogin() + " not found");
+//        }
+//        if (!passwordEncoder.matches(login.getPassword(), user.getPassword())) {
+//            throw new InvalidCredentialsException("Invalid credentials");
+//        }
+//        return UserMapper.convertToUserDTO(user);
+//    }
 
     public UserDTO getUserByLogin(String login) {
         User user = userQueryPort.findByLogin(login);
         if (user == null) {
             throw new UserNotFoundException("User with login " + login + " not found");
         }
-        return userMapper.convertToUserDTO(user);
+        return UserMapper.convertToUserDTO(user);
     }
 
     public List<UserDTO> getUsersByRole(Role role) {
@@ -83,7 +80,7 @@ public class UserService implements UserDetailsService {
         if (users.isEmpty()) {
             throw new UserNotFoundException("Users with role " + role + " not found");
         }
-        return userMapper.toDTO(users);
+        return UserMapper.toDTO(users);
     }
 
     public List<UserDTO> getAllUsers() {
@@ -91,7 +88,7 @@ public class UserService implements UserDetailsService {
         if (users.isEmpty()) {
             throw new UserNotFoundException("No users found");
         }
-        return userMapper.toDTO(users);
+        return UserMapper.toDTO(users);
     }
 
     public List<UserDTO> getUsersByFirstName(String firstName) {
@@ -99,7 +96,7 @@ public class UserService implements UserDetailsService {
         if (users.isEmpty()) {
             throw new UserNotFoundException("Users with first name " + firstName + " not found");
         }
-        return userMapper.toDTO(users);
+        return UserMapper.toDTO(users);
     }
 
     public List<UserDTO> getUsersByRoleAndFirstName(Role role, String firstName) {
@@ -107,40 +104,28 @@ public class UserService implements UserDetailsService {
         if (users.isEmpty()) {
             throw new UserNotFoundException("Users with role " + role + " and first name " + firstName + " not found");
         }
-        return userMapper.toDTO(users);
+        return UserMapper.toDTO(users);
     }
 
     public void updateUser(String id, UpdateUserDTO userDTO) {
         if (!findUserById(id)) {
             throw new UserNotFoundException("User with id " + id + " not found");
         }
-        // TODO: przemyslec o tym bo updateresult to klasa z mongo
-//        UpdateResult result = userCommandPort.update(id, userDTO.getFirstName(), userDTO.getLastName());
-//        if (result.getModifiedCount() == 0) {
-//            throw new RuntimeException("User with id " + id + " not updated");
-//        }
+        userCommandPort.update(id, userDTO.getFirstName(), userDTO.getLastName());
     }
 
     public void activateUser(String id) {
         if (!findUserById(id)) {
             throw new UserNotFoundException("User with id " + id + " not found");
         }
-        // TODO: przemyslec o tym bo updateresult to klasa z mongo
-//        UpdateResult result = userCommandPort.activateUser(id);
-//        if (result.getModifiedCount() == 0) {
-//            throw new RuntimeException("User with id " + id + " not updated");
-//        }
+        userCommandPort.activateUser(id);
     }
 
     public void deactivateUser(String id) {
         if (!findUserById(id)) {
             throw new UserNotFoundException("User with id " + id + " not found");
         }
-        // TODO: przemyslec o tym bo updateresult to klasa z mongo
-//        UpdateResult result = userCommandPort.deactivateUser(id);
-//        if (result.getModifiedCount() == 0) {
-//            throw new RuntimeException("User with id " + id + " not updated");
-//        }
+        userCommandPort.deactivateUser(id);
     }
 
     private boolean userExists(String login) {
@@ -171,11 +156,7 @@ public class UserService implements UserDetailsService {
         }
 
         String encodedNewPassword = passwordEncoder.encode(dto.getNewPassword());
-        // TODO: przemyslec o tym bo updateresult to klasa z mongo
-//        UpdateResult result = userRepository.updatePassword(user.getLogin(), encodedNewPassword);
-//        if (result.getModifiedCount() == 0) {
-//            throw new RuntimeException("Failed to update password for user with login " + username);
-//        }
+        userCommandPort.updatePassword(user.getLogin(), encodedNewPassword);
     }
 
     public String login(LoginDTO loginDTO) {

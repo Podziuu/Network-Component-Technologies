@@ -38,29 +38,22 @@ public class ItemService {
     }
 
     public ItemDTO addItem(ItemDTO itemDTO) {
-        ObjectId id;
         Item addedItem;
 
         switch (itemDTO.getItemType().toLowerCase()) {
             case "music":
                 Music music = ItemMapper.toMusic((MusicDTO) itemDTO);
                 addedItem = itemCommandRepository.addItem(music);
-//                String idAsString1 = id.toHexString();
-//                addedItem = itemRepository.getItemById(idAsString1);
                 return ItemMapper.toMusicDTO((Music) addedItem);
 
             case "movie":
                 Movie movie = ItemMapper.toMovie((MovieDTO) itemDTO);
                 addedItem = itemCommandRepository.addItem(movie);
-//                String idAsString2 = id.toHexString();
-//                addedItem = itemRepository.getItemById(idAsString2);
                 return ItemMapper.toMovieDTO((Movie) addedItem);
 
             case "comics":
                 Comics comics = ItemMapper.toComics((ComicsDTO) itemDTO);
                 addedItem = itemCommandRepository.addItem(comics);
-//                String idAsString3 = id.toHexString();
-//                addedItem = itemRepository.getItemById(idAsString3);
                 return ItemMapper.toComicsDTO((Comics) addedItem);
 
             default:
@@ -140,7 +133,6 @@ public class ItemService {
             throw new ItemAlreadyRentedException("Item cannot be removed because it is currently rented.");
         }
 
-//        ObjectId objectId = new ObjectId(id);
         itemCommandRepository.removeItem(id);
     }
 

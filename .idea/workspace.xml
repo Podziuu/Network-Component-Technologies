@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/ItemServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/UserServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/ItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/ItemMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/EntityMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/EntityMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/UserRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/UserRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/dto/ChangePasswordDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/dto/ChangePasswordDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/dto/LoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/dto/LoginDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/ItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/UserCommandPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/UserCommandPort.java" afterDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,14 +49,32 @@
     "JUnit.ItemRepositoryTest.addItemTest.executor": "Run",
     "JUnit.ItemRepositoryTest.executor": "Run",
     "JUnit.ItemRepositoryTest.setUnavailableTest.executor": "Run",
+    "JUnit.ItemServiceTest.executor": "Run",
+    "JUnit.ItemServiceTest.shouldAddMusicItem.executor": "Run",
+    "JUnit.ItemServiceTest.shouldGetAllItems.executor": "Run",
+    "JUnit.ItemServiceTest.shouldGetItemById.executor": "Run",
+    "JUnit.ItemServiceTest.shouldRemoveItem.executor": "Run",
+    "JUnit.ItemServiceTest.shouldSetItemUnavailable.executor": "Run",
+    "JUnit.ItemServiceTest.shouldThrowExceptionWhenItemNotFoundWhenSetUnavailable.executor": "Run",
+    "JUnit.ItemServiceTest.shouldUpdateMusicItemSuccessfully.executor": "Run",
     "JUnit.RentRepositoryTest.executor": "Run",
     "JUnit.RentRepositoryTest.rentItemTest.executor": "Run",
     "JUnit.UserRepositoryTest.executor": "Run",
+    "JUnit.UserServiceTest.executor": "Run",
+    "JUnit.UserServiceTest.shouldAddUserSuccessfully.executor": "Run",
+    "JUnit.UserServiceTest.shouldChangePasswordSuccessfully.executor": "Run",
+    "JUnit.UserServiceTest.shouldGetUserByIdSuccessfully.executor": "Run",
+    "JUnit.UserServiceTest.shouldLoginSuccessfully.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenNoUsersWithRole.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenPasswordIsIncorrect.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenUserAlreadyExists.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenUserNotFound.executor": "Run",
     "Maven.Adapters [compile].executor": "Run",
     "Maven.Adapters [install].executor": "Run",
     "Maven.Mediastore [clean].executor": "Run",
     "Maven.Mediastore [compile].executor": "Run",
     "Maven.Mediastore [install].executor": "Run",
+    "Maven.Mediastore [test].executor": "Run",
     "Maven.RepositoriesAdapters [clean].executor": "Run",
     "Maven.RepositoriesAdapters [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
@@ -100,54 +126,52 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.EntityMapperTest">
-    <configuration name="EntityMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RepositoriesAdapters" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="EntityMapperTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EntityMapperTest.movieMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RepositoriesAdapters" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="EntityMapperTest" />
-      <option name="METHOD_NAME" value="movieMapperTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RentRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RepositoriesAdapters" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RentRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RentRepositoryTest.rentItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RepositoriesAdapters" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RentRepositoryTest" />
-      <option name="METHOD_NAME" value="rentItemTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UserServiceTest">
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ApplicationServices" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="services.Application" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.shouldChangePasswordSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ApplicationServices" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserServiceTest" />
+      <option name="METHOD_NAME" value="shouldChangePasswordSuccessfully" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.shouldLoginSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ApplicationServices" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserServiceTest" />
+      <option name="METHOD_NAME" value="shouldLoginSuccessfully" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.shouldThrowExceptionWhenNoUsersWithRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ApplicationServices" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserServiceTest" />
+      <option name="METHOD_NAME" value="shouldThrowExceptionWhenNoUsersWithRole" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.shouldThrowExceptionWhenPasswordIsIncorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ApplicationServices" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserServiceTest" />
+      <option name="METHOD_NAME" value="shouldThrowExceptionWhenPasswordIsIncorrect" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -161,19 +185,19 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.EntityMapperTest" />
-        <item itemvalue="JUnit.EntityMapperTest.movieMapperTest" />
-        <item itemvalue="JUnit.RentRepositoryTest" />
-        <item itemvalue="JUnit.RentRepositoryTest.rentItemTest" />
-        <item itemvalue="Spring Boot.Application" />
+        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.UserServiceTest.shouldThrowExceptionWhenPasswordIsIncorrect" />
+        <item itemvalue="JUnit.UserServiceTest.shouldLoginSuccessfully" />
+        <item itemvalue="JUnit.UserServiceTest.shouldChangePasswordSuccessfully" />
+        <item itemvalue="JUnit.UserServiceTest.shouldThrowExceptionWhenNoUsersWithRole" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.22855.74" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.22855.74" />
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
       </set>
     </attachedChunks>
   </component>
@@ -193,6 +217,8 @@
       <workItem from="1742733207683" duration="9234000" />
       <workItem from="1742749786067" duration="2108000" />
       <workItem from="1742821120522" duration="2004000" />
+      <workItem from="1742836359719" duration="82000" />
+      <workItem from="1742836458038" duration="9541000" />
     </task>
     <servers />
   </component>
@@ -211,16 +237,6 @@
           <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/ItemMapper.java</url>
           <line>44</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/EntityMapperTest.java</url>
-          <line>198</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/EntityMapperTest.java</url>
-          <line>199</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java</url>
