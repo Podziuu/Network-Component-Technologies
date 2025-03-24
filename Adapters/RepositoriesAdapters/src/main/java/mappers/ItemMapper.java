@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 public class ItemMapper {
     public static Music toMusic(MusicEnt musicEnt) {
-        return new Music(musicEnt.getId().toString(),
+        return new Music(musicEnt.getId().toHexString(),
                 musicEnt.getBasePrice(),
                 musicEnt.getItemName(),
                 musicEnt.isAvailable(),
@@ -22,7 +22,8 @@ public class ItemMapper {
     }
 
     public static MusicEnt toMusicEnt(Music music) {
-        return new MusicEnt(new ObjectId(music.getId()),
+        ObjectId objectId = ObjectId.isValid(music.getId()) ? new ObjectId(music.getId()) : new ObjectId();
+        return new MusicEnt(objectId,
                 music.getBasePrice(),
                 music.getItemName(),
                 music.isAvailable(),
@@ -31,7 +32,7 @@ public class ItemMapper {
     }
 
     public static Movie toMovie(MovieEnt movieEnt) {
-        return new Movie(movieEnt.getId().toString(),
+        return new Movie(movieEnt.getId().toHexString(),
                 movieEnt.getBasePrice(),
                 movieEnt.getItemName(),
                 movieEnt.isAvailable(),
@@ -40,7 +41,8 @@ public class ItemMapper {
     }
 
     public static MovieEnt toMovieEnt(Movie movie) {
-        return new MovieEnt(new ObjectId(movie.getId()),
+        ObjectId objectId = ObjectId.isValid(movie.getId()) ? new ObjectId(movie.getId()) : new ObjectId();
+        return new MovieEnt(objectId,
                 movie.getBasePrice(),
                 movie.getItemName(),
                 movie.isAvailable(),
@@ -49,7 +51,7 @@ public class ItemMapper {
     }
 
     public static Comics toComics(ComicsEnt comicsEnt) {
-        return new Comics(comicsEnt.getId().toString(),
+        return new Comics(comicsEnt.getId().toHexString(),
                 comicsEnt.getBasePrice(),
                 comicsEnt.getItemName(),
                 comicsEnt.isAvailable(),
@@ -58,7 +60,8 @@ public class ItemMapper {
     }
 
     public static ComicsEnt toComicsEnt(Comics comics) {
-        return new ComicsEnt(new ObjectId(comics.getId()),
+        ObjectId objectId = ObjectId.isValid(comics.getId()) ? new ObjectId(comics.getId()) : new ObjectId();
+        return new ComicsEnt(objectId,
                 comics.getBasePrice(),
                 comics.getItemName(),
                 comics.isAvailable(),
