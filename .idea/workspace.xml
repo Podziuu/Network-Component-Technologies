@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/RentServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/RentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/RentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/Rent.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/Rent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/pom.xml" afterDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,8 +53,6 @@
     &quot;JUnit.ItemServiceTest.shouldUpdateMusicItemSuccessfully.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.RentRepositoryTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.RentRepositoryTest.rentItemTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.rentItem_success.executor&quot;: &quot;Debug&quot;,
     &quot;JUnit.UserRepositoryTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.UserServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.UserServiceTest.shouldAddUserSuccessfully.executor&quot;: &quot;Run&quot;,
@@ -70,7 +68,6 @@
     &quot;Maven.Mediastore [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.Mediastore [compile].executor&quot;: &quot;Run&quot;,
     &quot;Maven.Mediastore [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [site].executor&quot;: &quot;Run&quot;,
     &quot;Maven.Mediastore [test].executor&quot;: &quot;Run&quot;,
     &quot;Maven.RepositoriesAdapters [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.RepositoriesAdapters [install].executor&quot;: &quot;Run&quot;,
@@ -123,16 +120,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RentServiceTest">
-    <configuration name="RentServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ApplicationServices" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RentServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.UserServiceTest">
     <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ApplicationServices" />
       <option name="PACKAGE_NAME" value="" />
@@ -162,6 +150,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserServiceTest.shouldThrowExceptionWhenNoUsersWithRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ApplicationServices" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserServiceTest" />
+      <option name="METHOD_NAME" value="shouldThrowExceptionWhenNoUsersWithRole" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserServiceTest.shouldThrowExceptionWhenPasswordIsIncorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ApplicationServices" />
       <option name="PACKAGE_NAME" value="" />
@@ -181,11 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RentServiceTest" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.UserServiceTest.shouldThrowExceptionWhenPasswordIsIncorrect" />
         <item itemvalue="JUnit.UserServiceTest.shouldLoginSuccessfully" />
         <item itemvalue="JUnit.UserServiceTest.shouldChangePasswordSuccessfully" />
+        <item itemvalue="JUnit.UserServiceTest.shouldThrowExceptionWhenNoUsersWithRole" />
       </list>
     </recent_temporary>
   </component>
@@ -214,10 +212,7 @@
       <workItem from="1742749786067" duration="2108000" />
       <workItem from="1742821120522" duration="2004000" />
       <workItem from="1742836359719" duration="82000" />
-      <workItem from="1742836458038" duration="10431000" />
-      <workItem from="1742911232601" duration="1183000" />
-      <workItem from="1742912451032" duration="1460000" />
-      <workItem from="1742913940529" duration="308000" />
+      <workItem from="1742836458038" duration="9541000" />
     </task>
     <servers />
   </component>
@@ -227,16 +222,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/ItemMapper.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/ItemMapper.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java</url>
           <line>15</line>
