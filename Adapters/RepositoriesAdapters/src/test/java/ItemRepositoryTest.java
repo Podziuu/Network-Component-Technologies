@@ -64,13 +64,6 @@ public class ItemRepositoryTest {
         Assertions.assertNull(itemRepository.getItemById(itemId.toString()));
     }
 
-//    @Test
-//    void removeItemInvalidTest() {
-//        Assertions.assertThrows(NullPointerException.class, () -> {
-//            itemRepository.removeItem(new ObjectId());
-//        });
-//    } //d
-
     @Test
     void updateItemTest() {
         ComicsEnt comics = new ComicsEnt(null, 250, "Movie", 120,
@@ -86,16 +79,6 @@ public class ItemRepositoryTest {
         Assertions.assertEquals("new name", comics.getItemName());
     }
 
-//    @Test
-//    void updateItemInvalidTest() {
-//        //obiekt bez id
-//        ItemEnt item = new ItemEnt();
-//        item.setItemName("invalid");
-//        Assertions.assertThrows(NullPointerException.class, () -> {
-//           itemRepository.updateItem(item);
-//        });
-//    } //d
-
     @Test
     void setUnavailableTest() {
         ComicsEnt comics = new ComicsEnt(null, 250, "Movie", 120,
@@ -105,7 +88,7 @@ public class ItemRepositoryTest {
         itemRepository.updateItem(comics);
         ItemEnt itemEnt = itemRepository.getItemById(itemId.toString());
         Assertions.assertFalse(itemEnt.isAvailable());
-    } //d
+    }
 
     @AfterAll
     static void tearDown() throws Exception {

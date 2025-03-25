@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/pom.xml" afterDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -187,8 +186,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.22855.74" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.22855.74" />
       </set>
     </attachedChunks>
   </component>
@@ -210,6 +209,7 @@
       <workItem from="1742821120522" duration="2004000" />
       <workItem from="1742836359719" duration="82000" />
       <workItem from="1742836458038" duration="9541000" />
+      <workItem from="1742934989098" duration="331000" />
     </task>
     <servers />
   </component>

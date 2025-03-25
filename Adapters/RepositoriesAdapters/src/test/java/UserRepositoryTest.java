@@ -13,24 +13,16 @@ import repo.UserRepository;
 
 public class UserRepositoryTest {
     private static MongoEntity mongoEntity;
-//    private static MongoDatabase database;
-//    private static MongoCollection<UserEnt> userCollection;
     private static UserRepository userRepository;
 
     @BeforeAll
     static void setUp() {
         mongoEntity = new MongoEntity();
-//        database = mongoEntity.getDatabase();
-//        userCollection = database.getCollection("users", UserEnt.class);
         userRepository = new UserRepository();
     }
 
     @Test
     void addUserTest() {
-//        MovieEnt movie = new MovieEnt(null, 250, "Movie", 120, true);
-//        ObjectId itemId = itemRepository.addItem(movie).getId();
-//        Assertions.assertNotNull(itemId);
-//        Assertions.assertEquals(itemId, movie.getId());
         ClientEnt user = new ClientEnt(
                 new ObjectId(),
                 "testLogin",
@@ -122,10 +114,7 @@ public class UserRepositoryTest {
         UserEnt savedUser = userRepository.save(user);
         userRepository.deactivateUser(savedUser.getId().toString());
         UserEnt deactivatedUser = userRepository.findById(savedUser.getId().toString());
-//        userRepository.update(savedUser.getId().toString());
         Assertions.assertFalse(deactivatedUser.getActive());
-
-//        UpdateResult result = userRepository.update(savedUser.getId().toString(), "Janek", "Robakowski");
 
         UpdateResult result = userRepository.activateUser(savedUser.getId().toString());
 
