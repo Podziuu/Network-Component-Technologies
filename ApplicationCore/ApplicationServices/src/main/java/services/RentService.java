@@ -10,6 +10,7 @@ import mapper.RentMapper;
 import model.Rent;
 import model.item.Item;
 import model.user.Client;
+import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
 import query.RentQueryPort;
 import query.UserQueryPort;
@@ -57,15 +58,14 @@ public class RentService {
         try (var session = mongoEntity.getMongoClient().startSession()) {
             session.startTransaction();
 
-            // TODO: Fix this later
-//            itemService.setUnavailable(item.getId());
+            itemService.setUnavailable(new ObjectId(item.getId()));
 
             Rent rent = new Rent(rentDTO.getBeginTime(), rentDTO.getRentCost(), client, item);
-            rentCommandPort.add(rent);
+            Rent createdRent = rentCommandPort.add(rent);
 
             session.commitTransaction();
 
-            return rentMapper.convertToDTO(rent);
+            return rentMapper.convertToDTO(createdRent);
         } catch (Exception e) {
             throw new RentOperationException("Error during rental operation: "  + e.getMessage(), e);
         }
@@ -100,8 +100,7 @@ public class RentService {
             rent.setArchive(true);
             rentCommandPort.update(rent);
 
-            // TODO: Fix this later
-//            itemService.setAvailable(item.getId());
+            itemService.setAvailable(new ObjectId(item.getId()));
 
             session.commitTransaction();
         } catch (Exception e) {

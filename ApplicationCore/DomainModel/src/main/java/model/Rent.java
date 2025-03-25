@@ -15,6 +15,14 @@ public class Rent {
     private Client client;
     private Item item;
 
+    public Rent(String id, LocalDateTime beginTime, int rentCost, Client client, Item item) {
+        this.id = id;
+        this.beginTime = beginTime;
+        this.rentCost = rentCost;
+        this.client = client;
+        this.item = item;
+    }
+
     public Rent(LocalDateTime beginTime, int rentCost, Client client, Item item) {
         this.beginTime = beginTime;
         this.rentCost = rentCost;

@@ -56,17 +56,6 @@ public class UserService implements UserDetailsService {
         return UserMapper.convertToUserDTO(user);
     }
 
-//    public UserDTO getUserByLogin(LoginDTO login) {
-//        User user = userQueryPort.findByLogin(login.getLogin());
-//        if (user == null) {
-//            throw new UserNotFoundException("User with login " + login.getLogin() + " not found");
-//        }
-//        if (!passwordEncoder.matches(login.getPassword(), user.getPassword())) {
-//            throw new InvalidCredentialsException("Invalid credentials");
-//        }
-//        return UserMapper.convertToUserDTO(user);
-//    }
-
     public UserDTO getUserByLogin(String login) {
         User user = userQueryPort.findByLogin(login);
         if (user == null) {
