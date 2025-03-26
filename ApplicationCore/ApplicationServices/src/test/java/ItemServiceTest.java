@@ -3,6 +3,7 @@ import dto.MusicDTO;
 import exception.InvalidItemTypeException;
 import exception.ItemNotFoundException;
 import infrastructure.ItemCommandPort;
+import model.item.Item;
 import model.item.Music;
 import model.item.MusicGenre;
 import org.bson.types.ObjectId;
@@ -40,7 +41,7 @@ public class ItemServiceTest {
     private ItemService itemService;
 
     private MusicDTO musicDTO;
-    private MusicDTO updatedMusicDTO;
+    private Music updatedMusic;
     private Music music;
     private Music unavailableMusic;
     private final String id = "507f1f77bcf86cd799439011";
@@ -50,14 +51,14 @@ public class ItemServiceTest {
         musicDTO = new MusicDTO(id, 20, "album", true, MusicGenre.Jazz, false);
         music = new Music(id, 20, "album", true, MusicGenre.Jazz, false);
         unavailableMusic = new Music("507f1f77bcf86cd799439012", 20, "album", false, MusicGenre.Jazz, false);
-        updatedMusicDTO = new MusicDTO(id, 40, "differentAlbum", true, MusicGenre.POP, true);
+        updatedMusic = new Music(id, 40, "differentAlbum", true, MusicGenre.POP, true);
     }
 
     @Test
     void shouldAddMusicItem() {
         when(itemCommandRepository.addItem(any(Music.class))).thenReturn(music);
 
-        ItemDTO result = itemService.addItem(musicDTO);
+        Item result = itemService.addItem(music);
 
         assertNotNull(result);
         assertEquals("album", result.getItemName());
@@ -65,18 +66,18 @@ public class ItemServiceTest {
     }
 
     @Test
-    void shouldThrowExceptionForInvalidItemType() {
-        ItemDTO invalidDTO = new ItemDTO();
-        invalidDTO.setItemType("unknown");
+    void shouldThrowExceptionForInvalidItemTypeWhenAddingItem() {
+        Item invalidItem = new Item();
+        invalidItem.setItemType("unknown");
 
-        assertThrows(InvalidItemTypeException.class, () -> itemService.addItem(invalidDTO));
+        assertThrows(InvalidItemTypeException.class, () -> itemService.addItem(invalidItem));
     }
 
     @Test
     void shouldGetItemById() {
         when(itemQueryRepository.getItemById(id)).thenReturn(music);
 
-        ItemDTO result = itemService.getItemById(id);
+        Item result = itemService.getItemById(id);
 
         assertNotNull(result);
         assertEquals("album", result.getItemName());
@@ -102,7 +103,7 @@ public class ItemServiceTest {
     void shouldSetItemAvailable() {
         when(itemQueryRepository.getItemById("507f1f77bcf86cd799439012")).thenReturn(unavailableMusic);
 
-        itemService.setAvailable(new ObjectId("507f1f77bcf86cd799439012"));
+        itemService.setAvailable("507f1f77bcf86cd799439012");
 
         assertTrue(unavailableMusic.isAvailable());
         verify(itemCommandRepository, times(1)).updateItem(unavailableMusic);
@@ -110,17 +111,16 @@ public class ItemServiceTest {
 
     @Test
     void shouldThrowExceptionWhenItemNotFoundWhenSetAvailable() {
-        ObjectId objectId = new ObjectId();
-        when(itemQueryRepository.getItemById(objectId.toHexString())).thenReturn(null);
+        when(itemQueryRepository.getItemById("invalid")).thenReturn(null);
 
-        assertThrows(ItemNotFoundException.class, () -> itemService.setAvailable(objectId));
+        assertThrows(ItemNotFoundException.class, () -> itemService.setAvailable("invalid"));
     }
 
     @Test
     void shouldUpdateMusicItemSuccessfully() {
         when(itemQueryRepository.getItemById(id)).thenReturn(music);
 
-        itemService.updateItem(id, updatedMusicDTO);
+        itemService.updateItem(id, updatedMusic);
 
         assertEquals("differentAlbum", music.getItemName());
         assertEquals(40, music.getBasePrice());
@@ -133,7 +133,7 @@ public class ItemServiceTest {
     void shouldGetItemsByBasePrice() {
         when(itemQueryRepository.getItemsByBasePrice(20)).thenReturn(Collections.singletonList(music));
 
-        List<ItemDTO> result = itemService.getItemsByBasePrice(20);
+        List<Item> result = itemService.getItemsByBasePrice(20);
 
         assertNotNull(result);
         verify(itemQueryRepository, times(1)).getItemsByBasePrice(20);
@@ -143,7 +143,7 @@ public class ItemServiceTest {
     void shouldGetItemsByItemName() {
         when(itemQueryRepository.getItemsByItemName("album")).thenReturn(Collections.singletonList(music));
 
-        List<ItemDTO> result = itemService.getItemsByItemName("album");
+        List<Item> result = itemService.getItemsByItemName("album");
 
         assertNotNull(result);
         verify(itemQueryRepository, times(1)).getItemsByItemName("album");
@@ -153,7 +153,7 @@ public class ItemServiceTest {
     void shouldGetItemsByItemType() {
         when(itemQueryRepository.getItemsByItemType("music")).thenReturn(Collections.singletonList(music));
 
-        List<ItemDTO> result = itemService.getItemsByItemType("music");
+        List<Item> result = itemService.getItemsByItemType("music");
 
         assertNotNull(result);
         verify(itemQueryRepository, times(1)).getItemsByItemType("music");
@@ -163,7 +163,7 @@ public class ItemServiceTest {
     void shouldSetItemUnavailable() {
         when(itemQueryRepository.getItemById("507f1f77bcf86cd799439011")).thenReturn(music);
 
-        itemService.setUnavailable(new ObjectId("507f1f77bcf86cd799439011"));
+        itemService.setUnavailable("507f1f77bcf86cd799439011");
 
         assertFalse(music.isAvailable());
         verify(itemCommandRepository, times(1)).updateItem(music);
@@ -171,18 +171,16 @@ public class ItemServiceTest {
 
     @Test
     void shouldThrowExceptionWhenItemNotFoundWhenSetUnavailable() {
-        ObjectId objectId = new ObjectId();
+        when(itemQueryRepository.getItemById("invalid")).thenReturn(null);
 
-        when(itemQueryRepository.getItemById(objectId.toHexString())).thenReturn(null);
-
-        assertThrows(ItemNotFoundException.class, () -> itemService.setUnavailable(objectId));
+        assertThrows(ItemNotFoundException.class, () -> itemService.setUnavailable("invalid"));
     }
 
     @Test
     void shouldGetAllItems() {
         when(itemQueryRepository.getAllItems()).thenReturn(Collections.singletonList(music));
 
-        List<ItemDTO> result = itemService.getAllItems();
+        List<Item> result = itemService.getAllItems();
 
         assertNotNull(result);
         verify(itemQueryRepository, times(1)).getAllItems();

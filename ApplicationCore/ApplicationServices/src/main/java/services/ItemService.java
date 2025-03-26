@@ -37,86 +37,65 @@ public class ItemService {
         this.rentQueryRepository = rentQueryRepository;
     }
 
-    public ItemDTO addItem(ItemDTO itemDTO) {
-        Item addedItem;
-
-        switch (itemDTO.getItemType().toLowerCase()) {
-            case "music":
-                Music music = ItemMapper.toMusic((MusicDTO) itemDTO);
-                addedItem = itemCommandRepository.addItem(music);
-                return ItemMapper.toMusicDTO((Music) addedItem);
-
-            case "movie":
-                Movie movie = ItemMapper.toMovie((MovieDTO) itemDTO);
-                addedItem = itemCommandRepository.addItem(movie);
-                return ItemMapper.toMovieDTO((Movie) addedItem);
-
-            case "comics":
-                Comics comics = ItemMapper.toComics((ComicsDTO) itemDTO);
-                addedItem = itemCommandRepository.addItem(comics);
-                return ItemMapper.toComicsDTO((Comics) addedItem);
-
-            default:
-                throw new InvalidItemTypeException("Invalid item type: " + itemDTO.getItemType());
+    public Item addItem(Item item) {
+        if (!(item instanceof Music || item instanceof Movie || item instanceof Comics)) {
+            throw new InvalidItemTypeException("Invalid item type: " + item.getClass().getSimpleName());
         }
+        return itemCommandRepository.addItem(item);
     }
 
-    public ItemDTO getItemById(String id) {
+    public Item getItemById(String id) {
         Item item = itemQueryRepository.getItemById(id);
         if (item == null) {
             throw new ItemNotFoundException("Item with ID: " + id + " not found");
         }
-        return ItemMapper.toDTO(item);
+        return item;
     }
 
-    public List<ItemDTO> getItemsByBasePrice(int basePrice) {
+    public List<Item> getItemsByBasePrice(int basePrice) {
         List<Item> items = itemQueryRepository.getItemsByBasePrice(basePrice);
-        return ItemMapper.toDTOList(items);
+        if (items == null) {
+            throw new ItemNotFoundException("Items with basePrice: " + basePrice + " not found");
+        }
+        return items;
     }
 
-    public List<ItemDTO> getItemsByItemName(String itemName) {
+    public List<Item> getItemsByItemName(String itemName) {
         List<Item> items = itemQueryRepository.getItemsByItemName(itemName);
-        return ItemMapper.toDTOList(items);
+        if (items == null) {
+            throw new ItemNotFoundException("Item with itemName: " + itemName + " not found");
+        }
+        return items;
     }
 
-    public List<ItemDTO> getItemsByItemType(String itemType) {
+    public List<Item> getItemsByItemType(String itemType) {
         List<Item> items = itemQueryRepository.getItemsByItemType(itemType);
-        return ItemMapper.toDTOList(items);
+        if (items == null) {
+            throw new ItemNotFoundException("Item with itemType: " + itemType + " not found");
+        }
+        return items;
     }
 
-    public void updateItem(String id, ItemDTO itemDTO) {
-        Item item = itemQueryRepository.getItemById(id);
+    public void updateItem(String id, Item item) {
+        Item existingItem = itemQueryRepository.getItemById(id);
         if (item == null) {
             throw new ItemNotFoundException("Item with ID: " + id + " not found");
         }
 
-        item.setBasePrice(itemDTO.getBasePrice());
-        item.setItemName(itemDTO.getItemName());
+        existingItem.setBasePrice(item.getBasePrice());
+        existingItem.setItemName(item.getItemName());
 
-        switch (itemDTO.getClass().getSimpleName().toLowerCase()) {
-            case "musicdto":
-                Music music = (Music) item;
-                MusicDTO musicDTO = (MusicDTO) itemDTO;
-                music.setGenre(musicDTO.getGenre());
-                music.setVinyl(musicDTO.isVinyl());
-                break;
-
-            case "moviedto":
-                Movie movie = (Movie) item;
-                MovieDTO movieDTO = (MovieDTO) itemDTO;
-                movie.setMinutes(movieDTO.getMinutes());
-                movie.setCasette(movieDTO.isCasette());
-                break;
-
-            case "comicsdto":
-                Comics comics = (Comics) item;
-                ComicsDTO comicsDTO = (ComicsDTO) itemDTO;
-                comics.setPageNumber(comicsDTO.getPagesNumber());
-                comics.setPublisher(comicsDTO.getPublisher());
-                break;
-
-            default:
-                throw new InvalidItemTypeException("Unknown item type: " + itemDTO.getClass().getSimpleName());
+        if (existingItem instanceof Music music && item instanceof Music updatedMusic) {
+            music.setGenre(updatedMusic.getGenre());
+            music.setVinyl(updatedMusic.isVinyl());
+        } else if (existingItem instanceof Movie movie && item instanceof Movie updatedMovie) {
+            movie.setBasePrice(updatedMovie.getBasePrice());
+            movie.setItemName(updatedMovie.getItemName());
+        } else if (existingItem instanceof Comics comics && item instanceof Comics updatedComics) {
+            comics.setPageNumber(updatedComics.getPageNumber());
+            comics.setPublisher(updatedComics.getPublisher());
+        } else {
+            throw new InvalidItemTypeException("Unknown item type: " + item.getClass().getSimpleName());
         }
 
         itemCommandRepository.updateItem(item);
@@ -136,9 +115,8 @@ public class ItemService {
         itemCommandRepository.removeItem(id);
     }
 
-    public void setAvailable(ObjectId id) {
-        String idAsString = id.toHexString();
-        Item item = itemQueryRepository.getItemById(idAsString);
+    public void setAvailable(String id) {
+        Item item = itemQueryRepository.getItemById(id);
         if (item == null) {
             throw new ItemNotFoundException("Item with ID: " + id + " not found");
         }
@@ -146,9 +124,8 @@ public class ItemService {
         itemCommandRepository.updateItem(item);
     }
 
-    public void setUnavailable(ObjectId id) {
-        String idAsString = id.toHexString();
-        Item item = itemQueryRepository.getItemById(idAsString);
+    public void setUnavailable(String id) {
+        Item item = itemQueryRepository.getItemById(id);
         if (item == null) {
             throw new ItemNotFoundException("Item with ID: " + id + " not found");
         }
@@ -156,8 +133,11 @@ public class ItemService {
         itemCommandRepository.updateItem(item);
     }
 
-    public List<ItemDTO> getAllItems() {
+    public List<Item> getAllItems() {
         List<Item> items = itemQueryRepository.getAllItems();
-        return ItemMapper.toDTOList(items);
+        if (items == null) {
+            throw new ItemNotFoundException("No items found");
+        }
+        return items;
     }
 }
