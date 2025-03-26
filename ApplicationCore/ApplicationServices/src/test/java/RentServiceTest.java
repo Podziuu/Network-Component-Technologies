@@ -1,14 +1,12 @@
-import dto.MusicDTO;
-import dto.RentDTO;
 import exception.*;
+import infrastructure.ItemCommandPort;
 import infrastructure.RentCommandPort;
-import infrastructure.UserCommandPort;
 import model.Rent;
+import model.item.Item;
 import model.item.Music;
 import model.item.MusicGenre;
 import model.user.Client;
 import model.user.ClientType;
-import org.bson.types.ObjectId;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,8 +14,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import query.RentQueryPort;
-import query.UserQueryPort;
-import services.ItemService;
 import services.RentService;
 
 import java.time.LocalDateTime;
@@ -35,78 +31,62 @@ class RentServiceTest {
     @Mock
     private RentQueryPort rentQueryPort;
     @Mock
-    private UserCommandPort userCommandPort;
-    @Mock
-    private UserQueryPort userQueryPort;
-    @Mock
-    private ItemService itemService;
+    private ItemCommandPort itemCommandPort;
 
     @InjectMocks
     private RentService rentService;
 
-    private RentDTO rentDTO;
-    private Client client;
-    private MusicDTO musicDTO;
     private Music music;
     private Rent rent;
-    private Rent rent2;
-    private final String id = "507f1f77bcf86cd799439011";
 
     @BeforeEach
     void setUp() {
-        rentDTO = new RentDTO(300, "32", "32");
-        client = new Client("123", "JDoe", "password", "Joe", "Doe", ClientType.createNoMembership());
-        musicDTO = new MusicDTO(id, 20, "album", true, MusicGenre.Jazz, false);
-        music = new Music(id, 20, "album", true, MusicGenre.Jazz, false);
-        rent = new Rent("rentId", rentDTO.getBeginTime(), rentDTO.getRentCost(), client, music);
-        rent2 = new Rent("rentId2", LocalDateTime.now(), rentDTO.getRentCost(), client, music);
+        music = new Music("23", 20, "album", true, MusicGenre.Jazz, false);
+        Client client = new Client("123", "JDoe", "password", "Joe", "Doe", ClientType.createNoMembership());
+        rent = new Rent("rentId", LocalDateTime.now(), 230, client, music);
     }
 
     @Test
     void shouldRentItemSuccessfully() {
-        when(userQueryPort.getById(rentDTO.getClientId())).thenReturn(client);
-        when(itemService.getItemById(rentDTO.getItemId())).thenReturn(musicDTO);
-        when(rentCommandPort.add(any(Rent.class))).thenReturn(rent2);
+        doNothing().when(itemCommandPort).updateItem(any(Item.class));
+        when(rentCommandPort.add(any(Rent.class))).thenReturn(rent);
 
-        RentDTO result = rentService.rentItem(rentDTO);
+        Rent result = rentService.rentItem(rent);
 
         assertNotNull(result);
         assertNotNull(result.getBeginTime());
         assertNull(result.getEndTime());
         assertEquals(result.getRentCost(), rent.getRentCost());
-        verify(itemService).setUnavailable(any(ObjectId.class));
+        assertFalse(result.getItem().isAvailable());
         verify(rentCommandPort).add(any(Rent.class));
     }
 
     @Test
     void shouldThrowExceptionWhenUserNotFoundWhileRenting() {
-        when(userQueryPort.getById(rentDTO.getClientId())).thenReturn(null);
+        rent.setClient(null);
 
-        assertThrows(UserNotFoundException.class, () -> rentService.rentItem(rentDTO));
+        assertThrows(UserNotFoundException.class, () -> rentService.rentItem(rent));
     }
 
     @Test
     void shouldThrowExceptionWhenItemNotFoundWhileRenting() {
-        when(userQueryPort.getById(rentDTO.getClientId())).thenReturn(client);
-        when(itemService.getItemById(rentDTO.getItemId())).thenReturn(null);
+        rent.setItem(null);
 
-        assertThrows(ItemNotFoundException.class, () -> rentService.rentItem(rentDTO));
+        assertThrows(ItemNotFoundException.class, () -> rentService.rentItem(rent));
     }
 
     @Test
     void shouldThrowErrorWhenItemAlreadyRenterWhileRenting() {
-        musicDTO.setAvailable(false);
-        when(userQueryPort.getById(rentDTO.getClientId())).thenReturn(client);
-        when(itemService.getItemById(rentDTO.getItemId())).thenReturn(musicDTO);
+        music.setAvailable(false);
 
-        assertThrows(ItemAlreadyRentedException.class, () -> rentService.rentItem(rentDTO));
+        assertThrows(ItemAlreadyRentedException.class, () -> rentService.rentItem(rent));
     }
 
     @Test
     void shouldGetRentByIdSuccessfully() {
         when(rentQueryPort.getById("rentId")).thenReturn(rent);
 
-        RentDTO result = rentService.getRentById("rentId");
+        Rent result = rentService.getRentById("rentId");
 
         assertNotNull(result);
         assertEquals(result.getRentCost(), rent.getRentCost());
@@ -126,7 +106,7 @@ class RentServiceTest {
 
         rentService.returnRent("rentId");
 
-        verify(itemService).setAvailable(any(ObjectId.class));
+        verify(itemCommandPort).updateItem(any(Item.class));
         verify(rentCommandPort).update(any(Rent.class));
     }
 
@@ -141,7 +121,7 @@ class RentServiceTest {
     void shouldGetActiveRentSuccessfully() {
         when(rentQueryPort.getActiveRents()).thenReturn(Collections.singletonList(rent));
 
-        List<RentDTO> result = rentService.getActiveRents();
+        List<Rent> result = rentService.getActiveRents();
 
         assertNotNull(result);
         verify(rentQueryPort).getActiveRents();
@@ -158,7 +138,7 @@ class RentServiceTest {
     void shouldGetInactiveRentSuccessfully() {
         when(rentQueryPort.getInactiveRents()).thenReturn(Collections.singletonList(rent));
 
-        List<RentDTO> result = rentService.getInactiveRents();
+        List<Rent> result = rentService.getInactiveRents();
 
         assertNotNull(result);
         verify(rentQueryPort).getInactiveRents();
@@ -175,7 +155,7 @@ class RentServiceTest {
     void shouldGetRentsByItemSuccessfully() {
         when(rentQueryPort.getByItemId("itemId")).thenReturn(Collections.singletonList(rent));
 
-        List<RentDTO> result = rentService.getRentsByItem("itemId");
+        List<Rent> result = rentService.getRentsByItem("itemId");
 
         assertNotNull(result);
         verify(rentQueryPort).getByItemId("itemId");
@@ -192,7 +172,7 @@ class RentServiceTest {
     void shouldGetActiveRentsByItemSuccessfully() {
         when(rentQueryPort.findActiveRentsByItemId("itemId")).thenReturn(Collections.singletonList(rent));
 
-        List<RentDTO> result = rentService.getActiveRentsByItem("itemId");
+        List<Rent> result = rentService.getActiveRentsByItem("itemId");
 
         assertNotNull(result);
         verify(rentQueryPort).findActiveRentsByItemId("itemId");
@@ -209,7 +189,7 @@ class RentServiceTest {
     void shouldGetInactiveRentsByItemSuccessfully() {
         when(rentQueryPort.findInactiveRentsByItemId("itemId")).thenReturn(Collections.singletonList(rent));
 
-        List<RentDTO> result = rentService.getInactiveRentsByItem("itemId");
+        List<Rent> result = rentService.getInactiveRentsByItem("itemId");
 
         assertNotNull(result);
         verify(rentQueryPort).findInactiveRentsByItemId("itemId");
@@ -226,7 +206,7 @@ class RentServiceTest {
     void shouldGetRentsByClientSuccessfully() {
         when(rentQueryPort.getByClientId("clientId")).thenReturn(Collections.singletonList(rent));
 
-        List<RentDTO> result = rentService.getRentsByClient("clientId");
+        List<Rent> result = rentService.getRentsByClient("clientId");
 
         assertNotNull(result);
         verify(rentQueryPort).getByClientId("clientId");
@@ -243,7 +223,7 @@ class RentServiceTest {
     void shouldGetActiveRentsByClientSuccessfully() {
         when(rentQueryPort.findActiveRentsByClientId("clientId")).thenReturn(Collections.singletonList(rent));
 
-        List<RentDTO> result = rentService.getActiveRentsByClient("clientId");
+        List<Rent> result = rentService.getActiveRentsByClient("clientId");
 
         assertNotNull(result);
         verify(rentQueryPort).findActiveRentsByClientId("clientId");
@@ -260,7 +240,7 @@ class RentServiceTest {
     void shouldGetInactiveRentsByClientSuccessfully() {
         when(rentQueryPort.findInactiveRentsByClientId("clientId")).thenReturn(Collections.singletonList(rent));
 
-        List<RentDTO> result = rentService.getInactiveRentsByClient("clientId");
+        List<Rent> result = rentService.getInactiveRentsByClient("clientId");
 
         assertNotNull(result);
         verify(rentQueryPort).findInactiveRentsByClientId("clientId");

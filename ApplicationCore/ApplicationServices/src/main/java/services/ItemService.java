@@ -1,20 +1,14 @@
 package services;
 
-import dto.ComicsDTO;
-import dto.ItemDTO;
-import dto.MovieDTO;
-import dto.MusicDTO;
 import exception.InvalidItemTypeException;
 import exception.ItemAlreadyRentedException;
 import exception.ItemNotFoundException;
 import infrastructure.ItemCommandPort;
-import mapper.ItemMapper;
 import model.Rent;
 import model.item.Comics;
 import model.item.Item;
 import model.item.Movie;
 import model.item.Music;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.RequestScope;

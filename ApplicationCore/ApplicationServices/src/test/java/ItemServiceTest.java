@@ -34,13 +34,9 @@ public class ItemServiceTest {
     @Mock
     private ItemQueryPort itemQueryRepository;
 
-    @Mock
-    private RentQueryPort rentQueryRepository;
-
     @InjectMocks
     private ItemService itemService;
 
-    private MusicDTO musicDTO;
     private Music updatedMusic;
     private Music music;
     private Music unavailableMusic;
@@ -48,7 +44,6 @@ public class ItemServiceTest {
 
     @BeforeEach
     void setUp() {
-        musicDTO = new MusicDTO(id, 20, "album", true, MusicGenre.Jazz, false);
         music = new Music(id, 20, "album", true, MusicGenre.Jazz, false);
         unavailableMusic = new Music("507f1f77bcf86cd799439012", 20, "album", false, MusicGenre.Jazz, false);
         updatedMusic = new Music(id, 40, "differentAlbum", true, MusicGenre.POP, true);
