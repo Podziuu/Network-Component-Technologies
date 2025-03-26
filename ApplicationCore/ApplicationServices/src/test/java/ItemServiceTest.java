@@ -1,12 +1,10 @@
-import dto.ItemDTO;
-import dto.MusicDTO;
+
 import exception.InvalidItemTypeException;
 import exception.ItemNotFoundException;
 import infrastructure.ItemCommandPort;
 import model.item.Item;
 import model.item.Music;
 import model.item.MusicGenre;
-import org.bson.types.ObjectId;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -33,6 +31,8 @@ public class ItemServiceTest {
 
     @Mock
     private ItemQueryPort itemQueryRepository;
+
+    @Mock RentQueryPort rentQueryRepository;
 
     @InjectMocks
     private ItemService itemService;
@@ -88,6 +88,7 @@ public class ItemServiceTest {
     @Test
     void shouldRemoveItem() {
         when(itemQueryRepository.getItemById(id)).thenReturn(music);
+        when(rentQueryRepository.findActiveRentsByItemId(id)).thenReturn(Collections.emptyList());
 
         itemService.removeItem(id);
 
@@ -121,7 +122,7 @@ public class ItemServiceTest {
         assertEquals(40, music.getBasePrice());
         assertEquals(MusicGenre.POP, music.getGenre());
         assertTrue(music.isVinyl());
-        verify(itemCommandRepository).updateItem(music);
+        verify(itemCommandRepository).updateItem(updatedMusic);
     }
 
     @Test

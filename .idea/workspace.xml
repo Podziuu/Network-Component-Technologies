@@ -6,10 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/ItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/RentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/RentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/dto/ChangePasswordDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/dto/ClientDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/dto/ComicsDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/dto/CreateUserDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/dto/ItemDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/dto/LoginDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/dto/MovieDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/dto/MusicDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/dto/RentDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/dto/TokenDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/dto/UpdateUserDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/dto/UserDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/mapper/ItemMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/mapper/RentMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/ItemServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/ItemServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/RentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/RentServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/UserServiceTest.java" afterDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,15 +84,18 @@
     "JUnit.UserServiceTest.shouldChangePasswordSuccessfully.executor": "Run",
     "JUnit.UserServiceTest.shouldGetUserByIdSuccessfully.executor": "Run",
     "JUnit.UserServiceTest.shouldLoginSuccessfully.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenCurrentPasswordIsIncorrect.executor": "Run",
     "JUnit.UserServiceTest.shouldThrowExceptionWhenNoUsersWithRole.executor": "Run",
     "JUnit.UserServiceTest.shouldThrowExceptionWhenPasswordIsIncorrect.executor": "Run",
     "JUnit.UserServiceTest.shouldThrowExceptionWhenUserAlreadyExists.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenUserAlreadyExistsWhileAdding.executor": "Run",
     "JUnit.UserServiceTest.shouldThrowExceptionWhenUserNotFound.executor": "Run",
     "Maven.Adapters [compile].executor": "Run",
     "Maven.Adapters [install].executor": "Run",
     "Maven.Mediastore [clean].executor": "Run",
     "Maven.Mediastore [compile].executor": "Run",
     "Maven.Mediastore [install].executor": "Run",
+    "Maven.Mediastore [site].executor": "Run",
     "Maven.Mediastore [test].executor": "Run",
     "Maven.RepositoriesAdapters [clean].executor": "Run",
     "Maven.RepositoriesAdapters [install].executor": "Run",
@@ -131,51 +148,50 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RentServiceTest">
-    <configuration name="RentServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ItemServiceTest.shouldUpdateMusicItemSuccessfully">
+    <configuration name="ItemServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ApplicationServices" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RentServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="ItemServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RentServiceTest.shouldGetRentByIdSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ItemServiceTest.shouldRemoveItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ApplicationServices" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RentServiceTest" />
-      <option name="METHOD_NAME" value="shouldGetRentByIdSuccessfully" />
+      <option name="MAIN_CLASS_NAME" value="ItemServiceTest" />
+      <option name="METHOD_NAME" value="shouldRemoveItem" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RentServiceTest.shouldReturnRentSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ItemServiceTest.shouldUpdateMusicItemSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ApplicationServices" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RentServiceTest" />
-      <option name="METHOD_NAME" value="shouldReturnRentSuccessfully" />
+      <option name="MAIN_CLASS_NAME" value="ItemServiceTest" />
+      <option name="METHOD_NAME" value="shouldUpdateMusicItemSuccessfully" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RentServiceTest.shouldThrowErrorWhenItemAlreadyRenterWhileRenting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ApplicationServices" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RentServiceTest" />
-      <option name="METHOD_NAME" value="shouldThrowErrorWhenItemAlreadyRenterWhileRenting" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="UserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RentServiceTest.shouldThrowExceptionWhenItemNotFoundWhileRenting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTest.shouldThrowExceptionWhenCurrentPasswordIsIncorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ApplicationServices" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RentServiceTest" />
-      <option name="METHOD_NAME" value="shouldThrowExceptionWhenItemNotFoundWhileRenting" />
+      <option name="MAIN_CLASS_NAME" value="UserServiceTest" />
+      <option name="METHOD_NAME" value="shouldThrowExceptionWhenCurrentPasswordIsIncorrect" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -190,11 +206,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RentServiceTest" />
-        <item itemvalue="JUnit.RentServiceTest.shouldReturnRentSuccessfully" />
-        <item itemvalue="JUnit.RentServiceTest.shouldGetRentByIdSuccessfully" />
-        <item itemvalue="JUnit.RentServiceTest.shouldThrowErrorWhenItemAlreadyRenterWhileRenting" />
-        <item itemvalue="JUnit.RentServiceTest.shouldThrowExceptionWhenItemNotFoundWhileRenting" />
+        <item itemvalue="JUnit.ItemServiceTest.shouldUpdateMusicItemSuccessfully" />
+        <item itemvalue="JUnit.ItemServiceTest.shouldRemoveItem" />
+        <item itemvalue="JUnit.ItemServiceTest" />
+        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.UserServiceTest.shouldThrowExceptionWhenCurrentPasswordIsIncorrect" />
       </list>
     </recent_temporary>
   </component>

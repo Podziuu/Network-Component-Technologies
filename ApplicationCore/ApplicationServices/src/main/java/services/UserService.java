@@ -1,11 +1,9 @@
 package services;
 
-import dto.*;
 import exception.DuplicateUserException;
 import exception.UserNotFoundException;
 import exception.InvalidCredentialsException;
 import infrastructure.UserCommandPort;
-import mapper.UserMapper;
 import model.user.Role;
 import model.user.User;
 import model.user.UserPrincipal;
@@ -38,69 +36,67 @@ public class UserService implements UserDetailsService {
         this.jwtTokenProvider = jwtTokenProvider;
     }
 
-    public UserDTO addUser(CreateUserDTO user) {
+    public User addUser(User user) {
         if (userExists(user.getLogin())) {
             throw new DuplicateUserException("User with login " + user.getLogin() + " already exists");
         }
-        User mappedUser = UserMapper.convertToUser(user);
-        mappedUser.setPassword(passwordEncoder.encode(user.getPassword()));
-        User createdUser = userCommandPort.add(mappedUser);
-        return UserMapper.convertToUserDTO(createdUser);
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        return userCommandPort.add(user);
     }
 
-    public UserDTO getUserById(String id) {
+    public User getUserById(String id) {
         User user = userQueryPort.getById(id);
         if (user == null) {
             throw new UserNotFoundException("User with id " + id + " not found");
         }
-        return UserMapper.convertToUserDTO(user);
+        return user;
     }
 
-    public UserDTO getUserByLogin(String login) {
+    public User getUserByLogin(String login) {
         User user = userQueryPort.findByLogin(login);
         if (user == null) {
             throw new UserNotFoundException("User with login " + login + " not found");
         }
-        return UserMapper.convertToUserDTO(user);
+        return user;
     }
 
-    public List<UserDTO> getUsersByRole(Role role) {
+    public List<User> getUsersByRole(Role role) {
         List<User> users = userQueryPort.findByRole(role);
         if (users.isEmpty()) {
             throw new UserNotFoundException("Users with role " + role + " not found");
         }
-        return UserMapper.toDTO(users);
+        return users;
     }
 
-    public List<UserDTO> getAllUsers() {
+    public List<User> getAllUsers() {
         List<User> users = userQueryPort.getAll();
         if (users.isEmpty()) {
             throw new UserNotFoundException("No users found");
         }
-        return UserMapper.toDTO(users);
+        return users;
     }
 
-    public List<UserDTO> getUsersByFirstName(String firstName) {
+    public List<User> getUsersByFirstName(String firstName) {
         List<User> users = userQueryPort.findByFirstName(firstName);
         if (users.isEmpty()) {
             throw new UserNotFoundException("Users with first name " + firstName + " not found");
         }
-        return UserMapper.toDTO(users);
+        return users;
     }
 
-    public List<UserDTO> getUsersByRoleAndFirstName(Role role, String firstName) {
+    public List<User> getUsersByRoleAndFirstName(Role role, String firstName) {
         List<User> users = userQueryPort.findByRoleAndFirstName(role, firstName);
         if (users.isEmpty()) {
             throw new UserNotFoundException("Users with role " + role + " and first name " + firstName + " not found");
         }
-        return UserMapper.toDTO(users);
+        return users;
     }
 
-    public void updateUser(String id, UpdateUserDTO userDTO) {
+    public void updateUser(String id, String firstName, String lastName) {
         if (!findUserById(id)) {
             throw new UserNotFoundException("User with id " + id + " not found");
         }
-        userCommandPort.update(id, userDTO.getFirstName(), userDTO.getLastName());
+        userCommandPort.update(id, firstName, lastName);
     }
 
     public void activateUser(String id) {
@@ -134,23 +130,23 @@ public class UserService implements UserDetailsService {
         return new UserPrincipal(user);
     }
 
-    public void changePassword(String username, ChangePasswordDTO dto) {
+    public void changePassword(String username, String currentPassword, String newPassword) {
         User user = userQueryPort.findByLogin(username);
         if (user == null) {
             throw new UserNotFoundException("User with login " + username + " not found");
         }
 
-        if (!passwordEncoder.matches(dto.getCurrentPassword(), user.getPassword())) {
+        if (!passwordEncoder.matches(currentPassword, user.getPassword())) {
             throw new InvalidCredentialsException("Current password is incorrect");
         }
 
-        String encodedNewPassword = passwordEncoder.encode(dto.getNewPassword());
+        String encodedNewPassword = passwordEncoder.encode(newPassword);
         userCommandPort.updatePassword(user.getLogin(), encodedNewPassword);
     }
 
-    public String login(LoginDTO loginDTO) {
-        User user = userQueryPort.findByLogin(loginDTO.getLogin());
-        if (user == null || !passwordEncoder.matches(loginDTO.getPassword(), user.getPassword())) {
+    public String login(String login, String password) {
+        User user = userQueryPort.findByLogin(login);
+        if (user == null || !passwordEncoder.matches(password, user.getPassword())) {
             throw new InvalidCredentialsException("Invalid login or password");
         }
         return jwtTokenProvider.generateToken(user.getLogin(), user.getId(), user.getRole());

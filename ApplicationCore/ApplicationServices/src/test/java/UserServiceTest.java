@@ -1,4 +1,3 @@
-import dto.*;
 import exception.DuplicateUserException;
 import exception.InvalidCredentialsException;
 import exception.UserNotFoundException;
@@ -44,37 +43,34 @@ public class UserServiceTest {
     private UserService userService;
 
     private User testUser;
-    private static CreateUserDTO createUser;
-    private static UserDTO userDTO;
-    private User user2;
     private final String login = "JDoe";
     private final String password = "password";
     private final String firstName = "John";
-    private final String lastName = "Doe";
-    private final String updatedFirstName = "Jane";
-    private final String updatedLastName = "Does";
     private final Role role = Role.CLIENT;
-    private final UpdateUserDTO updateUserDTO = new UpdateUserDTO(updatedFirstName, updatedLastName);
     private final String currentPassword = "oldPassword";
     private final String newPassword = "newSecurePassword";
     private final String wrongPassword = "wrongPassword";
-    private ChangePasswordDTO changePasswordDTO = new ChangePasswordDTO(currentPassword, newPassword);
-    private LoginDTO loginDTO = new LoginDTO(login, password);
+
+    private User userToAdd;
 
     @BeforeEach
     void setUp() {
-        createUser = new CreateUserDTO(login, password, firstName, lastName, role);
+        userToAdd = new Client();
+        userToAdd.setLogin(login);
+        userToAdd.setPassword(password);
+        userToAdd.setFirstName(firstName);
+        String lastName = "Doe";
+        userToAdd.setLastName(lastName);
         testUser = new Client("123", login, password, firstName, lastName, ClientType.createNoMembership());
-        user2 = new Client("12345", login, password, updatedFirstName, updatedLastName, ClientType.createNoMembership());
     }
 
     @Test
     void shouldAddUserSuccessfully() {
-        when(userQueryPort.userExists(createUser.getLogin())).thenReturn(false);
-        when(passwordEncoder.encode(testUser.getPassword())).thenReturn("encodedPassword");
+        when(userQueryPort.userExists(userToAdd.getLogin())).thenReturn(false);
+        when(passwordEncoder.encode(userToAdd.getPassword())).thenReturn("encodedPassword");
         when(userCommandPort.add(any(User.class))).thenReturn(testUser);
 
-        UserDTO createdUser = userService.addUser(createUser);
+        User createdUser = userService.addUser(userToAdd);
 
         assertNotNull(createdUser);
         verify(userCommandPort).add(any(User.class));
@@ -82,9 +78,9 @@ public class UserServiceTest {
 
     @Test
     void shouldThrowExceptionWhenUserAlreadyExistsWhileAdding() {
-        when(userQueryPort.userExists(createUser.getLogin())).thenReturn(true);
+        when(userQueryPort.userExists(userToAdd.getLogin())).thenReturn(true);
 
-        assertThrows(DuplicateUserException.class, () -> userService.addUser(createUser));
+        assertThrows(DuplicateUserException.class, () -> userService.addUser(userToAdd));
     }
 
     @Test
@@ -98,7 +94,7 @@ public class UserServiceTest {
     void shouldGetUserByIdSuccessfully() {
         when(userQueryPort.getById("123")).thenReturn(testUser);
 
-        UserDTO user = userService.getUserById("123");
+        User user = userService.getUserById("123");
 
         assertEquals(testUser.getLogin(), user.getLogin());
         assertEquals(testUser.getFirstName(), user.getFirstName());
@@ -116,7 +112,7 @@ public class UserServiceTest {
     void shouldGetUserByLoginSuccessfully() {
         when(userQueryPort.findByLogin(login)).thenReturn(testUser);
 
-        UserDTO user = userService.getUserByLogin(login);
+        User user = userService.getUserByLogin(login);
 
         assertEquals(testUser.getLogin(), user.getLogin());
         assertEquals(testUser.getFirstName(), user.getFirstName());
@@ -134,7 +130,7 @@ public class UserServiceTest {
     void shoulGetUsersByRoleSuccessfully() {
         when(userQueryPort.findByRole(role)).thenReturn(Collections.singletonList(testUser));
 
-        List<UserDTO> users = userService.getUsersByRole(role);
+        List<User> users = userService.getUsersByRole(role);
 
         assertNotNull(users);
         assertEquals(1, users.size());
@@ -153,7 +149,7 @@ public class UserServiceTest {
     @Test
     void shouldGetAllUsersSuccessfully() {
         when(userQueryPort.getAll()).thenReturn(Collections.singletonList(testUser));
-        List<UserDTO> users = userService.getAllUsers();
+        List<User> users = userService.getAllUsers();
         assertNotNull(users);
         assertEquals(1, users.size());
         assertEquals(testUser.getLogin(), users.get(0).getLogin());
@@ -171,7 +167,7 @@ public class UserServiceTest {
     @Test
     void shouldGetUsersByFirstNameSuccessfully() {
         when(userQueryPort.findByFirstName(firstName)).thenReturn(Collections.singletonList(testUser));
-        List<UserDTO> users = userService.getUsersByFirstName(firstName);
+        List<User> users = userService.getUsersByFirstName(firstName);
         assertNotNull(users);
         assertEquals(1, users.size());
         assertEquals(testUser.getLogin(), users.get(0).getLogin());
@@ -189,7 +185,7 @@ public class UserServiceTest {
     @Test
     void shouldGetUsersByRoleAndFirstNameSuccessfully() {
         when(userQueryPort.findByRoleAndFirstName(role, firstName)).thenReturn(Collections.singletonList(testUser));
-        List<UserDTO> users = userService.getUsersByRoleAndFirstName(role, firstName);
+        List<User> users = userService.getUsersByRoleAndFirstName(role, firstName);
         assertNotNull(users);
         assertEquals(1, users.size());
         assertEquals(testUser.getLogin(), users.get(0).getLogin());
@@ -208,7 +204,9 @@ public class UserServiceTest {
     void shouldUpdateUserSuccessfully() {
         when(userQueryPort.getById("123")).thenReturn(testUser);
 
-        userService.updateUser("123", updateUserDTO);
+        String updatedFirstName = "Jane";
+        String updatedLastName = "Does";
+        userService.updateUser("123", updatedFirstName, updatedLastName);
 
         verify(userCommandPort).update("123", updatedFirstName, updatedLastName);
     }
@@ -251,7 +249,7 @@ public class UserServiceTest {
         when(passwordEncoder.matches(currentPassword, testUser.getPassword())).thenReturn(true);
         when(passwordEncoder.encode(newPassword)).thenReturn("encodedNewPassword");
 
-        userService.changePassword(login, changePasswordDTO);
+        userService.changePassword(login, currentPassword, newPassword);
 
         verify(userCommandPort).updatePassword(login, "encodedNewPassword");
     }
@@ -260,7 +258,7 @@ public class UserServiceTest {
     void shouldThrowExceptionWhenUserNotFoundWhileChangingPassword() {
         when(userQueryPort.findByLogin(login)).thenReturn(null);
 
-        assertThrows(UserNotFoundException.class, () -> userService.changePassword(login, changePasswordDTO));
+        assertThrows(UserNotFoundException.class, () -> userService.changePassword(login, testUser.getPassword(), newPassword));
 
         verify(userCommandPort, never()).updatePassword(anyString(), anyString());
     }
@@ -270,7 +268,7 @@ public class UserServiceTest {
         when(userQueryPort.findByLogin(login)).thenReturn(testUser);
         when(passwordEncoder.matches(currentPassword, testUser.getPassword())).thenReturn(false);
 
-        assertThrows(InvalidCredentialsException.class, () -> userService.changePassword(login, changePasswordDTO));
+        assertThrows(InvalidCredentialsException.class, () -> userService.changePassword(login, currentPassword, newPassword));
 
         verify(userCommandPort, never()).updatePassword(anyString(), anyString());
     }
@@ -281,7 +279,7 @@ public class UserServiceTest {
         when(passwordEncoder.matches(password, testUser.getPassword())).thenReturn(true);
         when(jwtTokenProvider.generateToken(testUser.getLogin(), testUser.getId(), testUser.getRole())).thenReturn("token123");
 
-        String token = userService.login(loginDTO);
+        String token = userService.login(testUser.getLogin(), testUser.getPassword());
 
         assertNotNull(token);
         assertEquals("token123", token);
@@ -294,7 +292,7 @@ public class UserServiceTest {
     void shouldThrowExceptionWhenUserNotFoundWhileLogin() {
         when(userQueryPort.findByLogin(login)).thenReturn(null);
 
-        assertThrows(InvalidCredentialsException.class, () -> userService.login(loginDTO));
+        assertThrows(InvalidCredentialsException.class, () -> userService.login(testUser.getLogin(), testUser.getPassword()));
 
         verify(passwordEncoder, never()).matches(anyString(), anyString());
         verify(jwtTokenProvider, never()).generateToken(anyString(), anyString(), any());
@@ -305,7 +303,7 @@ public class UserServiceTest {
         when(userQueryPort.findByLogin(login)).thenReturn(testUser);
         when(passwordEncoder.matches(wrongPassword, testUser.getPassword())).thenReturn(false);
 
-        assertThrows(InvalidCredentialsException.class, () -> userService.login(new LoginDTO(login, wrongPassword)));
+        assertThrows(InvalidCredentialsException.class, () -> userService.login(testUser.getLogin(), wrongPassword));
 
         verify(jwtTokenProvider, never()).generateToken(anyString(), anyString(), any());
     }
