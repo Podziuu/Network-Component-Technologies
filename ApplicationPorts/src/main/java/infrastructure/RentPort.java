@@ -1,10 +1,13 @@
-package query;
+package infrastructure;
 
 import model.Rent;
 
 import java.util.List;
 
-public interface RentQueryPort {
+public interface RentPort {
+    Rent add(Rent rent);
+
+    void update(Rent rent);
     Rent getById(String id);
 
     List<Rent> getByItemId(String itemId);
@@ -17,7 +20,7 @@ public interface RentQueryPort {
 
     List<Rent> getInactiveRents();
 
-    List<Rent> findInactiveRentsByItemId(String itemdId);
+    List<Rent> findInactiveRentsByItemId(String itemId);
 
     List<Rent> findActiveRentsByClientId(String clientId);
 

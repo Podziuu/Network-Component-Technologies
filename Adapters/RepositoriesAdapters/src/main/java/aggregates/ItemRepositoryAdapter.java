@@ -1,8 +1,7 @@
 package aggregates;
 
-import infrastructure.ItemCommandPort;
+import infrastructure.ItemPort;
 import org.springframework.stereotype.Component;
-import query.ItemQueryPort;
 import mappers.ItemMapper;
 import model.item.Item;
 import org.bson.types.ObjectId;
@@ -10,7 +9,7 @@ import repo.ItemRepository;
 
 import java.util.List;
 @Component
-public class ItemRepositoryAdapter implements ItemQueryPort, ItemCommandPort {
+public class ItemRepositoryAdapter implements ItemPort {
     private final ItemRepository itemRepository;
 
     public ItemRepositoryAdapter(ItemRepository itemRepository) {

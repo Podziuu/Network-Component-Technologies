@@ -3,7 +3,7 @@ package services;
 import exception.DuplicateUserException;
 import exception.UserNotFoundException;
 import exception.InvalidCredentialsException;
-import infrastructure.UserCommandPort;
+import infrastructure.UserPort;
 import model.user.Role;
 import model.user.User;
 import model.user.UserPrincipal;
@@ -13,25 +13,23 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import query.UserQueryPort;
 import security.JwtTokenProvider;
+import ui.IUserPort;
 
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Service
-public class UserService implements UserDetailsService {
-    private final UserQueryPort userQueryPort;
-    private final UserCommandPort userCommandPort;
+public class UserService implements IUserPort, UserDetailsService {
+    private final UserPort userPort;
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenProvider jwtTokenProvider;
     private final Set<String> blacklist = ConcurrentHashMap.newKeySet();
 
     @Autowired
-    public UserService(UserQueryPort userQueryPort, UserCommandPort userCommandPort, PasswordEncoder passwordEncoder, JwtTokenProvider jwtTokenProvider) {
-        this.userQueryPort = userQueryPort;
-        this.userCommandPort = userCommandPort;
+    public UserService(UserPort userPort, PasswordEncoder passwordEncoder, JwtTokenProvider jwtTokenProvider) {
+        this.userPort = userPort;
         this.passwordEncoder = passwordEncoder;
         this.jwtTokenProvider = jwtTokenProvider;
     }
@@ -41,11 +39,11 @@ public class UserService implements UserDetailsService {
             throw new DuplicateUserException("User with login " + user.getLogin() + " already exists");
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        return userCommandPort.add(user);
+        return userPort.addUser(user);
     }
 
     public User getUserById(String id) {
-        User user = userQueryPort.getById(id);
+        User user = userPort.getById(id);
         if (user == null) {
             throw new UserNotFoundException("User with id " + id + " not found");
         }
@@ -53,7 +51,7 @@ public class UserService implements UserDetailsService {
     }
 
     public User getUserByLogin(String login) {
-        User user = userQueryPort.findByLogin(login);
+        User user = userPort.findByLogin(login);
         if (user == null) {
             throw new UserNotFoundException("User with login " + login + " not found");
         }
@@ -61,7 +59,7 @@ public class UserService implements UserDetailsService {
     }
 
     public List<User> getUsersByRole(Role role) {
-        List<User> users = userQueryPort.findByRole(role);
+        List<User> users = userPort.findByRole(role);
         if (users.isEmpty()) {
             throw new UserNotFoundException("Users with role " + role + " not found");
         }
@@ -69,7 +67,7 @@ public class UserService implements UserDetailsService {
     }
 
     public List<User> getAllUsers() {
-        List<User> users = userQueryPort.getAll();
+        List<User> users = userPort.getAll();
         if (users.isEmpty()) {
             throw new UserNotFoundException("No users found");
         }
@@ -77,7 +75,7 @@ public class UserService implements UserDetailsService {
     }
 
     public List<User> getUsersByFirstName(String firstName) {
-        List<User> users = userQueryPort.findByFirstName(firstName);
+        List<User> users = userPort.findByFirstName(firstName);
         if (users.isEmpty()) {
             throw new UserNotFoundException("Users with first name " + firstName + " not found");
         }
@@ -85,7 +83,7 @@ public class UserService implements UserDetailsService {
     }
 
     public List<User> getUsersByRoleAndFirstName(Role role, String firstName) {
-        List<User> users = userQueryPort.findByRoleAndFirstName(role, firstName);
+        List<User> users = userPort.findByRoleAndFirstName(role, firstName);
         if (users.isEmpty()) {
             throw new UserNotFoundException("Users with role " + role + " and first name " + firstName + " not found");
         }
@@ -96,34 +94,34 @@ public class UserService implements UserDetailsService {
         if (!findUserById(id)) {
             throw new UserNotFoundException("User with id " + id + " not found");
         }
-        userCommandPort.update(id, firstName, lastName);
+        userPort.updateUser(id, firstName, lastName);
     }
 
     public void activateUser(String id) {
         if (!findUserById(id)) {
             throw new UserNotFoundException("User with id " + id + " not found");
         }
-        userCommandPort.activateUser(id);
+        userPort.activateUser(id);
     }
 
     public void deactivateUser(String id) {
         if (!findUserById(id)) {
             throw new UserNotFoundException("User with id " + id + " not found");
         }
-        userCommandPort.deactivateUser(id);
+        userPort.deactivateUser(id);
     }
 
-    private boolean userExists(String login) {
-        return userQueryPort.userExists(login);
+    public boolean userExists(String login) {
+        return userPort.userExists(login);
     }
 
     private boolean findUserById(String id) {
-        return userQueryPort.getById(id) != null;
+        return userPort.getById(id) != null;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userQueryPort.findByLogin(username);
+        User user = userPort.findByLogin(username);
         if (user == null) {
             throw new UserNotFoundException("User with login " + username + " not found");
         }
@@ -131,7 +129,7 @@ public class UserService implements UserDetailsService {
     }
 
     public void changePassword(String username, String currentPassword, String newPassword) {
-        User user = userQueryPort.findByLogin(username);
+        User user = userPort.findByLogin(username);
         if (user == null) {
             throw new UserNotFoundException("User with login " + username + " not found");
         }
@@ -141,11 +139,11 @@ public class UserService implements UserDetailsService {
         }
 
         String encodedNewPassword = passwordEncoder.encode(newPassword);
-        userCommandPort.updatePassword(user.getLogin(), encodedNewPassword);
+        userPort.updatePassword(user.getLogin(), encodedNewPassword);
     }
 
     public String login(String login, String password) {
-        User user = userQueryPort.findByLogin(login);
+        User user = userPort.findByLogin(login);
         if (user == null || !passwordEncoder.matches(password, user.getPassword())) {
             throw new InvalidCredentialsException("Invalid login or password");
         }

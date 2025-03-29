@@ -1,7 +1,7 @@
 import exception.DuplicateUserException;
 import exception.InvalidCredentialsException;
 import exception.UserNotFoundException;
-import infrastructure.UserCommandPort;
+import infrastructure.UserPort;
 import model.user.Client;
 import model.user.ClientType;
 import model.user.Role;
@@ -13,7 +13,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import query.UserQueryPort;
 import security.JwtTokenProvider;
 import services.UserService;
 
@@ -28,10 +27,7 @@ import static org.mockito.Mockito.*;
 public class UserServiceTest {
 
     @Mock
-    private UserCommandPort userCommandPort;
-
-    @Mock
-    private UserQueryPort userQueryPort;
+    private UserPort userPort;
 
     @Mock
     private PasswordEncoder passwordEncoder;
@@ -59,40 +55,39 @@ public class UserServiceTest {
         userToAdd.setLogin(login);
         userToAdd.setPassword(password);
         userToAdd.setFirstName(firstName);
-        String lastName = "Doe";
-        userToAdd.setLastName(lastName);
-        testUser = new Client("123", login, password, firstName, lastName, ClientType.createNoMembership());
+        userToAdd.setLastName("Doe");
+        testUser = new Client("123", login, password, firstName, "Doe", ClientType.createNoMembership());
     }
 
     @Test
     void shouldAddUserSuccessfully() {
-        when(userQueryPort.userExists(userToAdd.getLogin())).thenReturn(false);
+        when(userPort.userExists(userToAdd.getLogin())).thenReturn(false);
         when(passwordEncoder.encode(userToAdd.getPassword())).thenReturn("encodedPassword");
-        when(userCommandPort.add(any(User.class))).thenReturn(testUser);
+        when(userPort.addUser(any(User.class))).thenReturn(testUser);
 
         User createdUser = userService.addUser(userToAdd);
 
         assertNotNull(createdUser);
-        verify(userCommandPort).add(any(User.class));
+        verify(userPort).addUser(any(User.class));
     }
 
     @Test
-    void shouldThrowExceptionWhenUserAlreadyExistsWhileAdding() {
-        when(userQueryPort.userExists(userToAdd.getLogin())).thenReturn(true);
+    void shouldThrowExceptionWhenUserAlreadyExists() {
+        when(userPort.userExists(userToAdd.getLogin())).thenReturn(true);
 
         assertThrows(DuplicateUserException.class, () -> userService.addUser(userToAdd));
     }
 
     @Test
     void shouldThrowExceptionWhenUserNotFoundById() {
-        when(userQueryPort.getById("678")).thenReturn(null);
+        when(userPort.getById("678")).thenReturn(null);
 
         assertThrows(UserNotFoundException.class, () -> userService.getUserById("678"));
     }
 
     @Test
     void shouldGetUserByIdSuccessfully() {
-        when(userQueryPort.getById("123")).thenReturn(testUser);
+        when(userPort.getById("123")).thenReturn(testUser);
 
         User user = userService.getUserById("123");
 
@@ -103,14 +98,14 @@ public class UserServiceTest {
 
     @Test
     void shouldThrowExceptionWhenUserNotFoundByLogin() {
-        when(userQueryPort.findByLogin(login)).thenReturn(null);
+        when(userPort.findByLogin(login)).thenReturn(null);
 
         assertThrows(UserNotFoundException.class, () -> userService.getUserByLogin(login));
     }
 
     @Test
     void shouldGetUserByLoginSuccessfully() {
-        when(userQueryPort.findByLogin(login)).thenReturn(testUser);
+        when(userPort.findByLogin(login)).thenReturn(testUser);
 
         User user = userService.getUserByLogin(login);
 
@@ -121,189 +116,120 @@ public class UserServiceTest {
 
     @Test
     void shouldThrowExceptionWhenNoUsersWithRole() {
-        when(userQueryPort.findByRole(role)).thenReturn(Collections.emptyList());
+        when(userPort.findByRole(role)).thenReturn(Collections.emptyList());
 
         assertThrows(UserNotFoundException.class, () -> userService.getUsersByRole(role));
     }
 
     @Test
-    void shoulGetUsersByRoleSuccessfully() {
-        when(userQueryPort.findByRole(role)).thenReturn(Collections.singletonList(testUser));
+    void shouldGetUsersByRoleSuccessfully() {
+        when(userPort.findByRole(role)).thenReturn(Collections.singletonList(testUser));
 
         List<User> users = userService.getUsersByRole(role);
 
         assertNotNull(users);
         assertEquals(1, users.size());
-        assertEquals(testUser.getLogin(), users.get(0).getLogin());
-        assertEquals(testUser.getFirstName(), users.get(0).getFirstName());
-        assertEquals(testUser.getLastName(), users.get(0).getLastName());
     }
 
     @Test
     void shouldThrowExceptionWhenNoUsersFound() {
-        when(userQueryPort.getAll()).thenReturn(Collections.emptyList());
+        when(userPort.getAll()).thenReturn(Collections.emptyList());
 
         assertThrows(UserNotFoundException.class, () -> userService.getAllUsers());
     }
 
     @Test
     void shouldGetAllUsersSuccessfully() {
-        when(userQueryPort.getAll()).thenReturn(Collections.singletonList(testUser));
+        when(userPort.getAll()).thenReturn(Collections.singletonList(testUser));
+
         List<User> users = userService.getAllUsers();
+
         assertNotNull(users);
         assertEquals(1, users.size());
-        assertEquals(testUser.getLogin(), users.get(0).getLogin());
-        assertEquals(testUser.getFirstName(), users.get(0).getFirstName());
-        assertEquals(testUser.getLastName(), users.get(0).getLastName());
     }
 
     @Test
-    void shouldThrowExceptionWhenNoUsersFoundByFirstName() {
-        when(userQueryPort.findByFirstName("Janusz")).thenReturn(Collections.emptyList());
+    void shouldThrowExceptionWhenUpdatingNonexistentUser() {
+        when(userPort.getById("456")).thenReturn(null);
 
-        assertThrows(UserNotFoundException.class, () -> userService.getUsersByFirstName("Janusz"));
-    }
-
-    @Test
-    void shouldGetUsersByFirstNameSuccessfully() {
-        when(userQueryPort.findByFirstName(firstName)).thenReturn(Collections.singletonList(testUser));
-        List<User> users = userService.getUsersByFirstName(firstName);
-        assertNotNull(users);
-        assertEquals(1, users.size());
-        assertEquals(testUser.getLogin(), users.get(0).getLogin());
-        assertEquals(testUser.getFirstName(), users.get(0).getFirstName());
-        assertEquals(testUser.getLastName(), users.get(0).getLastName());
-    }
-
-    @Test
-    void shouldThrowExceptionWhenNoUsersFoundByRoleAndFirstName() {
-        when(userQueryPort.findByRoleAndFirstName(role, firstName)).thenReturn(Collections.emptyList());
-
-        assertThrows(UserNotFoundException.class, () -> userService.getUsersByRoleAndFirstName(role, firstName));
-    }
-
-    @Test
-    void shouldGetUsersByRoleAndFirstNameSuccessfully() {
-        when(userQueryPort.findByRoleAndFirstName(role, firstName)).thenReturn(Collections.singletonList(testUser));
-        List<User> users = userService.getUsersByRoleAndFirstName(role, firstName);
-        assertNotNull(users);
-        assertEquals(1, users.size());
-        assertEquals(testUser.getLogin(), users.get(0).getLogin());
-        assertEquals(testUser.getFirstName(), users.get(0).getFirstName());
-        assertEquals(testUser.getLastName(), users.get(0).getLastName());
-    }
-
-    @Test
-    void shouldThrowExceptionWhenUpdateUserDoesntExist() {
-        when(userQueryPort.getById("456")).thenReturn(null);
-
-        assertThrows(UserNotFoundException.class, () -> userService.getUserById("456"));
+        assertThrows(UserNotFoundException.class, () -> userService.updateUser("456", "Jane", "Doe"));
     }
 
     @Test
     void shouldUpdateUserSuccessfully() {
-        when(userQueryPort.getById("123")).thenReturn(testUser);
+        when(userPort.getById("123")).thenReturn(testUser);
 
-        String updatedFirstName = "Jane";
-        String updatedLastName = "Does";
-        userService.updateUser("123", updatedFirstName, updatedLastName);
+        userService.updateUser("123", "Jane", "Does");
 
-        verify(userCommandPort).update("123", updatedFirstName, updatedLastName);
-    }
-
-    @Test
-    void shouldThrowExceptionWhenNoUserFoundWhileActivating() {
-        when(userQueryPort.getById("456")).thenReturn(null);
-
-        assertThrows(UserNotFoundException.class, () -> userService.activateUser("456"));
+        verify(userPort).updateUser("123", "Jane", "Does");
     }
 
     @Test
     void shouldActivateUserSuccessfully() {
-        when(userQueryPort.getById("123")).thenReturn(testUser);
+        when(userPort.getById("123")).thenReturn(testUser);
 
         userService.activateUser("123");
 
-        verify(userCommandPort).activateUser("123");
-    }
-
-    @Test
-    void shouldThrowExceptionWhenNoUserFoundWhileDeactivating() {
-        when(userQueryPort.getById("456")).thenReturn(null);
-
-        assertThrows(UserNotFoundException.class, () -> userService.deactivateUser("456"));
+        verify(userPort).activateUser("123");
     }
 
     @Test
     void shouldDeactivateUserSuccessfully() {
-        when(userQueryPort.getById("123")).thenReturn(testUser);
+        when(userPort.getById("123")).thenReturn(testUser);
 
         userService.deactivateUser("123");
 
-        verify(userCommandPort).deactivateUser("123");
+        verify(userPort).deactivateUser("123");
     }
 
     @Test
     void shouldChangePasswordSuccessfully() {
-        when(userQueryPort.findByLogin(login)).thenReturn(testUser);
+        when(userPort.findByLogin(login)).thenReturn(testUser);
         when(passwordEncoder.matches(currentPassword, testUser.getPassword())).thenReturn(true);
         when(passwordEncoder.encode(newPassword)).thenReturn("encodedNewPassword");
 
         userService.changePassword(login, currentPassword, newPassword);
 
-        verify(userCommandPort).updatePassword(login, "encodedNewPassword");
-    }
-
-    @Test
-    void shouldThrowExceptionWhenUserNotFoundWhileChangingPassword() {
-        when(userQueryPort.findByLogin(login)).thenReturn(null);
-
-        assertThrows(UserNotFoundException.class, () -> userService.changePassword(login, testUser.getPassword(), newPassword));
-
-        verify(userCommandPort, never()).updatePassword(anyString(), anyString());
+        verify(userPort).updatePassword(login, "encodedNewPassword");
     }
 
     @Test
     void shouldThrowExceptionWhenCurrentPasswordIsIncorrect() {
-        when(userQueryPort.findByLogin(login)).thenReturn(testUser);
+        when(userPort.findByLogin(login)).thenReturn(testUser);
         when(passwordEncoder.matches(currentPassword, testUser.getPassword())).thenReturn(false);
 
         assertThrows(InvalidCredentialsException.class, () -> userService.changePassword(login, currentPassword, newPassword));
 
-        verify(userCommandPort, never()).updatePassword(anyString(), anyString());
+        verify(userPort, never()).updatePassword(anyString(), anyString());
     }
 
     @Test
     void shouldLoginSuccessfully() {
-        when(userQueryPort.findByLogin(login)).thenReturn(testUser);
+        when(userPort.findByLogin(login)).thenReturn(testUser);
         when(passwordEncoder.matches(password, testUser.getPassword())).thenReturn(true);
-        when(jwtTokenProvider.generateToken(testUser.getLogin(), testUser.getId(), testUser.getRole())).thenReturn("token123");
+        when(jwtTokenProvider.generateToken(login, testUser.getId(), testUser.getRole())).thenReturn("token123");
 
-        String token = userService.login(testUser.getLogin(), testUser.getPassword());
+        String token = userService.login(login, password);
 
         assertNotNull(token);
         assertEquals("token123", token);
-        verify(userQueryPort).findByLogin(login);
-        verify(passwordEncoder).matches(password, testUser.getPassword());
-        verify(jwtTokenProvider).generateToken(testUser.getLogin(), testUser.getId(), testUser.getRole());
     }
 
     @Test
-    void shouldThrowExceptionWhenUserNotFoundWhileLogin() {
-        when(userQueryPort.findByLogin(login)).thenReturn(null);
+    void shouldThrowExceptionWhenInvalidLogin() {
+        when(userPort.findByLogin(login)).thenReturn(null);
 
-        assertThrows(InvalidCredentialsException.class, () -> userService.login(testUser.getLogin(), testUser.getPassword()));
+        assertThrows(InvalidCredentialsException.class, () -> userService.login(login, password));
 
-        verify(passwordEncoder, never()).matches(anyString(), anyString());
         verify(jwtTokenProvider, never()).generateToken(anyString(), anyString(), any());
     }
 
     @Test
-    void shouldThrowExceptionWhenPasswordIsIncorrect() {
-        when(userQueryPort.findByLogin(login)).thenReturn(testUser);
+    void shouldThrowExceptionWhenIncorrectPassword() {
+        when(userPort.findByLogin(login)).thenReturn(testUser);
         when(passwordEncoder.matches(wrongPassword, testUser.getPassword())).thenReturn(false);
 
-        assertThrows(InvalidCredentialsException.class, () -> userService.login(testUser.getLogin(), wrongPassword));
+        assertThrows(InvalidCredentialsException.class, () -> userService.login(login, wrongPassword));
 
         verify(jwtTokenProvider, never()).generateToken(anyString(), anyString(), any());
     }

@@ -1,16 +1,16 @@
 package aggregates;
 
-import infrastructure.UserCommandPort;
+import infrastructure.UserPort;
 import mappers.UserMapper;
 import model.user.Role;
 import model.user.User;
 import org.springframework.stereotype.Component;
-import query.UserQueryPort;
 import repo.UserRepository;
 
 import java.util.List;
+
 @Component
-public class UserRepositoryAdapter implements UserCommandPort, UserQueryPort {
+public class UserRepositoryAdapter implements UserPort {
     private final UserRepository userRepository;
 
     public UserRepositoryAdapter(UserRepository userRepository) {
@@ -18,12 +18,12 @@ public class UserRepositoryAdapter implements UserCommandPort, UserQueryPort {
     }
 
     @Override
-    public User add(User user) {
+    public User addUser(User user) {
         return UserMapper.toUser(userRepository.save(UserMapper.toUserEnt(user)));
     }
 
     @Override
-    public void update(String id, String firstName, String lastName) {
+    public void updateUser(String id, String firstName, String lastName) {
         userRepository.update(id, firstName, lastName);
     }
 

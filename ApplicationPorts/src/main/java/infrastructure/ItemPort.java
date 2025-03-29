@@ -1,10 +1,14 @@
-package query;
+package infrastructure;
 
 import model.item.Item;
 
 import java.util.List;
 
-public interface ItemQueryPort {
+public interface ItemPort {
+    Item addItem(Item item);
+    void updateItem(Item item);
+    void removeItem(String id);
+
     List<Item> getAllItems();
 
     Item getItemById(String id);

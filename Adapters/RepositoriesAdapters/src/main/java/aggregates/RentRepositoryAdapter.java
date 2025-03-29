@@ -1,15 +1,14 @@
 package aggregates;
 
-import infrastructure.RentCommandPort;
+import infrastructure.RentPort;
 import mappers.RentMapper;
 import model.Rent;
 import org.springframework.stereotype.Component;
-import query.RentQueryPort;
 import repo.RentRepository;
 
 import java.util.List;
 @Component
-public class RentRepositoryAdapter implements RentQueryPort, RentCommandPort {
+public class RentRepositoryAdapter implements RentPort {
     private final RentRepository rentRepository;
 
     public RentRepositoryAdapter(RentRepository rentRepository) {

@@ -1,11 +1,20 @@
-package query;
+package infrastructure;
 
 import model.user.Role;
 import model.user.User;
 
 import java.util.List;
 
-public interface UserQueryPort {
+public interface UserPort {
+    User addUser(User user);
+
+    void updateUser(String id, String firstName, String lastName);
+
+    void activateUser(String id);
+
+    void deactivateUser(String id);
+
+    void updatePassword(String id, String newPassword);
     User getById(String id);
 
     List<User> getAll();

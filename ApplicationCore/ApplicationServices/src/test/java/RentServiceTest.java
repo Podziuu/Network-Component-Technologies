@@ -1,6 +1,6 @@
 import exception.*;
-import infrastructure.ItemCommandPort;
-import infrastructure.RentCommandPort;
+import infrastructure.ItemPort;
+import infrastructure.RentPort;
 import model.Rent;
 import model.item.Item;
 import model.item.Music;
@@ -13,7 +13,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import query.RentQueryPort;
 import services.RentService;
 
 import java.time.LocalDateTime;
@@ -27,11 +26,9 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class RentServiceTest {
     @Mock
-    private RentCommandPort rentCommandPort;
+    private RentPort rentPort;
     @Mock
-    private RentQueryPort rentQueryPort;
-    @Mock
-    private ItemCommandPort itemCommandPort;
+    private ItemPort itemPort;
 
     @InjectMocks
     private RentService rentService;
@@ -48,45 +45,45 @@ class RentServiceTest {
 
     @Test
     void shouldRentItemSuccessfully() {
-        doNothing().when(itemCommandPort).updateItem(any(Item.class));
-        when(rentCommandPort.add(any(Rent.class))).thenReturn(rent);
+        doNothing().when(itemPort).updateItem(any(Item.class));
+        when(rentPort.add(any(Rent.class))).thenReturn(rent);
 
-        Rent result = rentService.rentItem(rent);
+        Rent result = rentService.add(rent);
 
         assertNotNull(result);
         assertNotNull(result.getBeginTime());
         assertNull(result.getEndTime());
         assertEquals(result.getRentCost(), rent.getRentCost());
         assertFalse(result.getItem().isAvailable());
-        verify(rentCommandPort).add(any(Rent.class));
+        verify(rentPort).add(any(Rent.class));
     }
 
     @Test
     void shouldThrowExceptionWhenUserNotFoundWhileRenting() {
         rent.setClient(null);
 
-        assertThrows(UserNotFoundException.class, () -> rentService.rentItem(rent));
+        assertThrows(UserNotFoundException.class, () -> rentService.add(rent));
     }
 
     @Test
     void shouldThrowExceptionWhenItemNotFoundWhileRenting() {
         rent.setItem(null);
 
-        assertThrows(ItemNotFoundException.class, () -> rentService.rentItem(rent));
+        assertThrows(ItemNotFoundException.class, () -> rentService.add(rent));
     }
 
     @Test
-    void shouldThrowErrorWhenItemAlreadyRenterWhileRenting() {
+    void shouldThrowErrorWhenItemAlreadyRentedWhileRenting() {
         music.setAvailable(false);
 
-        assertThrows(ItemAlreadyRentedException.class, () -> rentService.rentItem(rent));
+        assertThrows(ItemAlreadyRentedException.class, () -> rentService.add(rent));
     }
 
     @Test
     void shouldGetRentByIdSuccessfully() {
-        when(rentQueryPort.getById("rentId")).thenReturn(rent);
+        when(rentPort.getById("rentId")).thenReturn(rent);
 
-        Rent result = rentService.getRentById("rentId");
+        Rent result = rentService.getById("rentId");
 
         assertNotNull(result);
         assertEquals(result.getRentCost(), rent.getRentCost());
@@ -94,162 +91,120 @@ class RentServiceTest {
 
     @Test
     void shouldThrowExceptionWhenRentNotFoundById() {
-        when(rentQueryPort.getById("rentId")).thenReturn(null);
+        when(rentPort.getById("rentId")).thenReturn(null);
 
-        assertThrows(RentNotFoundException.class, () -> rentService.getRentById("rentId"));
+        assertThrows(RentNotFoundException.class, () -> rentService.getById("rentId"));
     }
 
     @Test
     void shouldReturnRentSuccessfully() {
-        when(rentQueryPort.getById("rentId")).thenReturn(rent);
-        doNothing().when(rentCommandPort).update(any(Rent.class));
+        when(rentPort.getById("rentId")).thenReturn(rent);
+        doNothing().when(rentPort).update(any(Rent.class));
 
         rentService.returnRent("rentId");
 
-        verify(itemCommandPort).updateItem(any(Item.class));
-        verify(rentCommandPort).update(any(Rent.class));
+        verify(itemPort).updateItem(any(Item.class));
+        verify(rentPort).update(any(Rent.class));
     }
 
     @Test
     void shouldThrowExceptionWhenRentNotFoundWhileReturning() {
-        when(rentQueryPort.getById("rentId")).thenReturn(null);
+        when(rentPort.getById("rentId")).thenReturn(null);
 
         assertThrows(RentOperationException.class, () -> rentService.returnRent("rentId"));
     }
 
     @Test
-    void shouldGetActiveRentSuccessfully() {
-        when(rentQueryPort.getActiveRents()).thenReturn(Collections.singletonList(rent));
+    void shouldGetActiveRentsSuccessfully() {
+        when(rentPort.getActiveRents()).thenReturn(Collections.singletonList(rent));
 
         List<Rent> result = rentService.getActiveRents();
 
         assertNotNull(result);
-        verify(rentQueryPort).getActiveRents();
+        verify(rentPort).getActiveRents();
     }
 
     @Test
     void shouldThrowExceptionWhenNoRentsFoundWhileGetActiveRents() {
-        when(rentQueryPort.getActiveRents()).thenReturn(null);
+        when(rentPort.getActiveRents()).thenReturn(null);
 
         assertThrows(RentNotFoundException.class, () -> rentService.getActiveRents());
     }
 
     @Test
-    void shouldGetInactiveRentSuccessfully() {
-        when(rentQueryPort.getInactiveRents()).thenReturn(Collections.singletonList(rent));
+    void shouldGetInactiveRentsSuccessfully() {
+        when(rentPort.getInactiveRents()).thenReturn(Collections.singletonList(rent));
 
         List<Rent> result = rentService.getInactiveRents();
 
         assertNotNull(result);
-        verify(rentQueryPort).getInactiveRents();
+        verify(rentPort).getInactiveRents();
     }
 
     @Test
     void shouldThrowExceptionWhenNoRentsFoundWhileGetInactiveRents() {
-        when(rentQueryPort.getInactiveRents()).thenReturn(null);
+        when(rentPort.getInactiveRents()).thenReturn(null);
 
         assertThrows(RentNotFoundException.class, () -> rentService.getInactiveRents());
     }
 
     @Test
     void shouldGetRentsByItemSuccessfully() {
-        when(rentQueryPort.getByItemId("itemId")).thenReturn(Collections.singletonList(rent));
+        when(rentPort.getByItemId("itemId")).thenReturn(Collections.singletonList(rent));
 
-        List<Rent> result = rentService.getRentsByItem("itemId");
+        List<Rent> result = rentService.getByItemId("itemId");
 
         assertNotNull(result);
-        verify(rentQueryPort).getByItemId("itemId");
-    }
-
-    @Test
-    void shouldThrowExceptionWhenNoRentsFoundWhileGetRentsByItemId() {
-        when(rentQueryPort.getByItemId("itemId")).thenReturn(null);
-
-        assertThrows(RentNotFoundException.class, () -> rentService.getRentsByItem("itemId"));
+        verify(rentPort).getByItemId("itemId");
     }
 
     @Test
     void shouldGetActiveRentsByItemSuccessfully() {
-        when(rentQueryPort.findActiveRentsByItemId("itemId")).thenReturn(Collections.singletonList(rent));
+        when(rentPort.findActiveRentsByItemId("itemId")).thenReturn(Collections.singletonList(rent));
 
-        List<Rent> result = rentService.getActiveRentsByItem("itemId");
+        List<Rent> result = rentService.findActiveRentsByItemId("itemId");
 
         assertNotNull(result);
-        verify(rentQueryPort).findActiveRentsByItemId("itemId");
-    }
-
-    @Test
-    void shouldThrowExceptionWhenNoRentsFoundWhileGetActiveRentsByItem() {
-        when(rentQueryPort.findActiveRentsByItemId("itemId")).thenReturn(null);
-
-        assertThrows(RentNotFoundException.class, () -> rentService.getActiveRentsByItem("itemId"));
+        verify(rentPort).findActiveRentsByItemId("itemId");
     }
 
     @Test
     void shouldGetInactiveRentsByItemSuccessfully() {
-        when(rentQueryPort.findInactiveRentsByItemId("itemId")).thenReturn(Collections.singletonList(rent));
+        when(rentPort.findInactiveRentsByItemId("itemId")).thenReturn(Collections.singletonList(rent));
 
-        List<Rent> result = rentService.getInactiveRentsByItem("itemId");
+        List<Rent> result = rentService.findInactiveRentsByItemId("itemId");
 
         assertNotNull(result);
-        verify(rentQueryPort).findInactiveRentsByItemId("itemId");
-    }
-
-    @Test
-    void shouldThrowExceptionWhenNoRentsFoundWhileGetInactiveRentsByItem() {
-        when(rentQueryPort.findInactiveRentsByItemId("itemId")).thenReturn(null);
-
-        assertThrows(RentNotFoundException.class, () -> rentService.getInactiveRentsByItem("itemId"));
+        verify(rentPort).findInactiveRentsByItemId("itemId");
     }
 
     @Test
     void shouldGetRentsByClientSuccessfully() {
-        when(rentQueryPort.getByClientId("clientId")).thenReturn(Collections.singletonList(rent));
+        when(rentPort.getByClientId("clientId")).thenReturn(Collections.singletonList(rent));
 
-        List<Rent> result = rentService.getRentsByClient("clientId");
+        List<Rent> result = rentService.getByClientId("clientId");
 
         assertNotNull(result);
-        verify(rentQueryPort).getByClientId("clientId");
-    }
-
-    @Test
-    void shouldThrowExceptionWhenNoRentsFoundWhileGetRentsByClient() {
-        when(rentQueryPort.getByClientId("clientId")).thenReturn(null);
-
-        assertThrows(RentNotFoundException.class, () -> rentService.getRentsByClient("clientId"));
+        verify(rentPort).getByClientId("clientId");
     }
 
     @Test
     void shouldGetActiveRentsByClientSuccessfully() {
-        when(rentQueryPort.findActiveRentsByClientId("clientId")).thenReturn(Collections.singletonList(rent));
+        when(rentPort.findActiveRentsByClientId("clientId")).thenReturn(Collections.singletonList(rent));
 
-        List<Rent> result = rentService.getActiveRentsByClient("clientId");
+        List<Rent> result = rentService.findActiveRentsByClientId("clientId");
 
         assertNotNull(result);
-        verify(rentQueryPort).findActiveRentsByClientId("clientId");
-    }
-
-    @Test
-    void shouldThrowExceptionWhenNoRentsFoundWhileGetActiveRentsByClient() {
-        when(rentQueryPort.findActiveRentsByClientId("clientId")).thenReturn(null);
-
-        assertThrows(RentNotFoundException.class, () -> rentService.getActiveRentsByClient("clientId"));
+        verify(rentPort).findActiveRentsByClientId("clientId");
     }
 
     @Test
     void shouldGetInactiveRentsByClientSuccessfully() {
-        when(rentQueryPort.findInactiveRentsByClientId("clientId")).thenReturn(Collections.singletonList(rent));
+        when(rentPort.findInactiveRentsByClientId("clientId")).thenReturn(Collections.singletonList(rent));
 
-        List<Rent> result = rentService.getInactiveRentsByClient("clientId");
+        List<Rent> result = rentService.findInactiveRentsByClientId("clientId");
 
         assertNotNull(result);
-        verify(rentQueryPort).findInactiveRentsByClientId("clientId");
-    }
-
-    @Test
-    void shouldThrowExceptionWhenNoRentsFoundWhileGetInactiveRentsByClient() {
-        when(rentQueryPort.findInactiveRentsByClientId("clientId")).thenReturn(null);
-
-        assertThrows(RentNotFoundException.class, () -> rentService.getInactiveRentsByClient("clientId"));
+        verify(rentPort).findInactiveRentsByClientId("clientId");
     }
 }
