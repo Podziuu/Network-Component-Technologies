@@ -27,13 +27,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractMongoEntity implements AutoCloseable {
-    private ConnectionString connectionString = new ConnectionString(
-            "mongodb://mongodb1:27017,mongodb2:27018,mongodb3:27019/?replicaSet=replica_set_single");
-    private MongoCredential credential = MongoCredential.createCredential(
-            "admin",
-            "admin",
-            "adminpassword".toCharArray()
-    );
+    private final ConnectionString connectionString;
+    private final MongoCredential credential;
+
+//    private ConnectionString connectionString = new ConnectionString(
+//            "mongodb://mongodb1:27017,mongodb2:27018,mongodb3:27019/?replicaSet=replica_set_single");
+//    private MongoCredential credential = MongoCredential.createCredential(
+//            "admin",
+//            "admin",
+//            "adminpassword".toCharArray()
+//    );
+
+    protected AbstractMongoEntity(String connectionStringUri) {
+        this.connectionString = new ConnectionString(connectionStringUri);
+        this.credential = MongoCredential.createCredential(
+                "admin", "admin", "adminpassword".toCharArray()
+        );
+        initDbConnection();
+    }
+
+    public MongoDatabase getDatabase() {
+        return database;
+    }
 
     private CodecRegistry codecRegistry = CodecRegistries.fromProviders(
             PojoCodecProvider.builder()

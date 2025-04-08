@@ -1,32 +1,40 @@
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-import entities.RentEnt;
 import entities.item.ComicsEnt;
 import entities.item.ItemEnt;
 import entities.item.MovieEnt;
 import entities.item.MusicEnt;
-import entities.user.UserEnt;
 import model.item.MusicGenre;
 import org.bson.types.ObjectId;
 import org.junit.jupiter.api.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Import;
+import org.testcontainers.containers.MongoDBContainer;
+import org.testcontainers.junit.jupiter.Container;
 import repo.ItemRepository;
-
-
 import repo.MongoEntity;
 
-
+//@SpringBootTest
+@Import(TestMongoConfig.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ItemRepositoryTest {
-    private static MongoEntity mongoEntity;
-    private static MongoDatabase database;
-    private static MongoCollection<ItemEnt> itemCollection;
+//    private static MongoEntity mongoEntity;
+//    private static MongoDatabase database;
+//    private static MongoCollection<ItemEnt> itemCollection;
     private static ItemRepository itemRepository;
+
+    @Container
+    static final MongoDBContainer mongoContainer = new MongoDBContainer("mongo:6.0")
+            .withReuse(true)
+            .withCommand("--replSet", "rs0");
 
     @BeforeAll
     static void setUp() {
-        mongoEntity = new MongoEntity();
-        database = mongoEntity.getDatabase();
-        itemCollection = database.getCollection("items", ItemEnt.class);
-        itemRepository = new ItemRepository();
+        mongoContainer.start();
+        String uri = mongoContainer.getReplicaSetUrl();
+//        mongoEntity = new MongoEntity();
+//        database = mongoEntity.getDatabase();
+//        itemCollection = database.getCollection("items", ItemEnt.class);
+        itemRepository = new ItemRepository(new MongoEntity(uri));
     }
 
     @Test
@@ -90,17 +98,17 @@ public class ItemRepositoryTest {
         Assertions.assertFalse(itemEnt.isAvailable());
     }
 
-    @AfterAll
-    static void tearDown() throws Exception {
-        mongoEntity.close();
-    }
-    @AfterEach
-    public void dropCollection() {
-        MongoCollection<RentEnt> rentCollection = mongoEntity.getDatabase().getCollection("rent", RentEnt.class);
-        MongoCollection<ItemEnt> itemCollection = mongoEntity.getDatabase().getCollection("item", ItemEnt.class);
-        MongoCollection<UserEnt> userCollection = mongoEntity.getDatabase().getCollection("user", UserEnt.class);
-        itemCollection.drop();
-        userCollection.drop();
-        rentCollection.drop();
-    }
+//    @AfterAll
+//    static void tearDown() throws Exception {
+//        mongoEntity.close();
+//    }
+//    @AfterEach
+//    public void dropCollection() {
+//        MongoCollection<RentEnt> rentCollection = mongoEntity.getDatabase().getCollection("rent", RentEnt.class);
+//        MongoCollection<ItemEnt> itemCollection = mongoEntity.getDatabase().getCollection("item", ItemEnt.class);
+//        MongoCollection<UserEnt> userCollection = mongoEntity.getDatabase().getCollection("user", UserEnt.class);
+//        itemCollection.drop();
+//        userCollection.drop();
+//        rentCollection.drop();
+//    }
 }

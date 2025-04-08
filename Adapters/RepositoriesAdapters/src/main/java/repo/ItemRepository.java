@@ -6,6 +6,7 @@ import com.mongodb.client.model.Filters;
 import com.mongodb.client.result.InsertOneResult;
 import entities.item.ItemEnt;
 import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.context.annotation.ApplicationScope;
 
@@ -14,12 +15,13 @@ import java.util.List;
 
 @Repository
 @ApplicationScope
-public class ItemRepository extends AbstractMongoEntity {
+public class ItemRepository {
     private final MongoCollection<ItemEnt> itemCollection;
 
-    public ItemRepository() {
-        initDbConnection();
-        this.itemCollection = database.getCollection("items", ItemEnt.class);
+    @Autowired
+    public ItemRepository(MongoEntity mongoEntity) {
+//        initDbConnection();
+        this.itemCollection = mongoEntity.getDatabase().getCollection("items", ItemEnt.class);
     }
 
     public ItemEnt addItem(ItemEnt item) {
@@ -58,10 +60,10 @@ public class ItemRepository extends AbstractMongoEntity {
         itemCollection.deleteOne(object);
     }
 
-    @Override
-    public void close() throws Exception {
-        mongoClient.close();
-    }
+//    @Override
+//    public void close() throws Exception {
+//        mongoClient.close();
+//    }
 
     public List<ItemEnt> getAllItems() {
         return itemCollection.find().into(new ArrayList<>());

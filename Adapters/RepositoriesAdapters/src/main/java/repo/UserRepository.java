@@ -9,6 +9,7 @@ import entities.user.UserEnt;
 import model.user.Role;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -18,18 +19,19 @@ import static com.mongodb.client.model.Updates.combine;
 import static com.mongodb.client.model.Updates.set;
 
 @Repository
-public class UserRepository extends AbstractMongoEntity {
+public class UserRepository {
     private final MongoCollection<UserEnt> userCollection;
 
-    public UserRepository() {
-        initDbConnection();
-        userCollection = database.getCollection("users", UserEnt.class);
+    @Autowired
+    public UserRepository(MongoEntity mongoEntity) {
+//        initDbConnection();
+        userCollection = mongoEntity.getDatabase().getCollection("users", UserEnt.class);
     }
 
-    @Override
-    public void close() {
-        mongoClient.close();
-    }
+//    @Override
+//    public void close() {
+//        mongoClient.close();
+//    }
 
     public UserEnt save(UserEnt user) {
         InsertOneResult result = userCollection.insertOne(user);

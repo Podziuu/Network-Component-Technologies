@@ -5,11 +5,12 @@ import com.mongodb.client.MongoDatabase;
 
 public class MongoEntity extends AbstractMongoEntity {
     public MongoEntity() {
-        initDbConnection();
+//        initDbConnection();
+        super("mongodb://mongodb1:27017,mongodb2:27018,mongodb3:27019/?replicaSet=replica_set_single");
     }
 
-    public MongoDatabase getDatabase() {
-        return database;
+    public MongoEntity(String uri) {
+        super(uri);
     }
 
     public MongoClient getMongoClient() {

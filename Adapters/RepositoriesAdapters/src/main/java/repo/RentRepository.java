@@ -6,18 +6,20 @@ import com.mongodb.client.model.Filters;
 import com.mongodb.client.result.InsertOneResult;
 import entities.RentEnt;
 import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class RentRepository extends AbstractMongoEntity {
+public class RentRepository {
     private final MongoCollection<RentEnt> rentCollection;
 
-    public RentRepository() {
-        initDbConnection();
-        this.rentCollection = database.getCollection("rents", RentEnt.class);
+    @Autowired
+    public RentRepository(MongoEntity mongoEntity) {
+//        initDbConnection();
+        this.rentCollection = mongoEntity.getDatabase().getCollection("rents", RentEnt.class);
     }
 
     public RentEnt addRent(RentEnt rent) {
@@ -88,8 +90,8 @@ public class RentRepository extends AbstractMongoEntity {
         )).into(new ArrayList<>());
     }
 
-    @Override
-    public void close() {
-        mongoClient.close();
-    }
+//    @Override
+//    public void close() {
+//        mongoClient.close();
+//    }
 }
