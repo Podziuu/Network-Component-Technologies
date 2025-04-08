@@ -8,33 +8,18 @@ import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
-import org.testcontainers.containers.MongoDBContainer;
-import org.testcontainers.junit.jupiter.Container;
 import repo.ItemRepository;
-import repo.MongoEntity;
 
-//@SpringBootTest
+@SpringBootTest(classes = ItemRepository.class)
 @Import(TestMongoConfig.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ItemRepositoryTest {
-//    private static MongoEntity mongoEntity;
-//    private static MongoDatabase database;
-//    private static MongoCollection<ItemEnt> itemCollection;
-    private static ItemRepository itemRepository;
+    @Autowired
+    private ItemRepository itemRepository;
 
-    @Container
-    static final MongoDBContainer mongoContainer = new MongoDBContainer("mongo:6.0")
-            .withReuse(true)
-            .withCommand("--replSet", "rs0");
-
-    @BeforeAll
-    static void setUp() {
-        mongoContainer.start();
-        String uri = mongoContainer.getReplicaSetUrl();
-//        mongoEntity = new MongoEntity();
-//        database = mongoEntity.getDatabase();
-//        itemCollection = database.getCollection("items", ItemEnt.class);
-        itemRepository = new ItemRepository(new MongoEntity(uri));
+    @AfterAll
+    static void tearDown() {
+        System.clearProperty("TestEnvironment");
     }
 
     @Test
@@ -97,18 +82,4 @@ public class ItemRepositoryTest {
         ItemEnt itemEnt = itemRepository.getItemById(itemId.toString());
         Assertions.assertFalse(itemEnt.isAvailable());
     }
-
-//    @AfterAll
-//    static void tearDown() throws Exception {
-//        mongoEntity.close();
-//    }
-//    @AfterEach
-//    public void dropCollection() {
-//        MongoCollection<RentEnt> rentCollection = mongoEntity.getDatabase().getCollection("rent", RentEnt.class);
-//        MongoCollection<ItemEnt> itemCollection = mongoEntity.getDatabase().getCollection("item", ItemEnt.class);
-//        MongoCollection<UserEnt> userCollection = mongoEntity.getDatabase().getCollection("user", UserEnt.class);
-//        itemCollection.drop();
-//        userCollection.drop();
-//        rentCollection.drop();
-//    }
 }

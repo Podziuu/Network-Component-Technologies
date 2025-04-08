@@ -30,19 +30,16 @@ public abstract class AbstractMongoEntity implements AutoCloseable {
     private final ConnectionString connectionString;
     private final MongoCredential credential;
 
-//    private ConnectionString connectionString = new ConnectionString(
-//            "mongodb://mongodb1:27017,mongodb2:27018,mongodb3:27019/?replicaSet=replica_set_single");
-//    private MongoCredential credential = MongoCredential.createCredential(
-//            "admin",
-//            "admin",
-//            "adminpassword".toCharArray()
-//    );
-
     protected AbstractMongoEntity(String connectionStringUri) {
+        boolean isTestEnvironment = Boolean.getBoolean("TestEnvironment");
         this.connectionString = new ConnectionString(connectionStringUri);
-        this.credential = MongoCredential.createCredential(
-                "admin", "admin", "adminpassword".toCharArray()
-        );
+        if (!isTestEnvironment) {
+            this.credential = MongoCredential.createCredential(
+                    "admin", "admin", "adminpassword".toCharArray()
+            );
+        } else {
+            this.credential = null;
+        }
         initDbConnection();
     }
 
@@ -63,15 +60,18 @@ public abstract class AbstractMongoEntity implements AutoCloseable {
     protected MongoDatabase database;
 
     protected void initDbConnection() {
-        MongoClientSettings settings = MongoClientSettings.builder()
-                .credential(credential)
+        MongoClientSettings.Builder settingsBuilder = MongoClientSettings.builder()
                 .applyConnectionString(connectionString)
                 .uuidRepresentation(UuidRepresentation.STANDARD)
                 .codecRegistry(CodecRegistries.fromRegistries(
                         MongoClientSettings.getDefaultCodecRegistry(),
                         codecRegistry
-                ))
-                .build();
+                ));
+        if (credential != null) {
+            settingsBuilder.credential(credential);
+        }
+
+        MongoClientSettings settings = settingsBuilder.build();
         mongoClient = MongoClients.create(settings);
         database = mongoClient.getDatabase("mediastore");
         if (!database.listCollectionNames().into(new ArrayList<>()).contains("users")) {

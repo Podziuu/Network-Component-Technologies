@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/TestMongoConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/AbstractMongoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/AbstractMongoEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/ItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/MongoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/MongoEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/RentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/RentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/ItemRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/ItemRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/RentRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/RentRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/TestMongoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/TestMongoConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/UserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/UserRepositoryTest.java" afterDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
@@ -47,79 +42,79 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.EntityMapperTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EntityMapperTest.movieMapperTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ItemRepositoryTest.addItemTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemRepositoryTest.setUnavailableTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldAddMusicItem.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldGetAllItems.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldGetItemById.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldRemoveItem.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldSetItemUnavailable.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldThrowExceptionWhenItemNotFoundWhenSetUnavailable.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldUpdateMusicItemSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentRepositoryTest.rentItemTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldGetRentByIdSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldRentItemSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldReturnRentSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldThrowErrorWhenItemAlreadyRenterWhileRenting.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldThrowExceptionWhenItemNotFoundWhileRenting.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldThrowExceptionWhenNoRentsFoundWhileGetActiveRents.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldThrowExceptionWhenRentNotFoundWhileReturning.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldThrowExceptionWhenUserNotFoundWhileRenting.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldAddUserSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldChangePasswordSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldGetUserByIdSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldLoginSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldThrowExceptionWhenCurrentPasswordIsIncorrect.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldThrowExceptionWhenNoUsersWithRole.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldThrowExceptionWhenPasswordIsIncorrect.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldThrowExceptionWhenUserAlreadyExists.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldThrowExceptionWhenUserAlreadyExistsWhileAdding.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldThrowExceptionWhenUserNotFound.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Adapters [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Adapters [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RepositoriesAdapters [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RepositoriesAdapters [install].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.App.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.RestApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;test__containers&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/plewkowicz/Studia/sem6/MKWA_SR_1015_06&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.EntityMapperTest.executor": "Run",
+    "JUnit.EntityMapperTest.movieMapperTest.executor": "Debug",
+    "JUnit.ItemRepositoryTest.addItemTest.executor": "Run",
+    "JUnit.ItemRepositoryTest.executor": "Run",
+    "JUnit.ItemRepositoryTest.setUnavailableTest.executor": "Run",
+    "JUnit.ItemServiceTest.executor": "Run",
+    "JUnit.ItemServiceTest.shouldAddMusicItem.executor": "Run",
+    "JUnit.ItemServiceTest.shouldGetAllItems.executor": "Run",
+    "JUnit.ItemServiceTest.shouldGetItemById.executor": "Run",
+    "JUnit.ItemServiceTest.shouldRemoveItem.executor": "Run",
+    "JUnit.ItemServiceTest.shouldSetItemUnavailable.executor": "Run",
+    "JUnit.ItemServiceTest.shouldThrowExceptionWhenItemNotFoundWhenSetUnavailable.executor": "Run",
+    "JUnit.ItemServiceTest.shouldUpdateMusicItemSuccessfully.executor": "Run",
+    "JUnit.RentRepositoryTest.executor": "Run",
+    "JUnit.RentRepositoryTest.rentItemTest.executor": "Run",
+    "JUnit.RentServiceTest.executor": "Run",
+    "JUnit.RentServiceTest.shouldGetRentByIdSuccessfully.executor": "Run",
+    "JUnit.RentServiceTest.shouldRentItemSuccessfully.executor": "Run",
+    "JUnit.RentServiceTest.shouldReturnRentSuccessfully.executor": "Run",
+    "JUnit.RentServiceTest.shouldThrowErrorWhenItemAlreadyRenterWhileRenting.executor": "Run",
+    "JUnit.RentServiceTest.shouldThrowExceptionWhenItemNotFoundWhileRenting.executor": "Run",
+    "JUnit.RentServiceTest.shouldThrowExceptionWhenNoRentsFoundWhileGetActiveRents.executor": "Run",
+    "JUnit.RentServiceTest.shouldThrowExceptionWhenRentNotFoundWhileReturning.executor": "Run",
+    "JUnit.RentServiceTest.shouldThrowExceptionWhenUserNotFoundWhileRenting.executor": "Run",
+    "JUnit.UserRepositoryTest.executor": "Run",
+    "JUnit.UserServiceTest.executor": "Run",
+    "JUnit.UserServiceTest.shouldAddUserSuccessfully.executor": "Run",
+    "JUnit.UserServiceTest.shouldChangePasswordSuccessfully.executor": "Run",
+    "JUnit.UserServiceTest.shouldGetUserByIdSuccessfully.executor": "Run",
+    "JUnit.UserServiceTest.shouldLoginSuccessfully.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenCurrentPasswordIsIncorrect.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenNoUsersWithRole.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenPasswordIsIncorrect.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenUserAlreadyExists.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenUserAlreadyExistsWhileAdding.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenUserNotFound.executor": "Run",
+    "Maven.Adapters [compile].executor": "Run",
+    "Maven.Adapters [install].executor": "Run",
+    "Maven.Mediastore [clean].executor": "Run",
+    "Maven.Mediastore [compile].executor": "Run",
+    "Maven.Mediastore [install].executor": "Run",
+    "Maven.Mediastore [site].executor": "Run",
+    "Maven.Mediastore [test].executor": "Run",
+    "Maven.RepositoriesAdapters [clean].executor": "Run",
+    "Maven.RepositoriesAdapters [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.App.executor": "Run",
+    "Spring Boot.Application.executor": "Run",
+    "Spring Boot.RestApplication.executor": "Run",
+    "git-widget-placeholder": "test__containers",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/plewkowicz/Studia/sem6/MKWA_SR_1015_06",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06\ApplicationCore\ApplicationServices\src\main\java" />
@@ -146,7 +141,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ItemRepositoryTest">
+  <component name="RunManager" selected="JUnit.UserRepositoryTest">
     <configuration name="ItemRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RepositoriesAdapters" />
       <option name="PACKAGE_NAME" value="" />
@@ -156,12 +151,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemServiceTest.shouldUpdateMusicItemSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ApplicationServices" />
+    <configuration name="RentRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RepositoriesAdapters" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ItemServiceTest" />
-      <option name="METHOD_NAME" value="shouldUpdateMusicItemSuccessfully" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="RentRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -186,10 +180,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ApplicationServices" />
+    <configuration name="UserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RepositoriesAdapters" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="UserRepositoryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -204,11 +198,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserRepositoryTest" />
+        <item itemvalue="JUnit.RentRepositoryTest" />
         <item itemvalue="JUnit.ItemRepositoryTest" />
         <item itemvalue="JUnit.RentServiceTest.shouldThrowExceptionWhenNoRentsFoundWhileGetActiveRents" />
         <item itemvalue="JUnit.RentServiceTest.shouldThrowExceptionWhenRentNotFoundWhileReturning" />
-        <item itemvalue="JUnit.UserServiceTest" />
-        <item itemvalue="JUnit.ItemServiceTest.shouldUpdateMusicItemSuccessfully" />
       </list>
     </recent_temporary>
   </component>
