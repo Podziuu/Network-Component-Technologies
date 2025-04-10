@@ -4,6 +4,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.result.InsertOneResult;
 import com.mongodb.client.result.UpdateResult;
+import entities.RentEnt;
 import entities.user.RoleEnt;
 import entities.user.UserEnt;
 import model.user.Role;
@@ -22,8 +23,13 @@ public class UserRepository extends AbstractMongoEntity {
     private final MongoCollection<UserEnt> userCollection;
 
     public UserRepository() {
-        initDbConnection();
+        super();
         userCollection = database.getCollection("users", UserEnt.class);
+    }
+
+    public UserRepository(String connectionString, String dbName) {
+        super(connectionString, dbName);
+        this.userCollection = database.getCollection("users", UserEnt.class);
     }
 
     @Override

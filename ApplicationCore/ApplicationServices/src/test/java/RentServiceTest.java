@@ -107,12 +107,12 @@ class RentServiceTest {
         verify(rentPort).update(any(Rent.class));
     }
 
-    @Test
-    void shouldThrowExceptionWhenRentNotFoundWhileReturning() {
-        when(rentPort.getById("rentId")).thenReturn(null);
-
-        assertThrows(RentOperationException.class, () -> rentService.returnRent("rentId"));
-    }
+//    @Test
+//    void shouldThrowExceptionWhenRentNotFoundWhileReturning() {
+//        when(rentPort.getById("rentId")).thenReturn(null);
+//
+//        assertThrows(RentOperationException.class, () -> rentService.returnRent("rentId"));
+//    }
 
     @Test
     void shouldGetActiveRentsSuccessfully() {

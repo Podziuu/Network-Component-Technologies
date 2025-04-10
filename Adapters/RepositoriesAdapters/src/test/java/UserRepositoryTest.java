@@ -1,24 +1,25 @@
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.result.UpdateResult;
-import entities.item.ItemEnt;
-import entities.item.MovieEnt;
 import entities.user.ClientEnt;
 import entities.user.UserEnt;
 import org.bson.types.ObjectId;
 import org.junit.jupiter.api.*;
-import repo.ItemRepository;
-import repo.MongoEntity;
+import org.testcontainers.shaded.org.checkerframework.checker.units.qual.A;
 import repo.UserRepository;
 
-public class UserRepositoryTest {
-    private static MongoEntity mongoEntity;
+public class UserRepositoryTest extends AbstractMongoDBTest {
     private static UserRepository userRepository;
 
     @BeforeAll
-    static void setUp() {
-        mongoEntity = new MongoEntity();
-        userRepository = new UserRepository();
+    public static void setup() {
+        userRepository = new UserRepository(
+                mongoDBContainer.getReplicaSetUrl(),
+                "test-mediastore"
+        );
+    }
+
+    @AfterEach
+    public void teardown() {
+        userRepository.getDatabase().getCollection("users").drop();
     }
 
     @Test
@@ -143,9 +144,9 @@ public class UserRepositoryTest {
     }
 
 
-    @AfterEach
-    public void dropCollection() {
-        MongoCollection<UserEnt> userCollection = mongoEntity.getDatabase().getCollection("users", UserEnt.class);
-        userCollection.drop();
-    }
+//    @AfterEach
+//    public void dropCollection() {
+//        MongoCollection<UserEnt> userCollection = mongoDBContainer.getDatabase().getCollection("users", UserEnt.class);
+//        userCollection.drop();
+//    }
 }

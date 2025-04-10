@@ -5,6 +5,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.result.InsertOneResult;
 import entities.RentEnt;
+import entities.item.ItemEnt;
 import org.bson.types.ObjectId;
 import org.springframework.stereotype.Repository;
 
@@ -16,7 +17,12 @@ public class RentRepository extends AbstractMongoEntity {
     private final MongoCollection<RentEnt> rentCollection;
 
     public RentRepository() {
-        initDbConnection();
+        super();
+        this.rentCollection = database.getCollection("rents", RentEnt.class);
+    }
+
+    public RentRepository(String connectionString, String dbName) {
+        super(connectionString, dbName);
         this.rentCollection = database.getCollection("rents", RentEnt.class);
     }
 

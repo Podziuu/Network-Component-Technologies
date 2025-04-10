@@ -5,25 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/ui/IItemPort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/ui/IRentPort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/ui/IUserPort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/ItemRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/ItemRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/RentRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/RentRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/UserRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/UserRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/ItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/AbstractMongoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/AbstractMongoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/ItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/MongoEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/RentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/RentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/ItemRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/ItemRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/RentRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/RentRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/UserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/UserRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/RentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/RentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/ItemServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/ItemServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/RentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/RentServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/UserServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/ItemCommandPort.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/RentCommandPort.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/UserCommandPort.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/query/ItemQueryPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/ItemPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/query/RentQueryPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/RentPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/query/UserQueryPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/UserPort.java" afterDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +105,7 @@
     "Spring Boot.App.executor": "Run",
     "Spring Boot.Application.executor": "Run",
     "Spring Boot.RestApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "test__containers2",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/plewkowicz/Studia/sem6/MKWA_SR_1015_06",
@@ -151,23 +145,30 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RentServiceTest.shouldThrowExceptionWhenNoRentsFoundWhileGetActiveRents">
-    <configuration name="ItemServiceTest.shouldRemoveItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ApplicationServices" />
+  <component name="RunManager" selected="JUnit.UserRepositoryTest">
+    <configuration name="ItemRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RepositoriesAdapters" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ItemServiceTest" />
-      <option name="METHOD_NAME" value="shouldRemoveItem" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="ItemRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemServiceTest.shouldUpdateMusicItemSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RentRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RepositoriesAdapters" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RentRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RentServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ApplicationServices" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ItemServiceTest" />
-      <option name="METHOD_NAME" value="shouldUpdateMusicItemSuccessfully" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="RentServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -182,20 +183,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RentServiceTest.shouldThrowExceptionWhenRentNotFoundWhileReturning" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ApplicationServices" />
+    <configuration name="UserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RepositoriesAdapters" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RentServiceTest" />
-      <option name="METHOD_NAME" value="shouldThrowExceptionWhenRentNotFoundWhileReturning" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ApplicationServices" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="UserRepositoryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -210,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserRepositoryTest" />
+        <item itemvalue="JUnit.RentServiceTest" />
+        <item itemvalue="JUnit.RentRepositoryTest" />
+        <item itemvalue="JUnit.ItemRepositoryTest" />
         <item itemvalue="JUnit.RentServiceTest.shouldThrowExceptionWhenNoRentsFoundWhileGetActiveRents" />
-        <item itemvalue="JUnit.RentServiceTest.shouldThrowExceptionWhenRentNotFoundWhileReturning" />
-        <item itemvalue="JUnit.UserServiceTest" />
-        <item itemvalue="JUnit.ItemServiceTest.shouldUpdateMusicItemSuccessfully" />
-        <item itemvalue="JUnit.ItemServiceTest.shouldRemoveItem" />
       </list>
     </recent_temporary>
   </component>

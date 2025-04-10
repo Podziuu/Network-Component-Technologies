@@ -18,7 +18,12 @@ public class ItemRepository extends AbstractMongoEntity {
     private final MongoCollection<ItemEnt> itemCollection;
 
     public ItemRepository() {
-        initDbConnection();
+        super();
+        this.itemCollection = database.getCollection("items", ItemEnt.class);
+    }
+
+    public ItemRepository(String connectionString, String dbName) {
+        super(connectionString, dbName);
         this.itemCollection = database.getCollection("items", ItemEnt.class);
     }
 

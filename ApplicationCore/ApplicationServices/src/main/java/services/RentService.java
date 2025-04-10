@@ -7,7 +7,6 @@ import model.Rent;
 import model.item.Item;
 import model.user.Client;
 import org.springframework.stereotype.Service;
-import repo.MongoEntity;
 import ui.IRentPort;
 
 import java.time.LocalDateTime;
@@ -15,17 +14,14 @@ import java.util.List;
 
 @Service
 public class RentService implements IRentPort {
-    private final MongoEntity mongoEntity;
     private final RentPort rentPort;
     private final ItemPort itemPort;
 
     public RentService(RentPort rentPort, ItemPort itemPort) {
         this.rentPort = rentPort;
         this.itemPort = itemPort;
-        mongoEntity = new MongoEntity();
     }
 
-    //TODO zrobic dobrze te transakcje
     @Override
     public Rent add(Rent rent) {
         Client client = rent.getClient();
@@ -41,21 +37,21 @@ public class RentService implements IRentPort {
         if (!item.isAvailable()) {
             throw new ItemAlreadyRentedException("Item is already rented");
         }
-
-        try (var session = mongoEntity.getMongoClient().startSession()) {
-            session.startTransaction();
+//
+//        try (var session = mongoEntity.getMongoClient().startSession()) {
+//            session.startTransaction();
 
             item.setAvailable(false);
             itemPort.updateItem(item);
 
             Rent createdRent = rentPort.add(rent);
 
-            session.commitTransaction();
+//            session.commitTransaction();
 
             return createdRent;
-        } catch (Exception e) {
-            throw new RentOperationException("Error during rental operation: " + e.getMessage(), e);
-        }
+//        } catch (Exception e) {
+//            throw new RentOperationException("Error during rental operation: " + e.getMessage(), e);
+//        }
     }
 
     @Override
@@ -69,8 +65,8 @@ public class RentService implements IRentPort {
     }
 
     public void returnRent(String rentId) {
-        try (var session = mongoEntity.getMongoClient().startSession()) {
-            session.startTransaction();
+//        try (var session = mongoEntity.getMongoClient().startSession()) {
+//            session.startTransaction();
 
             Rent rent = rentPort.getById(rentId);
             if (rent == null) {
@@ -91,10 +87,10 @@ public class RentService implements IRentPort {
             item.setAvailable(true);
             itemPort.updateItem(item);
 
-            session.commitTransaction();
-        } catch (Exception e) {
-            throw new RentOperationException("Error during return operation: " + e.getMessage(), e);
-        }
+//            session.commitTransaction();
+//        } catch (Exception e) {
+//            throw new RentOperationException("Error during return operation: " + e.getMessage(), e);
+//        }
     }
 
     @Override

@@ -8,42 +8,31 @@ import entities.RentEnt;
 import org.bson.types.ObjectId;
 import org.junit.jupiter.api.*;
 import repo.ItemRepository;
-import repo.MongoEntity;
 import repo.RentRepository;
 import repo.UserRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class RentRepositoryTest {
-    private static MongoEntity mongoEntity;
+public class RentRepositoryTest extends AbstractMongoDBTest {
+    private static ItemRepository itemRepository;
     private static RentRepository rentRepository;
     private static UserRepository userRepository;
-    private static ItemRepository itemRepository;
-    private static MongoDatabase database;
-    private static MongoCollection<RentEnt> rentCollection;
-    private static MongoCollection<ItemEnt> itemCollection;
-    private static MongoCollection<UserEnt> userCollection;
 
     @BeforeAll
-    static void setUp() {
-        mongoEntity = new MongoEntity();
-        database = mongoEntity.getDatabase();
-
-        itemCollection = database.getCollection("items", ItemEnt.class);
-        rentCollection = database.getCollection("rents", RentEnt.class);
-        userCollection = database.getCollection("users", UserEnt.class);
-
-        rentRepository = new RentRepository();
-        userRepository = new UserRepository();
-        itemRepository = new ItemRepository();
-    }
-
-    @BeforeEach
-    public void clearCollections() {
-        itemCollection.drop();
-        userCollection.drop();
-        rentCollection.drop();
+    public static void setup() {
+        itemRepository = new ItemRepository(
+                mongoDBContainer.getReplicaSetUrl(),
+                "test-mediastore"
+        );
+        rentRepository = new RentRepository(
+                mongoDBContainer.getReplicaSetUrl(),
+                "test-mediastore"
+        );
+        userRepository = new UserRepository(
+                mongoDBContainer.getReplicaSetUrl(),
+                "test-mediastore"
+        );
     }
 
 
@@ -283,13 +272,13 @@ public class RentRepositoryTest {
     }
 
 
-    @AfterEach
-    public void dropCollection() {
-        MongoCollection<RentEnt> rentCollection = mongoEntity.getDatabase().getCollection("rents", RentEnt.class);
-        MongoCollection<ItemEnt> itemCollection = mongoEntity.getDatabase().getCollection("items", ItemEnt.class);
-        MongoCollection<UserEnt> userCollection = mongoEntity.getDatabase().getCollection("users", UserEnt.class);
-        itemCollection.drop();
-        userCollection.drop();
-        rentCollection.drop();
-    }
+//    @AfterEach
+//    public void dropCollection() {
+//        MongoCollection<RentEnt> rentCollection = mongoEntity.getDatabase().getCollection("rents", RentEnt.class);
+//        MongoCollection<ItemEnt> itemCollection = mongoEntity.getDatabase().getCollection("items", ItemEnt.class);
+//        MongoCollection<UserEnt> userCollection = mongoEntity.getDatabase().getCollection("users", UserEnt.class);
+//        itemCollection.drop();
+//        userCollection.drop();
+//        rentCollection.drop();
+//    }
 }
