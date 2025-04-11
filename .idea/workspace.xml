@@ -5,19 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/RestApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/config/PasswordEncoderConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/controller/ItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/controller/RentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/ChangePasswordDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/ClientDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/ComicsDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/CreateUserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/ItemDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/LoginDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/MovieDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/MusicDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/RentDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/TokenDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/UpdateUserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/DuplicateUserException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/InvalidCredentialsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/InvalidItemTypeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/InvalidUserDataException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/ItemAlreadyRentedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/ItemNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/RentNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/RentOperationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/UserNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/mapper/ItemMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/mapper/RentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/security/JwsProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/security/JwtFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/security/JwtTokenProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/UserRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/UserRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/AbstractMongoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/AbstractMongoEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/ItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/MongoEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/RentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/RentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/ItemRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/ItemRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/RentRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/RentRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/UserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/UserRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/RentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/RentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/RentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/RentServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/ui/IUserPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/ui/IUserPort.java" afterDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,6 +121,7 @@
     "Maven.Mediastore [test].executor": "Run",
     "Maven.RepositoriesAdapters [clean].executor": "Run",
     "Maven.RepositoriesAdapters [install].executor": "Run",
+    "Maven.RestAdapter [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -105,10 +131,10 @@
     "Spring Boot.App.executor": "Run",
     "Spring Boot.Application.executor": "Run",
     "Spring Boot.RestApplication.executor": "Run",
-    "git-widget-placeholder": "test__containers2",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/plewkowicz/Studia/sem6/MKWA_SR_1015_06",
+    "last_opened_file_path": "/home/plewkowicz/Studia/sem6/MKWA_SR_1015_06/Adapters/RestAdapter/src/main/java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -124,11 +150,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java" />
       <recent name="\\wsl$\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06\ApplicationCore\ApplicationServices\src\main\java" />
       <recent name="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/exception" />
       <recent name="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto" />
       <recent name="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java" />
-      <recent name="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06\ApplicationCore\ApplicationServices\src\main\java" />

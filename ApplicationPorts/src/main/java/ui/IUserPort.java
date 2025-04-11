@@ -1,5 +1,6 @@
 package ui;
 
+import jakarta.validation.Valid;
 import model.user.Role;
 import model.user.User;
 
@@ -27,4 +28,10 @@ public interface IUserPort {
     List<User> getUsersByRoleAndFirstName(Role role, String firstName);
 
     boolean userExists(String login);
+
+//    void changePassword(String username, dto.@Valid ChangePasswordDTO dto);
+//
+//    String login(dto.@Valid LoginDTO dto);
+//
+//    void invalidateToken(String token);
 }
