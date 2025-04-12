@@ -1,9 +1,9 @@
 package ui;
 
 import model.item.Item;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
 public interface IItemPort {
     Item addItem(Item item);
     void updateItem(String id, Item item);

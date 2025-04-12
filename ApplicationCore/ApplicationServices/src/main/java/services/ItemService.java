@@ -17,7 +17,6 @@ import ui.IItemPort;
 
 import java.util.List;
 
-@RequestScope
 @Service
 public class ItemService implements IItemPort {
     private final ItemPort itemPort;

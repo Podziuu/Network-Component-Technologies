@@ -15,8 +15,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>RepositoriesAdapters</module>
-        <module>RestAdapter</module>
         <module>SoapAdapter</module>
+        <module>RestAdapters</module>
     </modules>
     <dependencies>
         <dependency>

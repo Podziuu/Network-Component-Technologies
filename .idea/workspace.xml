@@ -5,15 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/java/it/p/lodz/pl/SoapApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/java/it/p/lodz/pl/config/WebServiceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/java/it/p/lodz/pl/endpoint/ItemEndpoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/java/it/p/lodz/pl/mapper/ItemMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/resources/items.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/restsecurity/JwtFilterRest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/restsecurity/JwtTokenProviderRest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/test/java/pl/lodz/p/edu/restadapters/AbstractRestTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/test/java/pl/lodz/p/edu/restadapters/ItemIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/RestApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/config/PasswordEncoderConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/config/PasswordEncoderConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/controller/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/controller/RentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/controller/RentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/ChangePasswordDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/ChangePasswordDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/ClientDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/ClientDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/ComicsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/ComicsDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/CreateUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/CreateUserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/ItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/ItemDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/LoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/LoginDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/MovieDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/MovieDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/MusicDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/MusicDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/RentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/RentDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/TokenDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/TokenDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/UpdateUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/UpdateUserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/DuplicateUserException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/DuplicateUserException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/InvalidCredentialsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/InvalidCredentialsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/InvalidItemTypeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/InvalidItemTypeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/InvalidUserDataException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/InvalidUserDataException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/ItemAlreadyRentedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/ItemAlreadyRentedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/ItemNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/ItemNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/RentNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/RentNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/RentOperationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/RentOperationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/UserNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/mapper/ItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/mapper/ItemMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/mapper/RentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/mapper/RentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/security/JwsProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/restsecurity/JwsProviderRest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/security/JwtFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/security/JwtTokenProvider.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Adapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/ItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/ItemPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/ItemPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/RentPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/RentPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/UserPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/UserPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/ui/IItemPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/ui/IItemPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/ui/IRentPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/ui/IRentPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/ui/IUserPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/ui/IUserPort.java" afterDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,8 +88,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "HTTP Request.generated-requests | #4.executor": "Run",
+    "HTTP Request.generated-requests | #5.executor": "Run",
     "JUnit.EntityMapperTest.executor": "Run",
     "JUnit.EntityMapperTest.movieMapperTest.executor": "Debug",
+    "JUnit.ItemIntegrationTest.testCreateMusic (1).executor": "Run",
+    "JUnit.ItemIntegrationTest.testCreateMusic.executor": "Run",
     "JUnit.ItemRepositoryTest.addItemTest.executor": "Run",
     "JUnit.ItemRepositoryTest.executor": "Run",
     "JUnit.ItemRepositoryTest.setUnavailableTest.executor": "Run",
@@ -85,6 +130,9 @@
     "JUnit.UserServiceTest.shouldThrowExceptionWhenUserNotFound.executor": "Run",
     "Maven.Adapters [compile].executor": "Run",
     "Maven.Adapters [install].executor": "Run",
+    "Maven.Application [install].executor": "Run",
+    "Maven.ApplicationCore [install].executor": "Run",
+    "Maven.ApplicationPorts [install].executor": "Run",
     "Maven.Mediastore [clean].executor": "Run",
     "Maven.Mediastore [compile].executor": "Run",
     "Maven.Mediastore [install].executor": "Run",
@@ -93,7 +141,10 @@
     "Maven.Mediastore [test].executor": "Run",
     "Maven.RepositoriesAdapters [clean].executor": "Run",
     "Maven.RepositoriesAdapters [install].executor": "Run",
+    "Maven.RestAdapter [clean].executor": "Run",
     "Maven.RestAdapter [install].executor": "Run",
+    "Maven.RestAdapters [clean].executor": "Run",
+    "Maven.RestAdapters [install].executor": "Run",
     "Maven.SoapAdapter [clean].executor": "Run",
     "Maven.SoapAdapter [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
@@ -104,19 +155,22 @@
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.App.executor": "Run",
     "Spring Boot.Application.executor": "Run",
+    "Spring Boot.RestAdaptersApplication.executor": "Run",
     "Spring Boot.RestApplication (1).executor": "Run",
+    "Spring Boot.RestApplication (2).executor": "Run",
     "Spring Boot.RestApplication.executor": "Run",
     "Spring Boot.SoapApplication.executor": "Run",
-    "git-widget-placeholder": "soap",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/plewkowicz/Studia/sem6/MKWA_SR_1015_06/Adapters/RestAdapter/src/main/java",
+    "last_opened_file_path": "/home/plewkowicz/Studia/sem6/MKWA_SR_1015_06/Adapters/RestAdapters/src/test/java/pl/lodz/p/edu/restadapters",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
@@ -126,11 +180,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Adapters/RestAdapters/src/test/java/pl/lodz/p/edu/restadapters" />
+      <recent name="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters" />
       <recent name="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java" />
       <recent name="\\wsl$\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06\ApplicationCore\ApplicationServices\src\main\java" />
       <recent name="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/exception" />
-      <recent name="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/dto" />
-      <recent name="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06\ApplicationCore\ApplicationServices\src\main\java" />
@@ -147,37 +201,93 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SoapApplication">
-    <configuration name="RentRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RepositoriesAdapters" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RentRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
+  <component name="RunManager" selected="Spring Boot.RestAdaptersApplication">
+    <configuration name="generated-requests | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="4" requestIdentifier="#4" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="5" requestIdentifier="#5" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="ItemIntegrationTest.testCreateMusic (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RestAdapters" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.lodz.p.edu.restadapters.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.lodz.p.edu.restadapters" />
+      <option name="MAIN_CLASS_NAME" value="pl.lodz.p.edu.restadapters.ItemIntegrationTest" />
+      <option name="METHOD_NAME" value="testCreateMusic" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RentServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ApplicationServices" />
+    <configuration name="ItemIntegrationTest.testCreateMusic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RentServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
+      <option name="METHOD_NAME" value="testCreateMusic" />
+      <option name="TEST_OBJECT" value="method" />
+      <envs>
+        <env name="APP_JWT_EXPIRATION" value=" 3600000" />
+        <env name="APP_JWT_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
+        <env name="KEYSTORE_PASSWORD" value=" Kzgm74&amp;8&quot;YM0" />
+      </envs>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RepositoriesAdapters" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
+    <configuration name="ItemIntegrationTest.testCreateMusic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RestAdapters" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.lodz.p.edu.restadapters.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.lodz.p.edu.restadapters" />
+      <option name="MAIN_CLASS_NAME" value="pl.lodz.p.edu.restadapters.ItemIntegrationTest" />
+      <option name="METHOD_NAME" value="testCreateMusic" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RestApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <envs>
+        <env name="APP_JWT_EXPIRATION" value=" 3600000" />
+        <env name="APP_JWT_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
+        <env name="KEYSTORE_PASSWORD" value=" Kzgm74&amp;8&quot;YM0" />
+      </envs>
+      <module name="Application" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.lodz.p.edu.application.app.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestAdaptersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <envs>
+        <env name="APP_JWS_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
+        <env name="APP_JWT_EXPIRATION" value=" 3600000" />
+        <env name="APP_JWT_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
+        <env name="KEYSTORE_PASSWORD" value=" Kzgm74&amp;8&quot;YM0" />
+      </envs>
+      <module name="RestAdapters" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.lodz.p.edu.restadapters.RestAdaptersApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="RestAdapter" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="RestApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="application.RestApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -189,20 +299,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SoapApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="SoapAdapter" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="it.p.lodz.pl.SoapApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="HTTP Request.generated-requests | #4" />
+      <item itemvalue="HTTP Request.generated-requests | #5" />
+      <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic (1)" />
+      <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic" />
+      <item itemvalue="Spring Boot.RestAdaptersApplication" />
+      <item itemvalue="Spring Boot.Application" />
+      <item itemvalue="Spring Boot.RestApplication" />
+      <item itemvalue="Spring Boot.RestApplication (2)" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.SoapApplication" />
-        <item itemvalue="Spring Boot.RestApplication (1)" />
-        <item itemvalue="JUnit.UserRepositoryTest" />
-        <item itemvalue="JUnit.RentServiceTest" />
-        <item itemvalue="JUnit.RentRepositoryTest" />
+        <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic (1)" />
+        <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic" />
+        <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic" />
+        <item itemvalue="HTTP Request.generated-requests | #5" />
+        <item itemvalue="HTTP Request.generated-requests | #4" />
       </list>
     </recent_temporary>
   </component>
@@ -286,6 +399,121 @@
           <line>26</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/controller/UserController.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/controller/UserController.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/controller/UserController.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Application/src/main/java/pl/lodz/p/edu/application/app/Application.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/mapper/RentMapper.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/controller/UserController.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java</url>
           <line>11</line>
@@ -294,6 +522,24 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/controller/UserController.java</url>
+          <line>58</line>
+          <properties class="controller.UserController">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/mapper/UserMapper.java</url>
+          <line>21</line>
+          <properties class="pl.lodz.p.edu.restadapters.mapper.UserMapper" method="convertToDTO">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="92" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

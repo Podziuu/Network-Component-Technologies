@@ -3,7 +3,6 @@ package infrastructure;
 import model.item.Item;
 
 import java.util.List;
-
 public interface ItemPort {
     Item addItem(Item item);
     void updateItem(Item item);

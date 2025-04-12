@@ -1,9 +1,9 @@
 package infrastructure;
 
 import model.Rent;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
 public interface RentPort {
     Rent add(Rent rent);
 

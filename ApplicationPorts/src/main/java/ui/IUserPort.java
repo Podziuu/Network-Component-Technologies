@@ -3,9 +3,9 @@ package ui;
 import jakarta.validation.Valid;
 import model.user.Role;
 import model.user.User;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
 public interface IUserPort {
     User addUser(User user);
 
@@ -29,9 +29,11 @@ public interface IUserPort {
 
     boolean userExists(String login);
 
+    boolean isTokenOnBlackList(String token);
+
 //    void changePassword(String username, dto.@Valid ChangePasswordDTO dto);
-//
-//    String login(dto.@Valid LoginDTO dto);
-//
-//    void invalidateToken(String token);
+
+    String login(String login, String password);
+
+    void invalidateToken(String token);
 }

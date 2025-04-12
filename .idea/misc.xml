@@ -6,11 +6,15 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/Adapters/pom.xml" />
+        <option value="$PROJECT_DIR$/Application/pom.xml" />
+        <option value="$PROJECT_DIR$/Adapters/RestAdapters/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/Adapters/RestAdapter/pom.xml" />
         <option value="$PROJECT_DIR$/Adapters/ViewAdapters/pom.xml" />
+        <option value="$PROJECT_DIR$/Application/pom.xml" />
         <option value="$PROJECT_DIR$/ApplicationPorts/infrastructure/pom.xml" />
       </set>
     </option>

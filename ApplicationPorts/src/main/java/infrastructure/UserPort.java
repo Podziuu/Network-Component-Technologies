@@ -2,9 +2,9 @@ package infrastructure;
 
 import model.user.Role;
 import model.user.User;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
 public interface UserPort {
     User addUser(User user);
 
