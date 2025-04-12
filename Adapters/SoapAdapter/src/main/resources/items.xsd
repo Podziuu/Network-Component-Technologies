@@ -1,0 +1,124 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+
+    <!-- Element główny request -->
+    <xs:element name="getItemsRequest" type="tns:GetItemsRequest"/>
+    <xs:element name="addItemRequest" type="tns:AddItemRequest"/>
+    <xs:element name="getItemsByTypeRequest" type="tns:GetItemsByTypeRequest"/>
+    <xs:element name="getItemsByNameRequest" type="tns:GetItemsByNameRequest"/>
+
+    <xs:complexType name="GetItemsRequest">
+        <xs:sequence/>
+    </xs:complexType>
+
+    <xs:complexType name="AddItemRequest" >
+        <xs:sequence>
+            <xs:element name="item" type="tns:Item" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GetItemsByTypeRequest">
+        <xs:sequence>
+            <xs:element name="itemType" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GetItemsByNameRequest">
+        <xs:sequence>
+            <xs:element name="itemName" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Element główny response -->
+    <xs:element name="getItemsResponse" type="tns:GetItemsResponse"/>
+    <xs:element name="addItemResponse" type="tns:AddItemResponse"/>
+    <xs:element name="getItemsByTypeResponse" type="tns:GetItemsByTypeResponse"/>
+    <xs:element name="getItemsByNameResponse" type="tns:GetItemsByNameResponse"/>
+
+    <xs:complexType name="GetItemsResponse">
+        <xs:sequence>
+            <xs:element name="items" type="tns:Item" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AddItemResponse">
+        <xs:sequence>
+            <xs:element name="success" type="xs:boolean"/>
+            <xs:element name="item" type="tns:Item" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GetItemsByTypeResponse">
+        <xs:sequence>
+            <xs:element name="items" type="tns:Item" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GetItemsByNameResponse">
+        <xs:sequence>
+            <xs:element name="items" type="tns:Item" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Abstrakcyjny typ bazowy -->
+    <xs:complexType name="Item" abstract="true">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="basePrice" type="xs:int"/>
+            <xs:element name="itemName" type="xs:string"/>
+            <xs:element name="available" type="xs:boolean"/>
+            <xs:element name="itemType" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Movie -->
+    <xs:complexType name="Movie">
+        <xs:complexContent>
+            <xs:extension base="tns:Item">
+                <xs:sequence>
+                    <xs:element name="minutes" type="xs:int"/>
+                    <xs:element name="casette" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- Comics -->
+    <xs:complexType name="Comics">
+        <xs:complexContent>
+            <xs:extension base="tns:Item">
+                <xs:sequence>
+                    <xs:element name="pageNumber" type="xs:int"/>
+                    <xs:element name="publisher" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- Music -->
+    <xs:complexType name="Music">
+        <xs:complexContent>
+            <xs:extension base="tns:Item">
+                <xs:sequence>
+                    <xs:element name="genre" type="tns:MusicGenre"/>
+                    <xs:element name="vinyl" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- Enum dla MusicGenre -->
+    <xs:simpleType name="MusicGenre">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ROCK"/>
+            <xs:enumeration value="POP"/>
+            <xs:enumeration value="CLASSICAL"/>
+            <xs:enumeration value="HIPHOP"/>
+            <xs:enumeration value="JAZZ"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Element nadrzędny dla listy itemów -->
+    <xs:element name="Item" type="tns:Item"/>
+
+</xs:schema>
