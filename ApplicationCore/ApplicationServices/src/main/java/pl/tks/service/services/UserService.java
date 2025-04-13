@@ -1,5 +1,6 @@
 package pl.tks.service.services;
 
+import pl.tks.ports.infrastructure.TokenProviderPort;
 import pl.tks.ports.infrastructure.UserPort;
 import pl.tks.model.user.Role;
 import pl.tks.model.user.User;
@@ -23,14 +24,13 @@ import java.util.concurrent.ConcurrentHashMap;
 public class UserService implements IUserPort, UserDetailsService {
     private final UserPort userPort;
     private final PasswordEncoder passwordEncoder;
-//    private final JwtTokenProviderRest jwtTokenProvider;
+    private final TokenProviderPort tokenProviderPort;
     private final Set<String> blacklist = ConcurrentHashMap.newKeySet();
 
-    @Autowired
-    public UserService(UserPort userPort, PasswordEncoder passwordEncoder) {
+    public UserService(UserPort userPort, PasswordEncoder passwordEncoder, TokenProviderPort tokenProviderPort) {
         this.userPort = userPort;
         this.passwordEncoder = passwordEncoder;
-//        this.jwtTokenProvider = jwtTokenProvider;
+        this.tokenProviderPort = tokenProviderPort;
     }
 
     public User addUser(User user) {
@@ -146,8 +146,7 @@ public class UserService implements IUserPort, UserDetailsService {
         if (user == null || !passwordEncoder.matches(password, user.getPassword())) {
             throw new InvalidCredentialsException("Invalid login or password");
         }
-        return "logged";
-//        return jwtTokenProvider.generateToken(user.getLogin(), user.getId(), user.getRole());
+        return tokenProviderPort.generateToken(user.getLogin(), user.getId(), user.getRole());
     }
 
     public void invalidateToken(String token) {

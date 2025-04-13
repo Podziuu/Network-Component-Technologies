@@ -1,5 +1,7 @@
 package pl.tks.ports.ui;
 
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import pl.tks.model.user.Role;
 import pl.tks.model.user.User;
 
@@ -34,4 +36,6 @@ public interface IUserPort {
     String login(String login, String password);
 
     void invalidateToken(String token);
+
+    UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
 }

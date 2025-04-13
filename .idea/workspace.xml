@@ -5,134 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/AbstractRestTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/Security/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/Security/src/main/java/pl/tks/security/providers/JwsProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/infrastructure/TokenProviderPort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/ItemRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/ItemRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/RentRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/RentRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/aggregates/UserRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/UserRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/RentEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/entities/RentEnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/item/ComicsEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/entities/item/ComicsEnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/item/ItemEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/entities/item/ItemEnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/item/MovieEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/entities/item/MovieEnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/item/MusicEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/entities/item/MusicEnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/user/AdminEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/entities/user/AdminEnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/user/ClientEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/entities/user/ClientEnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/user/ClientTypeEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/entities/user/ClientTypeEnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/user/ManagerEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/entities/user/ManagerEnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/user/RoleEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/entities/user/RoleEnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/user/UserEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/entities/user/UserEnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/entities/user/UserPrincipalEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/entities/user/UserPrincipalEnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/exception/DuplicateUserException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/exception/InvalidCredentialsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/exception/InvalidCredentialsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/exception/InvalidItemTypeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/exception/InvalidItemTypeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/exception/InvalidUserDataException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/exception/ItemAlreadyRentedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/exception/ItemAlreadyRentedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/exception/ItemNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/exception/ItemNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/exception/RentNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/exception/RentNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/exception/RentOperationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/exception/RentOperationException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/exception/UserNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/ItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/mappers/ItemMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/mappers/RentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/mappers/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/AbstractMongoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/repo/AbstractMongoEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/repo/ItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/RentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/repo/RentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/repo/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/repo/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/EntityMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/EntityMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/ItemRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/ItemRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/RentRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/RentRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/UserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/UserRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/RestAdaptersApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/config/PasswordEncoderConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/config/PasswordEncoderConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/controller/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/controller/RentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/controller/RentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/ChangePasswordDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/dto/ChangePasswordDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/ClientDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/dto/ClientDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/ComicsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/dto/ComicsDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/CreateUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/dto/CreateUserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/ItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/dto/ItemDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/LoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/dto/LoginDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/MovieDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/dto/MovieDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/MusicDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/dto/MusicDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/RentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/dto/RentDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/TokenDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/dto/TokenDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/UpdateUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/dto/UpdateUserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/DuplicateUserException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/InvalidCredentialsException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/InvalidItemTypeException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/InvalidUserDataException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/ItemAlreadyRentedException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/ItemNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/RentNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/RentOperationException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/exception/UserNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/mapper/ItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/mapper/ItemMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/mapper/RentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/mapper/RentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/restsecurity/JwsProviderRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/restsecurity/JwsProviderRest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/restsecurity/JwtFilterRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/restsecurity/JwtFilterRest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters/restsecurity/JwtTokenProviderRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/restsecurity/JwtTokenProviderRest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/test/java/pl/lodz/p/edu/restadapters/AbstractRestTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/test/java/pl/lodz/p/edu/restadapters/ItemIntegrationTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapters/src/test/java/pl/lodz/p/edu/restadapters/RestAdaptersApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/SoapAdapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/java/it/p/lodz/pl/SoapApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/java/it/p/lodz/pl/config/WebServiceConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/java/it/p/lodz/pl/endpoint/ItemEndpoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/java/it/p/lodz/pl/mapper/ItemMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/RestAdaptersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/RestAdaptersApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/config/PasswordEncoderConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/Security/src/main/java/pl/tks/security/config/PasswordEncoderConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/restsecurity/JwsProviderRest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/restsecurity/JwtFilterRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/restsecurity/JwtFilterRest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/restsecurity/JwtTokenProviderRest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Adapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/exception/DuplicateUserException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/exception/DuplicateUserException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/exception/InvalidCredentialsException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/exception/InvalidItemTypeException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/exception/InvalidUserDataException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/exception/InvalidUserDataException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/exception/ItemAlreadyRentedException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/exception/ItemNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/exception/RentNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/exception/RentOperationException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/exception/UserNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/security/JwsProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/security/JwsProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/security/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/security/JwtFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/security/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/security/JwtTokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/services/ItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/RentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/services/RentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/ItemServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/ItemServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/RentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/RentServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/test/java/UserServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/Rent.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/pl/tks/model/Rent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/item/Comics.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/pl/tks/model/item/Comics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/pl/tks/model/item/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/item/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/pl/tks/model/item/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/item/Music.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/pl/tks/model/item/Music.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/item/MusicGenre.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/pl/tks/model/item/MusicGenre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/user/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/pl/tks/model/user/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/user/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/pl/tks/model/user/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/user/ClientType.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/pl/tks/model/user/ClientType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/user/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/pl/tks/model/user/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/user/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/pl/tks/model/user/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/pl/tks/model/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/model/user/UserPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/DomainModel/src/main/java/pl/tks/model/user/UserPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/ItemPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/infrastructure/ItemPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/RentPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/infrastructure/RentPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/infrastructure/UserPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/infrastructure/UserPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/ui/IItemPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/ui/IItemPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/ui/IRentPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/ui/IRentPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/ui/IUserPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/ui/IUserPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/ui/IUserPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/ui/IUserPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -143,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -155,6 +46,9 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
@@ -164,109 +58,116 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;HTTP Request.generated-requests | #4.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #5.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EntityMapperTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EntityMapperTest.movieMapperTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ItemIntegrationTest.testCreateMusic (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemIntegrationTest.testCreateMusic.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemRepositoryTest.addItemTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemRepositoryTest.setUnavailableTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldAddMusicItem.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldGetAllItems.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldGetItemById.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldRemoveItem.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldSetItemUnavailable.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldThrowExceptionWhenItemNotFoundWhenSetUnavailable.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldUpdateMusicItemSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentRepositoryTest.rentItemTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldGetRentByIdSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldRentItemSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldReturnRentSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldThrowErrorWhenItemAlreadyRenterWhileRenting.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldThrowExceptionWhenItemNotFoundWhileRenting.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldThrowExceptionWhenNoRentsFoundWhileGetActiveRents.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldThrowExceptionWhenRentNotFoundWhileReturning.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldThrowExceptionWhenUserNotFoundWhileRenting.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldAddUserSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldChangePasswordSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldGetUserByIdSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldLoginSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldThrowExceptionWhenCurrentPasswordIsIncorrect.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldThrowExceptionWhenNoUsersWithRole.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldThrowExceptionWhenPasswordIsIncorrect.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldThrowExceptionWhenUserAlreadyExists.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldThrowExceptionWhenUserAlreadyExistsWhileAdding.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldThrowExceptionWhenUserNotFound.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Adapters [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Adapters [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Application [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.ApplicationCore [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.ApplicationPorts [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [verify].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RepositoriesAdapters [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RepositoriesAdapters [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RestAdapter [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RestAdapter [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RestAdapters [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RestAdapters [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.SoapAdapter [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.SoapAdapter [install].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.App.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.RestAdaptersApplication (1).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.RestAdaptersApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.RestApplication (1).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.RestApplication (2).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.RestApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.SoapApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu/home/podziuu/studia/MKWA_SR_1015_06/Adapters/RestAdapter/src/main/java/pl/tks/rest&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "HTTP Request.generated-requests | #4.executor": "Run",
+    "HTTP Request.generated-requests | #5.executor": "Run",
+    "JUnit.EntityMapperTest.executor": "Run",
+    "JUnit.EntityMapperTest.movieMapperTest.executor": "Debug",
+    "JUnit.ItemIntegrationTest.executor": "Run",
+    "JUnit.ItemIntegrationTest.testCreateMusic (1).executor": "Run",
+    "JUnit.ItemIntegrationTest.testCreateMusic (2).executor": "Run",
+    "JUnit.ItemIntegrationTest.testCreateMusic.executor": "Run",
+    "JUnit.ItemRepositoryTest.addItemTest.executor": "Run",
+    "JUnit.ItemRepositoryTest.executor": "Run",
+    "JUnit.ItemRepositoryTest.setUnavailableTest.executor": "Run",
+    "JUnit.ItemServiceTest.executor": "Run",
+    "JUnit.ItemServiceTest.shouldAddMusicItem.executor": "Run",
+    "JUnit.ItemServiceTest.shouldGetAllItems.executor": "Run",
+    "JUnit.ItemServiceTest.shouldGetItemById.executor": "Run",
+    "JUnit.ItemServiceTest.shouldRemoveItem.executor": "Run",
+    "JUnit.ItemServiceTest.shouldSetItemUnavailable.executor": "Run",
+    "JUnit.ItemServiceTest.shouldThrowExceptionWhenItemNotFoundWhenSetUnavailable.executor": "Run",
+    "JUnit.ItemServiceTest.shouldUpdateMusicItemSuccessfully.executor": "Run",
+    "JUnit.RentRepositoryTest.executor": "Run",
+    "JUnit.RentRepositoryTest.rentItemTest.executor": "Run",
+    "JUnit.RentServiceTest.executor": "Run",
+    "JUnit.RentServiceTest.shouldGetRentByIdSuccessfully.executor": "Run",
+    "JUnit.RentServiceTest.shouldRentItemSuccessfully.executor": "Run",
+    "JUnit.RentServiceTest.shouldReturnRentSuccessfully.executor": "Run",
+    "JUnit.RentServiceTest.shouldThrowErrorWhenItemAlreadyRenterWhileRenting.executor": "Run",
+    "JUnit.RentServiceTest.shouldThrowExceptionWhenItemNotFoundWhileRenting.executor": "Run",
+    "JUnit.RentServiceTest.shouldThrowExceptionWhenNoRentsFoundWhileGetActiveRents.executor": "Run",
+    "JUnit.RentServiceTest.shouldThrowExceptionWhenRentNotFoundWhileReturning.executor": "Run",
+    "JUnit.RentServiceTest.shouldThrowExceptionWhenUserNotFoundWhileRenting.executor": "Run",
+    "JUnit.UserRepositoryTest.executor": "Run",
+    "JUnit.UserServiceTest.executor": "Run",
+    "JUnit.UserServiceTest.shouldAddUserSuccessfully.executor": "Run",
+    "JUnit.UserServiceTest.shouldChangePasswordSuccessfully.executor": "Run",
+    "JUnit.UserServiceTest.shouldGetUserByIdSuccessfully.executor": "Run",
+    "JUnit.UserServiceTest.shouldLoginSuccessfully.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenCurrentPasswordIsIncorrect.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenNoUsersWithRole.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenPasswordIsIncorrect.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenUserAlreadyExists.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenUserAlreadyExistsWhileAdding.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenUserNotFound.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.Adapters [compile].executor": "Run",
+    "Maven.Adapters [install].executor": "Run",
+    "Maven.Application [install].executor": "Run",
+    "Maven.ApplicationCore [install].executor": "Run",
+    "Maven.ApplicationPorts [install].executor": "Run",
+    "Maven.Mediastore [clean].executor": "Run",
+    "Maven.Mediastore [compile].executor": "Run",
+    "Maven.Mediastore [install].executor": "Run",
+    "Maven.Mediastore [package].executor": "Run",
+    "Maven.Mediastore [site].executor": "Run",
+    "Maven.Mediastore [test].executor": "Run",
+    "Maven.RepositoriesAdapters [clean].executor": "Run",
+    "Maven.RepositoriesAdapters [install].executor": "Run",
+    "Maven.RestAdapter [clean].executor": "Run",
+    "Maven.RestAdapter [install].executor": "Run",
+    "Maven.RestAdapters [clean].executor": "Run",
+    "Maven.RestAdapters [install].executor": "Run",
+    "Maven.Security [install].executor": "Run",
+    "Maven.SoapAdapter [clean].executor": "Run",
+    "Maven.SoapAdapter [install].executor": "Run",
+    "Maven.security [clean].executor": "Run",
+    "Maven.security [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.App.executor": "Run",
+    "Spring Boot.Application.executor": "Run",
+    "Spring Boot.RestAdaptersApplication (1).executor": "Run",
+    "Spring Boot.RestAdaptersApplication.executor": "Run",
+    "Spring Boot.RestApplication (1).executor": "Run",
+    "Spring Boot.RestApplication (2).executor": "Debug",
+    "Spring Boot.RestApplication.executor": "Run",
+    "Spring Boot.SoapApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "21",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/plewkowicz/Studia/sem6/MKWA_SR_1015_06/Adapters/RestAdapters/src/test/java/pl/lodz/p/edu/restadapters",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/home/plewkowicz/Studia/sem6/MKWA_SR_1015_06/Adapters/Security/src/main/java/pl/tks/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="\\wsl$\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06\Adapters\RestAdapter\src\main\java\pl\tks\rest" />
       <recent name="$PROJECT_DIR$/Adapters/RestAdapters/src/test/java/pl/lodz/p/edu/restadapters" />
       <recent name="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters" />
       <recent name="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java" />
       <recent name="\\wsl$\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06\ApplicationCore\ApplicationServices\src\main\java" />
+      <recent name="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/exception" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Adapters/Security/src/main/java/pl/tks/security/providers" />
       <recent name="\\wsl$\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06\ApplicationCore\ApplicationServices\src\main\java" />
       <recent name="\\wsl$\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06" />
     </key>
@@ -281,9 +182,22 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SoapApplication">
-    <configuration name="generated-requests | #5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="5" runType="Run single request">
-      <method v="2" />
+  <component name="RunManager" selected="Spring Boot.RestAdaptersApplication">
+    <configuration name="ItemIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RestAdapter" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <envs>
+        <env name="APP_JWT_EXPIRATION" value=" 3600000" />
+        <env name="APP_JWT_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
+        <env name="KEYSTORE_PASSWORD" value=" Kzgm74&amp;8&quot;YM0" />
+        <env name="APP_JWS_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
+      </envs>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="ItemIntegrationTest.testCreateMusic (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RestAdapters" />
@@ -301,16 +215,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemIntegrationTest.testCreateMusic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ItemIntegrationTest.testCreateMusic (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RestAdapter" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
       <option name="METHOD_NAME" value="testCreateMusic" />
       <option name="TEST_OBJECT" value="method" />
-      <envs>
-        <env name="APP_JWT_EXPIRATION" value=" 3600000" />
-        <env name="APP_JWT_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
-        <env name="KEYSTORE_PASSWORD" value=" Kzgm74&amp;8&quot;YM0" />
-      </envs>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -331,23 +241,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RestAdaptersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="RestAdaptersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <envs>
-        <env name="APP_JWT_EXPIRATION" value="3600000" />
-        <env name="APP_JWT_SECRET" value="41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
-        <env name="APP_JWS_SECRET" value="41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
+        <env name="APP_JWT_EXPIRATION" value=" 3600000" />
+        <env name="APP_JWT_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
+        <env name="KEYSTORE_PASSWORD" value=" Kzgm74&amp;8&quot;YM0" />
+        <env name="APP_JWS_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
       </envs>
       <module name="RestAdapter" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pl.tks.rest.RestAdaptersApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.tks.rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="SoapApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <envs>
-        <env name="APP_JWT_EXPIRATION" value="3600000" />
-        <env name="APP_JWT_SECRET" value="41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
-        <env name="APP_JWS_SECRET" value="41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
+        <env name="APP_JWT_EXPIRATION" value=" 3600000" />
+        <env name="APP_JWT_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
+        <env name="KEYSTORE_PASSWORD" value=" Kzgm74&amp;8&quot;YM0" />
+        <env name="APP_JWS_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
       </envs>
       <module name="SoapAdapter" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pl.tks.soap.SoapApplication" />
@@ -362,27 +280,27 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="HTTP Request.generated-requests | #5" />
+      <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic (2)" />
+      <item itemvalue="JUnit.ItemIntegrationTest" />
       <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic (1)" />
-      <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic" />
-      <item itemvalue="Spring Boot.RestAdaptersApplication" />
       <item itemvalue="Spring Boot.SoapApplication" />
+      <item itemvalue="Spring Boot.RestAdaptersApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.RestAdaptersApplication" />
+        <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic (2)" />
+        <item itemvalue="JUnit.ItemIntegrationTest" />
         <item itemvalue="Spring Boot.SoapApplication" />
         <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic (1)" />
-        <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic" />
-        <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic" />
-        <item itemvalue="HTTP Request.generated-requests | #5" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.22855.74" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.22855.74" />
       </set>
     </attachedChunks>
   </component>
@@ -408,12 +326,7 @@
       <workItem from="1743247921553" duration="6976000" />
       <workItem from="1744464004214" duration="752000" />
       <workItem from="1744464781542" duration="3708000" />
-      <workItem from="1744542789665" duration="1267000" />
-      <workItem from="1744544122564" duration="6065000" />
-      <workItem from="1744550219043" duration="3035000" />
-      <workItem from="1744553740410" duration="1329000" />
-      <workItem from="1744555088543" duration="450000" />
-      <workItem from="1744555556926" duration="410000" />
+      <workItem from="1744574861536" duration="8779000" />
     </task>
     <servers />
   </component>
@@ -435,119 +348,34 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/mappers/RentMapper.java</url>
+          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java</url>
           <line>15</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/mappers/RentMapper.java</url>
+          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java</url>
           <line>16</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/mappers/RentMapper.java</url>
+          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java</url>
           <line>14</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/mappers/RentMapper.java</url>
+          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java</url>
           <line>13</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/mappers/RentMapper.java</url>
+          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java</url>
           <line>12</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/mappers/UserMapper.java</url>
+          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/UserMapper.java</url>
           <line>26</line>
           <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="75" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/controller/UserController.java</url>
@@ -580,9 +408,9 @@
           <option name="timeStamp" value="94" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/mappers/RentMapper.java</url>
+          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java</url>
           <line>11</line>
-          <properties class="pl.tks.repos.mappers.RentMapper" method="toEnt">
+          <properties class="mappers.RentMapper">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

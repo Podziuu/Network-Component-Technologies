@@ -17,6 +17,7 @@
         <module>RepositoriesAdapters</module>
         <module>SoapAdapter</module>
         <module>RestAdapter</module>
+        <module>SecurityAdapter</module>
     </modules>
     <dependencies>
         <dependency>

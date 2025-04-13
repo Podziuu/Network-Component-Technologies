@@ -1,4 +1,4 @@
-package pl.tks.rest.config;
+package pl.tks.security.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

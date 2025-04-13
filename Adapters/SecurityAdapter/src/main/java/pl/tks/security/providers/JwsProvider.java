@@ -1,4 +1,4 @@
-package pl.tks.rest.restsecurity;
+package pl.tks.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -10,7 +10,7 @@ import javax.crypto.SecretKey;
 import java.security.Key;
 
 @Service
-public class JwsProviderRest {
+public class JwsProvider {
 
     @Value("${app.jws.secret}")
     private String secret;

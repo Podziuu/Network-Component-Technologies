@@ -1,20 +1,17 @@
-package pl.tks.rest.restsecurity;
-
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jws;
-import io.jsonwebtoken.JwtException;
-import io.jsonwebtoken.Jwts;
+package pl.tks.security.providers;
+import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import pl.tks.model.user.Role;
+import org.springframework.beans.factory.annotation.Value;
+import pl.tks.ports.infrastructure.TokenProviderPort;
 
 import javax.crypto.SecretKey;
 import java.security.Key;
 import java.util.Date;
 
 @Service
-public class JwtTokenProviderRest {
+public class JwtTokenProvider implements TokenProviderPort {
 
     @Value("${app.jwt.secret}")
     private String secret;

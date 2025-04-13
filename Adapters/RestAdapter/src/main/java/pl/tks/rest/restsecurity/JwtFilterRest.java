@@ -5,36 +5,52 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.web.filter.OncePerRequestFilter;
+import pl.tks.model.user.Role;
+import pl.tks.ports.infrastructure.TokenProviderPort;
 import pl.tks.ports.ui.IUserPort;
 
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Collections;
 
 @Service
 public class JwtFilterRest extends OncePerRequestFilter {
 
-    private final JwtTokenProviderRest jwtTokenProvider;
+    private final TokenProviderPort tokenProviderPort;
     private final IUserPort userPort;
 
     @Autowired
-    public JwtFilterRest(JwtTokenProviderRest jwtTokenProvider, IUserPort userPort) {
-        this.jwtTokenProvider = jwtTokenProvider;
+    public JwtFilterRest(TokenProviderPort tokenProviderPort, IUserPort userPort) {
+        this.tokenProviderPort = tokenProviderPort;
         this.userPort = userPort;
     }
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        // Logic for handling the JWT token here
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+            throws ServletException, IOException {
         String token = getTokenFromRequest(request);
-
-        if (token != null && jwtTokenProvider.validateToken(token)) {
-            String login = jwtTokenProvider.getLogin(token);
-            String role = jwtTokenProvider.getRole(token);
-
-            // You can set the authentication context here if needed
+        if (token != null && tokenProviderPort.validateToken(token)) {
+            if (userPort.isTokenOnBlackList(token)) {
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                response.getWriter().write("Token has been invalidated");
+                return;
+            }
+            String login = tokenProviderPort.getLogin(token);
+            String roleString = tokenProviderPort.getRole(token);
+            Role role = Role.valueOf(roleString);
+            UserDetails userDetails = userPort.loadUserByUsername(login);
+            Collection<GrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + role.name()));
+            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails,
+                    null, authorities);
+            SecurityContextHolder.getContext().setAuthentication(authentication);
         }
-
         filterChain.doFilter(request, response);
     }
 

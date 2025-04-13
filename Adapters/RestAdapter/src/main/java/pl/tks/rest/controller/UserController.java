@@ -6,13 +6,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+//import pl.tks.security.JwsProvider;
+import pl.tks.model.user.UserPrincipal;
+import pl.tks.security.JwsProvider;
+import pl.tks.security.providers.JwtTokenProvider;
 import pl.tks.model.user.Role;
 import pl.tks.model.user.User;
 import pl.tks.ports.ui.IUserPort;
 import pl.tks.rest.dto.*;
 import pl.tks.rest.mapper.UserMapper;
-import pl.tks.rest.restsecurity.JwsProviderRest;
-import pl.tks.rest.restsecurity.JwtTokenProviderRest;
 
 import java.util.List;
 
@@ -20,11 +22,11 @@ import java.util.List;
 @RequestMapping("/api/users")
 public class UserController {
     private final IUserPort userPort;
-    private final JwtTokenProviderRest jwtTokenProvider;
-    private final JwsProviderRest jwsProvider;
+    private final JwtTokenProvider jwtTokenProvider;
+    private final JwsProvider jwsProvider;
     private final UserMapper userMapper;
 
-    public UserController(IUserPort userPort, JwtTokenProviderRest jwtTokenProvider, JwsProviderRest jwsProvider, UserMapper userMapper) {
+    public UserController(IUserPort userPort, JwtTokenProvider jwtTokenProvider, JwsProvider jwsProvider, UserMapper userMapper) {
         this.userPort = userPort;
         this.jwtTokenProvider = jwtTokenProvider;
         this.jwsProvider = jwsProvider;
@@ -144,5 +146,4 @@ public class UserController {
 
         return userMapper.convertToDTO(user);
     }
-
 }

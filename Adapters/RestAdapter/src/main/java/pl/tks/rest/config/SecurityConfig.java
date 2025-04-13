@@ -8,16 +8,16 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import pl.tks.ports.infrastructure.TokenProviderPort;
 import pl.tks.ports.ui.IUserPort;
 import pl.tks.rest.restsecurity.JwtFilterRest;
-import pl.tks.rest.restsecurity.JwtTokenProviderRest;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
     private final JwtFilterRest jwtFilter;
 
-    public SecurityConfig(JwtTokenProviderRest jwtTokenProvider, IUserPort userPort) {
+    public SecurityConfig(TokenProviderPort jwtTokenProvider, IUserPort userPort) {
         this.jwtFilter = new JwtFilterRest(jwtTokenProvider, userPort);
     }
 
