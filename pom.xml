@@ -18,7 +18,6 @@
     <module>ApplicationCore</module>
     <module>Adapters</module>
     <module>ApplicationPorts</module>
-      <module>Adapters/Security</module>
   </modules>
     <dependencies>
         <dependency>

@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/AbstractRestTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/Security/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/Security/src/main/java/pl/tks/security/providers/JwsProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/infrastructure/TokenProviderPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/RestAdaptersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/RestAdaptersApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/config/PasswordEncoderConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/Security/src/main/java/pl/tks/security/config/PasswordEncoderConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/restsecurity/JwsProviderRest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/restsecurity/JwtFilterRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/restsecurity/JwtFilterRest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/restsecurity/JwtTokenProviderRest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/src/main/java/pl/tks/service/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/ui/IUserPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/ui/IUserPort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
@@ -103,9 +86,11 @@
     "JUnit.UserServiceTest.shouldThrowExceptionWhenUserAlreadyExistsWhileAdding.executor": "Run",
     "JUnit.UserServiceTest.shouldThrowExceptionWhenUserNotFound.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.Adapters [clean].executor": "Run",
     "Maven.Adapters [compile].executor": "Run",
     "Maven.Adapters [install].executor": "Run",
     "Maven.Application [install].executor": "Run",
+    "Maven.ApplicationCore [clean].executor": "Run",
     "Maven.ApplicationCore [install].executor": "Run",
     "Maven.ApplicationPorts [install].executor": "Run",
     "Maven.Mediastore [clean].executor": "Run",
@@ -121,6 +106,7 @@
     "Maven.RestAdapters [clean].executor": "Run",
     "Maven.RestAdapters [install].executor": "Run",
     "Maven.Security [install].executor": "Run",
+    "Maven.SecurityAdapter [install].executor": "Run",
     "Maven.SoapAdapter [clean].executor": "Run",
     "Maven.SoapAdapter [install].executor": "Run",
     "Maven.security [clean].executor": "Run",
@@ -139,7 +125,7 @@
     "Spring Boot.RestApplication (2).executor": "Debug",
     "Spring Boot.RestApplication.executor": "Run",
     "Spring Boot.SoapApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Dependency",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
@@ -326,7 +312,7 @@
       <workItem from="1743247921553" duration="6976000" />
       <workItem from="1744464004214" duration="752000" />
       <workItem from="1744464781542" duration="3708000" />
-      <workItem from="1744574861536" duration="8779000" />
+      <workItem from="1744574861536" duration="9359000" />
     </task>
     <servers />
   </component>
