@@ -1,10 +1,9 @@
 import com.mongodb.client.result.UpdateResult;
-import entities.user.ClientEnt;
-import entities.user.UserEnt;
+import pl.tks.repos.entities.user.ClientEnt;
+import pl.tks.repos.entities.user.UserEnt;
 import org.bson.types.ObjectId;
 import org.junit.jupiter.api.*;
-import org.testcontainers.shaded.org.checkerframework.checker.units.qual.A;
-import repo.UserRepository;
+import pl.tks.repos.repo.UserRepository;
 
 public class UserRepositoryTest extends AbstractMongoDBTest {
     private static UserRepository userRepository;

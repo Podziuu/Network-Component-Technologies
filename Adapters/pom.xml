@@ -16,7 +16,7 @@
     <modules>
         <module>RepositoriesAdapters</module>
         <module>SoapAdapter</module>
-        <module>RestAdapters</module>
+        <module>RestAdapter</module>
     </modules>
     <dependencies>
         <dependency>

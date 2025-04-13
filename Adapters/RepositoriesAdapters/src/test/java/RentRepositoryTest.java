@@ -1,15 +1,12 @@
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-import entities.item.ItemEnt;
-import entities.item.MovieEnt;
-import entities.user.ClientEnt;
-import entities.user.UserEnt;
-import entities.RentEnt;
+import pl.tks.repos.entities.item.MovieEnt;
+import pl.tks.repos.entities.user.ClientEnt;
+import pl.tks.repos.entities.user.UserEnt;
+import pl.tks.repos.entities.RentEnt;
 import org.bson.types.ObjectId;
 import org.junit.jupiter.api.*;
-import repo.ItemRepository;
-import repo.RentRepository;
-import repo.UserRepository;
+import pl.tks.repos.repo.ItemRepository;
+import pl.tks.repos.repo.RentRepository;
+import pl.tks.repos.repo.UserRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;

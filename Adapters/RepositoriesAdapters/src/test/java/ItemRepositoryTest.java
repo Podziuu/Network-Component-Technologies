@@ -1,11 +1,11 @@
-import entities.item.ComicsEnt;
-import entities.item.ItemEnt;
-import entities.item.MovieEnt;
-import entities.item.MusicEnt;
-import model.item.MusicGenre;
+import pl.tks.repos.entities.item.ComicsEnt;
+import pl.tks.repos.entities.item.ItemEnt;
+import pl.tks.repos.entities.item.MovieEnt;
+import pl.tks.repos.entities.item.MusicEnt;
+import pl.tks.model.item.MusicGenre;
 import org.bson.types.ObjectId;
 import org.junit.jupiter.api.*;
-import repo.ItemRepository;
+import pl.tks.repos.repo.ItemRepository;
 
 public class ItemRepositoryTest extends AbstractMongoDBTest {
     private static ItemRepository itemRepository;
