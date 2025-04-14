@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://tks.pl/items" version="1.0">
+
+  <xs:import namespace="http://tks.pl/items" schemaLocation="schema1.xsd"/>
+
+  <xs:complexType name="AddComicsRequest">
+
+    <xs:sequence>
+
+      <xs:element ref="ns1:basePrice"/>
+
+      <xs:element ref="ns1:itemName"/>
+
+      <xs:element ref="ns1:available"/>
+
+      <xs:element ref="ns1:itemType"/>
+
+      <xs:element ref="ns1:pageNumber"/>
+
+      <xs:element ref="ns1:publisher"/>
+
+    </xs:sequence>
+
+  </xs:complexType>
+
+  <xs:complexType name="AddComicsResponse">
+
+    <xs:sequence>
+
+      <xs:element name="item" type="Comics"/>
+
+    </xs:sequence>
+
+  </xs:complexType>
+
+  <xs:complexType name="Comics">
+
+    <xs:complexContent>
+
+      <xs:extension base="Item">
+
+        <xs:sequence>
+
+          <xs:element name="pageNumber" type="xs:int"/>
+
+          <xs:element name="publisher" type="xs:string"/>
+
+        </xs:sequence>
+
+      </xs:extension>
+
+    </xs:complexContent>
+
+  </xs:complexType>
+
+  <xs:complexType abstract="true" name="Item">
+
+    <xs:sequence>
+
+      <xs:element name="id" type="xs:string"/>
+
+      <xs:element name="basePrice" type="xs:int"/>
+
+      <xs:element name="itemName" type="xs:string"/>
+
+      <xs:element name="available" type="xs:boolean"/>
+
+      <xs:element name="itemType" type="xs:string"/>
+
+    </xs:sequence>
+
+  </xs:complexType>
+
+  <xs:complexType name="Movie">
+
+    <xs:complexContent>
+
+      <xs:extension base="Item">
+
+        <xs:sequence>
+
+          <xs:element name="minutes" type="xs:int"/>
+
+          <xs:element name="casette" type="xs:boolean"/>
+
+        </xs:sequence>
+
+      </xs:extension>
+
+    </xs:complexContent>
+
+  </xs:complexType>
+
+  <xs:complexType name="Music">
+
+    <xs:complexContent>
+
+      <xs:extension base="Item">
+
+        <xs:sequence>
+
+          <xs:element name="genre" type="xs:string"/>
+
+          <xs:element name="vinyl" type="xs:boolean"/>
+
+        </xs:sequence>
+
+      </xs:extension>
+
+    </xs:complexContent>
+
+  </xs:complexType>
+
+  <xs:complexType name="AddMovieRequest">
+
+    <xs:sequence>
+
+      <xs:element ref="ns1:basePrice"/>
+
+      <xs:element ref="ns1:itemName"/>
+
+      <xs:element ref="ns1:available"/>
+
+      <xs:element ref="ns1:itemType"/>
+
+      <xs:element ref="ns1:minutes"/>
+
+      <xs:element ref="ns1:casette"/>
+
+    </xs:sequence>
+
+  </xs:complexType>
+
+  <xs:complexType name="AddMovieResponse">
+
+    <xs:sequence>
+
+      <xs:element name="item" type="Movie"/>
+
+    </xs:sequence>
+
+  </xs:complexType>
+
+  <xs:complexType name="AddMusicRequest">
+
+    <xs:sequence>
+
+      <xs:element ref="ns1:basePrice"/>
+
+      <xs:element ref="ns1:itemName"/>
+
+      <xs:element ref="ns1:available"/>
+
+      <xs:element ref="ns1:itemType"/>
+
+      <xs:element ref="ns1:genre"/>
+
+      <xs:element ref="ns1:vinyl"/>
+
+    </xs:sequence>
+
+  </xs:complexType>
+
+  <xs:complexType name="AddMusicResponse">
+
+    <xs:sequence>
+
+      <xs:element name="item" type="Music"/>
+
+    </xs:sequence>
+
+  </xs:complexType>
+
+  <xs:complexType name="getItemsRequest">
+
+    <xs:sequence/>
+
+  </xs:complexType>
+
+  <xs:complexType name="getItemsResponse">
+
+    <xs:sequence>
+
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="items" type="Item"/>
+
+    </xs:sequence>
+
+  </xs:complexType>
+
+  <xs:simpleType name="MusicGenre">
+
+    <xs:restriction base="xs:string">
+
+      <xs:enumeration value="Jazz"/>
+
+      <xs:enumeration value="Metal"/>
+
+      <xs:enumeration value="Classical"/>
+
+      <xs:enumeration value="HipHop"/>
+
+      <xs:enumeration value="POP"/>
+
+    </xs:restriction>
+
+  </xs:simpleType>
+
+</xs:schema>

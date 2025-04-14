@@ -1,6 +1,6 @@
 app:
   jwt:
-    secret: ${APP_JWT_SECRET}
-    expiration: ${APP_JWT_EXPIRATION}
+    secret: 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116
+    expiration: 3600000
   jws:
-    secret: ${APP_JWS_SECRET}
+    secret: 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116

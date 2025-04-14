@@ -1,6 +1,6 @@
 package pl.tks.soap.mapper;
 
-import io.spring.guides.gs_producing_web_service.*;
+import generated.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,7 +12,7 @@ public class ItemMapper {
         return switch(item.getItemType().toLowerCase()) {
             case "music" -> toMusicSoap((pl.tks.model.item.Music) item);
             case "movie" -> toMovieSoap((pl.tks.model.item.Movie) item);
-            case "comic" -> toComicsSoap((pl.tks.model.item.Comics) item);
+            case "comics" -> toComicsSoap((pl.tks.model.item.Comics) item);
             default -> throw new IllegalStateException("Unexpected value: " + item.getItemType());
         };
     }
@@ -24,7 +24,7 @@ public class ItemMapper {
         soapMusic.setItemName(music.getItemName());
         soapMusic.setBasePrice(music.getBasePrice());
         soapMusic.setAvailable(music.isAvailable());
-        soapMusic.setGenre(MusicGenre.fromValue(music.getGenre().name()));
+        soapMusic.setGenre(music.getGenre().name());
         soapMusic.setVinyl(music.isVinyl());
         return soapMusic;
     }
@@ -76,8 +76,9 @@ public class ItemMapper {
         music.setItemName(soapMusic.getItemName());
         music.setBasePrice(soapMusic.getBasePrice());
         music.setAvailable(soapMusic.isAvailable());
-        music.setGenre(pl.tks.model.item.MusicGenre.valueOf(soapMusic.getGenre().value()));
+        music.setGenre(pl.tks.model.item.MusicGenre.valueOf(soapMusic.getGenre()));
         music.setVinyl(soapMusic.isVinyl());
+        music.setItemType(soapMusic.getItemType());
         return music;
     }
 
@@ -90,6 +91,7 @@ public class ItemMapper {
         movie.setAvailable(soapMovie.isAvailable());
         movie.setMinutes(soapMovie.getMinutes());
         movie.setCasette(soapMovie.isCasette());
+        movie.setItemType(soapMovie.getItemType());
         return movie;
     }
 
@@ -102,6 +104,7 @@ public class ItemMapper {
         comics.setAvailable(soapComics.isAvailable());
         comics.setPageNumber(soapComics.getPageNumber());
         comics.setPublisher(soapComics.getPublisher());
+        comics.setItemType(soapComics.getItemType());
         return comics;
     }
 
