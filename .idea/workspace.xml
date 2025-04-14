@@ -5,20 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SecurityAdapter/src/main/java/pl/tks/security/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SecurityAdapter/src/main/java/pl/tks/security/providers/JwtFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SOAP/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SOAP/src/main/resources/items.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SOAP/src/main/resources/schema1.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SOAP/src/main/resources/schema2.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/AddComicsRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/AddComicsResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/AddMovieRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/AddMovieResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/AddMusicRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/AddMusicResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/ComicsSOAP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/GetItemsRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/GetItemsResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/ItemSOAP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/MovieSOAP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/MusicGenreSOAP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/MusicSOAP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/ItemRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/ItemRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/mappers/ItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/mappers/ItemMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/mappers/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/mappers/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/repo/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/repo/ItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/EntityMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/EntityMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/dto/CreateUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/dto/CreateUserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/restsecurity/JwtFilterRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/restsecurity/JwtFilterRest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/AbstractRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/AbstractRestTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/infrastructure/ItemPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/infrastructure/ItemPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/SoapAdapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/java/pl/tks/soap/SoapApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SOAP/src/main/java/pl/tks/soap/SoapApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/java/pl/tks/soap/config/WebServiceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SOAP/src/main/java/pl/tks/soap/config/WebServiceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/java/pl/tks/soap/endpoint/ItemEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SOAP/src/main/java/pl/tks/soap/endpoint/ItemEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/java/pl/tks/soap/mapper/ItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SOAP/src/main/java/pl/tks/soap/mapper/ItemMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/resources/items.xsd" beforeDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +45,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -49,7 +65,6 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2uV41awss1SJ7WRbwWYzaCOMQVf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -127,6 +142,7 @@
     "Maven.SecurityAdapter [install].executor": "Run",
     "Maven.SoapAdapter [clean].executor": "Run",
     "Maven.SoapAdapter [install].executor": "Run",
+    "Maven.SoapAdapter [validate].executor": "Run",
     "Maven.security [clean].executor": "Run",
     "Maven.security [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
@@ -142,12 +158,13 @@
     "Spring Boot.RestApplication (1).executor": "Run",
     "Spring Boot.RestApplication (2).executor": "Debug",
     "Spring Boot.RestApplication.executor": "Run",
+    "Spring Boot.SoapApplication (1).executor": "Run",
     "Spring Boot.SoapApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "soap__schemagen",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/plewkowicz/Studia/sem6/MKWA_SR_1015_06/Adapters/RestAdapters/src/test/java/pl/lodz/p/edu/restadapters",
+    "last_opened_file_path": "//wsl.localhost/Ubuntu/home/podziuu/studia/MKWA_SR_1015_06/Adapters/SoapAdapter/SOAP/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -164,13 +181,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl.localhost\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06\Adapters\SoapAdapter\SOAP\src\main\resources" />
       <recent name="$PROJECT_DIR$/Adapters/RestAdapters/src/test/java/pl/lodz/p/edu/restadapters" />
       <recent name="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters" />
       <recent name="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java" />
       <recent name="\\wsl$\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06\ApplicationCore\ApplicationServices\src\main\java" />
-      <recent name="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/exception" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl.localhost\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06\Adapters\SoapAdapter\SOAP\src\main\java" />
       <recent name="$PROJECT_DIR$/Adapters/Security/src/main/java/pl/tks/security/providers" />
       <recent name="\\wsl$\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06\ApplicationCore\ApplicationServices\src\main\java" />
       <recent name="\\wsl$\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06" />
@@ -186,7 +204,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ItemIntegrationTest">
+  <component name="RunManager" selected="Spring Boot.SoapApplication">
     <configuration name="ItemIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RestAdapter" />
       <option name="PACKAGE_NAME" value="" />
@@ -198,42 +216,6 @@
         <env name="APP_JWT_EXPIRATION" value=" 3600000" />
         <env name="APP_JWT_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
       </envs>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ItemIntegrationTest.testCreateComics" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RestAdapter" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
-      <option name="METHOD_NAME" value="testCreateComics" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ItemIntegrationTest.testCreateMovie" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RestAdapter" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
-      <option name="METHOD_NAME" value="testCreateMovie" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ItemIntegrationTest.testCreateMusic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RestAdapters" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.lodz.p.edu.restadapters.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pl.lodz.p.edu.restadapters" />
-      <option name="MAIN_CLASS_NAME" value="pl.lodz.p.edu.restadapters.ItemIntegrationTest" />
-      <option name="METHOD_NAME" value="testCreateMusic" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -270,29 +252,46 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SoapApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="APP_JWT_EXPIRATION" value="3600000" />
+        <env name="APP_JWT_SECRET" value="41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
+        <env name="APP_JWS_SECRET" value="41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
+      </envs>
+      <module name="SOAP" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.tks.soap.SoapApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.tks.soap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="JUnit.ItemIntegrationTest.testCreateComics" />
       <item itemvalue="JUnit.ItemIntegrationTest.testGetAllItems" />
       <item itemvalue="JUnit.ItemIntegrationTest.testGetMusic" />
-      <item itemvalue="JUnit.ItemIntegrationTest.testCreateMovie" />
       <item itemvalue="JUnit.ItemIntegrationTest" />
       <item itemvalue="Spring Boot.RestAdaptersApplication" />
+      <item itemvalue="Spring Boot.SoapApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.SoapApplication" />
+        <item itemvalue="Spring Boot.SoapApplication" />
         <item itemvalue="JUnit.ItemIntegrationTest" />
         <item itemvalue="JUnit.ItemIntegrationTest.testGetAllItems" />
         <item itemvalue="JUnit.ItemIntegrationTest.testGetMusic" />
-        <item itemvalue="JUnit.ItemIntegrationTest.testCreateComics" />
-        <item itemvalue="JUnit.ItemIntegrationTest.testCreateMovie" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.22855.74" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.22855.74" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.318" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.318" />
       </set>
     </attachedChunks>
   </component>
@@ -484,6 +483,11 @@
           <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
           <line>172</line>
           <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/SoapAdapter/SOAP/src/main/java/pl/tks/soap/mapper/ItemMapper.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="149" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java</url>
