@@ -10,6 +10,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.filter.OncePerRequestFilter;
 import pl.tks.model.user.Role;
@@ -20,7 +21,7 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
 
-@Service
+@Component
 public class JwtFilterRest extends OncePerRequestFilter {
 
     private final TokenProviderPort tokenProviderPort;

@@ -42,6 +42,11 @@ public class ItemRepositoryAdapter implements ItemPort {
     }
 
     @Override
+    public void deleteAllItems() {
+        itemRepository.deleteAllItems();
+    }
+
+    @Override
     public Item addItem(Item item) {
         return ItemMapper.toItem(itemRepository.addItem(ItemMapper.toItemEnt(item)));
     }

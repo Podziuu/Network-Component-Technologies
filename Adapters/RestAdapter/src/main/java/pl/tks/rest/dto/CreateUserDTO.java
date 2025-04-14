@@ -21,17 +21,18 @@ public class CreateUserDTO {
     private Role role;
     private boolean isActive;
 
-    @JsonCreator
-    public CreateUserDTO(String id, String login, String password, String firstName, String lastName, Role role, boolean isActive) {
-        this.id = id;
-        this.login = login;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.role = role;
-        this.isActive = isActive;
-    }
+//    @JsonCreator
+//    public CreateUserDTO(String id, String login, String password, String firstName, String lastName, Role role, boolean isActive) {
+//        this.id = id;
+//        this.login = login;
+//        this.password = password;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.role = role;
+//        this.isActive = isActive;
+//    }
 
+//        @JsonCreator
     public CreateUserDTO(String login, String password, String firstName, String lastName, Role role) {
         this.login = login;
         this.password = password;

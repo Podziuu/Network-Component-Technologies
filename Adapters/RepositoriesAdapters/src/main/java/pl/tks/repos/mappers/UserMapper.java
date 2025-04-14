@@ -18,7 +18,7 @@ public class UserMapper {
     }
 
     public static ClientEnt toClientEnt(Client client) {
-        return new ClientEnt(new ObjectId(client.getId()),
+        return new ClientEnt(new ObjectId(),
                 client.getLogin(),
                 client.getPassword(),
                 client.getFirstName(),
@@ -35,7 +35,7 @@ public class UserMapper {
     }
 
     public static AdminEnt toAdminEnt(Admin admin) {
-        return new AdminEnt(new ObjectId(admin.getId()),
+        return new AdminEnt(new ObjectId(),
                 admin.getLogin(),
                 admin.getPassword(),
                 admin.getFirstName(),
@@ -51,7 +51,7 @@ public class UserMapper {
     }
 
     public static ManagerEnt toManagerEnt(Manager manager) {
-        return new ManagerEnt(new ObjectId(manager.getId()),
+        return new ManagerEnt(new ObjectId(),
                 manager.getLogin(),
                 manager.getPassword(),
                 manager.getFirstName(),

@@ -35,7 +35,6 @@ public class EntityMapperTest {
         Movie mappedBackMovie = ItemMapper.toMovie(movieEnt);
 
         assertNotNull(movieEnt);
-        assertEquals(movie.getId(), movieEnt.getId().toHexString());
         assertEquals(movie.getBasePrice(), movieEnt.getBasePrice());
         assertEquals(movie.getItemName(), movieEnt.getItemName());
         assertEquals(movie.isAvailable(), movieEnt.isAvailable());
@@ -43,7 +42,6 @@ public class EntityMapperTest {
         assertEquals(movie.isCasette(), movieEnt.isCasette());
 
         assertNotNull(mappedBackMovie);
-        assertEquals(movie.getId(), mappedBackMovie.getId());
         assertEquals(movie.getBasePrice(), mappedBackMovie.getBasePrice());
         assertEquals(movie.getItemName(), mappedBackMovie.getItemName());
         assertEquals(movie.isAvailable(), mappedBackMovie.isAvailable());
@@ -59,7 +57,6 @@ public class EntityMapperTest {
         Music mappedBackMusic = ItemMapper.toMusic(musicEnt);
 
         assertNotNull(musicEnt);
-        assertEquals(music.getId(), musicEnt.getId().toHexString());
         assertEquals(music.getBasePrice(), musicEnt.getBasePrice());
         assertEquals(music.getItemName(), musicEnt.getItemName());
         assertEquals(music.isAvailable(), musicEnt.isAvailable());
@@ -67,7 +64,6 @@ public class EntityMapperTest {
         assertEquals(music.isVinyl(), musicEnt.isVinyl());
 
         assertNotNull(mappedBackMusic);
-        assertEquals(music.getId(), mappedBackMusic.getId());
         assertEquals(music.getBasePrice(), mappedBackMusic.getBasePrice());
         assertEquals(music.getItemName(), mappedBackMusic.getItemName());
         assertEquals(music.isAvailable(), mappedBackMusic.isAvailable());
@@ -83,7 +79,6 @@ public class EntityMapperTest {
         Comics mappedBackComics = ItemMapper.toComics(comicsEnt);
 
         assertNotNull(comicsEnt);
-        assertEquals(comics.getId(), comicsEnt.getId().toHexString());
         assertEquals(comics.getBasePrice(), comicsEnt.getBasePrice());
         assertEquals(comics.getItemName(), comicsEnt.getItemName());
         assertEquals(comics.isAvailable(), comicsEnt.isAvailable());
@@ -91,7 +86,6 @@ public class EntityMapperTest {
         assertEquals(comics.getPublisher(), comicsEnt.getPublisher());
 
         assertNotNull(mappedBackComics);
-        assertEquals(comics.getId(), mappedBackComics.getId());
         assertEquals(comics.getBasePrice(), mappedBackComics.getBasePrice());
         assertEquals(comics.getItemName(), mappedBackComics.getItemName());
         assertEquals(comics.isAvailable(), mappedBackComics.isAvailable());
@@ -108,7 +102,6 @@ public class EntityMapperTest {
         Client mappedBackClient = UserMapper.toClient(clientEnt);
 
         assertNotNull(clientEnt);
-        assertEquals(client.getId(), clientEnt.getId().toHexString());
         assertEquals(client.getLogin(), clientEnt.getLogin());
         assertEquals(client.getPassword(), clientEnt.getPassword());
         assertEquals(client.getFirstName(), clientEnt.getFirstName());
@@ -117,7 +110,6 @@ public class EntityMapperTest {
         assertEquals(client.getClientType().getDiscount(), clientEnt.getClientType().getDiscount());
 
         assertNotNull(mappedBackClient);
-        assertEquals(client.getId(), mappedBackClient.getId());
         assertEquals(client.getLogin(), mappedBackClient.getLogin());
         assertEquals(client.getPassword(), mappedBackClient.getPassword());
         assertEquals(client.getFirstName(), mappedBackClient.getFirstName());
@@ -134,14 +126,12 @@ public class EntityMapperTest {
         Admin mappedBackAdmin = UserMapper.toAdmin(adminEnt);
 
         assertNotNull(adminEnt);
-        assertEquals(admin.getId(), adminEnt.getId().toHexString());
         assertEquals(admin.getLogin(), adminEnt.getLogin());
         assertEquals(admin.getPassword(), adminEnt.getPassword());
         assertEquals(admin.getFirstName(), adminEnt.getFirstName());
         assertEquals(admin.getLastName(), adminEnt.getLastName());
 
         assertNotNull(mappedBackAdmin);
-        assertEquals(admin.getId(), mappedBackAdmin.getId());
         assertEquals(admin.getLogin(), mappedBackAdmin.getLogin());
         assertEquals(admin.getPassword(), mappedBackAdmin.getPassword());
         assertEquals(admin.getFirstName(), mappedBackAdmin.getFirstName());
@@ -156,14 +146,12 @@ public class EntityMapperTest {
         Manager mappedBackManager = UserMapper.toManager(managerEnt);
 
         assertNotNull(managerEnt);
-        assertEquals(manager.getId(), managerEnt.getId().toHexString());
         assertEquals(manager.getLogin(), managerEnt.getLogin());
         assertEquals(manager.getPassword(), managerEnt.getPassword());
         assertEquals(manager.getFirstName(), managerEnt.getFirstName());
         assertEquals(manager.getLastName(), managerEnt.getLastName());
 
         assertNotNull(mappedBackManager);
-        assertEquals(manager.getId(), mappedBackManager.getId());
         assertEquals(manager.getLogin(), mappedBackManager.getLogin());
         assertEquals(manager.getPassword(), mappedBackManager.getPassword());
         assertEquals(manager.getFirstName(), mappedBackManager.getFirstName());

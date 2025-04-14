@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationCore/ApplicationServices/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/ItemRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/ItemRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/mappers/ItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/mappers/ItemMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/mappers/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/mappers/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/repo/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/repo/ItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/EntityMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/test/java/EntityMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/dto/CreateUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/dto/CreateUserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/restsecurity/JwtFilterRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/restsecurity/JwtFilterRest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/AbstractRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/AbstractRestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/infrastructure/ItemPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/infrastructure/ItemPort.java" afterDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,12 +57,18 @@
   "keyToString": {
     "HTTP Request.generated-requests | #4.executor": "Run",
     "HTTP Request.generated-requests | #5.executor": "Run",
+    "HTTP Request.generated-requests | #6.executor": "Run",
     "JUnit.EntityMapperTest.executor": "Run",
-    "JUnit.EntityMapperTest.movieMapperTest.executor": "Debug",
+    "JUnit.EntityMapperTest.movieMapperTest.executor": "Run",
+    "JUnit.EntityMapperTest.rentMapperTest.executor": "Run",
     "JUnit.ItemIntegrationTest.executor": "Run",
+    "JUnit.ItemIntegrationTest.testCreateComics.executor": "Run",
+    "JUnit.ItemIntegrationTest.testCreateMovie.executor": "Run",
     "JUnit.ItemIntegrationTest.testCreateMusic (1).executor": "Run",
     "JUnit.ItemIntegrationTest.testCreateMusic (2).executor": "Run",
     "JUnit.ItemIntegrationTest.testCreateMusic.executor": "Run",
+    "JUnit.ItemIntegrationTest.testGetAllItems.executor": "Run",
+    "JUnit.ItemIntegrationTest.testGetMusic.executor": "Debug",
     "JUnit.ItemRepositoryTest.addItemTest.executor": "Run",
     "JUnit.ItemRepositoryTest.executor": "Run",
     "JUnit.ItemRepositoryTest.setUnavailableTest.executor": "Run",
@@ -125,7 +143,7 @@
     "Spring Boot.RestApplication (2).executor": "Debug",
     "Spring Boot.RestApplication.executor": "Run",
     "Spring Boot.SoapApplication.executor": "Run",
-    "git-widget-placeholder": "Dependency",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
@@ -168,7 +186,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.RestAdaptersApplication">
+  <component name="RunManager" selected="JUnit.ItemIntegrationTest">
     <configuration name="ItemIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RestAdapter" />
       <option name="PACKAGE_NAME" value="" />
@@ -176,36 +194,29 @@
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <envs>
+        <env name="APP_JWS_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
         <env name="APP_JWT_EXPIRATION" value=" 3600000" />
         <env name="APP_JWT_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
-        <env name="KEYSTORE_PASSWORD" value=" Kzgm74&amp;8&quot;YM0" />
-        <env name="APP_JWS_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
       </envs>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemIntegrationTest.testCreateMusic (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RestAdapters" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.lodz.p.edu.restadapters.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pl.lodz.p.edu.restadapters" />
-      <option name="MAIN_CLASS_NAME" value="pl.lodz.p.edu.restadapters.ItemIntegrationTest" />
-      <option name="METHOD_NAME" value="testCreateMusic" />
+    <configuration name="ItemIntegrationTest.testCreateComics" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RestAdapter" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
+      <option name="METHOD_NAME" value="testCreateComics" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemIntegrationTest.testCreateMusic (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ItemIntegrationTest.testCreateMovie" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RestAdapter" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
-      <option name="METHOD_NAME" value="testCreateMusic" />
+      <option name="METHOD_NAME" value="testCreateMovie" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -227,58 +238,53 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RestAdaptersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <envs>
-        <env name="APP_JWT_EXPIRATION" value=" 3600000" />
-        <env name="APP_JWT_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
-        <env name="KEYSTORE_PASSWORD" value=" Kzgm74&amp;8&quot;YM0" />
-        <env name="APP_JWS_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
-      </envs>
+    <configuration name="ItemIntegrationTest.testGetAllItems" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RestAdapter" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.tks.rest.RestAdaptersApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.tks.rest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
+      <option name="METHOD_NAME" value="testGetAllItems" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SoapApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="ItemIntegrationTest.testGetMusic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RestAdapter" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
+      <option name="METHOD_NAME" value="testGetMusic" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestAdaptersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <envs>
+        <env name="APP_JWS_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
         <env name="APP_JWT_EXPIRATION" value=" 3600000" />
         <env name="APP_JWT_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
-        <env name="KEYSTORE_PASSWORD" value=" Kzgm74&amp;8&quot;YM0" />
-        <env name="APP_JWS_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
       </envs>
-      <module name="SoapAdapter" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.tks.soap.SoapApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.tks.soap.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <module name="RestAdapter" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.tks.rest.RestAdaptersApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic (2)" />
+      <item itemvalue="JUnit.ItemIntegrationTest.testCreateComics" />
+      <item itemvalue="JUnit.ItemIntegrationTest.testGetAllItems" />
+      <item itemvalue="JUnit.ItemIntegrationTest.testGetMusic" />
+      <item itemvalue="JUnit.ItemIntegrationTest.testCreateMovie" />
       <item itemvalue="JUnit.ItemIntegrationTest" />
-      <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic (1)" />
-      <item itemvalue="Spring Boot.SoapApplication" />
       <item itemvalue="Spring Boot.RestAdaptersApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.RestAdaptersApplication" />
-        <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic (2)" />
         <item itemvalue="JUnit.ItemIntegrationTest" />
-        <item itemvalue="Spring Boot.SoapApplication" />
-        <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic (1)" />
+        <item itemvalue="JUnit.ItemIntegrationTest.testGetAllItems" />
+        <item itemvalue="JUnit.ItemIntegrationTest.testGetMusic" />
+        <item itemvalue="JUnit.ItemIntegrationTest.testCreateComics" />
+        <item itemvalue="JUnit.ItemIntegrationTest.testCreateMovie" />
       </list>
     </recent_temporary>
   </component>
@@ -312,7 +318,8 @@
       <workItem from="1743247921553" duration="6976000" />
       <workItem from="1744464004214" duration="752000" />
       <workItem from="1744464781542" duration="3708000" />
-      <workItem from="1744574861536" duration="9359000" />
+      <workItem from="1744574861536" duration="12066000" />
+      <workItem from="1744626899853" duration="5316000" />
     </task>
     <servers />
   </component>
@@ -393,6 +400,91 @@
           <line>56</line>
           <option name="timeStamp" value="94" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/UserRepositoryAdapter.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/ItemRepositoryAdapter.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>175</line>
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>173</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>159</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>160</line>
+          <option name="timeStamp" value="112" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>162</line>
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>161</line>
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>163</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>164</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>166</line>
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>167</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>168</line>
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>169</line>
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>170</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>171</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>172</line>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java</url>
           <line>11</line>
@@ -420,6 +512,10 @@
           </properties>
           <option name="timeStamp" value="92" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NoSuchMethodError" package="java.lang" />
+          <option name="timeStamp" value="102" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

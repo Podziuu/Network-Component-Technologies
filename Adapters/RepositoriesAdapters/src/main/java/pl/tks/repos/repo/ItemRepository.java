@@ -68,6 +68,10 @@ public class ItemRepository extends AbstractMongoEntity {
         mongoClient.close();
     }
 
+    public void deleteAllItems() {
+        itemCollection.drop();
+    }
+
     public List<ItemEnt> getAllItems() {
         return itemCollection.find().into(new ArrayList<>());
     }

@@ -10,6 +10,8 @@ public interface ItemPort {
 
     List<Item> getAllItems();
 
+    void deleteAllItems();
+
     Item getItemById(String id);
 
     List<Item> getItemsByBasePrice(int basePrice);

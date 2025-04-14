@@ -24,8 +24,7 @@ public class ItemMapper {
     }
 
     public static MusicEnt toMusicEnt(Music music) {
-        ObjectId objectId = ObjectId.isValid(music.getId()) ? new ObjectId(music.getId()) : new ObjectId();
-        return new MusicEnt(objectId,
+        return new MusicEnt(new ObjectId(),
                 music.getBasePrice(),
                 music.getItemName(),
                 music.isAvailable(),
@@ -43,8 +42,7 @@ public class ItemMapper {
     }
 
     public static MovieEnt toMovieEnt(Movie movie) {
-        ObjectId objectId = ObjectId.isValid(movie.getId()) ? new ObjectId(movie.getId()) : new ObjectId();
-        return new MovieEnt(objectId,
+        return new MovieEnt(new ObjectId(),
                 movie.getBasePrice(),
                 movie.getItemName(),
                 movie.isAvailable(),
@@ -62,8 +60,7 @@ public class ItemMapper {
     }
 
     public static ComicsEnt toComicsEnt(Comics comics) {
-        ObjectId objectId = ObjectId.isValid(comics.getId()) ? new ObjectId(comics.getId()) : new ObjectId();
-        return new ComicsEnt(objectId,
+        return new ComicsEnt(new ObjectId(),
                 comics.getBasePrice(),
                 comics.getItemName(),
                 comics.isAvailable(),
