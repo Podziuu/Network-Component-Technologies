@@ -24,4 +24,6 @@ public interface RentPort {
     List<Rent> findActiveRentsByClientId(String clientId);
 
     List<Rent> findInactiveRentsByClientId(String clientId);
+
+    void deleteAll();
 }

@@ -15,9 +15,5 @@ public abstract class AbstractRestTest {
     @DynamicPropertySource
     static void setProperties(DynamicPropertyRegistry registry) {
         registry.add("spring.data.mongodb.uri", mongoDBContainer::getReplicaSetUrl);
-
-        registry.add("APP_JWT_SECRET", () -> "");
-        registry.add("APP_JWT_EXPIRATION", () -> "");
-        registry.add("APP_JWS_SECRET", () -> "");
     }
 }

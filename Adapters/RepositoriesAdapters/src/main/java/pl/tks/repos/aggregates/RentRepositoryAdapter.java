@@ -69,4 +69,9 @@ public class RentRepositoryAdapter implements RentPort {
     public List<Rent> findInactiveRentsByClientId(String clientId) {
         return RentMapper.toRentList(rentRepository.findInactiveRentsByClientId(clientId));
     }
+
+    @Override
+    public void deleteAll() {
+        rentRepository.deleteAll();
+    }
 }

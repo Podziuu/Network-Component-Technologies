@@ -5,36 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Adapters/SecurityAdapter/src/main/java/pl/tks/security/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SecurityAdapter/src/main/java/pl/tks/security/providers/JwtFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SOAP/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SOAP/src/main/resources/items.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SOAP/src/main/resources/schema1.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SOAP/src/main/resources/schema2.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/AddComicsRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/AddComicsResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/AddMovieRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/AddMovieResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/AddMusicRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/AddMusicResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/ComicsSOAP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/GetItemsRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/GetItemsResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/ItemSOAP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/MovieSOAP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/MusicGenreSOAP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SchemaGen/src/main/java/pl/tks/schemagen/model/MusicSOAP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/RentIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/UserIntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/restsecurity/JwtFilterRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/restsecurity/JwtFilterRest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/SoapAdapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/java/pl/tks/soap/SoapApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SOAP/src/main/java/pl/tks/soap/SoapApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/java/pl/tks/soap/config/WebServiceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SOAP/src/main/java/pl/tks/soap/config/WebServiceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/java/pl/tks/soap/endpoint/ItemEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SOAP/src/main/java/pl/tks/soap/endpoint/ItemEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/java/pl/tks/soap/mapper/ItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/SoapAdapter/SOAP/src/main/java/pl/tks/soap/mapper/ItemMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/SoapAdapter/src/main/resources/items.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/RentRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/RentRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/UserRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/UserRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/repo/RentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/repo/RentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/repo/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/repo/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/AbstractRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/AbstractRestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/infrastructure/RentPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/infrastructure/RentPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/infrastructure/UserPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/infrastructure/UserPort.java" afterDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +46,7 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2uV41awss1SJ7WRbwWYzaCOMQVf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -95,6 +77,7 @@
     "JUnit.ItemServiceTest.shouldSetItemUnavailable.executor": "Run",
     "JUnit.ItemServiceTest.shouldThrowExceptionWhenItemNotFoundWhenSetUnavailable.executor": "Run",
     "JUnit.ItemServiceTest.shouldUpdateMusicItemSuccessfully.executor": "Run",
+    "JUnit.RentIntegrationTest.executor": "Run",
     "JUnit.RentRepositoryTest.executor": "Run",
     "JUnit.RentRepositoryTest.rentItemTest.executor": "Run",
     "JUnit.RentServiceTest.executor": "Run",
@@ -106,6 +89,11 @@
     "JUnit.RentServiceTest.shouldThrowExceptionWhenNoRentsFoundWhileGetActiveRents.executor": "Run",
     "JUnit.RentServiceTest.shouldThrowExceptionWhenRentNotFoundWhileReturning.executor": "Run",
     "JUnit.RentServiceTest.shouldThrowExceptionWhenUserNotFoundWhileRenting.executor": "Run",
+    "JUnit.UserIntegrationTest.executor": "Run",
+    "JUnit.UserIntegrationTest.testCreateUser.executor": "Debug",
+    "JUnit.UserIntegrationTest.testCreateUserWithMissingProperty.executor": "Run",
+    "JUnit.UserIntegrationTest.testGetAllUsers.executor": "Run",
+    "JUnit.UserIntegrationTest.testUpdateUser.executor": "Run",
     "JUnit.UserRepositoryTest.executor": "Run",
     "JUnit.UserServiceTest.executor": "Run",
     "JUnit.UserServiceTest.shouldAddUserSuccessfully.executor": "Run",
@@ -160,7 +148,7 @@
     "Spring Boot.RestApplication.executor": "Run",
     "Spring Boot.SoapApplication (1).executor": "Run",
     "Spring Boot.SoapApplication.executor": "Run",
-    "git-widget-placeholder": "soap__schemagen",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
@@ -204,37 +192,51 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SoapApplication">
-    <configuration name="ItemIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.RentIntegrationTest">
+    <configuration name="RentIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RestAdapter" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
-      <option name="METHOD_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RentIntegrationTest" />
       <option name="TEST_OBJECT" value="class" />
-      <envs>
-        <env name="APP_JWS_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
-        <env name="APP_JWT_EXPIRATION" value=" 3600000" />
-        <env name="APP_JWT_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
-      </envs>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemIntegrationTest.testGetAllItems" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserIntegrationTest.testCreateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RestAdapter" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
-      <option name="METHOD_NAME" value="testGetAllItems" />
+      <option name="MAIN_CLASS_NAME" value="UserIntegrationTest" />
+      <option name="METHOD_NAME" value="testCreateUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemIntegrationTest.testGetMusic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserIntegrationTest.testCreateUserWithMissingProperty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RestAdapter" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
-      <option name="METHOD_NAME" value="testGetMusic" />
+      <option name="MAIN_CLASS_NAME" value="UserIntegrationTest" />
+      <option name="METHOD_NAME" value="testCreateUserWithMissingProperty" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserIntegrationTest.testGetAllUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RestAdapter" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserIntegrationTest" />
+      <option name="METHOD_NAME" value="testGetAllUsers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserIntegrationTest.testUpdateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RestAdapter" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserIntegrationTest" />
+      <option name="METHOD_NAME" value="testUpdateUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -252,38 +254,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SoapApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <envs>
-        <env name="APP_JWT_EXPIRATION" value="3600000" />
-        <env name="APP_JWT_SECRET" value="41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
-        <env name="APP_JWS_SECRET" value="41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
-      </envs>
-      <module name="SOAP" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.tks.soap.SoapApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.tks.soap.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.ItemIntegrationTest.testGetAllItems" />
-      <item itemvalue="JUnit.ItemIntegrationTest.testGetMusic" />
-      <item itemvalue="JUnit.ItemIntegrationTest" />
+      <item itemvalue="JUnit.RentIntegrationTest" />
+      <item itemvalue="JUnit.UserIntegrationTest.testCreateUser" />
+      <item itemvalue="JUnit.UserIntegrationTest.testCreateUserWithMissingProperty" />
+      <item itemvalue="JUnit.UserIntegrationTest.testGetAllUsers" />
+      <item itemvalue="JUnit.UserIntegrationTest.testUpdateUser" />
       <item itemvalue="Spring Boot.RestAdaptersApplication" />
-      <item itemvalue="Spring Boot.SoapApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.SoapApplication" />
-        <item itemvalue="Spring Boot.SoapApplication" />
-        <item itemvalue="JUnit.ItemIntegrationTest" />
-        <item itemvalue="JUnit.ItemIntegrationTest.testGetAllItems" />
-        <item itemvalue="JUnit.ItemIntegrationTest.testGetMusic" />
+        <item itemvalue="JUnit.RentIntegrationTest" />
+        <item itemvalue="JUnit.UserIntegrationTest.testUpdateUser" />
+        <item itemvalue="JUnit.UserIntegrationTest.testGetAllUsers" />
+        <item itemvalue="JUnit.UserIntegrationTest.testCreateUserWithMissingProperty" />
+        <item itemvalue="JUnit.UserIntegrationTest.testCreateUser" />
       </list>
     </recent_temporary>
   </component>
@@ -489,6 +474,11 @@
           <line>56</line>
           <option name="timeStamp" value="149" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/controller/UserController.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="160" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java</url>
           <line>11</line>
@@ -516,10 +506,6 @@
           </properties>
           <option name="timeStamp" value="92" />
         </line-breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NoSuchMethodError" package="java.lang" />
-          <option name="timeStamp" value="102" />
-        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

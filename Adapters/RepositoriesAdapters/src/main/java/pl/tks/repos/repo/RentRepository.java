@@ -97,4 +97,8 @@ public class RentRepository extends AbstractMongoEntity {
     public void close() {
         mongoClient.close();
     }
+
+    public void deleteAll() {
+        rentCollection.drop();
+    }
 }

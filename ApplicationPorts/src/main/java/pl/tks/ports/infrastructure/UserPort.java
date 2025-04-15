@@ -10,7 +10,7 @@ public interface UserPort {
     void updateUser(String id, String firstName, String lastName);
 
     void activateUser(String id);
-
+    void deleteAll();
     void deactivateUser(String id);
 
     void updatePassword(String id, String newPassword);

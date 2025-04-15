@@ -103,4 +103,8 @@ public class UserRepository extends AbstractMongoEntity {
                 set("password", encodedNewPassword)
         );
     }
+
+    public void deleteAll() {
+        userCollection.drop();
+    }
 }

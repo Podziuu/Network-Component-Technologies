@@ -28,6 +28,11 @@ public class UserRepositoryAdapter implements UserPort {
     }
 
     @Override
+    public void deleteAll() {
+        userRepository.deleteAll();
+    }
+
+    @Override
     public User getById(String id) {
         return UserMapper.toUser(userRepository.findById(id));
     }

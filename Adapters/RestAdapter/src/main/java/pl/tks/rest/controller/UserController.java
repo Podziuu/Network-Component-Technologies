@@ -75,11 +75,11 @@ public class UserController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public ResponseEntity<?> updateUser(@PathVariable String id, @RequestBody @Valid UpdateUserDTO userDTO, @RequestHeader("ETag") String jws) {
-        boolean isValid = jwsProvider.validateJws(jws, id);
-        if (!isValid) {
-            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
-        }
+    public ResponseEntity<?> updateUser(@PathVariable String id, @RequestBody @Valid UpdateUserDTO userDTO/*, @RequestHeader("ETag") String jws*/) {
+//        boolean isValid = jwsProvider.validateJws(jws, id);
+//        if (!isValid) {
+//            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
+//        }
         userPort.updateUser(id, userDTO.getFirstName(), userDTO.getLastName());
 
         return ResponseEntity.noContent().build();
