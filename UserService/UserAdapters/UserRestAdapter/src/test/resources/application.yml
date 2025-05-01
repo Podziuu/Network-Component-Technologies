@@ -1,0 +1,6 @@
+app:
+  jwt:
+    secret:
+    expiration:
+  jws:
+    secret:

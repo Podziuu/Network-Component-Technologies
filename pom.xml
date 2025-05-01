@@ -15,9 +15,8 @@
   </parent>
 
   <modules>
-    <module>ApplicationCore</module>
-    <module>Adapters</module>
-    <module>ApplicationPorts</module>
+      <module>UserService</module>
+      <module>RentService</module>
   </modules>
     <dependencies>
         <dependency>
