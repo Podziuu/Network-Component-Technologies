@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.test.context.ActiveProfiles;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import pl.tks.model.item.Item;
 import pl.tks.ports.infrastructure.ItemPort;
@@ -20,6 +21,7 @@ import java.util.Map;
 import static org.hamcrest.Matchers.equalTo;
 @Testcontainers
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = RentRestAdapterApplication.class)
+@ActiveProfiles("test")
 public class ItemIntegrationTest extends AbstractRestTest {
     private String authToken;
 
@@ -30,6 +32,8 @@ public class ItemIntegrationTest extends AbstractRestTest {
     ItemPort itemPort;
 
     private String username;
+
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     @BeforeEach
     public void setup() throws JsonProcessingException {
@@ -78,8 +82,8 @@ public class ItemIntegrationTest extends AbstractRestTest {
         itemPort.deleteAllItems();
     }
 
-    private String toJson(Map<String, Object> map) throws JsonProcessingException {
-        return new ObjectMapper().writeValueAsString(map);
+    private String toJson(Object obj) throws JsonProcessingException {
+        return objectMapper.writeValueAsString(obj);
     }
 
     @Test
