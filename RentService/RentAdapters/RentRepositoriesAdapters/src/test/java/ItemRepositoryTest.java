@@ -1,8 +1,10 @@
 import org.bson.types.ObjectId;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pl.tks.model.item.MusicGenre;
+import pl.tks.repos.config.MongoProperties;
 import pl.tks.repos.entities.item.ComicsEnt;
 import pl.tks.repos.entities.item.ItemEnt;
 import pl.tks.repos.entities.item.MovieEnt;
@@ -11,13 +13,21 @@ import pl.tks.repos.repo.ItemRepository;
 
 public class ItemRepositoryTest extends AbstractMongoDBTest {
     private static ItemRepository itemRepository;
+    private MongoProperties mongoProperties;
+//    @BeforeAll
+//    static void setUp() {
+//        itemRepository = new ItemRepository(
+//                mongoDBContainer.getReplicaSetUrl(),
+//                "test-mediastore"
+//        );
+//    }
 
-    @BeforeAll
-    static void setUp() {
-        itemRepository = new ItemRepository(
-                mongoDBContainer.getReplicaSetUrl(),
-                "test-mediastore"
-        );
+    @BeforeEach
+    public void setUp() {
+        mongoProperties = new MongoProperties();
+        mongoProperties.setUri(mongoDBContainer.getReplicaSetUrl());
+        mongoProperties.setDatabase("item_repository_test");
+        itemRepository = new ItemRepository(mongoProperties);
     }
 
     @Test

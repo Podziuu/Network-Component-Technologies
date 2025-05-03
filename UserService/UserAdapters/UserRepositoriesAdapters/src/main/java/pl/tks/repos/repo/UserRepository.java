@@ -6,8 +6,11 @@ import com.mongodb.client.result.InsertOneResult;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import pl.tks.model.user.Role;
+import pl.tks.repos.config.MongoProperties;
 import pl.tks.repos.entities.user.UserEnt;
 
 import java.util.ArrayList;
@@ -20,14 +23,10 @@ import static com.mongodb.client.model.Updates.set;
 public class UserRepository extends AbstractMongoEntity {
     private final MongoCollection<UserEnt> userCollection;
 
-    public UserRepository() {
-        super();
+    @Autowired
+    public UserRepository(@Qualifier("mongo-pl.tks.repos.config.MongoProperties") MongoProperties properties) {
+        super(properties);
         userCollection = database.getCollection("users", UserEnt.class);
-    }
-
-    public UserRepository(String connectionString, String dbName) {
-        super(connectionString, dbName);
-        this.userCollection = database.getCollection("users", UserEnt.class);
     }
 
     @Override

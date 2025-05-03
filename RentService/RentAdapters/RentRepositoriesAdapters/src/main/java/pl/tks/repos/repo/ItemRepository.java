@@ -5,8 +5,11 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.result.InsertOneResult;
 import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.context.annotation.ApplicationScope;
+import pl.tks.repos.config.MongoProperties;
 import pl.tks.repos.entities.item.ItemEnt;
 
 import java.util.ArrayList;
@@ -17,15 +20,16 @@ import java.util.List;
 public class ItemRepository extends AbstractMongoEntity {
     private final MongoCollection<ItemEnt> itemCollection;
 
-    public ItemRepository() {
-        super();
+    @Autowired
+    public ItemRepository(@Qualifier("mongo-pl.tks.repos.config.MongoProperties") MongoProperties properties) {
+        super(properties);
         this.itemCollection = database.getCollection("items", ItemEnt.class);
     }
 
-    public ItemRepository(String connectionString, String dbName) {
-        super(connectionString, dbName);
-        this.itemCollection = database.getCollection("items", ItemEnt.class);
-    }
+//    public ItemRepository(String connectionString, String dbName) {
+//        super(connectionString, dbName);
+//        this.itemCollection = database.getCollection("items", ItemEnt.class);
+//    }
 
     public ItemEnt addItem(ItemEnt item) {
         InsertOneResult result = itemCollection.insertOne(item);

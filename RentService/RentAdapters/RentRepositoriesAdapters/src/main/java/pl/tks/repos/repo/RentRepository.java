@@ -5,7 +5,10 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.result.InsertOneResult;
 import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import pl.tks.repos.config.MongoProperties;
 import pl.tks.repos.entities.RentEnt;
 
 import java.util.ArrayList;
@@ -15,15 +18,16 @@ import java.util.List;
 public class RentRepository extends AbstractMongoEntity {
     private final MongoCollection<RentEnt> rentCollection;
 
-    public RentRepository() {
-        super();
+    @Autowired
+    public RentRepository(@Qualifier("mongo-pl.tks.repos.config.MongoProperties") MongoProperties properties) {
+        super(properties);
         this.rentCollection = database.getCollection("rents", RentEnt.class);
     }
 
-    public RentRepository(String connectionString, String dbName) {
-        super(connectionString, dbName);
-        this.rentCollection = database.getCollection("rents", RentEnt.class);
-    }
+//    public RentRepository(String connectionString, String dbName) {
+//        super(connectionString, dbName);
+//        this.rentCollection = database.getCollection("rents", RentEnt.class);
+//    }
 
     public RentEnt addRent(RentEnt rent) {
         InsertOneResult result = rentCollection.insertOne(rent);

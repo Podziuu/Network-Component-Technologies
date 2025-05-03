@@ -1,22 +1,22 @@
 import com.mongodb.client.result.UpdateResult;
 import org.bson.types.ObjectId;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import pl.tks.repos.config.MongoProperties;
 import pl.tks.repos.entities.user.ClientEnt;
 import pl.tks.repos.entities.user.UserEnt;
 import pl.tks.repos.repo.UserRepository;
 
 public class UserRepositoryTest extends AbstractMongoDBTest {
-    private static UserRepository userRepository;
 
-    @BeforeAll
-    public static void setup() {
-        userRepository = new UserRepository(
-                mongoDBContainer.getReplicaSetUrl(),
-                "test-mediastore"
-        );
+    private UserRepository userRepository;
+    private MongoProperties mongoProperties;
+
+    @BeforeEach
+    public void setup() {
+        mongoProperties = new MongoProperties();
+        mongoProperties.setUri(mongoDBContainer.getReplicaSetUrl());
+        mongoProperties.setDatabase("user_repository_test");
+        userRepository = new UserRepository(mongoProperties);
     }
 
     @AfterEach

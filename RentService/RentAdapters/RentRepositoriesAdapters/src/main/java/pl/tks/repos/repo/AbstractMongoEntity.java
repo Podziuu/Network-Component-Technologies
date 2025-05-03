@@ -16,9 +16,7 @@ import org.bson.codecs.configuration.CodecRegistries;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.Conventions;
 import org.bson.codecs.pojo.PojoCodecProvider;
-import pl.tks.repos.entities.item.ComicsEnt;
-import pl.tks.repos.entities.item.MovieEnt;
-import pl.tks.repos.entities.item.MusicEnt;
+import pl.tks.repos.config.MongoProperties;
 import pl.tks.repos.entities.user.AdminEnt;
 import pl.tks.repos.entities.user.ClientEnt;
 import pl.tks.repos.entities.user.ManagerEnt;
@@ -27,50 +25,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractMongoEntity implements AutoCloseable {
-//    private ConnectionString connectionString = new ConnectionString(
-//            "mongodb://mongodb1:27017,mongodb2:27018,mongodb3:27019/?replicaSet=replica_set_single");
-//    private MongoCredential credential = MongoCredential.createCredential(
-//            "admin",
-//            "admin",
-//            "adminpassword".toCharArray()
-//    );
-//
-//    private CodecRegistry codecRegistry = CodecRegistries.fromProviders(
-//            PojoCodecProvider.builder()
-//                    .automatic(true)
-//                    .conventions(List.of(Conventions.ANNOTATION_CONVENTION))
-//                    .register(ClientEnt.class, AdminEnt.class, ManagerEnt.class)
-//                    .register(MovieEnt.class, MusicEnt.class, ComicsEnt.class)
-//                    .build()
-//    );
     private ConnectionString connectionString;
     private MongoCredential credential;
     protected MongoClient mongoClient;
     protected MongoDatabase database;
 
     private CodecRegistry codecRegistry = CodecRegistries.fromProviders(
-        PojoCodecProvider.builder()
-                .automatic(true)
-                .conventions(List.of(Conventions.ANNOTATION_CONVENTION))
-                .register(ClientEnt.class, AdminEnt.class, ManagerEnt.class)
-                .register(MovieEnt.class, MusicEnt.class, ComicsEnt.class)
-                .build()
+            PojoCodecProvider.builder()
+                    .automatic(true)
+                    .conventions(List.of(Conventions.ANNOTATION_CONVENTION))
+                    .register(ClientEnt.class, AdminEnt.class, ManagerEnt.class)
+                    .build()
     );
 
-    public AbstractMongoEntity() {
-        this("mongodb://mongodb1:27017,mongodb2:27018,mongodb3:27019/?replicaSet=replica_set_single",
-                "admin", "admin", "adminpassword", "mediastore");
-    }
-
-    public AbstractMongoEntity(String connectionString, String username, String authDb, String password, String database) {
-        this.connectionString = new ConnectionString(connectionString);
-        this.credential = MongoCredential.createCredential(username, authDb, password.toCharArray());
-        initDbConnection(database);
-    }
-
-    public AbstractMongoEntity(String connectionString, String dbName) {
-        this.connectionString = new ConnectionString(connectionString);
-        initDbConnection(dbName);
+    public AbstractMongoEntity(MongoProperties properties) {
+        this.connectionString = new ConnectionString(properties.getUri());
+        if (properties.getUsername() != null && properties.getPassword() != null && properties.getDatabase() != null) {
+            this.credential = MongoCredential.createCredential(properties.getUsername(), properties.getAuthDB(), properties.getPassword().toCharArray());
+        }
+        initDbConnection(properties.getDatabase());
     }
 
     protected void initDbConnection(String dbName) {

@@ -25,7 +25,15 @@ import static org.hamcrest.Matchers.equalTo;
 @Testcontainers
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = UserRestAdapterApplication.class)
 @ActiveProfiles("test")
-public class UserIntegrationTest {
+public class UserIntegrationTest extends AbstractRestTest {
+
+    static {
+        System.setProperty("mongo.uri", mongoDBContainer.getReplicaSetUrl());
+        System.setProperty("mongo.database", "user_integration_test");
+        System.clearProperty("mongo.username");
+        System.clearProperty("mongo.password");
+        System.clearProperty("mongo.authDb");
+    }
 
     private String authToken;
     private String username;
