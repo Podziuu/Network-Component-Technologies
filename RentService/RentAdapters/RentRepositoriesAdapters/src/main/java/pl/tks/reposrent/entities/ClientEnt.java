@@ -1,4 +1,4 @@
-package pl.tks.repos.entities;
+package pl.tks.reposrent.entities;
 
 import org.bson.codecs.pojo.annotations.BsonCreator;
 import org.bson.codecs.pojo.annotations.BsonId;

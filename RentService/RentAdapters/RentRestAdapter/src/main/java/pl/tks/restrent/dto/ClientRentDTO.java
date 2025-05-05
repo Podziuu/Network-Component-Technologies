@@ -1,4 +1,4 @@
-package pl.tks.rest.dto;
+package pl.tks.restrent.dto;
 
 public class ClientRentDTO {
     private String id;

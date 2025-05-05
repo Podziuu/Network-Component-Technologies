@@ -1,14 +1,14 @@
-package pl.tks.repos.mappers;
+package pl.tks.reposrent.mappers;
 
 import org.bson.types.ObjectId;
-import pl.tks.model.item.Comics;
-import pl.tks.model.item.Item;
-import pl.tks.model.item.Movie;
-import pl.tks.model.item.Music;
-import pl.tks.repos.entities.item.ComicsEnt;
-import pl.tks.repos.entities.item.ItemEnt;
-import pl.tks.repos.entities.item.MovieEnt;
-import pl.tks.repos.entities.item.MusicEnt;
+import pl.tks.modelrent.item.Comics;
+import pl.tks.modelrent.item.Item;
+import pl.tks.modelrent.item.Movie;
+import pl.tks.modelrent.item.Music;
+import pl.tks.reposrent.entities.item.ComicsEnt;
+import pl.tks.reposrent.entities.item.ItemEnt;
+import pl.tks.reposrent.entities.item.MovieEnt;
+import pl.tks.reposrent.entities.item.MusicEnt;
 
 import java.util.List;
 import java.util.stream.Collectors;

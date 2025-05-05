@@ -1,4 +1,4 @@
-package pl.tks.repos.config;
+package pl.tks.reposrent.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Primary;

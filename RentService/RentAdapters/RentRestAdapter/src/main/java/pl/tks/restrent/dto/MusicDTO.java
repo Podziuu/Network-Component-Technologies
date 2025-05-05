@@ -1,7 +1,7 @@
-package pl.tks.rest.dto;
+package pl.tks.restrent.dto;
 
 import jakarta.validation.constraints.NotNull;
-import pl.tks.model.item.MusicGenre;
+import pl.tks.modelrent.item.MusicGenre;
 
 public class MusicDTO extends ItemDTO {
     @NotNull(message = "Genre cannot be null")

@@ -1,6 +1,6 @@
-package pl.tks.ports.infrastructure;
+package pl.tks.portsrent.infrastructure;
 
-import pl.tks.model.Rent;
+import pl.tks.modelrent.Rent;
 
 import java.util.List;
 

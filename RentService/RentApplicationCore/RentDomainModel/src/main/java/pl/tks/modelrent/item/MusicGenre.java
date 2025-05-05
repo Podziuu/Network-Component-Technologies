@@ -1,4 +1,4 @@
-package pl.tks.model.item;
+package pl.tks.modelrent.item;
 
 public enum MusicGenre {
     Jazz(1),

@@ -1,11 +1,11 @@
-package pl.tks.repos.aggregates;
+package pl.tks.reposrent.aggregates;
 
 import org.springframework.stereotype.Component;
-import pl.tks.model.client.Client;
-import pl.tks.ports.infrastructure.ClientPort;
-import pl.tks.repos.entities.ClientEnt;
-import pl.tks.repos.mappers.ClientMapper;
-import pl.tks.repos.repo.ClientRepository;
+import pl.tks.modelrent.client.Client;
+import pl.tks.portsrent.infrastructure.ClientPort;
+import pl.tks.reposrent.entities.ClientEnt;
+import pl.tks.reposrent.mappers.ClientMapper;
+import pl.tks.reposrent.repo.ClientRepository;
 
 import java.util.List;
 

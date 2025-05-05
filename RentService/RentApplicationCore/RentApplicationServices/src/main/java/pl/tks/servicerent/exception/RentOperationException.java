@@ -1,4 +1,4 @@
-package pl.tks.service.exception;
+package pl.tks.servicerent.exception;
 
 public class RentOperationException extends RuntimeException {
     public RentOperationException(String message) {

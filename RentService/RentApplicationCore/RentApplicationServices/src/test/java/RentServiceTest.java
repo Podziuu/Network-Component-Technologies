@@ -4,19 +4,18 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import pl.tks.model.Rent;
-import pl.tks.model.item.Item;
-import pl.tks.model.item.Music;
-import pl.tks.model.item.MusicGenre;
-import pl.tks.model.user.Client;
-import pl.tks.model.user.ClientType;
-import pl.tks.ports.infrastructure.ItemPort;
-import pl.tks.ports.infrastructure.RentPort;
-import pl.tks.service.exception.ItemAlreadyRentedException;
-import pl.tks.service.exception.ItemNotFoundException;
-import pl.tks.service.exception.RentNotFoundException;
-import pl.tks.service.exception.UserNotFoundException;
-import pl.tks.service.services.RentService;
+import pl.tks.modelrent.Rent;
+import pl.tks.modelrent.client.Client;
+import pl.tks.modelrent.item.Item;
+import pl.tks.modelrent.item.Music;
+import pl.tks.modelrent.item.MusicGenre;
+import pl.tks.portsrent.infrastructure.ItemPort;
+import pl.tks.portsrent.infrastructure.RentPort;
+import pl.tks.servicerent.exception.ItemAlreadyRentedException;
+import pl.tks.servicerent.exception.ItemNotFoundException;
+import pl.tks.servicerent.exception.RentNotFoundException;
+import pl.tks.servicerent.exception.UserNotFoundException;
+import pl.tks.servicerent.services.RentService;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
@@ -42,7 +41,7 @@ class RentServiceTest {
     @BeforeEach
     void setUp() {
         music = new Music("23", 20, "album", true, MusicGenre.Jazz, false);
-        Client client = new Client("123", "JDoe", "password", "Joe", "Doe", ClientType.createNoMembership());
+        Client client = new Client("123", "JDoe", "password", 12,12);
         rent = new Rent("rentId", LocalDateTime.now(), 230, client, music);
     }
 

@@ -1,9 +1,9 @@
-package pl.tks.repos.entities.item;
+package pl.tks.reposrent.entities.item;
 
 import org.bson.codecs.pojo.annotations.BsonDiscriminator;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 import org.bson.types.ObjectId;
-import pl.tks.model.item.MusicGenre;
+import pl.tks.modelrent.item.MusicGenre;
 
 @BsonDiscriminator("music")
 public class MusicEnt extends ItemEnt {

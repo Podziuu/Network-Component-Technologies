@@ -1,13 +1,12 @@
-package pl.tks.rest.mapper;
+package pl.tks.restrent.mapper;
 
 import org.springframework.stereotype.Component;
-import pl.tks.model.Rent;
-import pl.tks.model.client.Client;
-import pl.tks.model.item.Item;
-import pl.tks.ports.infrastructure.ClientPort;
-import pl.tks.ports.infrastructure.ItemPort;
-import pl.tks.ports.infrastructure.UserPort;
-import pl.tks.rest.dto.RentDTO;
+import pl.tks.modelrent.Rent;
+import pl.tks.modelrent.client.Client;
+import pl.tks.modelrent.item.Item;
+import pl.tks.portsrent.infrastructure.ClientPort;
+import pl.tks.portsrent.infrastructure.ItemPort;
+import pl.tks.restrent.dto.RentDTO;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,11 +1,11 @@
-package pl.tks.repos.aggregates;
+package pl.tks.reposrent.aggregates;
 
 import org.bson.types.ObjectId;
 import org.springframework.stereotype.Component;
-import pl.tks.model.item.Item;
-import pl.tks.ports.infrastructure.ItemPort;
-import pl.tks.repos.mappers.ItemMapper;
-import pl.tks.repos.repo.ItemRepository;
+import pl.tks.modelrent.item.Item;
+import pl.tks.portsrent.infrastructure.ItemPort;
+import pl.tks.reposrent.mappers.ItemMapper;
+import pl.tks.reposrent.repo.ItemRepository;
 
 import java.util.List;
 

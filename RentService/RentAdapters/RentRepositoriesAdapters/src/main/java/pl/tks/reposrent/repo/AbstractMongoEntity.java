@@ -1,4 +1,4 @@
-package pl.tks.repos.repo;
+package pl.tks.reposrent.repo;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
@@ -7,19 +7,16 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.CreateCollectionOptions;
-import com.mongodb.client.model.IndexOptions;
 import com.mongodb.client.model.ValidationAction;
 import com.mongodb.client.model.ValidationOptions;
 import org.bson.Document;
 import org.bson.UuidRepresentation;
 import org.bson.codecs.configuration.CodecRegistries;
 import org.bson.codecs.configuration.CodecRegistry;
-import org.bson.codecs.pojo.Conventions;
 import org.bson.codecs.pojo.PojoCodecProvider;
-import pl.tks.repos.config.MongoProperties;
+import pl.tks.reposrent.config.MongoProperties;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public abstract class AbstractMongoEntity implements AutoCloseable {
     private ConnectionString connectionString;

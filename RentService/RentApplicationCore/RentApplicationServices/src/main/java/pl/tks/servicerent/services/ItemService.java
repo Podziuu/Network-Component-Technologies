@@ -1,18 +1,18 @@
-package pl.tks.service.services;
+package pl.tks.servicerent.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.tks.model.Rent;
-import pl.tks.model.item.Comics;
-import pl.tks.model.item.Item;
-import pl.tks.model.item.Movie;
-import pl.tks.model.item.Music;
-import pl.tks.ports.infrastructure.ItemPort;
-import pl.tks.ports.infrastructure.RentPort;
-import pl.tks.ports.ui.IItemPort;
-import pl.tks.service.exception.InvalidItemTypeException;
-import pl.tks.service.exception.ItemAlreadyRentedException;
-import pl.tks.service.exception.ItemNotFoundException;
+import pl.tks.modelrent.Rent;
+import pl.tks.modelrent.item.Comics;
+import pl.tks.modelrent.item.Item;
+import pl.tks.modelrent.item.Movie;
+import pl.tks.modelrent.item.Music;
+import pl.tks.portsrent.infrastructure.ItemPort;
+import pl.tks.portsrent.infrastructure.RentPort;
+import pl.tks.portsrent.ui.IItemPort;
+import pl.tks.servicerent.exception.InvalidItemTypeException;
+import pl.tks.servicerent.exception.ItemAlreadyRentedException;
+import pl.tks.servicerent.exception.ItemNotFoundException;
 
 import java.util.List;
 

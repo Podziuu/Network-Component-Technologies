@@ -1,4 +1,4 @@
-package pl.tks.repos.repo;
+package pl.tks.reposrent.repo;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
@@ -8,8 +8,8 @@ import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
-import pl.tks.repos.config.MongoProperties;
-import pl.tks.repos.entities.RentEnt;
+import pl.tks.reposrent.config.MongoProperties;
+import pl.tks.reposrent.entities.RentEnt;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ public class RentRepository extends AbstractMongoEntity {
     private final MongoCollection<RentEnt> rentCollection;
 
     @Autowired
-    public RentRepository(@Qualifier("mongo-pl.tks.repos.config.MongoProperties") MongoProperties properties) {
+    public RentRepository(@Qualifier("mongo-pl.tks.reposrent.config.MongoProperties") MongoProperties properties) {
         super(properties);
         this.rentCollection = database.getCollection("rents", RentEnt.class);
     }

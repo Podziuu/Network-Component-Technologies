@@ -1,4 +1,4 @@
-package pl.tks.service.exception;
+package pl.tks.servicerent.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

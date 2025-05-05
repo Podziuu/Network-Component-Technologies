@@ -1,9 +1,9 @@
-package pl.tks.rest.mapper;
+package pl.tks.restrent.mapper;
 
 import org.springframework.stereotype.Component;
-import pl.tks.model.client.Client;
-import pl.tks.rest.dto.ClientRentDTO;
-import pl.tks.rest.dto.CreateClientDTO;
+import pl.tks.modelrent.client.Client;
+import pl.tks.restrent.dto.ClientRentDTO;
+import pl.tks.restrent.dto.CreateClientDTO;
 
 import java.util.List;
 import java.util.stream.Collectors;

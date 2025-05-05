@@ -1,4 +1,4 @@
-package pl.tks.repos.repo;
+package pl.tks.reposrent.repo;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.context.annotation.ApplicationScope;
-import pl.tks.repos.config.MongoProperties;
-import pl.tks.repos.entities.item.ItemEnt;
+import pl.tks.reposrent.config.MongoProperties;
+import pl.tks.reposrent.entities.item.ItemEnt;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ public class ItemRepository extends AbstractMongoEntity {
     private final MongoCollection<ItemEnt> itemCollection;
 
     @Autowired
-    public ItemRepository(@Qualifier("mongo-pl.tks.repos.config.MongoProperties") MongoProperties properties) {
+    public ItemRepository(@Qualifier("mongo-pl.tks.reposrent.config.MongoProperties") MongoProperties properties) {
         super(properties);
         this.itemCollection = database.getCollection("items", ItemEnt.class);
     }

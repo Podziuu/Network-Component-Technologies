@@ -1,4 +1,4 @@
-package pl.tks.model.item;
+package pl.tks.modelrent.item;
 
 public class Movie extends Item {
     private int minutes;

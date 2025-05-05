@@ -1,14 +1,14 @@
-package pl.tks.rest.controller;
+package pl.tks.restrent.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.tks.model.client.Client;
-import pl.tks.ports.ui.IClientPort;
-import pl.tks.rest.dto.ClientRentDTO;
-import pl.tks.rest.dto.CreateClientDTO;
-import pl.tks.rest.dto.UpdateClientDTO;
-import pl.tks.rest.mapper.ClientMapper;
+import pl.tks.modelrent.client.Client;
+import pl.tks.portsrent.ui.IClientPort;
+import pl.tks.restrent.dto.ClientRentDTO;
+import pl.tks.restrent.dto.CreateClientDTO;
+import pl.tks.restrent.dto.UpdateClientDTO;
+import pl.tks.restrent.mapper.ClientMapper;
 
 import java.util.List;
 

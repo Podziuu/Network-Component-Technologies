@@ -1,17 +1,17 @@
-package pl.tks.rest.controller;
+package pl.tks.restrent.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import pl.tks.model.item.Item;
-import pl.tks.ports.ui.IItemPort;
-import pl.tks.rest.dto.ComicsDTO;
-import pl.tks.rest.dto.ItemDTO;
-import pl.tks.rest.dto.MovieDTO;
-import pl.tks.rest.dto.MusicDTO;
-import pl.tks.rest.mapper.ItemMapper;
-import pl.tks.service.exception.InvalidItemTypeException;
+import pl.tks.modelrent.item.Item;
+import pl.tks.portsrent.ui.IItemPort;
+import pl.tks.restrent.dto.ComicsDTO;
+import pl.tks.restrent.dto.ItemDTO;
+import pl.tks.restrent.dto.MovieDTO;
+import pl.tks.restrent.dto.MusicDTO;
+import pl.tks.restrent.mapper.ItemMapper;
+import pl.tks.servicerent.exception.InvalidItemTypeException;
 
 import java.util.List;
 import java.util.Map;

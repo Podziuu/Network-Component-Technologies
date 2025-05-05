@@ -1,15 +1,14 @@
 import org.bson.types.ObjectId;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import pl.tks.model.item.MusicGenre;
-import pl.tks.repos.config.MongoProperties;
-import pl.tks.repos.entities.item.ComicsEnt;
-import pl.tks.repos.entities.item.ItemEnt;
-import pl.tks.repos.entities.item.MovieEnt;
-import pl.tks.repos.entities.item.MusicEnt;
-import pl.tks.repos.repo.ItemRepository;
+import pl.tks.modelrent.item.MusicGenre;
+import pl.tks.reposrent.config.MongoProperties;
+import pl.tks.reposrent.entities.item.ComicsEnt;
+import pl.tks.reposrent.entities.item.ItemEnt;
+import pl.tks.reposrent.entities.item.MovieEnt;
+import pl.tks.reposrent.entities.item.MusicEnt;
+import pl.tks.reposrent.repo.ItemRepository;
 
 public class ItemRepositoryTest extends AbstractMongoDBTest {
     private static ItemRepository itemRepository;

@@ -1,16 +1,16 @@
-package pl.tks.rest.mapper;
+package pl.tks.restrent.mapper;
 
 import org.bson.types.ObjectId;
 import org.springframework.stereotype.Component;
-import pl.tks.model.item.Comics;
-import pl.tks.model.item.Item;
-import pl.tks.model.item.Movie;
-import pl.tks.model.item.Music;
-import pl.tks.rest.dto.ComicsDTO;
-import pl.tks.rest.dto.ItemDTO;
-import pl.tks.rest.dto.MovieDTO;
-import pl.tks.rest.dto.MusicDTO;
-import pl.tks.service.exception.InvalidItemTypeException;
+import pl.tks.modelrent.item.Comics;
+import pl.tks.modelrent.item.Item;
+import pl.tks.modelrent.item.Movie;
+import pl.tks.modelrent.item.Music;
+import pl.tks.restrent.dto.ComicsDTO;
+import pl.tks.restrent.dto.ItemDTO;
+import pl.tks.restrent.dto.MovieDTO;
+import pl.tks.restrent.dto.MusicDTO;
+import pl.tks.servicerent.exception.InvalidItemTypeException;
 
 import java.util.List;
 import java.util.stream.Collectors;

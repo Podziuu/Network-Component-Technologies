@@ -1,10 +1,10 @@
-package pl.tks.repos.aggregates;
+package pl.tks.reposrent.aggregates;
 
 import org.springframework.stereotype.Component;
-import pl.tks.model.Rent;
-import pl.tks.ports.infrastructure.RentPort;
-import pl.tks.repos.mappers.RentMapper;
-import pl.tks.repos.repo.RentRepository;
+import pl.tks.modelrent.Rent;
+import pl.tks.portsrent.infrastructure.RentPort;
+import pl.tks.reposrent.mappers.RentMapper;
+import pl.tks.reposrent.repo.RentRepository;
 
 import java.util.List;
 

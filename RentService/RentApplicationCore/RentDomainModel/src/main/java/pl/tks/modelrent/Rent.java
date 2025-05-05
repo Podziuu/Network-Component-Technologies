@@ -1,7 +1,7 @@
-package pl.tks.model;
+package pl.tks.modelrent;
 
-import pl.tks.model.client.Client;
-import pl.tks.model.item.Item;
+import pl.tks.modelrent.client.Client;
+import pl.tks.modelrent.item.Item;
 
 import java.time.Duration;
 import java.time.LocalDateTime;

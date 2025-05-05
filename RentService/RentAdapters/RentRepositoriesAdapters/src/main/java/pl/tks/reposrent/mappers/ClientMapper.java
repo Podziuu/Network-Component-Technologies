@@ -1,7 +1,7 @@
-package pl.tks.repos.mappers;
+package pl.tks.reposrent.mappers;
 
-import pl.tks.model.client.Client;
-import pl.tks.repos.entities.ClientEnt;
+import pl.tks.modelrent.client.Client;
+import pl.tks.reposrent.entities.ClientEnt;
 
 import java.util.List;
 import java.util.stream.Collectors;

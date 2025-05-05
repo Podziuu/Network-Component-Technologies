@@ -1,6 +1,6 @@
-package pl.tks.ports.ui;
+package pl.tks.portsrent.ui;
 
-import pl.tks.model.client.Client;
+import pl.tks.modelrent.client.Client;
 
 import java.util.List;
 

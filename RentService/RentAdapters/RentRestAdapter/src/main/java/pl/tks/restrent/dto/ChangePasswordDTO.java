@@ -1,4 +1,4 @@
-package pl.tks.rest.dto;
+package pl.tks.restrent.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

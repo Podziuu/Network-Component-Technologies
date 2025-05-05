@@ -1,4 +1,4 @@
-package pl.tks.rest.dto;
+package pl.tks.restrent.dto;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;

@@ -1,4 +1,4 @@
-package pl.tks.model.item;
+package pl.tks.modelrent.item;
 
 public class Music extends Item {
     private MusicGenre genre;

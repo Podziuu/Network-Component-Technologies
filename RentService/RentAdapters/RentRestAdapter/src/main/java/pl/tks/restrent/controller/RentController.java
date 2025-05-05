@@ -1,13 +1,13 @@
-package pl.tks.rest.controller;
+package pl.tks.restrent.controller;
 
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.tks.model.Rent;
-import pl.tks.ports.ui.IRentPort;
-import pl.tks.rest.dto.RentDTO;
-import pl.tks.rest.mapper.RentMapper;
+import pl.tks.modelrent.Rent;
+import pl.tks.portsrent.ui.IRentPort;
+import pl.tks.restrent.dto.RentDTO;
+import pl.tks.restrent.mapper.RentMapper;
 
 import java.time.LocalDateTime;
 import java.util.List;

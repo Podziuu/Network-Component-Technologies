@@ -1,10 +1,10 @@
-package pl.tks.service.services;
+package pl.tks.servicerent.services;
 
 
 import org.springframework.stereotype.Service;
-import pl.tks.model.client.Client;
-import pl.tks.ports.infrastructure.ClientPort;
-import pl.tks.ports.ui.IClientPort;
+import pl.tks.modelrent.client.Client;
+import pl.tks.portsrent.infrastructure.ClientPort;
+import pl.tks.portsrent.ui.IClientPort;
 
 import java.util.List;
 

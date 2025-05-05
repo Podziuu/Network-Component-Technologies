@@ -1,12 +1,11 @@
-package pl.tks.repos.entities;
+package pl.tks.reposrent.entities;
 
 import org.bson.codecs.pojo.annotations.BsonCreator;
 import org.bson.codecs.pojo.annotations.BsonId;
 import org.bson.codecs.pojo.annotations.BsonIgnore;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 import org.bson.types.ObjectId;
-import pl.tks.repos.entities.item.ItemEnt;
-import pl.tks.repos.entities.ClientEnt;
+import pl.tks.reposrent.entities.item.ItemEnt;
 
 import java.time.LocalDateTime;
 

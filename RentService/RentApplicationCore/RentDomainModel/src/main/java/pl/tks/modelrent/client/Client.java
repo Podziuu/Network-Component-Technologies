@@ -1,4 +1,4 @@
-package pl.tks.model.client;
+package pl.tks.modelrent.client;
 
 public class Client {
     private String id;

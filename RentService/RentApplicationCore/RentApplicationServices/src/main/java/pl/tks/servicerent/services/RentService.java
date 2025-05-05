@@ -1,16 +1,16 @@
-package pl.tks.service.services;
+package pl.tks.servicerent.services;
 
 import org.springframework.stereotype.Service;
-import pl.tks.model.Rent;
-import pl.tks.model.client.Client;
-import pl.tks.model.item.Item;
-import pl.tks.ports.infrastructure.ItemPort;
-import pl.tks.ports.infrastructure.RentPort;
-import pl.tks.ports.ui.IRentPort;
-import pl.tks.service.exception.ItemAlreadyRentedException;
-import pl.tks.service.exception.ItemNotFoundException;
-import pl.tks.service.exception.RentNotFoundException;
-import pl.tks.service.exception.UserNotFoundException;
+import pl.tks.modelrent.Rent;
+import pl.tks.modelrent.client.Client;
+import pl.tks.modelrent.item.Item;
+import pl.tks.portsrent.infrastructure.ItemPort;
+import pl.tks.portsrent.infrastructure.RentPort;
+import pl.tks.portsrent.ui.IRentPort;
+import pl.tks.servicerent.exception.ItemAlreadyRentedException;
+import pl.tks.servicerent.exception.ItemNotFoundException;
+import pl.tks.servicerent.exception.RentNotFoundException;
+import pl.tks.servicerent.exception.UserNotFoundException;
 
 import java.time.LocalDateTime;
 import java.util.List;
