@@ -19,21 +19,33 @@ import pl.tks.reposrent.config.MongoProperties;
 import java.util.ArrayList;
 
 public abstract class AbstractMongoEntity implements AutoCloseable {
-    private ConnectionString connectionString;
-    private MongoCredential credential;
+    private final ConnectionString connectionString;
+    private final MongoCredential credential;
     protected MongoClient mongoClient;
     protected MongoDatabase database;
 
     public AbstractMongoEntity(MongoProperties properties) {
+        if (properties.getUri() == null || properties.getUri().isEmpty()) {
+            throw new IllegalArgumentException("Mongo URI cannot be null or empty");
+        }
+        if (properties.getDatabase() == null || properties.getDatabase().isEmpty()) {
+            throw new IllegalArgumentException("Database name cannot be null or empty");
+        }
+
         this.connectionString = new ConnectionString(properties.getUri());
-        if (properties.getUsername() != null && properties.getPassword() != null && properties.getDatabase() != null) {
-            this.credential = MongoCredential.createCredential(properties.getUsername(), properties.getAuthDB(), properties.getPassword().toCharArray());
+        if (properties.getUsername() != null && properties.getPassword() != null) {
+            this.credential = MongoCredential.createCredential(
+                    properties.getUsername(),
+                    properties.getAuthDB(),
+                    properties.getPassword().toCharArray()
+            );
+        } else {
+            this.credential = null;
         }
         initDbConnection(properties.getDatabase());
     }
 
     protected void initDbConnection(String dbName) {
-        // Tworzenie CodecRegistry z POJOCodecProvider
         CodecRegistry pojoCodecRegistry = CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build());
         CodecRegistry codecRegistry = CodecRegistries.fromRegistries(
                 MongoClientSettings.getDefaultCodecRegistry(),
@@ -43,7 +55,7 @@ public abstract class AbstractMongoEntity implements AutoCloseable {
         MongoClientSettings.Builder settingsBuilder = MongoClientSettings.builder()
                 .applyConnectionString(connectionString)
                 .uuidRepresentation(UuidRepresentation.STANDARD)
-                .codecRegistry(codecRegistry);  // Zastosowanie zaktualizowanego codecRegistry
+                .codecRegistry(codecRegistry);
 
         if (credential != null) {
             settingsBuilder.credential(credential);
@@ -53,7 +65,6 @@ public abstract class AbstractMongoEntity implements AutoCloseable {
         mongoClient = MongoClients.create(settings);
         database = mongoClient.getDatabase(dbName);
 
-        // Kontynuacja logiki sprawdzania i tworzenia kolekcji
         if (!database.listCollectionNames().into(new ArrayList<>()).contains("clients")) {
             createClientCollection();
         }
@@ -64,7 +75,6 @@ public abstract class AbstractMongoEntity implements AutoCloseable {
             createRentsCollection();
         }
     }
-
 
     private void createClientCollection() {
         ValidationOptions validationOptions = new ValidationOptions().validator(
@@ -202,5 +212,12 @@ public abstract class AbstractMongoEntity implements AutoCloseable {
 
     public MongoDatabase getDatabase() {
         return database;
+    }
+
+    @Override
+    public void close() {
+        if (mongoClient != null) {
+            mongoClient.close();
+        }
     }
 }

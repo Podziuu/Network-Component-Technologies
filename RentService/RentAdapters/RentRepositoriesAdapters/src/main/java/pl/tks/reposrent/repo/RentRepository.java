@@ -19,7 +19,7 @@ public class RentRepository extends AbstractMongoEntity {
     private final MongoCollection<RentEnt> rentCollection;
 
     @Autowired
-    public RentRepository(@Qualifier("mongo-pl.tks.reposrent.config.MongoProperties") MongoProperties properties) {
+    public RentRepository(MongoProperties properties) {
         super(properties);
         this.rentCollection = database.getCollection("rents", RentEnt.class);
     }

@@ -19,7 +19,7 @@ public class ClientRepository extends AbstractMongoEntity {
     private final MongoCollection<ClientEnt> clientCollection;
 
     @Autowired
-    public ClientRepository(@Qualifier("mongo-pl.tks.reposrent.config.MongoProperties") MongoProperties properties) {
+    public ClientRepository(MongoProperties properties) {
         super(properties);
         this.clientCollection = database.getCollection("clients", ClientEnt.class);
     }

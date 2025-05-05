@@ -21,7 +21,7 @@ public class ItemRepository extends AbstractMongoEntity {
     private final MongoCollection<ItemEnt> itemCollection;
 
     @Autowired
-    public ItemRepository(@Qualifier("mongo-pl.tks.reposrent.config.MongoProperties") MongoProperties properties) {
+    public ItemRepository(MongoProperties properties) {
         super(properties);
         this.itemCollection = database.getCollection("items", ItemEnt.class);
     }
@@ -68,7 +68,7 @@ public class ItemRepository extends AbstractMongoEntity {
     }
 
     @Override
-    public void close() throws Exception {
+    public void close() {
         mongoClient.close();
     }
 

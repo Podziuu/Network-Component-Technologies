@@ -1,6 +1,6 @@
-#app:
-#  jwt:
-#    secret: 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116
-#    expiration: 3600000
-#  jws:
-#    secret: 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116
+mongo:
+  uri: mongodb://mongodb1:27017,mongodb2:27018,mongodb3:27019/?replicaSet=replica_set_single
+  database: mediastore
+  username: admin
+  password: adminpassword
+  authDB: admin

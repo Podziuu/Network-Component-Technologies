@@ -29,10 +29,8 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>pl.lodz.p.edu</groupId>
-            <artifactId>UserApplicationPorts</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>test</scope>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
@@ -53,25 +51,7 @@
         </dependency>
         <dependency>
             <groupId>pl.lodz.p.edu</groupId>
-            <artifactId>UserApplicationPorts</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>pl.lodz.p.edu</groupId>
-            <artifactId>UserSecurityAdapter</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>pl.lodz.p.edu</groupId>
             <artifactId>RentRepositoriesAdapters</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>pl.lodz.p.edu</groupId>
-            <artifactId>UserRestAdapter</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
