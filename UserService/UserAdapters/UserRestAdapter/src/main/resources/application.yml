@@ -1,6 +1,6 @@
 mongo:
   uri: mongodb://mongodb1:27017,mongodb2:27018,mongodb3:27019/?replicaSet=replica_set_single
-  database: mediastore-rent
+  database: mediastore-user
   username: admin
   password: adminpassword
   authDB: admin
