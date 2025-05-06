@@ -14,8 +14,11 @@
       <set>
         <option value="$PROJECT_DIR$/Adapters/RestAdapters/pom.xml" />
         <option value="$PROJECT_DIR$/Adapters/ViewAdapters/pom.xml" />
+        <option value="$PROJECT_DIR$/Adapters/pom.xml" />
         <option value="$PROJECT_DIR$/Application/pom.xml" />
+        <option value="$PROJECT_DIR$/ApplicationCore/pom.xml" />
         <option value="$PROJECT_DIR$/ApplicationPorts/infrastructure/pom.xml" />
+        <option value="$PROJECT_DIR$/ApplicationPorts/pom.xml" />
       </set>
     </option>
   </component>

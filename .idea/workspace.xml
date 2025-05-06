@@ -5,17 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/RentIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/UserIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/RentRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/RentRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/UserRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/UserRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/repo/RentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/repo/RentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/repo/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/pl/tks/repos/repo/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/AbstractRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapters/RestAdapter/src/test/java/AbstractRestTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/infrastructure/RentPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/infrastructure/RentPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/infrastructure/UserPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationPorts/src/main/java/pl/tks/ports/infrastructure/UserPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/config/MongoProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/config/MongoProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/repo/AbstractMongoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/repo/AbstractMongoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/repo/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/repo/ClientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/repo/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/repo/ItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/repo/RentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/repo/RentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/test/java/ItemIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/test/java/ItemIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/test/resources/application.yml" afterDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +66,8 @@
     "JUnit.ItemIntegrationTest.testCreateMovie.executor": "Run",
     "JUnit.ItemIntegrationTest.testCreateMusic (1).executor": "Run",
     "JUnit.ItemIntegrationTest.testCreateMusic (2).executor": "Run",
-    "JUnit.ItemIntegrationTest.testCreateMusic.executor": "Run",
+    "JUnit.ItemIntegrationTest.testCreateMusic.executor": "Debug",
+    "JUnit.ItemIntegrationTest.testCreateMusicItem.executor": "Run",
     "JUnit.ItemIntegrationTest.testGetAllItems.executor": "Run",
     "JUnit.ItemIntegrationTest.testGetMusic.executor": "Debug",
     "JUnit.ItemRepositoryTest.addItemTest.executor": "Run",
@@ -120,6 +124,15 @@
     "Maven.Mediastore [package].executor": "Run",
     "Maven.Mediastore [site].executor": "Run",
     "Maven.Mediastore [test].executor": "Run",
+    "Maven.RentApplicationCore [install].executor": "Run",
+    "Maven.RentApplicationPorts [install].executor": "Run",
+    "Maven.RentRepositoriesAdapters [clean].executor": "Run",
+    "Maven.RentRepositoriesAdapters [install].executor": "Run",
+    "Maven.RentRepositoriesAdapters [verify].executor": "Run",
+    "Maven.RentRestAdapter [clean].executor": "Run",
+    "Maven.RentRestAdapter [install].executor": "Run",
+    "Maven.RentService [clean].executor": "Run",
+    "Maven.RentService [install].executor": "Run",
     "Maven.RepositoriesAdapters [clean].executor": "Run",
     "Maven.RepositoriesAdapters [install].executor": "Run",
     "Maven.RestAdapter [clean].executor": "Run",
@@ -131,6 +144,9 @@
     "Maven.SoapAdapter [clean].executor": "Run",
     "Maven.SoapAdapter [install].executor": "Run",
     "Maven.SoapAdapter [validate].executor": "Run",
+    "Maven.UserService [clean].executor": "Run",
+    "Maven.UserService [install].executor": "Run",
+    "Maven.UserService [verify].executor": "Run",
     "Maven.security [clean].executor": "Run",
     "Maven.security [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
@@ -141,6 +157,8 @@
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.App.executor": "Run",
     "Spring Boot.Application.executor": "Run",
+    "Spring Boot.RentRestAdapterApplication (1).executor": "Run",
+    "Spring Boot.RentRestAdapterApplication.executor": "Run",
     "Spring Boot.RestAdaptersApplication (1).executor": "Run",
     "Spring Boot.RestAdaptersApplication.executor": "Run",
     "Spring Boot.RestApplication (1).executor": "Run",
@@ -148,38 +166,45 @@
     "Spring Boot.RestApplication.executor": "Run",
     "Spring Boot.SoapApplication (1).executor": "Run",
     "Spring Boot.SoapApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "mikroserwisy__v2",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "//wsl.localhost/Ubuntu/home/podziuu/studia/MKWA_SR_1015_06/Adapters/SoapAdapter/SOAP/src/main/resources",
+    "last_opened_file_path": "/home/plewkowicz/TESTOWY/MKWA_SR_1015_06/RentService/RentAdapters/RentRestAdapter/src/test/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/home/plewkowicz/Studia/sem6/MKWA_SR_1015_06/Adapters/Security/src/main/java/pl/tks/Main.java",
+    "onboarding.tips.debug.path": "/home/plewkowicz/Studia/sem6/TKS/MKWA_SR_1015_06/UserService/UserApplicationCore/UserApplicationServices/src/main/java/pl/lodz/p/edu/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="\\wsl.localhost\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06\Adapters\SoapAdapter\SOAP\src\main\resources" />
-      <recent name="$PROJECT_DIR$/Adapters/RestAdapters/src/test/java/pl/lodz/p/edu/restadapters" />
-      <recent name="$PROJECT_DIR$/Adapters/RestAdapters/src/main/java/pl/lodz/p/edu/restadapters" />
-      <recent name="$PROJECT_DIR$/Adapters/RestAdapter/src/main/java" />
-      <recent name="\\wsl$\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06\ApplicationCore\ApplicationServices\src\main\java" />
+      <recent name="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/test/resources" />
+      <recent name="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/resources" />
+      <recent name="$PROJECT_DIR$/RentService/RentApplicationCore/RentDomainModel/src/main/java/pl/tks/model/client" />
+      <recent name="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter" />
+      <recent name="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/repos" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl.localhost\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06\Adapters\SoapAdapter\SOAP\src\main\java" />
       <recent name="$PROJECT_DIR$/Adapters/Security/src/main/java/pl/tks/security/providers" />
       <recent name="\\wsl$\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06\ApplicationCore\ApplicationServices\src\main\java" />
       <recent name="\\wsl$\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pl.tks.service.services" />
+      <recent name="" />
+      <recent name="pl.tks.repos.aggregates" />
+      <recent name="pl.tks.ports.infrastructure" />
+      <recent name="pl.tks.ports.ui" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -192,91 +217,122 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RentIntegrationTest">
-    <configuration name="RentIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RestAdapter" />
+  <component name="RunManager" selected="Spring Boot.RentRestAdapterApplication (1)">
+    <configuration name="ItemIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RentRestAdapter" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RentIntegrationTest" />
+      <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserIntegrationTest.testCreateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RestAdapter" />
+    <configuration name="ItemIntegrationTest.testCreateMusic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RentRestAdapter" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserIntegrationTest" />
-      <option name="METHOD_NAME" value="testCreateUser" />
+      <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
+      <option name="METHOD_NAME" value="testCreateMusic" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserIntegrationTest.testCreateUserWithMissingProperty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RestAdapter" />
+    <configuration name="ItemIntegrationTest.testCreateMusicItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RentRestAdapter" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserIntegrationTest" />
-      <option name="METHOD_NAME" value="testCreateUserWithMissingProperty" />
+      <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
+      <option name="METHOD_NAME" value="testCreateMusicItem" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserIntegrationTest.testGetAllUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RentIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RestAdapter" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserIntegrationTest" />
-      <option name="METHOD_NAME" value="testGetAllUsers" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="RentIntegrationTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserIntegrationTest.testUpdateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="true" type="JetRunConfigurationType">
       <module name="RestAdapter" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserIntegrationTest" />
-      <option name="METHOD_NAME" value="testUpdateUser" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RestAdaptersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="RestAdapter" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RentRestAdapterApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="RentRestAdapter" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.tks.restrent.RentRestAdapterApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.tks.restrent.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RentRestAdapterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="RentRestAdapter" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.tks.rest.RentRestAdapterApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="SPRING_BOOT_MAIN_CLASS" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRestAdapterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <envs>
         <env name="APP_JWS_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
         <env name="APP_JWT_EXPIRATION" value=" 3600000" />
         <env name="APP_JWT_SECRET" value=" 41018f1c51787c824bac36394dd3e3b09ea90da1a366188df8e30a3d883e0116" />
       </envs>
-      <module name="RestAdapter" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.tks.rest.RestAdaptersApplication" />
+      <module name="UserRestAdapter" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.tks.rest.UserRestAdapterApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.ItemIntegrationTest" />
+      <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic" />
+      <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusicItem" />
       <item itemvalue="JUnit.RentIntegrationTest" />
-      <item itemvalue="JUnit.UserIntegrationTest.testCreateUser" />
-      <item itemvalue="JUnit.UserIntegrationTest.testCreateUserWithMissingProperty" />
-      <item itemvalue="JUnit.UserIntegrationTest.testGetAllUsers" />
-      <item itemvalue="JUnit.UserIntegrationTest.testUpdateUser" />
-      <item itemvalue="Spring Boot.RestAdaptersApplication" />
+      <item itemvalue="Spring Boot.RentRestAdapterApplication" />
+      <item itemvalue="Spring Boot.Unnamed" />
+      <item itemvalue="Spring Boot.UserRestAdapterApplication" />
+      <item itemvalue="Spring Boot.RentRestAdapterApplication (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.RentRestAdapterApplication (1)" />
+        <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic" />
+        <item itemvalue="JUnit.ItemIntegrationTest" />
+        <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusicItem" />
         <item itemvalue="JUnit.RentIntegrationTest" />
-        <item itemvalue="JUnit.UserIntegrationTest.testUpdateUser" />
-        <item itemvalue="JUnit.UserIntegrationTest.testGetAllUsers" />
-        <item itemvalue="JUnit.UserIntegrationTest.testCreateUserWithMissingProperty" />
-        <item itemvalue="JUnit.UserIntegrationTest.testCreateUser" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.318" />
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.318" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.22855.74" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.22855.74" />
       </set>
     </attachedChunks>
   </component>
@@ -304,6 +360,10 @@
       <workItem from="1744464781542" duration="3708000" />
       <workItem from="1744574861536" duration="12066000" />
       <workItem from="1744626899853" duration="5316000" />
+      <workItem from="1746095591225" duration="1100000" />
+      <workItem from="1746101089920" duration="8418000" />
+      <workItem from="1746109652260" duration="2186000" />
+      <workItem from="1746440119172" duration="3360000" />
     </task>
     <servers />
   </component>
@@ -478,6 +538,26 @@
           <url>file://$PROJECT_DIR$/Adapters/RestAdapter/src/main/java/pl/tks/rest/controller/UserController.java</url>
           <line>82</line>
           <option name="timeStamp" value="160" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/UserService/UserApplicationCore/src/main/java/pl/lodz/p/edu/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="162" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/UserService/UserApplicationCore/UserDomainModel/src/main/java/pl/lodz/p/edu/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="163" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/UserService/UserApplicationCore/UserApplicationServices/src/main/java/pl/lodz/p/edu/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="164" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/test/java/ItemIntegrationTest.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="166" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java</url>
