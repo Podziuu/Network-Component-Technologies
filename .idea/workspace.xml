@@ -5,20 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/config/RabbitMqConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/event/ClientCreatedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/messaging/ClientCreatedConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/messaging/QueueConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/java/pl/tks/configmq/RabbitMqConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/java/pl/tks/event/ClientCreatedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/java/pl/tks/event/RollbackClientEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/java/pl/tks/messaging/ClientProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/java/pl/tks/messaging/ClientResponseConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/main/java/pl/tks/rest/controller/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/config/MongoProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/config/MongoProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/repo/AbstractMongoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/repo/AbstractMongoEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/repo/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/repo/ClientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/repo/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/repo/ItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/repo/RentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/reposrent/repo/RentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Docker/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/RentRestAdapterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/RentRestAdapterApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/test/java/ItemIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/test/java/ItemIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/test/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/main/java/pl/tks/rest/UserRestAdapterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/main/java/pl/tks/rest/UserRestAdapterApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/java/pl/tks/security/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/java/pl/tks/security/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +67,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.RentRestAdapterApplication.executor": "Run",
+    "Docker.Docker.rabbitmq: Compose Deployment.executor": "Run",
     "HTTP Request.generated-requests | #4.executor": "Run",
     "HTTP Request.generated-requests | #5.executor": "Run",
     "HTTP Request.generated-requests | #6.executor": "Run",
@@ -166,7 +180,8 @@
     "Spring Boot.RestApplication.executor": "Run",
     "Spring Boot.SoapApplication (1).executor": "Run",
     "Spring Boot.SoapApplication.executor": "Run",
-    "git-widget-placeholder": "mikroserwisy__v2",
+    "Spring Boot.UserRestAdapterApplication.executor": "Run",
+    "git-widget-placeholder": "Komunikacja",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
@@ -217,7 +232,20 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.RentRestAdapterApplication (1)">
+  <component name="RunManager" selected="Docker.Docker.rabbitmq: Compose Deployment">
+    <configuration name="RentRestAdapterApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pl.tks.restrent.RentRestAdapterApplication" />
+      <module name="RentRestAdapter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.tks.restrent.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ItemIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RentRestAdapter" />
       <option name="PACKAGE_NAME" value="" />
@@ -233,26 +261,6 @@
       <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
       <option name="METHOD_NAME" value="testCreateMusic" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ItemIntegrationTest.testCreateMusicItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RentRestAdapter" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
-      <option name="METHOD_NAME" value="testCreateMusicItem" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RentIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RestAdapter" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RentIntegrationTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -308,11 +316,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Docker.rabbitmq: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="rabbitmq" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="Docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Application.RentRestAdapterApplication" />
+      <item itemvalue="Docker.Docker.rabbitmq: Compose Deployment" />
       <item itemvalue="JUnit.ItemIntegrationTest" />
       <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic" />
-      <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusicItem" />
-      <item itemvalue="JUnit.RentIntegrationTest" />
       <item itemvalue="Spring Boot.RentRestAdapterApplication" />
       <item itemvalue="Spring Boot.Unnamed" />
       <item itemvalue="Spring Boot.UserRestAdapterApplication" />
@@ -321,10 +346,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.RentRestAdapterApplication (1)" />
+        <item itemvalue="Docker.Docker.rabbitmq: Compose Deployment" />
+        <item itemvalue="Application.RentRestAdapterApplication" />
         <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic" />
         <item itemvalue="JUnit.ItemIntegrationTest" />
-        <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusicItem" />
-        <item itemvalue="JUnit.RentIntegrationTest" />
       </list>
     </recent_temporary>
   </component>
