@@ -1,10 +1,12 @@
 package pl.tks.service.services;
 
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import pl.tks.event.ClientCreatedEvent;
 import pl.tks.model.user.Role;
 import pl.tks.model.user.User;
 import pl.tks.model.user.UserPrincipal;
@@ -25,11 +27,13 @@ public class UserService implements IUserPort, UserDetailsService {
     private final PasswordEncoder passwordEncoder;
     private final TokenProviderPort tokenProviderPort;
     private final Set<String> blacklist = ConcurrentHashMap.newKeySet();
+    private final RabbitTemplate rabbitTemplate;
 
-    public UserService(UserPort userPort, PasswordEncoder passwordEncoder, TokenProviderPort tokenProviderPort) {
+    public UserService(UserPort userPort, PasswordEncoder passwordEncoder, TokenProviderPort tokenProviderPort, RabbitTemplate rabbitTemplate) {
         this.userPort = userPort;
         this.passwordEncoder = passwordEncoder;
         this.tokenProviderPort = tokenProviderPort;
+        this.rabbitTemplate = rabbitTemplate;
     }
 
     public User addUser(User user) {
@@ -37,7 +41,11 @@ public class UserService implements IUserPort, UserDetailsService {
             throw new DuplicateUserException("User with login " + user.getLogin() + " already exists");
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        return userPort.addUser(user);
+        User createdUser = userPort.addUser(user);
+        ClientCreatedEvent event = new ClientCreatedEvent(createdUser.getId(), createdUser.getFirstName(),
+                createdUser.getLastName(), 2, 0); // TODO: get maxArticles and discount from somewhere
+        rabbitTemplate.convertAndSend("client.create.queue", event);
+        return createdUser;
     }
 
     public User getUserById(String id) {
