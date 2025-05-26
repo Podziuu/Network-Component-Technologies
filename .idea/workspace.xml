@@ -5,32 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/config/RabbitMqConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/event/ClientCreatedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/messaging/ClientCreatedConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/messaging/QueueConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/java/pl/tks/configmq/RabbitMqConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/java/pl/tks/event/ClientCreatedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/java/pl/tks/event/RollbackClientEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/java/pl/tks/messaging/ClientProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/java/pl/tks/messaging/ClientResponseConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/main/java/pl/tks/rest/controller/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker/init-rabbitmq.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docker/rabbit-init/init.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/test/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docker/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Docker/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Docker/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/RentRestAdapterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/RentRestAdapterApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/main/java/pl/tks/rest/UserRestAdapterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/main/java/pl/tks/rest/UserRestAdapterApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/java/pl/tks/security/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/java/pl/tks/security/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/test/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/resources/application.properties" afterDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +47,6 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2uV41awss1SJ7WRbwWYzaCOMQVf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -107,7 +92,7 @@
     "JUnit.RentServiceTest.shouldThrowExceptionWhenNoRentsFoundWhileGetActiveRents.executor": "Run",
     "JUnit.RentServiceTest.shouldThrowExceptionWhenRentNotFoundWhileReturning.executor": "Run",
     "JUnit.RentServiceTest.shouldThrowExceptionWhenUserNotFoundWhileRenting.executor": "Run",
-    "JUnit.UserIntegrationTest.executor": "Run",
+    "JUnit.UserIntegrationTest.executor": "Debug",
     "JUnit.UserIntegrationTest.testCreateUser.executor": "Debug",
     "JUnit.UserIntegrationTest.testCreateUserWithMissingProperty.executor": "Run",
     "JUnit.UserIntegrationTest.testGetAllUsers.executor": "Run",
@@ -232,7 +217,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.Docker.rabbitmq: Compose Deployment">
+  <component name="RunManager" selected="JUnit.UserIntegrationTest">
     <configuration name="RentRestAdapterApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.tks.restrent.RentRestAdapterApplication" />
       <module name="RentRestAdapter" />
@@ -246,21 +231,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RentRestAdapter" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ItemIntegrationTest.testCreateMusic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RentRestAdapter" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ItemIntegrationTest" />
       <option name="METHOD_NAME" value="testCreateMusic" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UserRestAdapter" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -330,13 +315,15 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Application.RentRestAdapterApplication" />
       <item itemvalue="Docker.Docker.rabbitmq: Compose Deployment" />
-      <item itemvalue="JUnit.ItemIntegrationTest" />
+      <item itemvalue="JUnit.UserIntegrationTest" />
       <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic" />
       <item itemvalue="Spring Boot.RentRestAdapterApplication" />
       <item itemvalue="Spring Boot.Unnamed" />
@@ -345,19 +332,19 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserIntegrationTest" />
         <item itemvalue="Spring Boot.RentRestAdapterApplication (1)" />
         <item itemvalue="Docker.Docker.rabbitmq: Compose Deployment" />
         <item itemvalue="Application.RentRestAdapterApplication" />
         <item itemvalue="JUnit.ItemIntegrationTest.testCreateMusic" />
-        <item itemvalue="JUnit.ItemIntegrationTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.22855.74" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.22855.74" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
       </set>
     </attachedChunks>
   </component>
@@ -389,6 +376,7 @@
       <workItem from="1746101089920" duration="8418000" />
       <workItem from="1746109652260" duration="2186000" />
       <workItem from="1746440119172" duration="3360000" />
+      <workItem from="1748259586093" duration="3028000" />
     </task>
     <servers />
   </component>
@@ -583,6 +571,61 @@
           <url>file://$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/test/java/ItemIntegrationTest.java</url>
           <line>52</line>
           <option name="timeStamp" value="166" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/test/java/UserIntegrationTest.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="167" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/test/java/UserIntegrationTest.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="168" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/test/java/UserIntegrationTest.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="169" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/test/java/UserIntegrationTest.java</url>
+          <line>99</line>
+          <option name="timeStamp" value="170" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/UserService/UserApplicationCore/UserApplicationServices/src/main/java/pl/tks/service/services/UserService.java</url>
+          <line>144</line>
+          <option name="timeStamp" value="171" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/UserService/UserApplicationCore/UserApplicationServices/src/main/java/pl/tks/service/services/UserService.java</url>
+          <line>147</line>
+          <option name="timeStamp" value="172" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/UserService/UserApplicationCore/UserApplicationServices/src/main/java/pl/tks/service/services/UserService.java</url>
+          <line>145</line>
+          <option name="timeStamp" value="173" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/main/java/pl/tks/rest/controller/UserController.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="174" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/java/pl/tks/security/providers/JwtTokenProvider.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="175" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/main/java/pl/tks/rest/controller/UserController.java</url>
+          <line>112</line>
+          <option name="timeStamp" value="176" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/java/pl/tks/security/providers/JwtTokenProvider.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="177" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java</url>
