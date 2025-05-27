@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/JwtFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/JwtTokenProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/resources/public_key.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/resources/private_key.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/resources/public_key.pem" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/java/pl/tks/security/providers/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/java/pl/tks/security/providers/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/UserApplicationCore/UserApplicationServices/src/test/java/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserApplicationCore/UserApplicationServices/src/test/java/UserServiceTest.java" afterDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
