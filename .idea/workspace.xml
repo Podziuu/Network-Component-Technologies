@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/JwtFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/JwtTokenProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/resources/public_key.pem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/resources/private_key.pem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/resources/public_key.pem" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/messaging/ClientCreatedConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/messaging/ClientCreatedConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserApplicationCore/UserApplicationServices/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserApplicationCore/UserApplicationServices/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserApplicationCore/UserApplicationServices/src/main/java/pl/tks/service/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserApplicationCore/UserApplicationServices/src/main/java/pl/tks/service/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/java/pl/tks/security/providers/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/java/pl/tks/security/providers/JwtTokenProvider.java" afterDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,148 +47,148 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.RentRestAdapterApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.Docker.rabbitmq: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #4.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #5.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #6.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EntityMapperTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EntityMapperTest.movieMapperTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EntityMapperTest.rentMapperTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemIntegrationTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemIntegrationTest.testCreateComics.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemIntegrationTest.testCreateMovie.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemIntegrationTest.testCreateMusic (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemIntegrationTest.testCreateMusic (2).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemIntegrationTest.testCreateMusic.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ItemIntegrationTest.testCreateMusicItem.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemIntegrationTest.testGetAllItems.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemIntegrationTest.testGetMusic.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ItemRepositoryTest.addItemTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemRepositoryTest.setUnavailableTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldAddMusicItem.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldGetAllItems.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldGetItemById.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldRemoveItem.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldSetItemUnavailable.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldThrowExceptionWhenItemNotFoundWhenSetUnavailable.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ItemServiceTest.shouldUpdateMusicItemSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentIntegrationTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentRepositoryTest.rentItemTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldGetRentByIdSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldRentItemSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldReturnRentSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldThrowErrorWhenItemAlreadyRenterWhileRenting.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldThrowExceptionWhenItemNotFoundWhileRenting.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldThrowExceptionWhenNoRentsFoundWhileGetActiveRents.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldThrowExceptionWhenRentNotFoundWhileReturning.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RentServiceTest.shouldThrowExceptionWhenUserNotFoundWhileRenting.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserIntegrationTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserIntegrationTest.testCreateUser.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.UserIntegrationTest.testCreateUserWithMissingProperty.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserIntegrationTest.testGetAllUsers.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserIntegrationTest.testUpdateUser.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldAddUserSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldChangePasswordSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldGetUserByIdSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldLoginSuccessfully.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldThrowExceptionWhenCurrentPasswordIsIncorrect.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldThrowExceptionWhenNoUsersWithRole.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldThrowExceptionWhenPasswordIsIncorrect.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldThrowExceptionWhenUserAlreadyExists.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldThrowExceptionWhenUserAlreadyExistsWhileAdding.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.shouldThrowExceptionWhenUserNotFound.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Adapters [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Adapters [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Adapters [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Application [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.ApplicationCore [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.ApplicationCore [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.ApplicationPorts [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Mediastore [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RentApplicationCore [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RentApplicationPorts [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RentRepositoriesAdapters [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RentRepositoriesAdapters [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RentRepositoriesAdapters [verify].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RentRestAdapter [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RentRestAdapter [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RentService [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RentService [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RepositoriesAdapters [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RepositoriesAdapters [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RestAdapter [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RestAdapter [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RestAdapters [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.RestAdapters [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Security [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.SecurityAdapter [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.SoapAdapter [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.SoapAdapter [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.SoapAdapter [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.UserService [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.UserService [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.UserService [verify].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.security [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.security [install].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.App.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.RentRestAdapterApplication (1).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.RentRestAdapterApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.RestAdaptersApplication (1).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.RestAdaptersApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.RestApplication (1).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.RestApplication (2).executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.RestApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.SoapApplication (1).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.SoapApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.UserRestAdapterApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Komunikacja&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/plewkowicz/TESTOWY/MKWA_SR_1015_06/RentService/RentAdapters/RentRestAdapter/src/test/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/home/plewkowicz/Studia/sem6/TKS/MKWA_SR_1015_06/UserService/UserApplicationCore/UserApplicationServices/src/main/java/pl/lodz/p/edu/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.RentRestAdapterApplication.executor": "Run",
+    "Docker.Docker.rabbitmq: Compose Deployment.executor": "Run",
+    "HTTP Request.generated-requests | #4.executor": "Run",
+    "HTTP Request.generated-requests | #5.executor": "Run",
+    "HTTP Request.generated-requests | #6.executor": "Run",
+    "JUnit.EntityMapperTest.executor": "Run",
+    "JUnit.EntityMapperTest.movieMapperTest.executor": "Run",
+    "JUnit.EntityMapperTest.rentMapperTest.executor": "Run",
+    "JUnit.ItemIntegrationTest.executor": "Run",
+    "JUnit.ItemIntegrationTest.testCreateComics.executor": "Run",
+    "JUnit.ItemIntegrationTest.testCreateMovie.executor": "Run",
+    "JUnit.ItemIntegrationTest.testCreateMusic (1).executor": "Run",
+    "JUnit.ItemIntegrationTest.testCreateMusic (2).executor": "Run",
+    "JUnit.ItemIntegrationTest.testCreateMusic.executor": "Debug",
+    "JUnit.ItemIntegrationTest.testCreateMusicItem.executor": "Run",
+    "JUnit.ItemIntegrationTest.testGetAllItems.executor": "Run",
+    "JUnit.ItemIntegrationTest.testGetMusic.executor": "Debug",
+    "JUnit.ItemRepositoryTest.addItemTest.executor": "Run",
+    "JUnit.ItemRepositoryTest.executor": "Run",
+    "JUnit.ItemRepositoryTest.setUnavailableTest.executor": "Run",
+    "JUnit.ItemServiceTest.executor": "Run",
+    "JUnit.ItemServiceTest.shouldAddMusicItem.executor": "Run",
+    "JUnit.ItemServiceTest.shouldGetAllItems.executor": "Run",
+    "JUnit.ItemServiceTest.shouldGetItemById.executor": "Run",
+    "JUnit.ItemServiceTest.shouldRemoveItem.executor": "Run",
+    "JUnit.ItemServiceTest.shouldSetItemUnavailable.executor": "Run",
+    "JUnit.ItemServiceTest.shouldThrowExceptionWhenItemNotFoundWhenSetUnavailable.executor": "Run",
+    "JUnit.ItemServiceTest.shouldUpdateMusicItemSuccessfully.executor": "Run",
+    "JUnit.RentIntegrationTest.executor": "Run",
+    "JUnit.RentRepositoryTest.executor": "Run",
+    "JUnit.RentRepositoryTest.rentItemTest.executor": "Run",
+    "JUnit.RentServiceTest.executor": "Run",
+    "JUnit.RentServiceTest.shouldGetRentByIdSuccessfully.executor": "Run",
+    "JUnit.RentServiceTest.shouldRentItemSuccessfully.executor": "Run",
+    "JUnit.RentServiceTest.shouldReturnRentSuccessfully.executor": "Run",
+    "JUnit.RentServiceTest.shouldThrowErrorWhenItemAlreadyRenterWhileRenting.executor": "Run",
+    "JUnit.RentServiceTest.shouldThrowExceptionWhenItemNotFoundWhileRenting.executor": "Run",
+    "JUnit.RentServiceTest.shouldThrowExceptionWhenNoRentsFoundWhileGetActiveRents.executor": "Run",
+    "JUnit.RentServiceTest.shouldThrowExceptionWhenRentNotFoundWhileReturning.executor": "Run",
+    "JUnit.RentServiceTest.shouldThrowExceptionWhenUserNotFoundWhileRenting.executor": "Run",
+    "JUnit.UserIntegrationTest.executor": "Run",
+    "JUnit.UserIntegrationTest.testCreateUser.executor": "Debug",
+    "JUnit.UserIntegrationTest.testCreateUserWithMissingProperty.executor": "Run",
+    "JUnit.UserIntegrationTest.testGetAllUsers.executor": "Run",
+    "JUnit.UserIntegrationTest.testUpdateUser.executor": "Run",
+    "JUnit.UserRepositoryTest.executor": "Run",
+    "JUnit.UserServiceTest.executor": "Run",
+    "JUnit.UserServiceTest.shouldAddUserSuccessfully.executor": "Run",
+    "JUnit.UserServiceTest.shouldChangePasswordSuccessfully.executor": "Run",
+    "JUnit.UserServiceTest.shouldGetUserByIdSuccessfully.executor": "Run",
+    "JUnit.UserServiceTest.shouldLoginSuccessfully.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenCurrentPasswordIsIncorrect.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenNoUsersWithRole.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenPasswordIsIncorrect.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenUserAlreadyExists.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenUserAlreadyExistsWhileAdding.executor": "Run",
+    "JUnit.UserServiceTest.shouldThrowExceptionWhenUserNotFound.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.Adapters [clean].executor": "Run",
+    "Maven.Adapters [compile].executor": "Run",
+    "Maven.Adapters [install].executor": "Run",
+    "Maven.Application [install].executor": "Run",
+    "Maven.ApplicationCore [clean].executor": "Run",
+    "Maven.ApplicationCore [install].executor": "Run",
+    "Maven.ApplicationPorts [install].executor": "Run",
+    "Maven.Mediastore [clean].executor": "Run",
+    "Maven.Mediastore [compile].executor": "Run",
+    "Maven.Mediastore [install].executor": "Run",
+    "Maven.Mediastore [package].executor": "Run",
+    "Maven.Mediastore [site].executor": "Run",
+    "Maven.Mediastore [test].executor": "Run",
+    "Maven.RentApplicationCore [install].executor": "Run",
+    "Maven.RentApplicationPorts [install].executor": "Run",
+    "Maven.RentRepositoriesAdapters [clean].executor": "Run",
+    "Maven.RentRepositoriesAdapters [install].executor": "Run",
+    "Maven.RentRepositoriesAdapters [verify].executor": "Run",
+    "Maven.RentRestAdapter [clean].executor": "Run",
+    "Maven.RentRestAdapter [install].executor": "Run",
+    "Maven.RentService [clean].executor": "Run",
+    "Maven.RentService [install].executor": "Run",
+    "Maven.RepositoriesAdapters [clean].executor": "Run",
+    "Maven.RepositoriesAdapters [install].executor": "Run",
+    "Maven.RestAdapter [clean].executor": "Run",
+    "Maven.RestAdapter [install].executor": "Run",
+    "Maven.RestAdapters [clean].executor": "Run",
+    "Maven.RestAdapters [install].executor": "Run",
+    "Maven.Security [install].executor": "Run",
+    "Maven.SecurityAdapter [install].executor": "Run",
+    "Maven.SoapAdapter [clean].executor": "Run",
+    "Maven.SoapAdapter [install].executor": "Run",
+    "Maven.SoapAdapter [validate].executor": "Run",
+    "Maven.UserService [clean].executor": "Run",
+    "Maven.UserService [install].executor": "Run",
+    "Maven.UserService [verify].executor": "Run",
+    "Maven.security [clean].executor": "Run",
+    "Maven.security [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.App.executor": "Run",
+    "Spring Boot.Application.executor": "Run",
+    "Spring Boot.RentRestAdapterApplication (1).executor": "Run",
+    "Spring Boot.RentRestAdapterApplication.executor": "Run",
+    "Spring Boot.RestAdaptersApplication (1).executor": "Run",
+    "Spring Boot.RestAdaptersApplication.executor": "Run",
+    "Spring Boot.RestApplication (1).executor": "Run",
+    "Spring Boot.RestApplication (2).executor": "Debug",
+    "Spring Boot.RestApplication.executor": "Run",
+    "Spring Boot.SoapApplication (1).executor": "Run",
+    "Spring Boot.SoapApplication.executor": "Run",
+    "Spring Boot.UserRestAdapterApplication.executor": "Run",
+    "git-widget-placeholder": "Komunikacja",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "21",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/podziuu/Desktop/studia/tks/MKWA_SR_1015_06/RentService/RentAdapters/RentRestAdapter/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/home/plewkowicz/Studia/sem6/TKS/MKWA_SR_1015_06/UserService/UserApplicationCore/UserApplicationServices/src/main/java/pl/lodz/p/edu/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/test/resources" />
       <recent name="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/resources" />
+      <recent name="$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/resources" />
+      <recent name="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/test/resources" />
       <recent name="$PROJECT_DIR$/RentService/RentApplicationCore/RentDomainModel/src/main/java/pl/tks/model/client" />
       <recent name="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter" />
-      <recent name="$PROJECT_DIR$/RentService/RentAdapters/RentRepositoriesAdapters/src/main/java/pl/tks/repos" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl.localhost\Ubuntu\home\podziuu\studia\MKWA_SR_1015_06\Adapters\SoapAdapter\SOAP\src\main\java" />
@@ -210,7 +214,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserRestAdapterApplication">
+  <component name="RunManager" selected="Spring Boot.RentRestAdapterApplication (1)">
     <configuration name="RentRestAdapterApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.tks.restrent.RentRestAdapterApplication" />
       <module name="RentRestAdapter" />
@@ -593,19 +597,44 @@
           <option name="timeStamp" value="174" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/java/pl/tks/security/providers/JwtTokenProvider.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="175" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/main/java/pl/tks/rest/controller/UserController.java</url>
           <line>112</line>
           <option name="timeStamp" value="176" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/UserService/UserAdapters/UserSecurityAdapter/src/main/java/pl/tks/security/providers/JwtTokenProvider.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="177" />
+          <url>file://$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/JwtFilter.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/JwtFilter.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="203" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/JwtFilter.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="204" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/JwtFilter.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="205" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/JwtFilter.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="207" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/JwtFilter.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="208" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/JwtFilter.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="209" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Adapters/RepositoriesAdapters/src/main/java/mappers/RentMapper.java</url>

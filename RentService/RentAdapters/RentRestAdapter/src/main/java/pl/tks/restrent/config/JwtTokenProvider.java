@@ -1,11 +1,9 @@
-package pl.tks.security.providers;
+package pl.tks.restrent.config;
 
 import io.jsonwebtoken.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
-import pl.tks.model.user.Role;
-import pl.tks.ports.infrastructure.TokenProviderPort;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,21 +19,10 @@ import java.util.Base64;
 import java.util.Date;
 
 @Service
-public class JwtTokenProvider implements TokenProviderPort {
+public class JwtTokenProvider {
 
     @Value("${app.jwt.expiration}")
     private long expiration;
-
-    public String generateToken(String login, String id, Role role) {
-        return Jwts.builder()
-                .subject(login)
-                .claim("role", role.name())
-                .claim("userId", id)
-                .issuedAt(new Date())
-                .expiration(new Date(System.currentTimeMillis() + expiration))
-                .signWith(getPrivateKey())
-                .compact();
-    }
 
     public String getLogin(String token) {
         return Jwts.parser()
@@ -61,21 +48,6 @@ public class JwtTokenProvider implements TokenProviderPort {
             return true;
         } catch (JwtException e) {
             return false;
-        }
-    }
-
-    private RSAPrivateKey getPrivateKey() {
-        try (InputStream is = new ClassPathResource("private_key.pem").getInputStream()) {
-            String key = new String(is.readAllBytes(), StandardCharsets.UTF_8)
-                    .replace("-----BEGIN PRIVATE KEY-----", "")
-                    .replace("-----END PRIVATE KEY-----", "")
-                    .replaceAll("\\s+", "");
-            byte[] decoded = Base64.getDecoder().decode(key);
-            PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(decoded);
-            KeyFactory kf = KeyFactory.getInstance("RSA");
-            return (RSAPrivateKey) kf.generatePrivate(keySpec);
-        } catch (Exception e) {
-            throw new RuntimeException("Unable to load private key", e);
         }
     }
 
