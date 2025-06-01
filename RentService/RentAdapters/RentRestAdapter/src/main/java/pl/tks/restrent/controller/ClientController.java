@@ -1,5 +1,6 @@
 package pl.tks.restrent.controller;
 
+import io.micrometer.core.annotation.Timed;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +25,7 @@ public class ClientController {
     }
 
     // Pobierz wszystkich klientów
+    @Timed(value = "client.getAll", description = "Czas wykonania metody getAllClients")
     @GetMapping()
     @ResponseStatus(HttpStatus.OK)
     public List<ClientRentDTO> getAllClients(@RequestParam(required = false) String firstName) {

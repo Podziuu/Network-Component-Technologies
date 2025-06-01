@@ -4,3 +4,12 @@ mongo:
   username: admin
   password: adminpassword
   authDB: admin
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, prometheus
+  endpoint:
+    metrics:
+      enabled: true
