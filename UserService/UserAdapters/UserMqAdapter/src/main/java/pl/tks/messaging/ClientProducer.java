@@ -1,6 +1,5 @@
 package pl.tks.messaging;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -10,17 +9,22 @@ import pl.tks.event.ClientCreatedEvent;
 public class ClientProducer {
 
     private final RabbitTemplate rabbitTemplate;
-    private final ObjectMapper objectMapper;
 
     @Value("${mq.client.create.queue}")
-    private String createClientQueue;
+    private String clientCreateQueue;
 
-    public ClientProducer(RabbitTemplate rabbitTemplate, ObjectMapper objectMapper) {
+    public ClientProducer(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
-        this.objectMapper = objectMapper;
     }
 
     public void sendCreateClientEvent(ClientCreatedEvent event) {
-        rabbitTemplate.convertAndSend(createClientQueue, event);
+        try {
+            rabbitTemplate.convertAndSend(clientCreateQueue, event);
+            System.out.println("Sent client creation event for: " + event.getFirstName() + " " + event.getLastName());
+        } catch (Exception e) {
+            // tu tez lapiemy ogolnie po prostu
+            System.err.println("Failed to send client creation event: " + e.getMessage());
+            throw e;
+        }
     }
 }

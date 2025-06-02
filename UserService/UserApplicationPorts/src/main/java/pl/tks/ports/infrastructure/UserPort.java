@@ -4,6 +4,7 @@ import pl.tks.model.user.Role;
 import pl.tks.model.user.User;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface UserPort {
     User addUser(User user);
@@ -13,7 +14,7 @@ public interface UserPort {
     void activateUser(String id);
     void deleteAll();
     void deactivateUser(String id);
-
+    void deleteById(String id);
     void updatePassword(String id, String newPassword);
     User getById(String id);
 

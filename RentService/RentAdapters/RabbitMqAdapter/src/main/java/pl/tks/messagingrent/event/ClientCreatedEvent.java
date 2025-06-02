@@ -59,4 +59,8 @@ public class ClientCreatedEvent implements Serializable {
         this.maxArticles = maxArticles;
         this.discount = discount;
     }
+
+    public String getClientId() {
+        return id;
+    }
 }

@@ -24,7 +24,6 @@ public class ClientController {
         this.clientMapper = clientMapper;
     }
 
-    // Pobierz wszystkich klientów
     @Timed(value = "client.getAll", description = "Czas wykonania metody getAllClients")
     @GetMapping()
     @ResponseStatus(HttpStatus.OK)
@@ -38,7 +37,6 @@ public class ClientController {
         return clientMapper.toDTO(clients);
     }
 
-    // Dodaj nowego klienta
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
     public ClientRentDTO addClient(@RequestBody CreateClientDTO clientDTO) {
@@ -47,7 +45,6 @@ public class ClientController {
         return clientMapper.convertToDTO(createdClient);
     }
 
-    // Pobierz klienta po ID
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<ClientRentDTO> getClient(@PathVariable String id) {
@@ -58,7 +55,6 @@ public class ClientController {
         return ResponseEntity.ok(clientMapper.convertToDTO(client));
     }
 
-    // Zaktualizuj dane klienta
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<?> updateClient(@PathVariable String id, @RequestBody UpdateClientDTO clientDTO) {

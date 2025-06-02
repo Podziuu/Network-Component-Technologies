@@ -18,6 +18,8 @@ import pl.tks.rest.mapper.UserMapper;
 import pl.tks.security.providers.JwsProvider;
 import pl.tks.security.providers.JwtTokenProvider;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
 
 @RestController
@@ -61,15 +63,29 @@ public class UserController {
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public UserDTO addUser(@RequestBody @Valid CreateUserDTO userDTO) {
+    public ResponseEntity<Object> addUser(@RequestBody @Valid CreateUserDTO userDTO) {
         Counter counter = meterRegistry.counter("user.created.count");
         Timer timer = meterRegistry.timer("user.created.timer");
 
         return timer.record(() -> {
             counter.increment();
             User user = userMapper.convertToUser(userDTO);
+
+            boolean isRollbackTest = "ErrorTest".equals(user.getFirstName());
+
             User createdUser = userPort.addUser(user);
-            return userMapper.convertToDTO(createdUser);
+            UserDTO userResponse = userMapper.convertToDTO(createdUser);
+
+            Map<String, Object> response = new HashMap<>();
+            response.put("user", userResponse);
+
+            if (isRollbackTest) {
+                response.put("warning", "This is a test user that will trigger a rollback in RentService.");
+                return ResponseEntity.status(HttpStatus.ACCEPTED).body(response);
+            } else {
+                response.put("message", "User created successfully.");
+                return ResponseEntity.status(HttpStatus.CREATED).body(response);
+            }
         });
     }
 
