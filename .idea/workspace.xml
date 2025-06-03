@@ -5,29 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47acf05-2042-46c8-bafd-632ec08d03c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/event/RollbackClientEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserService/UserApplicationPorts/src/main/java/pl/tks/ports/infrastructure/RollbackHandlerPort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/config/RabbitListenerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/config/RabbitListenerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/config/RabbitMqConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/config/RabbitMqConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/event/ClientCreatedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/event/ClientCreatedEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/messaging/ClientCreatedConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/messaging/ClientCreatedConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/java/pl/tks/messagingrent/messaging/QueueConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RabbitMqAdapter/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/controller/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/java/pl/tks/configmq/RabbitMqConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/java/pl/tks/configmq/RabbitMqConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/java/pl/tks/event/RollbackClientEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/java/pl/tks/event/RollbackClientEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/java/pl/tks/messaging/ClientProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/java/pl/tks/messaging/ClientProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/java/pl/tks/messaging/ClientResponseConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/java/pl/tks/messaging/ClientResponseConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/RentService/RentAdapters/RentRestAdapter/src/main/java/pl/tks/restrent/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserMqAdapter/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserRepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/UserRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserRepositoriesAdapters/src/main/java/pl/tks/repos/aggregates/UserRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserRepositoriesAdapters/src/main/java/pl/tks/repos/repo/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserRepositoriesAdapters/src/main/java/pl/tks/repos/repo/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/main/java/pl/tks/rest/UserRestAdapterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/main/java/pl/tks/rest/UserRestAdapterApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/main/java/pl/tks/rest/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserAdapters/UserRestAdapter/src/main/java/pl/tks/rest/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserApplicationCore/UserApplicationServices/src/main/java/pl/tks/service/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserApplicationCore/UserApplicationServices/src/main/java/pl/tks/service/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserApplicationCore/UserApplicationServices/src/test/java/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserApplicationCore/UserApplicationServices/src/test/java/UserServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/UserApplicationPorts/src/main/java/pl/tks/ports/infrastructure/UserPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/UserApplicationPorts/src/main/java/pl/tks/ports/infrastructure/UserPort.java" afterDir="false" />
     </list>
     <list id="557ece6e-b011-4423-8caa-737fc98896b0" name="Changes by plewkowicz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -392,6 +374,7 @@
       <workItem from="1748520863837" duration="7000" />
       <workItem from="1748784549679" duration="2606000" />
       <workItem from="1748793677711" duration="1111000" />
+      <workItem from="1748978415186" duration="4637000" />
     </task>
     <servers />
   </component>

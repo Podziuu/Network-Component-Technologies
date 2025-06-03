@@ -51,7 +51,7 @@ public class ClientCreatedConsumer {
             handleRollback(event, e);
         } catch (Exception e) {
             logger.error("Unexpected error while processing client creation", e);
-            throw e;
+            handleRollback(event, e);
         }
     }
 
