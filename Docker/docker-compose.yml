@@ -88,5 +88,20 @@ services:
         }
       );'
 
+  rabbitmq:
+    image: 'bitnami/rabbitmq:latest'
+    container_name: rabbitmq
+    hostname: rabbitmq
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+    networks:
+      - mongonet
+    volumes:
+      - ./init-rabbitmq.sh:/docker-entrypoint-initdb.d/init-rabbitmq.sh
+    environment:
+      - RABBITMQ_LOGS=-
+
+
 networks:
   mongonet: {}

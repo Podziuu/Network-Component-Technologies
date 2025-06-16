@@ -27,8 +27,14 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/users/activate/**", "/api/users/deactivate/**").hasAnyRole("ADMIN", "MANAGER")
-                        .requestMatchers(HttpMethod.POST, "api/users", "/api/users/login", "/api/users/logout").permitAll()
+                        .requestMatchers(HttpMethod.POST, "api/users", "/api/users/login", "/api/users/logout", "test-event").permitAll()
                         .requestMatchers(HttpMethod.POST, "/ws/**").permitAll()
+                        .requestMatchers(
+                                "/actuator/health",
+                                "/actuator/metrics",
+                                "/actuator/metrics/**"
+                        ).permitAll()
+
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);

@@ -4,16 +4,19 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import pl.tks.event.ClientCreatedEvent;
+import pl.tks.messaging.ClientProducer;
 import pl.tks.model.user.Client;
 import pl.tks.model.user.ClientType;
 import pl.tks.model.user.Role;
 import pl.tks.model.user.User;
+import pl.tks.ports.infrastructure.TokenProviderPort;
 import pl.tks.ports.infrastructure.UserPort;
 import pl.tks.service.exception.DuplicateUserException;
 import pl.tks.service.exception.InvalidCredentialsException;
 import pl.tks.service.exception.UserNotFoundException;
 import pl.tks.service.services.UserService;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Collections;
 import java.util.List;
@@ -31,8 +34,11 @@ public class UserServiceTest {
     @Mock
     private PasswordEncoder passwordEncoder;
 
-//    @Mock
-//    private JwtTokenProviderRest jwtTokenProvider;
+    @Mock
+    private TokenProviderPort tokenProviderPort;
+
+    @Mock
+    private ClientProducer clientProducer;
 
     @InjectMocks
     private UserService userService;
@@ -63,11 +69,13 @@ public class UserServiceTest {
         when(userPort.userExists(userToAdd.getLogin())).thenReturn(false);
         when(passwordEncoder.encode(userToAdd.getPassword())).thenReturn("encodedPassword");
         when(userPort.addUser(any(User.class))).thenReturn(testUser);
+        doNothing().when(clientProducer).sendCreateClientEvent(any(ClientCreatedEvent.class));
 
         User createdUser = userService.addUser(userToAdd);
 
         assertNotNull(createdUser);
         verify(userPort).addUser(any(User.class));
+        verify(clientProducer).sendCreateClientEvent(any(ClientCreatedEvent.class));
     }
 
     @Test

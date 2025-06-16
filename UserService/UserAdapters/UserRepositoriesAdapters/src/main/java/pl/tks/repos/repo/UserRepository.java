@@ -2,6 +2,7 @@ package pl.tks.repos.repo;
 
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.InsertOneResult;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.conversions.Bson;
@@ -105,5 +106,10 @@ public class UserRepository extends AbstractMongoEntity {
 
     public void deleteAll() {
         userCollection.drop();
+    }
+
+    public DeleteResult deleteById(String id) {
+        DeleteResult result = userCollection.deleteOne(Filters.eq("_id", new ObjectId(id)));
+        return result;
     }
 }

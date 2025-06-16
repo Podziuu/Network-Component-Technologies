@@ -15,6 +15,7 @@
         <module>RentRepositoriesAdapters</module>
         <module>RentRestAdapter</module>
         <module>SoapAdapter</module>
+        <module>RabbitMqAdapter</module>
     </modules>
 
     <properties>

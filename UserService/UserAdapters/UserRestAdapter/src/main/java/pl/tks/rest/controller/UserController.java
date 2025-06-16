@@ -1,5 +1,9 @@
 package pl.tks.rest.controller;
 
+import io.micrometer.core.annotation.Timed;
+import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.MeterRegistry;
+import io.micrometer.core.instrument.Timer;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -14,6 +18,8 @@ import pl.tks.rest.mapper.UserMapper;
 import pl.tks.security.providers.JwsProvider;
 import pl.tks.security.providers.JwtTokenProvider;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
 
 @RestController
@@ -23,14 +29,18 @@ public class UserController {
     private final JwtTokenProvider jwtTokenProvider;
     private final JwsProvider jwsProvider;
     private final UserMapper userMapper;
+    private final MeterRegistry meterRegistry;
 
-    public UserController(IUserPort userPort, JwtTokenProvider jwtTokenProvider, JwsProvider jwsProvider, UserMapper userMapper) {
+    public UserController(IUserPort userPort, JwtTokenProvider jwtTokenProvider, JwsProvider jwsProvider,
+                          UserMapper userMapper, MeterRegistry meterRegistry) {
         this.userPort = userPort;
         this.jwtTokenProvider = jwtTokenProvider;
         this.jwsProvider = jwsProvider;
         this.userMapper = userMapper;
+        this.meterRegistry = meterRegistry;
     }
 
+    @Timed(value = "user.getAll", description = "Czas wykonania metody getAllUsers")
     @GetMapping()
     @ResponseStatus(HttpStatus.OK)
     public List<UserDTO> getAllUsers(
@@ -53,12 +63,33 @@ public class UserController {
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public UserDTO addUser(@RequestBody @Valid CreateUserDTO userDTO) {
-        User user = userMapper.convertToUser(userDTO);
-        User createdUser = userPort.addUser(user);
-        return userMapper.convertToDTO(createdUser);
+    public ResponseEntity<Object> addUser(@RequestBody @Valid CreateUserDTO userDTO) {
+        Counter counter = meterRegistry.counter("user.created.count");
+        Timer timer = meterRegistry.timer("user.created.timer");
+
+        return timer.record(() -> {
+            counter.increment();
+            User user = userMapper.convertToUser(userDTO);
+
+            boolean isRollbackTest = "ErrorTest".equals(user.getFirstName());
+
+            User createdUser = userPort.addUser(user);
+            UserDTO userResponse = userMapper.convertToDTO(createdUser);
+
+            Map<String, Object> response = new HashMap<>();
+            response.put("user", userResponse);
+
+            if (isRollbackTest) {
+                response.put("warning", "This is a test user that will trigger a rollback in RentService.");
+                return ResponseEntity.status(HttpStatus.ACCEPTED).body(response);
+            } else {
+                response.put("message", "User created successfully.");
+                return ResponseEntity.status(HttpStatus.CREATED).body(response);
+            }
+        });
     }
 
+    @Timed(value = "user.get", description = "Czas wykonania metody getUser")
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<UserDTO> getUser(@PathVariable String id) {
@@ -96,17 +127,7 @@ public class UserController {
         userPort.deactivateUser(id);
     }
 
-//    @PutMapping("/me/changePassword")
-//    @ResponseStatus(HttpStatus.NO_CONTENT)
-//    public void changePassword(@RequestBody @Valid ChangePasswordDTO dto) {
-//        UserPrincipal userPrincipal = (UserPrincipal) SecurityContextHolder
-//                .getContext()
-//                .getAuthentication()
-//                .getPrincipal();
-//        String username = userPrincipal.getUsername();
-//        userPort.changePassword(username, dto);
-//    }
-
+    @Timed(value = "user.login", description = "Czas wykonania metody login")
     @PostMapping("/login")
     @ResponseStatus(HttpStatus.OK)
     public TokenDTO login(@RequestBody @Valid LoginDTO dto) {

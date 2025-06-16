@@ -78,6 +78,11 @@ public class UserRepositoryAdapter implements UserPort {
     }
 
     @Override
+    public void deleteById(String id) {
+        userRepository.deleteById(id);
+    }
+
+    @Override
     public void updatePassword(String id, String newPassword) {
         userRepository.updatePassword(id, newPassword);
     }
